@@ -10,6 +10,7 @@ import SectionHero from "./SectionHero";
 import SectionClientSay from "components/SectionClientSay/SectionClientSay";
 import { useTranslation } from "react-i18next";
 import { Section2 } from "./section2";
+import SectionFeatures from "containers/PageHome/SectionFeatures";
 
 export interface PageAboutProps {
 	className?: string;
@@ -19,7 +20,7 @@ const PageAbout: FC<PageAboutProps> = ({ className = "" }) => {
 	const { t } = useTranslation();
 	return (
 		<div
-			className={`nc-PageAbout relative overflow-hidden ${className} bg-[#DDE2EB]`}
+			className={`nc-PageAbout relative overflow-hidden ${className} h-fit h-screen bg-[#DDE2EB] `}
 			data-nc-id="PageAbout"
 		>
 			<Helmet>
@@ -29,7 +30,7 @@ const PageAbout: FC<PageAboutProps> = ({ className = "" }) => {
 			{/* ======== BG GLASS ======== */}
 			{/* <BgGlassmorphism /> */}
 
-			<div className="container p-0 m-0 w-[100vw] ">
+			<div className="container m-0 w-[100vw] p-0 ">
 				<SectionHero
 					rightImg={rightImg}
 					heading={t("aboutTitle")}
@@ -39,9 +40,24 @@ const PageAbout: FC<PageAboutProps> = ({ className = "" }) => {
 
 				{/* <SectionFounder /> */}
 				<Section2 />
+
 				{/* <SectionStatistic /> */}
 
 				{/* <SectionSubscribe2 /> */}
+			</div>
+			<div className="bg-red h-fit w-full pb-[20vh]">
+				<div
+					className="h-fit 
+				
+				min-h-full
+		bg-[#1D4179]
+				"
+				>
+					{/* margin top changes depends on search form  */}
+					<div className="container ">
+						<SectionFeatures />
+					</div>
+				</div>
 			</div>
 		</div>
 	);
