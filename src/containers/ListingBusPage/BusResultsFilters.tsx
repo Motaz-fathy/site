@@ -246,7 +246,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
         }
     };
     const arrival_atFilterFunction = (each: any) => {
-        if (selectedCheckboxes.arrivalFilter.length == 0) {
+        if (selectedCheckboxes.arrivalFilter.length === 0) {
             return true;
         }
         if (selectedCheckboxes.arrivalFilter.includes(each.travel_to)) {
@@ -256,7 +256,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
     };
 
     const travel_atFilterFunction = (each: any) => {
-        if (selectedCheckboxes.departureFilter.length == 0) {
+        if (selectedCheckboxes.departureFilter.length === 0) {
             return true;
         }
         if (selectedCheckboxes.departureFilter.includes(each.travel_from)) {
@@ -265,7 +265,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
         return false;
     };
     const gateway_idFilterFunction = (each: any) => {
-        if (selectedCheckboxes.operatorFilter.length == 0) {
+        if (selectedCheckboxes.operatorFilter.length === 0) {
             return true;
         }
         if (selectedCheckboxes.operatorFilter.includes(each.gateway_id)) {
@@ -274,7 +274,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
         return false;
     };
     const classesFilterFunction = (each: any) => {
-        if (selectedCheckboxes.seatsFilter.length == 0) {
+        if (selectedCheckboxes.seatsFilter.length === 0) {
             return true;
         }
         if (selectedCheckboxes.seatsFilter.includes(each.classes)) {

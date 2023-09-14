@@ -9,7 +9,7 @@ import { Fragment } from "react";
 import moment from "moment";
 import NcInputNumber from "components/NcInputNumber/NcInputNumber";
 import { useTranslation } from "react-i18next";
-import { getFlightsClasses, getFlightsTrips } from "api";
+import { getFlightsClasses } from "api";
 import { useQuery } from "react-query";
 import { showApiErrorMessages } from "utils";
 import { toast } from "react-toastify";
@@ -60,9 +60,10 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 	const navigate = useNavigate();
 	const [flightClassState, setFlightClassState] = useState("");
 	const [flightClassCode, setFlightClassCode] = useState("");
-
 	const [flightClass, setFlightClass] = useState<any>([]);
 
+	window.localStorage.setItem("flightClassState" , flightClassState)
+	console.log("flightClassState" , flightClassState)
 	// USER EFFECT
 	useEffect(() => {
 		const localStorage = JSON.parse(
@@ -73,7 +74,7 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 				startDate: moment(localStorage?.dateRangeValue?.startDate),
 				endDate: moment(localStorage?.dateRangeValue?.endDate),
 			});
-			setDropOffLocationType(localStorage?.round == 1 ? "oneWay" : "roundTrip");
+			setDropOffLocationType(localStorage?.round === 1 ? "oneWay" : "roundTrip");
 			setPickUpInputValue(localStorage?.travelFrom?.name);
 			setDropOffInputValue(localStorage?.travelTo?.name);
 			setTravelFrom(localStorage?.travelFrom);
@@ -103,6 +104,7 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 				setFlightClass(response?.data?.data);
 				setFlightClassState(response?.data?.data?.[1]?.title ?? "");
 				setFlightClassCode(response?.data?.data?.[1]?.id ?? "");
+				
 			},
 			onError: (errors: any) => {
 				if (Object.keys(errors.response.data.errors)?.length) {
@@ -113,6 +115,7 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 			},
 		},
 	);
+
 	const navigateFightTrips = () => {
 		sessionStorage.setItem(
 			"flightData",
@@ -133,10 +136,16 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 				filter_by: "cheapest",
 				filter_dir: "desc",
 			}),
-		);
-		navigate("/listing-flights?flights=" + travelFrom?.id);
-	};
 
+		);
+		if(dropOffLocationType === "oneWay"){
+			navigate("/listing-flights-oneRound?flights=" + travelFrom?.id);
+		} else if (dropOffLocationType === "roundTrip"){
+			navigate("/listing-flights-twoRound?flights=" + travelFrom?.id);
+		} else {
+			navigate("/")
+		}
+	};
 	const renderRadioBtn = () => {
 		return (
 			<div className=" [ nc-hero-field-padding ] flex flex-row  flex-wrap gap-3 py-5 ">
@@ -198,26 +207,24 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 					disabled ? "cursor-not-allowed   select-none	" : "cursor-pointer"
 				}  md:h-fit `}
 			>
-				{!!disabled && (
-					<div className="absolute top-0    left-0 z-[9999] flex   h-full w-full  items-center justify-center rounded-[40px] rounded-t-2xl bg-gray-50   bg-opacity-70 text-lg font-semibold   text-black dark:bg-opacity-50 max-sm:h-[400px] xl:rounded-[49px] xl:rounded-t-3xl xl:text-2xl">
-						{t("shouldSelectTripType")}
-					</div>
-				)}
+				
 
-				<form className="relative mt-2  w-full p-2 dark:bg-neutral-800 max-sm:flex-col-reverse  sm:mt-8 sm:flex-col-reverse sm:bg-white   sm:p-8  xl:rounded-xl  ">
+				<form className="relative mt-2  w-full p-2 dark:bg-neutral-800 sm:mt-8  sm:bg-white sm:p-8 xl:rounded-xl   sm:flex-col-reverse  max-sm:flex-col-reverse  ">
 					<span className="flex sm:hidden">{renderRadioBtn()}</span>
-					<div className="flex h-[56px] gap-1 max-sm:flex-col sm:w-full  sm:justify-around md:w-full md:flex-row lg:w-full ">
-						<div className="relative flex w-[40vw] gap-y-2 max-sm:w-full max-sm:flex-col   sm:gap-1  lg:flex-row ">
+					<div className="flex h-[56px]  lg:w-full md:w-full sm:w-full  max-sm:flex-col gap-1 md:flex-row sm:justify-around ">
+						<div className="relative flex lg:flex-row w-[40vw] max-sm:flex-col gap-y-2   sm:gap-1  max-sm:w-full ">
+
 							<LocationInput
-								className="h-full sm:h-14 "
+								className="h-12 sm:h-14 "
 								defaultValue={pickUpInputValue}
-								onChange={e => setPickUpInputValue(e)}
+								onChange={(e) => setPickUpInputValue(e)}
 								onInputDone={(value: any) => {
+									console.log("origin value " , value)
+									setFieldFocused("dropOffInput");
 									setTravelFrom(value);
 									setPickUpInputValue(
 										i18next.language === "en" ? value?.name_en : value?.name_ar,
 									);
-									setFieldFocused("dropOffInput");
 								}}
 								placeHolder={t("pickingFrom")!}
 								noPlaceHolder={true}
@@ -230,10 +237,10 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 								sm:bg-transparent sm:p-0  sm:py-[25px]
 								"
 								onClick={() => {
-									setTravelFrom(travelTo);
+									setTravelFrom(travelFrom);
 									setPickUpInputValue(dropOffInputValue);
 									setDropOffInputValue(pickUpInputValue);
-									setTravelTo(travelFrom);
+									setTravelTo(travelTo);
 								}}
 							>
 								<svg
@@ -253,6 +260,7 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 									/>
 								</svg>
 							</div>
+
 							<LocationInput
 								className=" sm:h-14"
 								defaultValue={dropOffInputValue}
@@ -271,6 +279,7 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 								type={"flight"}
 								typeIcon="to"
 							/>
+
 						</div>
 						{dropOffLocationType === "roundTrip" ? (
 							<RentalCarDatesRangeInput

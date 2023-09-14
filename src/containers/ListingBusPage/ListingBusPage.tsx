@@ -334,9 +334,9 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 	// 	setRefactoredTrips(filtered)
 	// }
 	// 	, [filterFunction])
-	const f = () => {
+	// const f = () => {
 
-	}
+	// }
 
 	return (
 		<div
@@ -415,26 +415,7 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 
 				{loading && page === 1 && (
 					<div className="my-4 flex  w-full justify-center">
-						<svg
-							className="-ml-1 mr-3 h-20 w-20 animate-spin"
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-						>
-							<circle
-								className="opacity-25"
-								cx="12"
-								cy="12"
-								r="10"
-								stroke="currentColor"
-								strokeWidth="3"
-							></circle>
-							<path
-								className="opacity-75"
-								fill="currentColor"
-								d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-							></path>
-						</svg>
+					<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,23a9.63,9.63,0,0,1-8-9.5,9.51,9.51,0,0,1,6.79-9.1A1.66,1.66,0,0,0,12,2.81h0a1.67,1.67,0,0,0-1.94-1.64A11,11,0,0,0,12,23Z"><animateTransform attributeName="transform" type="rotate" dur="0.75s" values="0 12 12;360 12 12" repeatCount="indefinite"/></path></svg>
 					</div>
 				)}
 

@@ -54,6 +54,7 @@ interface Item {
 export const PrivateTrip: FC<PrivateTripPror> = () => {
 
   const {t} = useTranslation()
+  const [loading, setLoading] = useState<boolean>(false);
   const [data, setData]: any = useState();
   const dd:any = window.localStorage.getItem("private_oneRound_date_time");
   const date = JSON.parse(dd)
@@ -94,13 +95,15 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
   }
 
   useEffect(() => {
+    setLoading(true)
     axios
     .get(
       `${process.env.REACT_APP_API_TELE_URL}/api/transports/private/trips?from_location_id=${travelFrom}&to_location_id=${travelTo}&date=${date}&page=1`
     )
     .then((res: any) => {
       setData(res.data.data);
-      console.log("data" ,res.data.data)
+      setLoading(false)
+      
     });
   }, []) ;
 
@@ -128,7 +131,9 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
   	}, [screenSize])
     
     const Min_screen = (data: Item[]): JSX.Element[] => {
+     
       return data?.map((item) => (
+        
         <div
           className="mt-5 flex w-[100%] flex-col items-center rounded-lg bg-[white]"
           key={item.id}
@@ -368,7 +373,30 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
            </select>
          </div> */}
        </div>
-
+       {loading && 
+        ( <div className="my-4 flex  w-full justify-center">
+        <svg
+        className="-ml-1 mr-3 h-20 w-20 animate-spin"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        >
+        <circle
+        className="opacity-25"
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="currentColor"
+        strokeWidth="3"
+        ></circle>
+        <path
+        className="opacity-75"
+        fill="currentColor"
+        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+        ></path>
+        </svg>
+        </div>)
+       }
        { screenSize.width > 900 ?
          max_and_medium_screen(data) : 
          Min_screen(data)

@@ -15,6 +15,7 @@ import useNcId from "hooks/useNcId";
 import { useTranslation } from "react-i18next";
 import moment from "moment";
 import { getAddressList } from "../../api/index";
+import { toast } from "react-toastify";
 
 import Styled from "./component.module.css";
 import { Headprivatetrip } from "components/ptivateTrip/Headprivatetrip";
@@ -42,6 +43,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
 }) => {
   const { trip_Id } = useParams();
   const [data, setData]: any = useState();
+	const [loading, setLoading] = useState<boolean>(false);
 
   const [focusedInput, setFocusedInput] = useState(defaultFocus);
   const [stateDate, setStateDate] = useState(defaultDateValue);
@@ -55,8 +57,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
   
   const private_oneRound_date_time = date.split("T")[0].substring(1,11)
   
-  console.log(private_oneRound_date_time)
-  console.log( "state date ", stateDate)
+
   // code will be enhance
   const fromhead_en: string | null = window.localStorage.getItem("fromhead_en");
   const tohead_en: string | null = window.localStorage.getItem("tohead_en");
@@ -125,6 +126,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
 
   // handle data of trip
   useEffect(() => {
+    setLoading(true)
     axios
       .get(
         `${process.env.REACT_APP_API_TELE_URL}/api/transports/private/trips/${trip_Id}`,
@@ -135,8 +137,12 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
         }
       )
       .then((res: any) => {
+        
         setData(res.data.data);
-      });
+        setLoading(false)
+      }).catch((error) => {
+        toast.error(error.message)
+      })
   }, []);
 
   // popup map address
@@ -211,6 +217,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
         time === undefined ||
         private_oneRound_date_time === undefined
       ) {
+        toast.error("data not valid ")
         nav(`/private-trip/oneRound/${trip_Id}`);
       } else if (AddressFromOne === AddressToOne) {
         nav(`/private-trip/oneRound/${trip_Id}`);
@@ -242,6 +249,8 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
             }
           )
           .then((response) => {
+            toast.success("created ticket ")
+            
             // response to navigate pay page
             window.localStorage.setItem(
               "summaryoneround",
@@ -274,6 +283,34 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
     };
     return (
       <>
+      {loading && 
+
+         ( <div className="my-4 flex  w-full justify-center">
+						<svg
+							className="-ml-1 mr-3 h-20 w-20 animate-spin"
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+						>
+							<circle
+								className="opacity-25"
+								cx="12"
+								cy="12"
+								r="10"
+								stroke="currentColor"
+								strokeWidth="3"
+							></circle>
+							<path
+								className="opacity-75"
+								fill="currentColor"
+								d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+							></path>
+						</svg>
+					</div>)
+          
+          }
+
+
         <div className="m-auto flex w-full items-center justify-center ">
           {modal && (
             <div className={Styled.modal}>
@@ -312,6 +349,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                   </p>
                 </div>
                 <div className="mt-5 flex items-end justify-start text-[#69696A] rtl:justify-end">
+
                   <span className="flex items-center justify-start rtl:justify-end ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -366,6 +404,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                     </svg>
                     <h4 className="ml-2">1 large bag + 1 small bag </h4>{" "}
                   </span>
+
                 </div>
               </div>
             </div>

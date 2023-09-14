@@ -108,7 +108,7 @@ export const BusTwoRound = () => {
           </div>
 
           <hr className="mt-5 w-full text-[#69696A]"></hr>
-          <div className="mt-[24px] flex justify-between">
+          <div className="mt-[14px] flex justify-between">
             <div className="flex justify-start ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -250,7 +250,7 @@ export const BusTwoRound = () => {
           </div>
 
           <hr className="mt-5 w-full text-[#69696A]"></hr>
-          <div className="mt-[24px] flex justify-between">
+          <div className="mt-[14px] flex justify-between">
             <div className="flex justify-start ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

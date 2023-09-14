@@ -141,36 +141,18 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 	currentPage,
 }) => {
 	const [tabActive, setTabActive] = useState<SearchTab>(currentTab);
-	window.removeEventListener("storage", () => {});
-	function handleActiveTab() {
-		switch (tabActive) {
-			case "Flights":
-				sessionStorage.setItem("currentActiveTab", "Flights");
-				break;
-			case "Bus":
-				sessionStorage.setItem("currentActiveTab", "Bus");
-				break;
-			case "Cars":
-				sessionStorage.setItem("currentActiveTab", "Cars");
-				break;
-			case "Maritime transport":
-				sessionStorage.setItem("currentActiveTab", "Maritime transport");
-				break;
-		}
-		window.dispatchEvent(new Event("storage"));
-	}
-	handleActiveTab();
 	const { t } = useTranslation();
 
 	const renderTab = () => {
 		return (
-			<ul className="hiddenScrollbar ml-2  flex w-full overflow-x-auto sm:mt-6 sm:mb-0 sm:justify-around sm:gap-8 sm:pt-0  ">
+			<ul className="hiddenScrollbar   w-full flex overflow-x-auto sm:mt-6 sm:mb-0 sm:justify-around sm:gap-8 sm:pt-0  ">
+				
 				{tabs.map((tab: any) => {
 					const active = tab === tabActive;
 					return (
 						<li
 							onClick={() => setTabActive(tab)}
-							className={`inline-flex min-w-fit cursor-pointer items-center rounded-full  text-sm font-normal text-neutral-700  hover:bg-neutral-100 hover:text-neutral-900 sm:py-2 sm:px-4 xl:px-5 xl:text-base ${
+							className={`inline-flex cursor-pointer items-center rounded-full min-w-fit  text-sm font-normal text-neutral-700  hover:bg-neutral-100 hover:text-neutral-900 sm:py-2 sm:px-4 xl:px-5 xl:text-base ${
 								active
 									? "pointer-events-none bg-[#E8ECF2] !text-neutral-900 "
 									: ""
@@ -214,7 +196,7 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 
 	return (
 		<div
-			className={`nc-HeroSearchForm  w-[88vw] max-w-full py-5 max-sm:w-full lg:py-0   ${className} rounded-t-2xl bg-white lg:rounded-b-2xl
+			className={` container  max-sm:h-[145%] max-w-full w-[88vw] max-sm:w-[90%] py-5 lg:py-0   ${className} rounded-t-2xl lg:rounded-b-2xl bg-white
 			
 			`}
 			data-nc-id="HeroSearchForm"
