@@ -421,9 +421,21 @@ export const getFlightsTrips = async (data: any): Promise<any> => {
 			},
 		},
 	);
+	console.log(data)
 	return res;
 };
-
+export const getFlightsCountries = async (value:any): Promise<any> => {
+	const res = await axios.get(
+		`${process.env.REACT_APP_API_TELE_URL}/api/transports/flights/locations?term=${value}`,
+		{
+			headers: {
+				"Content-Type": "application/json",
+				"Accept-Language": i18n?.language,
+			},
+		},
+	);
+	return res;
+};
 export const getFlightsTripsSession = async (
 	page: number,
 	tokenSession: string,

@@ -6,7 +6,14 @@ import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useQuery } from "react-query";
 import { showApiErrorMessages } from "utils";
-import { getCities, getCitiesMaritime, getCitiesPrivate, getFlightsLocation } from "api";
+import {
+	getCities,
+	getCitiesMaritime,
+	getCitiesPrivate,
+	getFlightsTrips,
+	getFlightsLocation,
+	getFlightsCountries,
+} from "api";
 import { Cities } from "types";
 import { toast } from "react-toastify";
 import i18next from "i18next";
@@ -204,13 +211,14 @@ const LocationInput: FC<LocationInputProps> = ({
 
 	const searchFlightItems = async (value: string) => {
 		if (!!value) {
-			await getFlightsLocation(value).then((res: any) => {
+			await getFlightsCountries(value).then((res: any) => {
 				if (res?.data?.data) {
 					setCities(res?.data?.data);
 				}
 			});
 		}
 	};
+	// console.log(cities,"cities")
 
 	useEffect(() => {
 		setValue(defaultValue);
@@ -299,7 +307,6 @@ const LocationInput: FC<LocationInputProps> = ({
 			},
 		},
 	);
-
 	const handleSelectLocation = (item: any) => {
 		const name =
 			i18next.language === "en"
@@ -323,7 +330,8 @@ const LocationInput: FC<LocationInputProps> = ({
 							<span
 								onClick={() => handleSelectLocation(item)}
 								key={item?.id}
-								className="flex cursor-pointer items-center space-x-3 px-4 bg-white py-4 hover:bg-neutral-100 dark:hover:bg-neutral-700 sm:space-x-4 sm:px-8 sm:py-5 mt-0">
+								className="mt-0 flex cursor-pointer items-center space-x-3 bg-white px-4 py-4 hover:bg-neutral-100 dark:hover:bg-neutral-700 sm:space-x-4 sm:px-8 sm:py-5"
+							>
 								<span className="block text-neutral-400">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
@@ -353,6 +361,7 @@ const LocationInput: FC<LocationInputProps> = ({
 	};
 
 	const renderSearchValue = () => {
+		// console.log(cities,"citeties")
 		return (
 			<>
 				{cities?.length! > 0 &&
@@ -397,7 +406,7 @@ const LocationInput: FC<LocationInputProps> = ({
 
 	return (
 		<div
-			className={`relative flex ${className} lg:w-[19vw] h-[56px]  justify-between`}
+			className={`relative flex ${className} h-[56px] justify-between  lg:w-[19vw]`}
 			ref={containerRef}
 		>
 			<div
@@ -406,7 +415,7 @@ const LocationInput: FC<LocationInputProps> = ({
 					showPopover ? "nc-hero-field-focused" : ""
 				} md:h-full`}
 			>
-				<div className="text-neutral-300 dark:text-neutral-400 w-fit  ">
+				<div className="w-fit text-neutral-300 dark:text-neutral-400  ">
 					{type && typeIcon ? (
 						typeIcon === "from" ? (
 							SVGS_ICON[type ?? ""].from
@@ -438,7 +447,7 @@ const LocationInput: FC<LocationInputProps> = ({
 				</div>
 				<div className="flex-grow ">
 					<input
-						className={`block  truncate border-none bg-transparent p-0 bg-white placeholder-[#B9C4D5] focus:placeholder-neutral-300 focus:outline-none  focus:ring-0 xl:text-lg w-[70%]`}
+						className={`block  w-[70%] truncate border-none bg-transparent bg-white p-0 placeholder-[#B9C4D5] focus:placeholder-neutral-300  focus:outline-none focus:ring-0 xl:text-lg`}
 						placeholder={noPlaceHolder ? placeHolder : ""}
 						value={value}
 						autoFocus={showPopover}
@@ -473,11 +482,11 @@ const LocationInput: FC<LocationInputProps> = ({
 					)}
 				</div>
 			</div>
-			{showPopover && (
-				<div className="absolute    bg-white top-full z-50 mt-3 max-h-96 w-full min-w-[300px] overflow-y-auto rounded-3xl  py-3 shadow-xl ltr:left-0 rtl:right-0 dark:bg-neutral-800 sm:min-w-[500px] sm:py-6">
-					{value ? renderSearchValue() : renderRecentSearches()}
+			{showPopover && value ? (
+				<div className="absolute    top-full z-50 mt-3 max-h-96 w-full min-w-[300px] overflow-y-auto rounded-3xl bg-white  py-3 shadow-xl ltr:left-0 rtl:right-0 dark:bg-neutral-800 sm:min-w-[500px] sm:py-6">
+					{value && renderSearchValue()}
 				</div>
-			)}
+			) : null}
 		</div>
 	);
 };

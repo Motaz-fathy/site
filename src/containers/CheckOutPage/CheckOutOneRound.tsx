@@ -60,6 +60,7 @@ const CheckOutOneRound: FC<CheckOutOneRoundProps> = ({ className = "" }) => {
 	useEffect(() => {
 		if (!!search) {
 			const data = search?.slice(1)?.split("/");
+			console.log("search data ", data);
 			setDate(data?.[0]);
 			setTravelFrom(data?.[1]);
 			setTravelTo(data?.[2]);

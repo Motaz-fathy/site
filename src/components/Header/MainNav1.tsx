@@ -60,7 +60,7 @@ const MainNav1: FC<MainNav1Props> = ({ className = "" }) => {
 						) : (
 							<>
 								<div
-									className="mr-2 flex h-6 w-6 gap-1 overflow-hidden  rounded-full rtl:ml-2"
+									className="mr-2 mt-1 flex h-6 w-6 items-center  justify-center gap-1 overflow-hidden rounded-full rtl:ml-2 "
 									onClick={() => redirect("/signup")}
 								>
 									<svg
