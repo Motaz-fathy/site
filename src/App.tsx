@@ -9,6 +9,7 @@ import { AppContext } from "components/context/AppContext";
 import { useTranslation } from "react-i18next";
 
 function App() {
+	//test
 	const [name, setName] = useState("");
 	const [phone, setPhone] = useState("");
 	const [email, setEmail] = useState("");
