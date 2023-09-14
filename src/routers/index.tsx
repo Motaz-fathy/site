@@ -73,14 +73,12 @@ export const pages: any[] = [
 
 	{ path: "/", exact: true, component: PageHome },
 	{ path: "/#", exact: true, component: PageHome },
-	{ path: "/profile",  component: Profile },
-	
-	{ path: "/address",  component: AdressDetail },
-	{ path: "/addaddress",  component: Address },
-	{ path: "/changepassword",  component: ChangePassord },
-	{ path: "/booking",  component: Booking },
+	{ path: "/profile", component: Profile },
 
-
+	{ path: "/address", component: AdressDetail },
+	{ path: "/addaddress", component: Address },
+	{ path: "/changepassword", component: ChangePassord },
+	{ path: "/booking", component: Booking },
 
 	{ path: "/listing-car", component: ListingCarPage },
 	{ path: "/listing-car-map", component: ListingCarMapPage },
@@ -95,7 +93,7 @@ export const pages: any[] = [
 	{ path: "/listing-flights-twoRound", component: ListFlightTwoRound },
 	{ path: "/listing-ships", component: ListingShipsPage },
 	{ path: "/listing-bus/", component: ListingBusPage },
-	
+
 	//
 	{ path: "/checkout", component: CheckOutPage },
 	// { path: "/pay-done", component: PayPage },
@@ -120,20 +118,24 @@ export const pages: any[] = [
 	{ path: "/checkout-private", component: CheckOutPrivatePage },
 	//
 
-
-	// 
+	//
 
 	{ path: "/private-trip", component: PrivateTrip },
 	{ path: "/private-trip/oneRound/:trip_Id", component: PrivateTripOneRoundId },
 	{ path: "/private-trip/twoRound/:trip_Id", component: PrivateTripTwoRoundid },
 	{ path: "/private-trip/add-address-trip", component: AddAdressTrip },
-	{ path: "/private-trip/oneRound/summary", component: SummaryPrivateoneRoundTrip },
-	{ path: "/private-trip/twoRound/summary", component: SummaryPrivateTwoRoundTrip },
-   
-	// bus trip 
+	{
+		path: "/private-trip/oneRound/summary",
+		component: SummaryPrivateoneRoundTrip,
+	},
+	{
+		path: "/private-trip/twoRound/summary",
+		component: SummaryPrivateTwoRoundTrip,
+	},
+
+	// bus trip
 	{ path: "/bus-trip/oneRound/summary", component: BusOneRound },
-	{ path: "/bus-trip/twoRound/summary", component: BusTwoRound }
-	
+	{ path: "/bus-trip/twoRound/summary", component: BusTwoRound },
 ];
 
 const MyRoutes = () => {
@@ -152,7 +154,7 @@ const MyRoutes = () => {
 				<Route element={<Page404 />} />
 			</Routes>
 
-			{WIN_WIDTH < 768 && <FooterNav />}
+			{/* {WIN_WIDTH < 768 && <FooterNav />} */}
 			<Footer />
 		</BrowserRouter>
 	);

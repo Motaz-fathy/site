@@ -7,7 +7,7 @@ import {
 import { Fragment, useEffect, useState } from "react";
 import Avatar from "react-avatar";
 import { useTranslation } from "react-i18next";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, redirect, useNavigate } from "react-router-dom";
 
 export default function AvatarDropdown() {
 	const { t } = useTranslation();
@@ -53,11 +53,19 @@ export default function AvatarDropdown() {
 				{({ open }) => (
 					<>
 						<Popover.Button
-							className={`inline-flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+							className={`flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
 						>
-							<Avatar name={name} round="100px" size="30" textSizeRatio={0.5} />
+							<div onClick={() => navigate("/profile")} className="bg-red">
+								<Avatar
+									name={name}
+									round="30px"
+									size="40"
+									value="20%"
+									textSizeRatio={2}
+								/>
+							</div>
 						</Popover.Button>
-						<Transition
+						{/* <Transition
 							as={Fragment}
 							enter="transition ease-out duration-200"
 							enterFrom="opacity-0 translate-y-1"
@@ -136,7 +144,7 @@ export default function AvatarDropdown() {
 									</div>
 								</div>
 							</Popover.Panel>
-						</Transition>
+						</Transition> */}
 					</>
 				)}
 			</Popover>

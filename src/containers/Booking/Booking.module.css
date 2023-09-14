@@ -1,6 +1,7 @@
 .layout{
     width: 100%;
-    height: auto;
+    margin: 10vh 0;
+    min-height: 100vh;
     background: url("../../images/Profile\ Background.png");
     background-size: cover;
     background-position: center;

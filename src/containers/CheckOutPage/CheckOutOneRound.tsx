@@ -42,26 +42,24 @@ const CheckOutOneRound: FC<CheckOutOneRoundProps> = ({ className = "" }) => {
 	const [selectedSeatsList, setSelectedSeatsList] = useState<any>({});
 	const [seatsType, setSeatsType] = useState("");
 
-	const [ifreturn , setIfreturn] = useState(false)
+	const [ifreturn, setIfreturn] = useState(false);
 
 	const navigate = useNavigate();
 	const location = useLocation();
 
-	const dropOffLocationType = window.localStorage.getItem("dropOffLocationType")
+	const dropOffLocationType = window.localStorage.getItem(
+		"dropOffLocationType",
+	);
 
+	const tf: any = window.localStorage.getItem("travle_from_bus");
+	const travle_from_bus = JSON.parse(tf);
 
-	const tf:any = window.localStorage.getItem("travle_from_bus")
-	const travle_from_bus = JSON.parse(tf)
-
-	const tt:any = window.localStorage.getItem("travle_to_bus")
-	const travle_to_bus = JSON.parse(tt)
-
-
+	const tt: any = window.localStorage.getItem("travle_to_bus");
+	const travle_to_bus = JSON.parse(tt);
 
 	useEffect(() => {
 		if (!!search) {
 			const data = search?.slice(1)?.split("/");
-			console.log("search data " , data)
 			setDate(data?.[0]);
 			setTravelFrom(data?.[1]);
 			setTravelTo(data?.[2]);
@@ -75,8 +73,6 @@ const CheckOutOneRound: FC<CheckOutOneRoundProps> = ({ className = "" }) => {
 				location?.pathname +
 					`?${data?.[0]}/${data?.[1]}/${data?.[2]}/${data?.[3]}/${data?.[4]}/${data?.[5]}/${data?.[6]}/${data?.[7]}/${data?.[8]}`,
 			);
-
-
 		}
 	}, [search]);
 	const { data } = useQuery(
@@ -114,10 +110,9 @@ const CheckOutOneRound: FC<CheckOutOneRoundProps> = ({ className = "" }) => {
 		},
 	);
 
-
 	// const RenderButton = () => {
 	// 	if(dropOffLocationType === "oneWay") {
-	// 		return 
+	// 		return
 	// 	} else {
 	// 		if(ifreturn === false) {
 	// 			return <ButtonPrimary loading={loading} onClick={() => createFirsttrip()}>
@@ -125,9 +120,9 @@ const CheckOutOneRound: FC<CheckOutOneRoundProps> = ({ className = "" }) => {
 	// 				   </ButtonPrimary>
 	// 		}else {
 
-	// 			return 
+	// 			return
 	// 		}
-		
+
 	// 	}
 	// }
 
@@ -149,7 +144,7 @@ const CheckOutOneRound: FC<CheckOutOneRoundProps> = ({ className = "" }) => {
 
 	// 	setLoading(true);
 	// 	if (seatsList?.length) {
-			
+
 	// 		await createTrip(
 	// 			{
 	// 				date,
@@ -169,10 +164,10 @@ const CheckOutOneRound: FC<CheckOutOneRoundProps> = ({ className = "" }) => {
 	// 					let busTicket: any = JSON.stringify(res?.data)
 	// 					window.sessionStorage.setItem("bus_Ticket" , busTicket)
 	// 					console.log("create ticket"  , res?.data?.data )
-	// 					dropOffLocationType === "oneWay" ? navigate(`/bus-trip/oneRound/summary`) : 
+	// 					dropOffLocationType === "oneWay" ? navigate(`/bus-trip/oneRound/summary`) :
 	// 					navigate(
 	// 						`/listing-bus?${busEndDate}/
-							
+
 	// 						${
 	// 							travle_from_bus?.id
 	// 						}/${travle_to_bus?.id}/${
@@ -185,7 +180,7 @@ const CheckOutOneRound: FC<CheckOutOneRoundProps> = ({ className = "" }) => {
 	// 								: travle_to_bus?.name_ar
 	// 						}`,
 	// 					)
-						
+
 	// 				}
 	// 				setLoading(false);
 	// 			})
@@ -207,12 +202,8 @@ const CheckOutOneRound: FC<CheckOutOneRoundProps> = ({ className = "" }) => {
 	// 		setLoading(false);
 	// 	}
 	// };
-	
 
-
-
-
-	const createOneRound = async () => { 
+	const createOneRound = async () => {
 		const seatsList: any = [];
 		for (const property in selectedSeatsList) {
 			seats.forEach((item: any) => {
@@ -228,29 +219,27 @@ const CheckOutOneRound: FC<CheckOutOneRoundProps> = ({ className = "" }) => {
 		setLoading(true);
 		if (seatsList?.length) {
 			const data = {
-				"round": 1,
-				"boarding": {
-				  "trip_id": id,
-				  "from_city_id": cityFrom,
-				  "to_city_id": cityTo,
-				  "from_location_id": travelFrom,
-				  "to_location_id": travelTo,
-				  "date": date,
-				  "seats": seatsList
-				}
-			  }
+				round: 1,
+				boarding: {
+					trip_id: id,
+					from_city_id: cityFrom,
+					to_city_id: cityTo,
+					from_location_id: travelFrom,
+					to_location_id: travelTo,
+					date: date,
+					seats: seatsList,
+				},
+			};
 			await createFirstTrip(data)
 				.then(res => {
 					if (res?.data?.data?.gateway_order_id) {
 						setOrderId(res?.data?.data?.gateway_order_id);
 						setPriceData(res?.data?.data);
 						toast.success(res?.data?.message);
-						let busTicket: any = JSON.stringify(res?.data)
-						window.localStorage.setItem("bus_Ticket" , busTicket)
-						console.log("create ticket"  , res?.data?.data )
-						 navigate(`/bus-trip/oneRound/summary` ) 
-						
-						
+						let busTicket: any = JSON.stringify(res?.data);
+						window.localStorage.setItem("bus_Ticket", busTicket);
+						console.log("create ticket", res?.data?.data);
+						navigate(`/bus-trip/oneRound/summary`);
 					}
 					setLoading(false);
 				})
@@ -271,10 +260,7 @@ const CheckOutOneRound: FC<CheckOutOneRoundProps> = ({ className = "" }) => {
 			toast.error(t("selectSeatPlz"));
 			setLoading(false);
 		}
-
-
-		    
-	}
+	};
 	const createPayments = async () => {
 		if (!!orderId) {
 			await createPayment(orderId)
@@ -282,7 +268,6 @@ const CheckOutOneRound: FC<CheckOutOneRoundProps> = ({ className = "" }) => {
 					if (res?.data?.data?.url) {
 						setIframe(res?.data?.data?.url);
 						setIsOpen(true);
-		
 					}
 					setLoading(false);
 				})
@@ -412,9 +397,12 @@ const CheckOutOneRound: FC<CheckOutOneRoundProps> = ({ className = "" }) => {
 					<div className="mt-6">
 						<div className="pt-8">
 							{!orderId && (
-							  <ButtonPrimary loading={loading} onClick={() => createOneRound()}>
-							  {t("confirmTicket")}
-							</ButtonPrimary> 
+								<ButtonPrimary
+									loading={loading}
+									onClick={() => createOneRound()}
+								>
+									{t("confirmTicket")}
+								</ButtonPrimary>
 							)}
 							{!!orderId && (
 								<ButtonPrimary

@@ -8,7 +8,7 @@ const Address = () => {
     <div className={classes.layout}>
             <div className="container">
                 <BackButtom />
-                <div className='two mt-5'>
+                <div className="two mt-5 mb-5 min-h-[80vh] gap-[20px]">
                     <ProfileCard />
                     <AddressCard />
                 </div>

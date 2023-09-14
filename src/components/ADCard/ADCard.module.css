@@ -1,10 +1,10 @@
 .addressCard{
     
-    margin-top: 14rem;
-    margin-left: 10px;
+    margin-top: 4rem;
     color: var(--black, #1E1E1E);
     border-radius: 16px;
 background: var(--white, #FFF);
+    
     /* height: 90vh; */
     padding: 1.5rem;
     position: relative;

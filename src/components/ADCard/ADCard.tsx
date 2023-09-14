@@ -1,18 +1,17 @@
-import React ,  {useState} from 'react'
+import React, { useState } from "react";
 import classes from "./ADCard.module.css";
-import { useQuery } from 'react-query';
-import { getAddressList } from 'api';
-import { showApiErrorMessages } from 'utils';
-import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { useQuery } from "react-query";
+import { getAddressList } from "api";
+import { showApiErrorMessages } from "utils";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 const ADCard = () => {
-    const navigate = useNavigate();
-    const [addressList , setAddressList] = useState<any> ([]);
+	const navigate = useNavigate();
+	const [addressList, setAddressList] = useState<any>([]);
 
 	const { data: addressListData } = useQuery(
 		["addressListData"],
 		() => {
-		
 			return getAddressList();
 		},
 		{
@@ -34,45 +33,55 @@ const ADCard = () => {
 			},
 		},
 	);
-    if(addressList.length > 0){
-        return (
-            <div className={classes.addressCard}>
-                <div className={classes.title}>
-                    <h2>
-                        MyAdress
-                    </h2>
-                    <span > Edit </span>
-                </div>
-                {addressList.map((item:any)=>   <>
-                <div className={classes.layout}>
-                    <div className={classes.input}>
-                        <label>Phone Number *</label>
-                        <input placeholder={item.phone} readOnly={true}/>
-                    </div>
-                    <div className={classes.input}>
-                        <label>city *</label>
-                        <input placeholder={item.city.name} readOnly={true}/>
-                    </div>
-                </div>
-                <div className={classes.layout}>
-                    <div className={classes.input}>
-                        <label>Street Name  *</label>
-                        <input placeholder={item.name} readOnly={true}/>
-                    </div>
-                    <div className={classes.input}>
-                        <label>Location *</label>
-                        <input placeholder={item.name} readOnly={true}/>
-        
-                    </div>
-                </div>
-                <hr />
-                </>) }
-              
-                <button className={classes.Edit} onClick={()=> navigate("/addaddress")}> Add another address</button>
-            </div>
-          )
-    }
-    return <p> no Address </p>
-}
+	if (addressList.length > 0) {
+		return (
+			<div className={classes.addressCard}>
+				<div className={classes.title}>
+					<h2>MyAdress</h2>
+					{/* <span > Edit </span> */}
+				</div>
+				{addressList.map((item: any) => (
+					<>
+						<div className={classes.layout}>
+							<div className={classes.input}>
+								<label>Phone Number *</label>
+								<input placeholder={item.phone} readOnly={true} />
+							</div>
+							<div className={classes.input}>
+								<label>city *</label>
+								<input placeholder={item.city.name} readOnly={true} />
+							</div>
+						</div>
+						<div className={classes.layout}>
+							<div className={classes.input}>
+								<label>Street Name *</label>
+								<input placeholder={item.name} readOnly={true} />
+							</div>
+							<div className={classes.input}>
+								<label>Location *</label>
+								<input placeholder={item.name} readOnly={true} />
+							</div>
+						</div>
+						<hr />
+					</>
+				))}
 
-export default ADCard
+				<button
+					className={classes.Edit}
+					onClick={() => navigate("/addaddress")}
+				>
+					{" "}
+					Add another address
+				</button>
+			</div>
+		);
+	}
+	return (
+		<div className={classes.addressCard}>
+			{" "}
+			<p className=""> no Address </p>
+		</div>
+	);
+};
+
+export default ADCard;

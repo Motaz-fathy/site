@@ -77,7 +77,7 @@ const Button: FC<ButtonProps> = ({
 	return (
 		<button
 			disabled={disabled || loading}
-			className={`${CLASSES}`}
+			className={`${CLASSES} bg-red`}
 			onClick={onClick}
 			type={type}
 		>

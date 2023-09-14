@@ -12,7 +12,7 @@ const SectionSteps = ({
 		<>
 			<div
 				className={`nc-SectionOurFeatures  mx-0 pt-10 rtl:gap-2 sm:mx-4 lg:flex-row
-          ${className}`}
+          ${className} overflow-hidden`}
 				data-nc-id="SectionOurFeatures"
 			>
 				<div className="flex flex-col items-center justify-center pb-8 text-2xl font-extrabold tracking-wide text-white lg:flex-row">
@@ -51,8 +51,11 @@ const SectionSteps = ({
 					))}
 				</div>
 				<div className="relative mt-10 flex flex-col justify-center  rtl:gap-2 sm:flex-row lg:mt-[100px]">
-					<div className="mt-18 order-2 max-w-2xl flex-shrink-0 sm:order-1 lg:mt-14 lg:w-2/5">
-						<img className="mx-auto " src={wordImg} />
+					<div className="mt-18 relative order-2 max-w-2xl flex-shrink-0 sm:order-1 lg:mt-14 lg:w-2/5">
+						<img
+							className="absolute bottom-[-15px] mx-auto hidden lg:block"
+							src={wordImg}
+						/>
 					</div>
 
 					<div

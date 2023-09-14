@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useLayoutEffect } from "react";
 import homeBg1 from "images/homeBg1.png";
 import homeBg2 from "images/homeBg2.png";
 import homeBg3 from "images/homeBg3.png";
@@ -33,7 +33,35 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
 	];
 
 	const [currentIndex, setCurrentIndex] = React.useState(0);
+	const [openTab, setOpenTab] = React.useState("");
+	useLayoutEffect(() => {
+		window.addEventListener("storage", () => {
+			const sessionTab = sessionStorage.getItem("currentActiveTab");
+			if (sessionTab) {
+				setOpenTab(sessionTab);
+			}
+			// ...
+		});
+		switch (openTab) {
+			case "Flights":
+				setCurrentIndex(0);
+				break;
+			case "Bus":
+				setCurrentIndex(2);
 
+				break;
+			case "Cars":
+				setCurrentIndex(3);
+
+				break;
+			case "Maritime transport":
+				setCurrentIndex(1);
+				break;
+		}
+		return () => {
+			window.removeEventListener("storage", () => {});
+		};
+	}, [openTab]);
 	// const prevSlide = () => {
 	// 	const isFirstSlide = currentIndex === 0;
 	// 	const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
@@ -53,53 +81,61 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
 		<div
 			className={`nc-SectionHero  relative flex w-full   bg-cover bg-center lg:flex-col ${className} h-[80vh]  
 			
-			max-sm:h-[484px] max-sm:mt-0 max-sm:flex-col 
+			bg-black max-md:mt-0 max-md:h-[484px] 
 			 
-			max-md:h-[484px] max-md:mt-0 sm:flex-col 
-			bg-black
+			max-sm:mt-0 max-sm:h-[484px] max-sm:flex-col 
+			sm:flex-col
 			`}
 			data-nc-id="SectionHero"
 			style={{
 				backgroundImage: `url(${slides[currentIndex].url})`,
-				backgroundAttachment: 'fixed'
 				// WebkitBorderBottomLeftRadius:"0"
 			}}
 		>
 			{/* slider */}
-			<div className="relative flex-row-reverse items-center lg:flex
+			<div
+				className="relative flex-row-reverse items-center max-md:mx-auto
 			
-			lg:right-[-20%]
-			max-md:mx-auto max-md:mt-10 max-md:mb-44
-			md:mx-auto md:mt-10 md:mb-44
-			max-sm:mx-auto max-sm:mt-24 max-sm:mb-44
-			">
-				<div className=" z-[9999]  flex h-[220px]  w-full max-w-[400px] flex-col mt-[-60px] py-1  px-4
+			max-md:mt-10
+			max-md:mb-44 max-sm:mx-auto max-sm:mt-24
+			max-sm:mb-44 md:mx-auto md:mt-10
+			md:mb-44 lg:right-[-20%] lg:flex
+			"
+			>
+				<div
+					className=" z-[9999]  mt-[-60px] flex  h-[220px] w-full max-w-[400px] flex-col py-1  px-4
 				max-sm:max-w-[400px]
 
-				">
-					<div className="h-full w-[512px]  rounded-[4px] bg-[#FFFFFF1A] bg-cover bg-center pl-4 duration-500
+				"
+				>
+					<div
+						className="h-full w-[512px]  rounded-[4px] bg-[#FFFFFF1A] bg-cover bg-center pl-4 duration-500
 						max-sm:max-w-[380px]
 					
-					">
-						<div className="text-white flex flex-col items-center">
+					"
+					>
+						<div className="text-white">
 							<span>{currentIndex + 1}/4</span>
-							<div className="mb-6 h-1  w-[400px] bg-[#FFFFFF1A] 
+							<div
+								className="mb-6 h-1  w-[400px] bg-[#FFFFFF1A] 
 								max-sm:max-w-[340px]
 							
-							">
+							"
+							>
 								<div
 									className="h-1 bg-white"
 									style={{ width: slides[currentIndex].progress }}
 								></div>
 							</div>
 						</div>
-						<h4 className="pb-2 text-2xl text-white text-center">Your First Title</h4>
-						<p className="pb-6 text-base text-white text-center
+						<h4 className="pb-2 text-2xl text-white ">Your First Title</h4>
+						<p
+							className="pb-6 text-base text-white 
 				max-sm:max-w-[300px]
 						
-						">
-							Lorem , consectetur adipiscing elit.
-							Vestibulum porta ipsum
+						"
+						>
+							Lorem , consectetur adipiscing elit. Vestibulum porta ipsum
 						</p>
 					</div>
 					<div
@@ -129,7 +165,6 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
 								key={slideIndex}
 								className="cursor-pointer text-2xl text-white "
 								onClick={() => {
-								
 									goToSlide(slideIndex);
 								}}
 							>
@@ -143,11 +178,15 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
 					</div>
 				</div>
 			</div>
-			<div className="relative z-10 mb-12 flex w-full flex-col items-center justify-center text-center lg:mb-0 lg:mt-40 lg:justify-end
+			<div
+				className="relative z-10 mb-12 flex w-full flex-col items-center justify-center text-center lg:mb-0 lg:mt-40 lg:justify-end
 			
-			">
-				<div className="flex h-[60vh] w-full mb-48 lg:mt-[-300px] justify-center text-justify sm:h-min sm:px-5 
-				">
+			"
+			>
+				<div
+					className="mb-48 flex h-[60vh] w-full justify-center text-justify sm:h-min sm:px-5 lg:mt-[-300px] 
+				"
+				>
 					<HeroSearchForm />
 				</div>
 			</div>
