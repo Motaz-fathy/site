@@ -724,6 +724,8 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
   // { handle min and meduim screen }
 
   const Min_Midum_Screen = () => {
+console.log("1")
+
     const handlesetfromaddress = (itemfrom: any) => {
       setAddressFromOne(itemfrom);
       setEnableFrom(false);
@@ -732,7 +734,6 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
       setAddressToOne(itemto);
       setEnableTo(false);
     };
-
     return (
       <>
         <div className="m-auto flex w-full items-center justify-center ">
