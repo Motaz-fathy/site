@@ -17,11 +17,30 @@ const ListFlightTwoRound = () => {
 	const [paginationStatus, setPaginationStatus] = useState<boolean>(true);
   const flightClassState:any = window.localStorage.getItem("flightClassState")
 
+  function getMinimumPrice(objArray: Array<any>): number {
+    if (objArray.length === 0) {
+      return 0; // Return 0 or handle the empty array case as per your requirement
+    }
+  
+    let minPrice = Number.MAX_VALUE;
+  
+    for (let i = 0; i < objArray.length; i++) {
+      const obj = objArray[i];
+      const price = parseFloat(obj.origin_price);
+  
+      if (!isNaN(price) && price < minPrice) {
+        minPrice = price;
+      }
+    }
+  
+    return minPrice;
+  }
+  console.log("one trip ",trips[0])
   const getFlightsTripsData = async (localData: any) => {
-    
+        
 		setLoading(true);
 		if (!!localData) {
-			console.log("local data flight trip " , localData)
+			
 			const body: any = {
 				cabinClass: localData?.cabinClass,
 				round: localData?.round,
@@ -135,7 +154,7 @@ const ListFlightTwoRound = () => {
               <svg className='mr-1' xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
               <path d="M17.25 9L21 12.75M21 12.75L17.25 16.5M21 12.75H3" stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              <span className='mr-1'>{item?.depart_trip?.segments[0]?.destinationPlace?.name}</span>
+              <span className='mr-1'>{item?.depart_trip?.segments[item?.depart_trip?.segments.length - 1]?.destinationPlace?.name}</span>
               <span className='mr-1'>{item?.depart_trip?.arrivalDateTime}</span>
             </div>
 
@@ -170,7 +189,7 @@ const ListFlightTwoRound = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" width="65" height="10" viewBox="0 0 65 10" fill="none">
                   <path d="M60 1.25L63.75 5M63.75 5L60 8.75M63.75 5H1.25H45.75" stroke="#69696A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-                  <span className='text-[#69696A] text-[12px] font-[400]' >1 stop</span>
+                  <span className='text-[#69696A] text-[12px] font-[400]' >{item?.depart_trip?.segments?.length} stop</span>
                   </div>
                </div>
 
@@ -207,7 +226,7 @@ const ListFlightTwoRound = () => {
               <svg className='mr-1' xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
               <path d="M17.25 9L21 12.75M21 12.75L17.25 16.5M21 12.75H3" stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              <span className='mr-1'>{item?.return_trip?.segments[0]?.destinationPlace?.name}</span>
+              <span className='mr-1'>{item?.return_trip?.segments[item?.return_trip?.segments.length - 1]?.destinationPlace?.name}</span>
               <span className='mr-1'>{item?.return_trip?.arrivalDateTime}</span>
             </div>
 
@@ -242,7 +261,7 @@ const ListFlightTwoRound = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" width="65" height="10" viewBox="0 0 65 10" fill="none">
                   <path d="M60 1.25L63.75 5M63.75 5L60 8.75M63.75 5H1.25H45.75" stroke="#69696A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-                  <span className='text-[#69696A] text-[12px] font-[400]' >1 stop</span>
+                  <span className='text-[#69696A] text-[12px] font-[400]' >{item?.return_trip?.segments?.length} stop</span>
                   </div>
                </div>
 
@@ -306,7 +325,7 @@ const ListFlightTwoRound = () => {
 
               <div className='flex justify-around items-center mb-3'>
                 <div className='flex flex-col rtl:ml-2' >
-                  <span>LE 10.000</span>
+                  <span>{getMinimumPrice(item?.offers)} LE</span>
                   <span >{t("Price per person")}</span>
                 </div>
                 <button  onClick={() => handleoffers(JSON.stringify(item))} className='ml-2 cursor-pointer flex justify-center items-center rounded-[10px] text-white bg-[#1D4179] w-[177px] h-[54px]'>{t("select")}</button>
@@ -336,7 +355,7 @@ const ListFlightTwoRound = () => {
               <svg className='mr-1' xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
               <path d="M17.25 9L21 12.75M21 12.75L17.25 16.5M21 12.75H3" stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              <span className='mr-1'>{item?.depart_trip?.segments[0]?.destinationPlace?.name}</span>
+              <span className='mr-1'>{item?.depart_trip?.segments[item?.depart_trip?.segments.length -1 ]?.destinationPlace?.name}</span>
               <span className='mr-1'>{item?.depart_trip?.arrivalDateTime}</span>
             </div>
 
@@ -385,7 +404,7 @@ const ListFlightTwoRound = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" width="65" height="10" viewBox="0 0 65 10" fill="none">
                   <path d="M60 1.25L63.75 5M63.75 5L60 8.75M63.75 5H1.25H45.75" stroke="#69696A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-                  <span className='text-[#69696A] text-[12px] font-[400]' >1 stop</span>
+                  <span className='text-[#69696A] text-[12px] font-[400]' >{item?.depart_trip?.segments?.length} stop</span>
                   </div>
                </div>
 
@@ -412,7 +431,7 @@ const ListFlightTwoRound = () => {
               <svg className='mr-1' xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
               <path d="M17.25 9L21 12.75M21 12.75L17.25 16.5M21 12.75H3" stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              <span className='mr-1'>{item?.return_trip?.segments[0]?.destinationPlace?.name}</span>
+              <span className='mr-1'>{item?.return_trip?.segments[item?.return_trip?.segments.length -1]?.destinationPlace?.name}</span>
               <span className='mr-1'>{item?.return_trip?.arrivalDateTime}</span>
             </div>
 
@@ -436,8 +455,8 @@ const ListFlightTwoRound = () => {
             </div>
             <div className='flex justify-around items-center w-full'>
               <div className='flex flex-col items-start ml-3'>
-              <span className='text-[#69696A] text-[16px] font-[400]'>{item?.depart_trip?.segments[0]?.destinationPlace?.iata}</span>
-                  <span className='text-[#69696A] text-[12px] font-[400]'>{item?.depart_trip?.segments[0]?.departureDateTime?.substring(11)}</span>
+              <span className='text-[#69696A] text-[16px] font-[400]'>{item?.return_trip?.segments[0]?.destinationPlace?.iata}</span>
+                  <span className='text-[#69696A] text-[12px] font-[400]'>{item?.return_trip?.segments[0]?.departureDateTime?.substring(11)}</span>
                
                 </div>
 
@@ -459,11 +478,11 @@ const ListFlightTwoRound = () => {
                   <path d="M24.2806 1.28192C24.026 1.02664 23.7177 0.831252 23.3782 0.709931C23.0387 0.58861 22.6764 0.544401 22.3177 0.580511C21.0249 0.705816 19.8163 1.27776 18.8996 2.19793L14.8011 6.29645L4.20676 3.96715C3.89324 3.8993 3.56767 3.91169 3.26022 4.0032C2.95277 4.0947 2.6734 4.26234 2.44801 4.49059L1.20746 5.7259C1.05015 5.88095 0.932142 6.07133 0.863254 6.28119C0.794367 6.49105 0.776592 6.71433 0.811409 6.93245C0.846225 7.15057 0.932627 7.35722 1.06343 7.53521C1.19422 7.71319 1.36563 7.85737 1.5634 7.95575L9.27887 11.8239L6.2691 14.8337L3.09707 15.153C2.81934 15.1835 2.55728 15.2971 2.3452 15.4789C2.13312 15.6608 1.98091 15.9025 1.9085 16.1724C1.83608 16.4422 1.84685 16.7276 1.93938 16.9913C2.03191 17.2549 2.20189 17.4844 2.42707 17.6498L5.63051 19.9215L7.91269 23.1354C8.07663 23.3642 8.3063 23.5378 8.57119 23.6329C8.83609 23.7281 9.12367 23.7405 9.39574 23.6683C9.66782 23.5962 9.91151 23.443 10.0944 23.2291C10.2774 23.0152 10.3909 22.7506 10.42 22.4707L10.7393 19.2986L13.749 16.2889L17.6068 23.9991C17.7051 24.1954 17.8486 24.3655 18.0254 24.4955C18.2023 24.6255 18.4075 24.7116 18.6241 24.7469C18.8408 24.7822 19.0627 24.7655 19.2717 24.6983C19.4806 24.6311 19.6707 24.5152 19.8261 24.3603L21.0771 23.1354C21.3058 22.9103 21.4737 22.631 21.5653 22.3234C21.6568 22.0159 21.6689 21.6902 21.6006 21.3767L19.2765 10.7614L23.3646 6.66286C24.2847 5.74623 24.8567 4.53756 24.982 3.24481C25.0185 2.88605 24.9744 2.52368 24.8531 2.1841C24.7318 1.84452 24.5362 1.53631 24.2806 1.28192ZM22.2654 5.54793L18.0779 9.73543C17.9121 9.89906 17.7906 10.1021 17.7247 10.3254C17.6588 10.5488 17.6506 10.7852 17.701 11.0126L20.0407 21.7064C20.0539 21.762 20.0527 21.8201 20.0371 21.875C20.0215 21.93 19.9921 21.9801 19.9518 22.0205L18.9049 23.0674L15.0367 15.3519C14.9386 15.1558 14.7955 14.9857 14.619 14.8555C14.4424 14.7254 14.2376 14.639 14.0212 14.6034C13.9481 14.5973 13.8745 14.5973 13.8014 14.6034C13.4339 14.6045 13.0819 14.7513 12.8225 15.0117L9.5877 18.2465C9.36187 18.4732 9.22133 18.7709 9.18988 19.0893L8.91246 21.8373L6.90769 19.0055C6.81679 18.8796 6.70531 18.7699 6.57793 18.681L3.75137 16.6762L6.49941 16.3988C6.8178 16.3673 7.11552 16.2268 7.34215 16.001L10.577 12.7661C10.7319 12.6107 10.8478 12.4206 10.915 12.2117C10.9822 12.0027 10.9989 11.7808 10.9636 11.5641C10.9284 11.3475 10.8422 11.1423 10.7122 10.9654C10.5822 10.7886 10.4121 10.6451 10.2158 10.5468L2.49512 6.65762L3.54199 5.61075C3.58295 5.57118 3.63306 5.54235 3.68785 5.52682C3.74264 5.5113 3.80043 5.50956 3.85605 5.52176L14.5499 7.86153C14.7768 7.91253 15.013 7.90519 15.2363 7.8402C15.4597 7.77521 15.6629 7.65469 15.8271 7.48989L20.0146 3.30239C20.6776 2.63986 21.5518 2.23056 22.4852 2.14559C22.6111 2.13437 22.7378 2.1509 22.8566 2.19402C22.9754 2.23714 23.0832 2.30579 23.1726 2.39514C23.2619 2.48449 23.3306 2.59235 23.3737 2.71113C23.4168 2.8299 23.4334 2.95668 23.4221 3.08254C23.3358 4.01667 22.9246 4.89092 22.2601 5.55317L22.2654 5.54793Z" fill="#593E0E"/>
                   </svg>
                   <div className='absolute top-[100%] left-[0%] flex flex-col items-center'>
-                  <span className='text-[#69696A] text-[12px] font-[400]'>{item?.depart_trip?.segments[0]?.durationInMinutes} min</span> 
+                  <span className='text-[#69696A] text-[12px] font-[400]'>{item?.return_trip?.segments[0]?.durationInMinutes} min</span> 
                   <svg xmlns="http://www.w3.org/2000/svg" width="65" height="10" viewBox="0 0 65 10" fill="none">
                   <path d="M60 1.25L63.75 5M63.75 5L60 8.75M63.75 5H1.25H45.75" stroke="#69696A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
-                  <span className='text-[#69696A] text-[12px] font-[400]' >1 stop</span>
+                  <span className='text-[#69696A] text-[12px] font-[400]' >{item?.return_trip?.segments?.length} stop</span>
                   </div>
                </div>
 
@@ -515,7 +534,7 @@ const ListFlightTwoRound = () => {
                 </div> }
 
                 <div className='flex flex-col'>
-                  <span>LE 10.000</span>
+                  <span>{getMinimumPrice(item?.offers)} LE</span>
                   <span>Price per person</span>
                 </div>
               </div>

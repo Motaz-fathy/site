@@ -133,7 +133,7 @@ export const ListFlightOneRound = () => {
                 <svg className='mr-1' xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                 <path d="M17.25 9L21 12.75M21 12.75L17.25 16.5M21 12.75H3" stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <span className='mr-1'>{item?.depart_trip?.segments[0]?.destinationPlace?.name}</span>
+                <span className='mr-1'>{item?.depart_trip?.segments[item?.depart_trip?.segments?.length -1]?.destinationPlace?.name}</span>
                 <span className='mr-1'>{item?.depart_trip?.arrivalDateTime}</span>
               </div>
   
@@ -182,7 +182,7 @@ export const ListFlightOneRound = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" width="65" height="10" viewBox="0 0 65 10" fill="none">
                     <path d="M60 1.25L63.75 5M63.75 5L60 8.75M63.75 5H1.25H45.75" stroke="#69696A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <span className='text-[#69696A] text-[12px] font-[400]' >1 stop</span>
+                    <span className='text-[#69696A] text-[12px] font-[400]' >{item?.depart_trip?.segments?.length} stop</span>
                     </div>
                  </div>
   
@@ -246,7 +246,7 @@ export const ListFlightOneRound = () => {
                 <svg className='mr-1' xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                 <path d="M17.25 9L21 12.75M21 12.75L17.25 16.5M21 12.75H3" stroke="#1E1E1E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <span className='mr-1'>{item?.depart_trip?.segments[0]?.destinationPlace?.name}</span>
+                <span className='mr-1'>{item?.depart_trip?.segments[item?.depart_trip?.segments.length -1 ]?.destinationPlace?.name}</span>
                 <span className='mr-1'>{item?.depart_trip?.arrivalDateTime}</span>
               </div>
   
@@ -281,7 +281,7 @@ export const ListFlightOneRound = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" width="65" height="10" viewBox="0 0 65 10" fill="none">
                     <path d="M60 1.25L63.75 5M63.75 5L60 8.75M63.75 5H1.25H45.75" stroke="#69696A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <span className='text-[#69696A] text-[12px] font-[400]' >{item?.depart_trip?.segments[0]?.length} stop</span>
+                    <span className='text-[#69696A] text-[12px] font-[400]' >{item?.depart_trip?.segments?.length} stop</span>
                     </div>
                  </div>
   
