@@ -62,8 +62,7 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 	const [flightClassCode, setFlightClassCode] = useState("");
 	const [flightClass, setFlightClass] = useState<any>([]);
 
-	window.localStorage.setItem("flightClassState" , flightClassState)
-	console.log("flightClassState" , flightClassState)
+	window.localStorage.setItem("flightClassState", flightClassState);
 	// USER EFFECT
 	useEffect(() => {
 		const localStorage = JSON.parse(
@@ -74,7 +73,9 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 				startDate: moment(localStorage?.dateRangeValue?.startDate),
 				endDate: moment(localStorage?.dateRangeValue?.endDate),
 			});
-			setDropOffLocationType(localStorage?.round === 1 ? "oneWay" : "roundTrip");
+			setDropOffLocationType(
+				localStorage?.round === 1 ? "oneWay" : "roundTrip",
+			);
 			setPickUpInputValue(localStorage?.travelFrom?.name);
 			setDropOffInputValue(localStorage?.travelTo?.name);
 			setTravelFrom(localStorage?.travelFrom);
@@ -104,7 +105,6 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 				setFlightClass(response?.data?.data);
 				setFlightClassState(response?.data?.data?.[1]?.title ?? "");
 				setFlightClassCode(response?.data?.data?.[1]?.id ?? "");
-				
 			},
 			onError: (errors: any) => {
 				if (Object.keys(errors.response.data.errors)?.length) {
@@ -136,14 +136,13 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 				filter_by: "cheapest",
 				filter_dir: "desc",
 			}),
-
 		);
-		if(dropOffLocationType === "oneWay"){
+		if (dropOffLocationType === "oneWay") {
 			navigate("/listing-flights-oneRound?flights=" + travelFrom?.id);
-		} else if (dropOffLocationType === "roundTrip"){
+		} else if (dropOffLocationType === "roundTrip") {
 			navigate("/listing-flights-twoRound?flights=" + travelFrom?.id);
 		} else {
-			navigate("/")
+			navigate("/");
 		}
 	};
 	const renderRadioBtn = () => {
@@ -207,19 +206,16 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 					disabled ? "cursor-not-allowed   select-none	" : "cursor-pointer"
 				}  md:h-fit `}
 			>
-				
-
-				<form className="relative mt-2  w-full p-2 dark:bg-neutral-800 sm:mt-8  sm:bg-white sm:p-8 xl:rounded-xl   sm:flex-col-reverse  max-sm:flex-col-reverse  ">
+				<form className="relative mt-2  w-full p-2 dark:bg-neutral-800 max-sm:flex-col-reverse  sm:mt-8 sm:flex-col-reverse sm:bg-white   sm:p-8  xl:rounded-xl  ">
 					<span className="flex sm:hidden">{renderRadioBtn()}</span>
-					<div className="flex h-[56px]  lg:w-full md:w-full sm:w-full  max-sm:flex-col gap-1 md:flex-row sm:justify-around ">
-						<div className="relative flex lg:flex-row w-[40vw] max-sm:flex-col gap-y-2   sm:gap-1  max-sm:w-full ">
-
+					<div className="flex h-[56px]  gap-1 max-sm:flex-col sm:w-full  sm:justify-around md:w-full md:flex-row lg:w-full ">
+						<div className="relative flex w-[40vw] gap-y-2 max-sm:w-full max-sm:flex-col   sm:gap-1  lg:flex-row ">
 							<LocationInput
 								className="h-12 sm:h-14 "
 								defaultValue={pickUpInputValue}
-								onChange={(e) => setPickUpInputValue(e)}
+								onChange={e => setPickUpInputValue(e)}
 								onInputDone={(value: any) => {
-									console.log("origin value " , value)
+									console.log("origin value ", value);
 									setFieldFocused("dropOffInput");
 									setTravelFrom(value);
 									setPickUpInputValue(
@@ -237,10 +233,10 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 								sm:bg-transparent sm:p-0  sm:py-[25px]
 								"
 								onClick={() => {
-									setTravelFrom(travelFrom);
+									setTravelFrom(travelTo);
 									setPickUpInputValue(dropOffInputValue);
 									setDropOffInputValue(pickUpInputValue);
-									setTravelTo(travelTo);
+									setTravelTo(travelFrom);
 								}}
 							>
 								<svg
@@ -279,7 +275,6 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 								type={"flight"}
 								typeIcon="to"
 							/>
-
 						</div>
 						{dropOffLocationType === "roundTrip" ? (
 							<RentalCarDatesRangeInput
