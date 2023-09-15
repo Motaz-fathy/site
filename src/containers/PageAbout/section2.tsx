@@ -13,7 +13,7 @@ return (
             
             <div className=" flex flex-row items-center justify-around w-[80%] sm:w-[90%] max-sm:w-[90%]   m-auto  max-sm:flex-col max-md:flex-col  ">
                 <div className="flex flex-col  items-center   max-sm:w-[80%] max-md:w-full">
-                    <div className="flex flex-row h-[244px] w-[216px] justify-center">
+                    <div className="flex flex-row h-[244px] w-[216px] justify-center ">
                         <img
                             className=" object-fill w-[117px] "
                             src={salonPic}
@@ -64,7 +64,7 @@ return (
                 </p>
             </div>
             
-            <div className=" flex flex-col items-start justify-around  w-[80%]  m-auto my-[60px]">
+            <div className=" flex flex-col items-start justify-around max-sm: w-[80%]  m-auto my-[60px]">
                 {/* title and p  */}
                 <h4 className="text-[24px] text-[500] text-[#1E1E1E] mb-[16px]">Our vision</h4>
                 <p className="text-20 text-400 text-[#69696A]">

@@ -50,6 +50,7 @@ import Profile from "containers/Profile/Profile";
 import AdressDetail from "containers/AdressDetail/AdressDetail";
 import Address from "containers/Address/Address";
 import ChangePassord from "containers/ChangePassword/ChangePassord";
+import { SuccessPay } from "containers/PayPage/SuccessPay";
 
 export const pages: any[] = [
 	{ path: "/", exact: true, component: PageHome },
@@ -79,6 +80,8 @@ export const pages: any[] = [
 	{ path: "/addaddress", component: Address },
 	{ path: "/changepassword", component: ChangePassord },
 	{ path: "/booking", component: Booking },
+	
+	{ path: "/success-payment", component: SuccessPay },
 
 	{ path: "/listing-car", component: ListingCarPage },
 	{ path: "/listing-car-map", component: ListingCarMapPage },

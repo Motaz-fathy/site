@@ -348,6 +348,7 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 				// backgroundImage: `url(${homeBg2})`,
 				objectFit: "contain",
 			}}> <img src={homeBg2} className="object-cover w-[100%]  mb-0 mt-0 p-0  lg:h-[30vh] max-sm:h-[150px]  max-sm:w-[100%]"></img>
+			
 			</div>
 
 			<Helmet>
