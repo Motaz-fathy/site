@@ -423,9 +423,9 @@ const LocationInput: FC<LocationInputProps> = ({
 							SVGS_ICON[type ?? ""].to
 						)
 					) : (
-						<svg
+						<svg 
 							xmlns="http://www.w3.org/2000/svg"
-							className="nc-icon-field"
+							className="nc-icon-field "
 							fill="none"
 							viewBox="0 0 24 24"
 							stroke="currentColor"
@@ -447,7 +447,9 @@ const LocationInput: FC<LocationInputProps> = ({
 				</div>
 				<div className="flex-grow ">
 					<input
-						className={`block  w-[70%] truncate border-none bg-transparent bg-white p-0 placeholder-[#B9C4D5] focus:placeholder-neutral-300  focus:outline-none focus:ring-0 xl:text-lg`}
+						className={`block  w-[70%] truncate border-none bg-transparent bg-white p-0 placeholder-[#B9C4D5] 
+						
+						focus:placeholder-neutral-300  focus:outline-none focus:ring-0 xl:text-lg`}
 						placeholder={noPlaceHolder ? placeHolder : ""}
 						value={value}
 						autoFocus={showPopover}

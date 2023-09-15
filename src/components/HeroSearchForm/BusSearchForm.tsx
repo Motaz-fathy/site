@@ -185,6 +185,7 @@ const BusSearchForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 							<div
 								className="absolute  right-0 top-7 z-30 mx-2 flex h-[50px] w-[50px] cursor-pointer items-center justify-center  rounded-full border-[1px] border-[#E8ECF2] bg-[#FFFFFF]  sm:relative sm:top-0 sm:w-[60px] sm:rounded-[4px]
 									sm:bg-transparent sm:p-0  sm:py-[25px]
+									max-sm:rtl:right-[80%]
 									"
 								onClick={() => {
 							

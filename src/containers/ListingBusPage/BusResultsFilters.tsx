@@ -380,6 +380,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
                         </div>
                     </div>
                 </div>
+                
                 {
                     nonDuplicatedPrices.length > 1 &&
                     <div className="mb-10 flex h-6 h-fit w-full flex-col rounded-lg bg-white p-3 shadow-md">
@@ -459,6 +460,8 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
 
     </div>
   </div>
+
+  
  <div className={`${Styled.f1}`}>
     <div className={`${Styled.f1_icon}` }  onClick={handleF1}> time Bus </div>
 

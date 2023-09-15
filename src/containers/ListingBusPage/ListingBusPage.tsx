@@ -438,7 +438,7 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 
 				</div>
 
-						<div className={`${Styled.Min_filter} w-[100%] h-[80px]`}>
+						<div className={`${Styled.Min_filter} w-[100%] h-[60px]`}>
 						{
 							!loading && travelData.length > 0 ?
 								<BusResultsFilters className="flex-1 mr-10" refactoredData={travelDataImmutable} isLoading={loading} setData={setDisplayableData}

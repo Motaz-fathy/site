@@ -10,10 +10,10 @@ const SectionFeatures = ({
 	return (
 		<>
 			<div
-				className={`mb-8 mt-20 relative mx-4 flex h-[340px] flex-col items-center justify-center py-12 rtl:gap-2 lg:flex-row
+				className={`mb-8 mt-20 relative mx-4 flex h-[340px] flex-col items-center justify-center py-12 rtl:gap-2 lg:flex-row max-sm:h-[800px] max-sm:mb-10
           ${className} `}
 			>
-				<div className="flex flex-col pb-10 text-2xl text-white">
+				<div className="flex flex-col pb-10 text-2xl text-white max-sm:mt-[300px]">
 					<h2 className="text-3xl font-extrabold tracking-wide">
 						{t("featuresHeader")}
 					</h2>
@@ -23,7 +23,7 @@ const SectionFeatures = ({
 				</div>
 
 				<div className="absolute top-[16rem]  flex flex-col items-center justify-center gap-12 sm:flex-row lg:flex-row
-				max-sm:mt-24
+				max-sm:mt-[450px]
 				
 				">
 					{/* #1 */}
@@ -50,7 +50,7 @@ const SectionFeatures = ({
 						</div>
 					</div>
 					{/* #2 */}
-					<div className="my-[4px] flex w-[184px] -translate-x-1 items-center justify-center gap-4 rounded-lg border border-gray-100 bg-white p-1  pt-12 lg:p-4">
+					<div className="my-[4px] flex w-[184px] -translate-x-1  items-center justify-center gap-4 rounded-lg border border-gray-100 bg-white p-1  pt-12 lg:p-4">
 						<div className="pt-2 text-center text-gray-500">
 							<div className="mx-auto w-fit bg-[#FFF7EA]">
 								<svg

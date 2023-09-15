@@ -245,7 +245,7 @@
 }
 
 .Min_filter {
-    overflow-y: scroll;
+    overflow-x: hidden;
 }
 /* start scroll width  */
 .scroll {
@@ -405,8 +405,20 @@
     .filter_items {
         display: none;
     }
-
+ 
 }
+@media screen  and (min-width : 1024px){
+    .min_filter_items {
+        display: none;
+    }
+    .scroll {
+    display: none;
+    }
+    .scroll::-webkit-scrollbar {
+        display: none;
+    }
+}
+@media  screen and (max-width: 700px) {}
 @media  screen and (max-width: 700px) {
 
     .min_filter_items {

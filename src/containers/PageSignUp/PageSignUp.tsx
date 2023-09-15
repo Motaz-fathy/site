@@ -333,8 +333,8 @@ const PageSignUp: FC<PageSignUpProps> = ({ className = "" }) => {
 		<div className={classes.Form}> 
 			<form className={classes.FormCard}>
 				<div className={classes.actions}>
-				<button onClick={()=> navigate("/login")}>Sign in </button>
-				<button onClick={()=> navigate("signin")} className={classes.active}>Sign up</button>
+				<button onClick={()=> navigate("/login")} className="w-[200px] h-[50px] ">Sign in </button>
+				<button onClick={()=> navigate("signin")} className={`${classes.active} w-[200px] h-[50px] `}>Sign up</button>
 
 				</div>
 			<div className={classes.element}>
