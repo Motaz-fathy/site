@@ -66,10 +66,13 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
   // code will be enhance
   
   useEffect(() => {
-    getAddressList().then((res: any) => {
+      getAddressList().then((res: any) => {
+        console.log("address ",res?.data?.data)
       setAddressapifrom(res?.data?.data);
       setAddressapito(res?.data?.data);
-    });
+    }).catch((erro) => {
+        console.log(erro)
+    })
   }, []);
   useEffect(() => {
     setStateDate(defaultDateValue);
@@ -124,7 +127,6 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
 
   // handle data of trip
   useEffect(() => {
-    setLoading(true)
     axios
       .get(
         `${process.env.REACT_APP_API_TELE_URL}/api/transports/private/trips/${trip_Id}`,
@@ -136,7 +138,6 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
       )
       .then((res: any) => {
         setData(res?.data?.data);
-        setLoading(false)
       });
   }, []);
 
@@ -157,9 +158,9 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
   const [AddressFromOne, setAddressFromOne] = useState<any>();
   const [AddressToOne, setAddressToOne] = useState<any>();
   const [time, setTime] = useState<any>();
-   window.localStorage.setItem("private_time" , JSON.stringify(time)) 
-   window.localStorage.setItem("AddressFromOne" , JSON.stringify(AddressFromOne))
-   window.localStorage.setItem("AddressToOne" , JSON.stringify(AddressToOne))
+  window.localStorage.setItem("private_time" , JSON.stringify(time)) 
+  window.localStorage.setItem("AddressFromOne" , JSON.stringify(AddressFromOne))
+  window.localStorage.setItem("AddressToOne" , JSON.stringify(AddressToOne))
   const dropOffLocationType = window.localStorage.getItem(
     "dropOffLocationType"
   );

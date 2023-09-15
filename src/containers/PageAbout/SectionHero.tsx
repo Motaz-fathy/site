@@ -24,7 +24,7 @@ const SectionHero: FC<SectionHeroProps> = ({
 			data-nc-id="SectionHero"
 		>
 			<div className=" flex items-center text-center align-middle max-sm:m-0  max-sm:flex-col-reverse max-sm:justify-between sm:m-0  sm:flex-col-reverse sm:justify-between  lg:mt-20  lg:flex-row lg:justify-around ">
-				<div className="max-sm:mx-auto-28 m-auto w-[50vw] p-8 rtl:mr-[15vw] rtl:text-right max-md:mx-auto  max-sm:w-full max-sm:p-3 sm:p-3 lg:ml-80">
+				<div className="max-sm:mx-auto-28 m-auto w-[50vw] max-sm:mt-10 p-8 rtl:mr-[15vw] rtl:text-right max-md:mx-auto  max-sm:w-full max-sm:p-3 sm:p-3 lg:ml-80">
 					<h2 className="flex w-full   text-center  font-semibold !leading-tight text-white max-sm:text-[16px] lg:text-[24px] ">
 						{heading}
 					</h2>

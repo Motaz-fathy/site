@@ -12,7 +12,7 @@ return (
             
             
             <div className=" flex flex-row items-center justify-around w-[80%] sm:w-[90%] max-sm:w-[90%]   m-auto  max-sm:flex-col max-md:flex-col  ">
-                <div className="flex flex-col  items-center w-[50%]  max-sm:w-full max-md:w-full">
+                <div className="flex flex-col  items-center   max-sm:w-[80%] max-md:w-full">
                     <div className="flex flex-row h-[244px] w-[216px] justify-center">
                         <img
                             className=" object-fill w-[117px] "
@@ -26,11 +26,13 @@ return (
                             />
 
                     </div>
-                    <h4 className="text-center text-[16px] text-[400] text-black">Making it easier to experience the travel.</h4>
-                    <p className="text-[16px] text-center text-[400] w-[419px] text-[#1E1E1E]" >
+                    <div className="max-sm:w-[100%] max-sm:flex-col max-sm:items-center">
+                    <h4 className="text-center text-[16px] text-[400] text-black ">Making it easier to experience the travel.</h4>
+                    <p className="text-[16px] text-center text-[400]  text-[#1E1E1E]" >
                     Find tickets for flight, bus and private car you won’t see anywhere else. Check out our
                     </p>
                     <h4 className="text-center text-[16px] text-[400] text-[#1D4078]">Mobile app</h4>
+                    </div>
                 </div>
                 <div className="flex flex-col  items-center w-[50%] max-sm:w-full max-md:w-full max-sm:mt-5 max-md:mt-5">
                     <div className="flex flex-row   max-sm:w-full max-md:w-full  justify-center">
@@ -48,13 +50,13 @@ return (
 
                     </div>
                     <h4 className="text-center text-[16px] text-[400] text-black">Making it easier to experience the travel.</h4>
-                    <p className="text-[16px] text-center text-[400] w-[419px] text-[#1E1E1E]" >
+                    <p className="text-[16px] text-center text-[400] w-[419px] text-[#1E1E1E] max-sm:w-[80%]" >
                     Find tickets for flight, bus and private car you won’t see anywhere else. Check out our
                     </p>
                     <h4 className="text-center text-[16px] text-[400] text-[#1D4078]">Mobile app</h4>
                 </div>
             </div>
-            <div className=" flex flex-col items-start justify-around  w-[80%]  m-auto my-[60px] ">
+            <div className="  flex flex-col items-start justify-around max-sm:container ">
                 {/* title and p  */}
                 <h4 className="text-[24px] text-[500] text-[#1E1E1E] mb-[16px]">What we do</h4>
                 <p className="text-20 text-400 text-[#69696A]">

@@ -139,7 +139,7 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
 						</p>
 					</div>
 					<div
-						className="absolute top-[30%] right-[-48px]  flex h-[42px] max-sm:right-[22%]
+						className="absolute top-[30%] right-[-48px]  flex h-[42px] max-sm:right-[28%]
 						max-sm:rtl:right-[98%]
 						 w-[42px] translate-y-[-100%]	 translate-x-[70px] cursor-pointer 
 						 items-center justify-center rounded-full bg-[#EBEBEC70]  p-2 text-2xl text-white"

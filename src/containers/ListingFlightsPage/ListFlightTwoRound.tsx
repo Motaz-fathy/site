@@ -5,6 +5,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { showApiErrorMessages } from 'utils';
 import Styled from './flight.module.css'
+import homeBg2 from "images/homeBg1.png";
+
 const ListFlightTwoRound = () => {
 
     const { t } = useTranslation();
@@ -558,6 +560,12 @@ const ListFlightTwoRound = () => {
   return (
      
    <div>
+    <div className="m-0 p-0  w-full  block" style={{
+				// backgroundImage: `url(${homeBg2})`,
+				objectFit: "contain",
+			}}> <img src={homeBg2} className="object-cover w-[100%]  mb-0 mt-0 p-0  lg:h-[500px] max-sm:h-[150px]  max-sm:w-[100%]"></img>
+			
+			</div>
         {loading && 
         ( <div className="my-4 flex  w-full justify-center">
         <svg

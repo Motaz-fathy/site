@@ -340,14 +340,14 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 
 	return (
 		<div
-			className={`nc-ListingFlightsPage bg-[#dde2eb] relative overflow-hidden ${className}`}
+			className={` bg-[#dde2eb] relative overflow-hidden ${className}`}
 			data-nc-id="ListingFlightsPage"
 		>
 			{/* bus back ground for search page  */}
-			<div className="m-0 p-0  w-[100vw] h-[30vh] block" style={{
+			<div className="m-0 p-0  w-[100%]  block" style={{
 				// backgroundImage: `url(${homeBg2})`,
 				objectFit: "contain",
-			}}> <img src={homeBg2} className="object-cover w-[100%]  mb-0 mt-0 p-0  h-[30vh] "></img>
+			}}> <img src={homeBg2} className="object-cover w-[100%]  mb-0 mt-0 p-0  lg:h-[30vh] max-sm:h-[150px]  max-sm:w-[100%]"></img>
 			</div>
 
 			<Helmet>
@@ -355,7 +355,7 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 			</Helmet>
 			
 
-			<div className="container flex flex-col items-center   mt-10">
+			<div className=" flex flex-col items-center   mt-10">
 				{/* SECTION HERO */}
 
 				{/* <SectionHeroArchivePage

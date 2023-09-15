@@ -60,7 +60,7 @@ const MaritimeCheckout: FC<CheckOutPageProps> = ({ className = "" }) => {
 			last_name: "",
 			first_name: "",
 			passport_number: "",
-			nationality_id: 3,
+			nationality_id: 1,
 			dob: "",
 			passport_created_date: "",
 		},
@@ -73,7 +73,7 @@ const MaritimeCheckout: FC<CheckOutPageProps> = ({ className = "" }) => {
 				last_name: "",
 				first_name: "",
 				passport_number: "",
-				nationality_id: 3,
+				nationality_id: 1,
 				dob: "",
 				passport_created_date: "",
 			},
@@ -361,10 +361,11 @@ const MaritimeCheckout: FC<CheckOutPageProps> = ({ className = "" }) => {
 																	name="nationality_id"
 																	id="nationality_id"
 																	className={`block h-[50px] w-full rounded-[0px] border-neutral-200 bg-white p-5 text-[20px] focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50  `}
-																	placeholder={t("nationalId")!}
+																	placeholder={t("Egyption")!}
 																	required
-																	defaultValue={item.nationality_id || ""}
+																	// defaultValue={item.nationality_id || ""}
 																	onChange={e => onHandle(e, index)}
+																	disabled
 																/>
 															</div>
 
