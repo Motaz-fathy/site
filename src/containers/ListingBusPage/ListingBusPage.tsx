@@ -422,7 +422,8 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 				{/* SECTION */}
 				<div className={`flex flex-row   w-[85vw] justify-between ${Styled.BusHome_container}`}>
 
-					<div className={`lg:w-[30%] md:w-0 ${Styled.Fillter_component}`} >
+				
+				<div className={`lg:w-[30%] md:w-0 ${Styled.Fillter_component}`} >
 						{
 							!loading && travelData.length > 0 ?
 								<BusResultsFilters className="flex-1 mr-10" refactoredData={travelDataImmutable} isLoading={loading} setData={setDisplayableData}
@@ -435,7 +436,17 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 						{operatorsCompo("station_from")}
 						{operatorsCompo("station_to")} */}
 
-					</div>
+				</div>
+
+						<div className={`${Styled.Min_filter} w-[100%] h-[80px]`}>
+						{
+							!loading && travelData.length > 0 ?
+								<BusResultsFilters className="flex-1 mr-10" refactoredData={travelDataImmutable} isLoading={loading} setData={setDisplayableData}
+								// setRefactoredData={setRefactoredTrips} setFilterFunction={setFilterFunction}
+								/> : null
+						}
+						</div>
+
 					<div className="lg:w-[70%] md:w-full ">{trips.length > 0 && (
 						<SectionGridFilterCard
 							trips={trips}
