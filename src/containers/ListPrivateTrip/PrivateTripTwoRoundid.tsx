@@ -65,15 +65,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
   const tohead_ar: string | null = window.localStorage.getItem("tohead_ar");
   // code will be enhance
   
-  useEffect(() => {
-      getAddressList().then((res: any) => {
-        console.log("address ",res?.data?.data)
-      setAddressapifrom(res?.data?.data);
-      setAddressapito(res?.data?.data);
-    }).catch((erro) => {
-        console.log(erro)
-    })
-  }, []);
+  
   useEffect(() => {
     setStateDate(defaultDateValue);
   }, [defaultDateValue]);
@@ -88,7 +80,14 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
     setFocusedInput(focus);
     onFocusChange && onFocusChange(focus);
   };
-
+  useEffect(() => {
+    getAddressList().then((res: any) => {
+    setAddressapifrom(res?.data?.data);
+    setAddressapito(res?.data?.data);
+  }).catch((erro) => {
+      console.log(erro)
+  })
+}, []);
   const renderInputpickUpDate = () => {
     const focused: any = focusedInput === "startDate";
     return (
@@ -1100,7 +1099,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
  
  }
         <div className="container m-auto mb-5 mt-10 flex w-full flex-col">
-          {screenSize.width > 850 ? Large_Screen_display() : Min_Midum_Screen()}
+          {screenSize.width > 600 ? Large_Screen_display() : Min_Midum_Screen()}
         </div>
       </>
     );

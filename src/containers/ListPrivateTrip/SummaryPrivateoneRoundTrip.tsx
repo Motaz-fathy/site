@@ -545,7 +545,7 @@ setLoading(false)
         </svg>
         </div>)
        }
-        {screenSize.width > 700
+        {screenSize.width > 600
           ? Large_Screen_display()
           : Min_Medium_Screen_display()}
       </div>
