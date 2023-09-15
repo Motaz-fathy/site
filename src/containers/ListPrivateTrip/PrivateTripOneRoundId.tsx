@@ -1142,7 +1142,9 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
     );
   };
 
+  console.log(data)
   if (data !== null) {
+    console.log(screenSize.width)
     return (
       <>
         <Headprivatetrip
@@ -1154,7 +1156,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
         />
 
         <div className="container m-auto mb-5 mt-10 flex w-full flex-col">
-          {screenSize.width > 600 ? Large_Screen_display() : Min_Midum_Screen()}
+          {screenSize.width >= 600 ? Large_Screen_display() : Min_Midum_Screen()}
         </div>
       </>
     );
