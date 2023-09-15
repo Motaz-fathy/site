@@ -343,7 +343,7 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
 				<button
 					onClick={buttonSubmitHref}
 					type="button"
-					className="flex h-[45px] w-[45px] max-sm:w-full max-sm:py-6 items-center justify-center rounded-full bg-[#1D4078]  text-neutral-50 hover:bg-primary-700 focus:outline-none sm:mt-0  sm:py-0"
+					className="flex h-[45px] w-[45px] p-2 max-sm:w-full max-sm:py-6 items-center justify-center rounded-full bg-[#1D4078]  text-neutral-50 hover:bg-primary-700 focus:outline-none sm:mt-0  sm:py-0"
 				>
 					<span className="mr-3 hidden max-sm:block">Search & compare</span>
 					<svg
