@@ -6,6 +6,7 @@ import { Headprivatetrip } from "components/ptivateTrip/Headprivatetrip";
 import Styled from './component.module.css'
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import Button from "shared/Button/Button";
 
 interface PrivateTripPror {
   PrivatetripItem?: ChildNode;
@@ -136,17 +137,17 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
         
         <div
           className="mt-5 flex w-[100%] flex-col items-center rounded-lg bg-[white]"
-          key={item.id}
+          key={item?.id}
         >
              <div
                className="mt-5 flex w-[100%] flex-col items-center rounded-lg bg-[white]"
-               key={item.id}
+               key={item?.id}
              >
                <div className=" flex h-[auto] w-full items-center justify-around  pb-5 ">
     
                  <div className="flex justify-center items-center   w-[30%]">
                    <img
-                     src={item.bus.featured_image}
+                     src={item?.bus?.featured_image}
                      className="h-[100px] w-[100px]"
                    />
                  </div>
@@ -156,9 +157,9 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
                    <div className="flex  flex-col text-start">
                      <h3 className="text-[16px] text-[#1E1E1E] font-[500]">
                        {" "}
-                       {item.bus.name}{" "}
+                       {item?.bus?.name}{" "}
                      </h3>
-                     <p className="text-[12px] text-[#69696A] font-[400]"> {item.bus.model} , or similar </p>
+                     <p className="text-[12px] text-[#69696A] font-[400]"> {item?.bus?.model} , or similar </p>
                    </div>
     
                    <div className="mt-5 flex flex-col items-start text-[#69696A]">
@@ -185,7 +186,7 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
     
                      <span className=" flex items-start justify-center mb-3">
                        <img src="./Vector.png" />
-                       <h4 className="ml-3 rtl:mr-3"> {item.bus.seats_number} </h4>{" "}
+                       <h4 className="ml-3 rtl:mr-3"> {item?.bus?.seats_number} </h4>{" "}
                      </span>
     
                      <span className=" flex items-start justify-center ">
@@ -215,7 +216,7 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
                <div className=" flex h-20 w-full items-center justify-around rounded-lg">
     
                  <div className="">
-                   <img src={item.company_logo} className="h-[40px] w-[70px] " />
+                   <img src={item?.company_logo} className="h-[40px] w-[70px] " />
                  </div>
     
                  <div className="flex flex-col ">
@@ -224,18 +225,20 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
                  </div>
     
                 {
-                  dropOffLocationType === "oneWay" ?  <a
+                  dropOffLocationType === "oneWay" ?  <Link
                   className=" flex mr-2 h-14 w-[110px] items-center justify-center rounded-[9px] bg-[#1D4179] text-center text-[20px] text-white"
-                  href={`/private-trip/oneRound/${item.id}`}
+                  to={`/private-trip/oneRound/${item?.id}`}
                 >
                  {t('select')}
-                </a> :  <a
+                </Link> :  <Link
                    className=" flex mr-2 h-14 w-[110px] items-center justify-center rounded-[9px] bg-[#1D4179] text-center text-[20px] text-white"
-                   href={`/private-trip/twoRound/${item.id}`}
+                   to={`/private-trip/twoRound/${item?.id}`}
                  >
                   {t('select')}
-                 </a>
+                 </Link>
                 }
+
+                
                </div>
              </div>
         </div>
@@ -246,7 +249,7 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
       return data?.map((item) => (
         <div
           className="mt-5 flex w-[100%] flex-col items-center rounded-lg bg-[white]"
-          key={item.id}
+          key={item?.id}
         >
          
              <div
@@ -256,7 +259,7 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
                <div className="mt-4 flex h-[auto] w-full items-center justify-around  pb-3 pt-3">
                  <div className="ml-5 mr-[auto] rtl:ml-[auto] rtl:mr-5">
                    <img
-                     src={item.bus.featured_image}
+                     src={item?.bus?.featured_image}
                      className="h-[80px] w-[80px]"
                    />
                  </div>
@@ -266,7 +269,7 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
                        {" "}
                        {item.bus.name}{" "}
                      </h3>
-                     <p className="ml-1  rtl:justify-start"> {item.bus.model} , or similar </p>
+                     <p className="ml-1  rtl:justify-start"> {item?.bus?.model} , or similar </p>
                    </div>
                    <div className="mt-5 flex items-end justify-between rtl:justify-start text-[#69696A]">
                      <span className="flex items-center justify-center rtl:justify-start ">
@@ -290,7 +293,7 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
                      </span>
                      <span className="ml-5 flex items-end justify-center ">
                        <img src="./Vector.png" />
-                       <h4 className="ml-3 rtl:mr-3"> {item.bus.seats_number} </h4>{" "}
+                       <h4 className="ml-3 rtl:mr-3"> {item?.bus?.seats_number} </h4>{" "}
                      </span>
                      <span className="ml-2 flex items-end justify-center">
                        <svg
@@ -310,26 +313,26 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
                    </div>
                  </div>
                  <div className="ml-[auto] rtl:mr-[auto] mr-5 ]">
-                   <img src={item.company_logo} className="h-[40px] w-[70px]" />
+                   <img src={item?.company_logo} className="h-[40px] w-[70px]" />
                  </div>
                </div>
                <hr className="color-black mb-5 w-full"></hr>
                <div className="mb-5 rtl:ml-10 justify-end mr-10  rtl:flex-row-reverse flex h-20 w-full items-center rounded-lg">
     
                  <div className="flex flex-col ">
-                   <h3> <span>{t('LE')}</span> {item.price}</h3>
-                   <span>round trip </span>
+                   <h3> <span>{t('LE')}</span> {item?.price}</h3>
+                   <span>{t("round trip")} </span>
                  </div>
     
               { dropOffLocationType === "oneWay" ? <Link
                    className={`${Styled.link_select} ml-[16px] rtl:mr-[16px] flex h-14 w-[110px] items-center justify-center rounded-[9px] bg-[#1D4179] text-center text-[20px] text-white`}
-                   to={`/private-trip/oneRound/${item.id}`}
+                   to={`/private-trip/oneRound/${item?.id}`}
                  >
                   {t('select')}
                  </Link> : 
                  <Link
                  className={`${Styled.link_select} ml-[16px] rtl:mr-[16px] flex h-14 w-[110px] items-center justify-center rounded-[9px] bg-[#1D4179] text-center text-[20px] text-white`}
-                 to={`/private-trip/twoRound/${item.id}`}
+                 to={`/private-trip/twoRound/${item?.id}`}
                >
                 {t('select')}
                </Link> 

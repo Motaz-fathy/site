@@ -63,7 +63,7 @@ export const SummaryPrivateTwoRoundTrip = () => {
         setdata_from_summary(response?.data?.data)
         setLoading(false)
         toast.success("created ticket")
-        console.log(response?.data);
+        
       })
       .catch((error) => {
         toast.error("data not valid ")

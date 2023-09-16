@@ -1126,8 +1126,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
   };
 
 
-  if (data !== null) {
-    console.log(screenSize.width)
+
     return (
       <>
         <Headprivatetrip
@@ -1168,7 +1167,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
         </div>
       </>
     );
-  } else {
-    return <div>loading .. </div>;
-  }
+  
+
+    
 };
