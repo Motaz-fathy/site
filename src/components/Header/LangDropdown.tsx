@@ -4,6 +4,7 @@ import { GlobeAltIcon } from "@heroicons/react/24/outline";
 import { FC, Fragment } from "react";
 import { ChangeLanguage } from "utils";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 export const headerLanguage = [
 	{
@@ -36,11 +37,13 @@ const LangDropdown: FC<LangDropdownProps> = ({
 						<Popover.Button
 							className={`
                 ${open ? "" : "text-opacity-80"}
-             group inline-flex items-center rounded-full border-neutral-300 px-3 py-1.5 text-sm font-medium text-gray-700 hover:border-neutral-400 hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 dark:border-neutral-700 dark:text-neutral-300`}
+             group inline-flex items-center rounded-full border-neutral-300 px-3 py-1.5 text-sm font-medium text-gray-700 hover:border-neutral-400 
+			 hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 dark:border-neutral-700
+			  dark:text-neutral-300 max-sm:ml-[20px]`}
 						>
-							<GlobeAltIcon className="h-[18px] w-[18px] opacity-80" />
+							<GlobeAltIcon className="max-sm:ml-[20px] h-[18px] w-[18px] opacity-80" />
 
-							<span className="ml-2 select-none">{t("language")}</span>
+							<span className=" select-none">{t("language")}</span>
 							<ChevronDownIcon
 								className={`${open ? "-rotate-180" : "text-opacity-70"}
                   ml-2 h-4 w-4  transition duration-150 ease-in-out group-hover:text-opacity-80`}
@@ -60,7 +63,7 @@ const LangDropdown: FC<LangDropdownProps> = ({
 								<div className="overflow-hidden rounded-2xl shadow-lg ring-1 ring-black ring-opacity-5">
 									<div className="relative grid gap-8 bg-white p-7 dark:bg-neutral-800 lg:grid-cols-2">
 										{headerLanguage.map((item, index) => (
-											<a
+											<div
 												key={index}
 												onClick={() => {
 													item.click();
@@ -73,9 +76,9 @@ const LangDropdown: FC<LangDropdownProps> = ({
 												}`}
 											>
 												<div className="cursor-pointer">
-													<p className="text-sm font-medium ">{item.name}</p>
+													<p className="text-sm font-medium ">{item?.name}</p>
 												</div>
-											</a>
+											</div>
 										))}
 									</div>
 								</div>

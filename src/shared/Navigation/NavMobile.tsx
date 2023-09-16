@@ -136,7 +136,8 @@ const NavMobile: React.FC<NavMobileProps> = ({
 				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 14 17" fill="none">
 <path d="M1.18177 14.0102L1.1818 14.0102L1.17658 14.0062C1.05119 13.9114 0.959763 13.7786 0.915919 13.6276C0.872245 13.4772 0.878108 13.3167 0.932612 13.1699C1.4037 11.943 2.23553 10.8877 3.31845 10.143C4.40201 9.39794 5.68602 8.99891 7.00104 8.99861C8.31605 8.99831 9.60025 9.39675 10.6841 10.1413C11.768 10.8859 12.6007 11.9417 13.0722 13.1693L13.0726 13.1703C13.1846 13.46 13.0896 13.7996 12.8248 14.0047L12.8241 14.0052C11.2157 15.2555 9.19492 16 6.99995 16L6.9992 16C4.89256 16.0032 2.84516 15.3029 1.18177 14.0102ZM8.76772 5.26777C8.29888 5.73661 7.663 6 6.99995 6C6.33691 6 5.70103 5.73661 5.23219 5.26777C4.76335 4.79893 4.49996 4.16304 4.49996 3.5C4.49996 2.83696 4.76335 2.20107 5.23219 1.73223C5.70103 1.26339 6.33691 1 6.99995 1C7.663 1 8.29888 1.26339 8.76772 1.73223C9.23656 2.20107 9.49996 2.83696 9.49996 3.5C9.49996 4.16304 9.23656 4.79893 8.76772 5.26777Z" fill="#B9C4D5" stroke="#B9C4D5"/>
 </svg>
-<Link  to={'/signup'} className="text-[#1d4179] cursor-pointer" >Sign Up</Link>
+<Link  to={'/signup'} className=" cursor-pointer bg-[#1D4179] flex justify-center text-white pl-3 pr-3 pt-1 pb-1 rounded-[9px] text-[14px]" >Sign Up</Link>
+<Link  to={'/login'} className=" cursor-pointer bg-[#1D4179] flex justify-center text-white pl-3 pr-3 pt-1 pb-1 rounded-[9px] text-[14px] " >Login</Link>
 				</div>
 }
 				{/* <div className="mt-5 flex flex-col text-sm text-neutral-700 dark:text-neutral-300">

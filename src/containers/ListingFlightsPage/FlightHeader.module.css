@@ -20,18 +20,30 @@
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width : 1024px )  {
     .routarSquer {
         position: absolute;
-        bottom: -50px;
+        bottom: -30px;
         left: calc(35%);
-        width: 250px;
-        height: 250px;
+        width: 230px;
+        height: 230px;
         z-index: 0;
     }
 
 }
-
 @media screen and (max-width : 912px )  {
     .routarSquer {
         position: absolute;
@@ -43,7 +55,6 @@
     }
 
 }
-
 
 
 @media screen and (max-width : 820px )  {
@@ -58,6 +69,7 @@
 
 }
 
+
 @media screen and (max-width : 540px ) {
     .routarSquer {
         position: absolute;
@@ -70,35 +82,59 @@
 
 }
 
+
 @media screen and (max-width : 414px ) {
     .routarSquer {
         position: absolute;
-        bottom: -45px;
+        bottom: -30px;
         left: calc(12%);
         width: 250px;
         height: 100px;
         z-index: 0;
     }
-
+    .to_name{
+        font-size: 20px;
+     }
+     .from_name{
+         font-size: 20px;
+      }
+ 
 }
-
 
 @media screen and (max-width : 375px ) {
     .routarSquer {
         position: absolute;
-        bottom: -45px;
+        bottom: -35px;
         left: calc(30%);
         width: 150px;
         height: 100px;
         z-index: 0;
     }
+    .to_name{
+       font-size: 16px;
+    }
+    .from_name{
+        font-size: 16px;
+     }
 
 }
+@media screen and (max-width : 360px ) {
+    .routarSquer {
+        position: absolute;
+        bottom: -35px;
+        left: calc(28%);
+        width: 150px;
+        height: 100px;
+        z-index: 0;
+    }
+    .to_name{
+       font-size: 16px;
+    }
+    .from_name{
+        font-size: 16px;
+     }
 
-
-
-
-
+}
 
 @media screen and (max-width : 280px )  {
     .routarSquer {

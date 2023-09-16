@@ -21,11 +21,11 @@ import ontimebus from "images/image 8.png";
 function PageHome() {
 	const { t } = useTranslation();
 	return (
-		<div className="relative overflow-hidden  bg-[#E8ECF2] ">
+		<div className=" max-sm:mb-[20px] relative overflow-hidden  bg-[#E8ECF2] ">
 			{/* GLASSMOPHIN */}
 			<BgGlassmorphism />
 
-			<div className="relative mb-24 lg:mb-28 ">
+			<div className="relative mb-24 lg:mb-28  ">
 				{/* SECTION HERO */}
 				<SectionHero className="pt-10 lg:pt-16 lg:pb-2" />
 
@@ -62,7 +62,7 @@ function PageHome() {
 						/>
 					</div>
 				</div>
-				<div className="flex flex-col items-center justify-center  bg-[#E8ECF2] rtl:flex-row-reverse">
+				<div className=" max-sm:mb-[80px] flex flex-col items-center justify-center  bg-[#E8ECF2] rtl:flex-row-reverse">
 					<SectionDowloadApp />
 				</div>
 				<div

@@ -45,7 +45,7 @@ const PageAbout: FC<PageAboutProps> = ({ className = "" }) => {
 
 				{/* <SectionSubscribe2 /> */}
 			</div>
-			<div className="bg-red h-fit w-full pb-[20vh]">
+			<div className=" h-fit w-full pb-[20vh]">
 				<div
 					className="h-fit 
 				

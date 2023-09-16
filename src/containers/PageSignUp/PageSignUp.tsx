@@ -332,9 +332,10 @@ const PageSignUp: FC<PageSignUpProps> = ({ className = "" }) => {
 	return(
 		<div className={classes.Form}> 
 			<form className={classes.FormCard}>
-				<div className={classes.actions}>
-				<button onClick={()=> navigate("/login")} className="w-[200px] h-[50px] ">Sign in </button>
-				<button onClick={()=> navigate("signin")} className={`${classes.active} w-[200px] h-[50px] `}>Sign up</button>
+				<div className={`max-sm:flex max-sm:flex-col max-sm:items-center  ${classes.actions}`}>
+
+				<button onClick={()=> navigate("/login")} className=" max-sm:mt-2 max-sm:text-[20px] w-[200px] h-[50px] ">Sign in </button>
+				<button onClick={()=> navigate("signin")} className={`max-sm:mt-0 ${classes.active} w-[200px] h-[50px] `}>Sign up</button>
 
 				</div>
 			<div className={classes.element}>

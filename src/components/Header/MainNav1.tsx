@@ -8,7 +8,7 @@ import userImage from "images/logos/user-icon.jpg";
 
 import LangDropdown from "components/Header/LangDropdown";
 import { useTranslation } from "react-i18next";
-import { redirect, useLocation } from "react-router-dom";
+import { Link, redirect, useLocation } from "react-router-dom";
 import { AppContext } from "components/context/AppContext";
 import AvatarDropdown from "./AvatarDropdown";
 import Avatar from "react-avatar";
@@ -36,7 +36,7 @@ const MainNav1: FC<MainNav1Props> = ({ className = "" }) => {
 			<div className="relative flex h-20 items-center justify-between px-4 py-4 lg:container lg:py-2">
 				<div className="flex flex-1 items-center justify-start space-x-4 sm:space-x-10 md:flex">
 					<MenuBar />
-					<img src={logoImage} alt="logo" className="ml-4 " />
+					<img src={logoImage} alt="logo" className="mr-2 max-sm:mr-[10px]" />
 					<Navigation />
 				</div>
 				<div></div>
@@ -77,9 +77,9 @@ const MainNav1: FC<MainNav1Props> = ({ className = "" }) => {
 										/>
 									</svg>
 								</div>{" "}
-								<a className="hidden text-[#1d4179] sm:block" href="/signup">
-									Sign In
-								</a>
+								<Link className=" text-[#1d4179] sm:block" to="/login">
+									Login
+								</Link>
 							</>
 						)}
 					</div>
