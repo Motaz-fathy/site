@@ -283,32 +283,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
     };
     return (
       <>
-      {loading && 
-
-         ( <div className="my-4 flex  w-full justify-center">
-						<svg
-							className="-ml-1 mr-3 h-20 w-20 animate-spin"
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-						>
-							<circle
-								className="opacity-25"
-								cx="12"
-								cy="12"
-								r="10"
-								stroke="currentColor"
-								strokeWidth="3"
-							></circle>
-							<path
-								className="opacity-75"
-								fill="currentColor"
-								d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-							></path>
-						</svg>
-					</div>)
-          
-          }
+      
 
 
         <div className="m-auto flex w-full items-center justify-center ">
@@ -724,7 +699,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
   // { handle min and meduim screen }
 
   const Min_Midum_Screen = () => {
-console.log("1")
+
 
     const handlesetfromaddress = (itemfrom: any) => {
       setAddressFromOne(itemfrom);
@@ -734,6 +709,8 @@ console.log("1")
       setAddressToOne(itemto);
       setEnableTo(false);
     };
+
+
     return (
       <>
         <div className="m-auto flex w-full items-center justify-center ">
@@ -771,7 +748,7 @@ console.log("1")
                     {data?.bus?.model} & {data?.bus?.year} or similar{" "}
                   </p>
                 </div>
-                <div className="mt-5 flex items-end justify-start text-[#69696A] rtl:justify-end">
+                <div className="flex items-start flex-col text-[#69696A] rtl:justify-start">
                   <span className="flex items-center justify-start rtl:justify-end ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -792,7 +769,7 @@ console.log("1")
                     <h4 className="ml-2">Van</h4>
                   </span>
 
-                  <span className="ml-3 flex items-end justify-start  rtl:justify-end ">
+                  <span className=" flex items-end justify-start  rtl:justify-end ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="25"
@@ -811,7 +788,7 @@ console.log("1")
                     <h4 className="ml-1"> {data?.bus?.seats_number} seat</h4>{" "}
                   </span>
 
-                  <span className="ml-2 flex items-end justify-start rtl:justify-end ">
+                  <span className=" flex items-end justify-start rtl:justify-end ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="21"
@@ -830,20 +807,18 @@ console.log("1")
               </div>
             </div>
 
-            <div className="">
-              <img src={data?.company_logo} className="h-[40px] w-[70px]" />
-            </div>
+      
           </div>
 
           <hr className="color-black mb-5 w-full"></hr>
 
           <div className="mb-4  flex  w-[98%] items-center justify-between ">
-            <div className=" text-[#FFB229] ">
-              <h3>
-                {t("Free cancellation up to 3 hours before your pick-up")}
-              </h3>
-            </div>
 
+            <div className="">
+              <img src={data?.company_logo} className="h-[40px] w-[70px]" />
+            </div>
+            
+         
             <div className=" ">
               <div className="flex flex-col">
                 <h3 className="text-[20px] font-[500] text-[black]">
@@ -852,7 +827,14 @@ console.log("1")
                 <span>{t(`${dropOffLocationType}`)}</span>
               </div>
             </div>
+
           </div>
+            <div className=" container text-[#FFB229] ">
+              <h3>
+                {t("Free cancellation up to 3 hours before your pick-up")}
+              </h3>
+            </div>
+
         </div>
 
         <div className=" container mb-5 mt-5 flex h-auto w-full flex-col rounded-lg bg-white pb-5">
@@ -1143,7 +1125,7 @@ console.log("1")
     );
   };
 
-  console.log(data)
+
   if (data !== null) {
     console.log(screenSize.width)
     return (
@@ -1155,7 +1137,32 @@ console.log("1")
           tohead_ar={tohead_ar}
           seats_number={data?.bus?.seats_number}
         />
+        {loading && 
 
+        ( <div className="my-4 flex  w-full justify-center">
+        <svg
+        className="-ml-1 mr-3 h-20 w-20 animate-spin"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        >
+        <circle
+        className="opacity-25"
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="currentColor"
+        strokeWidth="3"
+        ></circle>
+        <path
+        className="opacity-75"
+        fill="currentColor"
+        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+        ></path>
+        </svg>
+        </div>)
+
+        }
         <div className="container m-auto mb-5 mt-10 flex w-full flex-col">
           {screenSize.width >= 600 ? Large_Screen_display() : Min_Midum_Screen()}
         </div>

@@ -79,7 +79,7 @@ export const Headprivatetrip: FC<HeadProps> = ({
             <div
               className={`flex items-center justify-center ${Styled.fromtospace}`}
             >
-              <span className={`text-[32px] font-[500px] ${Styled.from_name}`}>
+              <span className={`text-[32px] font-[500px] max-sm:text-[14px] ${Styled.from_name}`}>
                 {t(`${address_From}`)} {t(`${fromhead_EN}`)} 
               </span>
               <svg
@@ -97,7 +97,7 @@ export const Headprivatetrip: FC<HeadProps> = ({
                 <circle fill="#FFFFFF" cx="58.581" cy="5.039" r="3.562" />
                 <rect x="3.653" y="4" fill="#FFFFFF" width="55" height="2" />
               </svg>
-              <span className={`text-[32px] font-[500px] ${Styled.to_name}`}>
+              <span className={`text-[32px] font-[500px] max-sm:text-[14px] ${Styled.to_name}`}>
                 {t(`${address_To}`)} {t(`${tohead_EN}`)}
               </span>
             </div>

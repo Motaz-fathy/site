@@ -126,6 +126,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
 
   // handle data of trip
   useEffect(() => {
+    setLoading(true)
     axios
       .get(
         `${process.env.REACT_APP_API_TELE_URL}/api/transports/private/trips/${trip_Id}`,
@@ -137,6 +138,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
       )
       .then((res: any) => {
         setData(res?.data?.data);
+        setLoading(false)
       });
   }, []);
 
@@ -647,10 +649,12 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
     const handlesetfromaddress = (itemfrom: any) => {
       setAddressFromOne(itemfrom);
       setEnableFrom(false);
+
     };
     const handlesettoaddress = (itemto: any) => {
       setAddressToOne(itemto);
       setEnableTo(false);
+      setLoading(false)
     };
 
     return (
@@ -690,7 +694,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
                     {data?.bus?.model} & {data?.bus?.year} or similar{" "}
                   </p>
                 </div>
-                <div className="mt-5 flex items-end justify-start text-[#69696A] rtl:justify-end">
+                <div className="flex items-start flex-col text-[#69696A] rtl:justify-start">
                   <span className="flex items-center justify-start rtl:justify-end ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -711,7 +715,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
                     <h4 className="ml-2">Van</h4>
                   </span>
 
-                  <span className="ml-3 flex items-end justify-start  rtl:justify-end ">
+                  <span className=" flex items-end justify-start  rtl:justify-end ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="25"
@@ -730,7 +734,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
                     <h4 className="ml-1"> {data?.bus?.seats_number} seat</h4>{" "}
                   </span>
 
-                  <span className="ml-2 flex items-end justify-start rtl:justify-end ">
+                  <span className=" flex items-end justify-start rtl:justify-end ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="21"
@@ -749,20 +753,18 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
               </div>
             </div>
 
-            <div className="">
-              <img src={data?.company_logo} className="h-[40px] w-[70px]" />
-            </div>
+      
           </div>
 
           <hr className="color-black mb-5 w-full"></hr>
 
-          <div className="mb-4  flex  w-[98%] items-center justify-between">
-            <div className=" text-[#FFB229] ">
-              <h3>
-                {t("Free cancellation up to 3 hours before your pick-up")}
-              </h3>
-            </div>
+          <div className="mb-4  flex  w-[98%] items-center justify-between ">
 
+            <div className="">
+              <img src={data?.company_logo} className="h-[40px] w-[70px]" />
+            </div>
+            
+         
             <div className=" ">
               <div className="flex flex-col">
                 <h3 className="text-[20px] font-[500] text-[black]">
@@ -771,7 +773,14 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
                 <span>{t(`${dropOffLocationType}`)}</span>
               </div>
             </div>
+
           </div>
+            <div className=" container text-[#FFB229] ">
+              <h3>
+                {t("Free cancellation up to 3 hours before your pick-up")}
+              </h3>
+            </div>
+
         </div>
 
         <div className=" container mb-5 mt-5 flex h-auto w-full flex-col rounded-lg bg-white pb-5">
@@ -786,13 +795,13 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
               {t("Pick Up Information")}
             </span>
 
-            <div className={`mt-3 flex w-full items-center justify-between `} >
+            <div className={`mt-3 flex w-full items-center justify-between ${Styled.Date_and_Time_minScreen}`} >
               <div className=" mr-auto flex w-[45%] flex-col rounded-[4px] rtl:ml-auto">
                 <span className=" text-[12px] font-[400] text-[#69696A]">
                   {t("Confirm Pickup Date")}
                 </span>
 
-                <div className="flex h-[40px] items-center justify-between border-[1px] border-[#E8ECF2] ">
+                <div className={`flex h-[40px] items-center justify-between border-[1px] border-[#E8ECF2] ${Styled.date_container}`}>
                   <div
                     className={` relative  flex  sm:pt-0 ${className} ${
                       !!focusedInput
@@ -800,7 +809,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
                         : "nc-date-not-focusedInput"
                     }   } max-sm:w-full   `}
                   >
-                    <div className={` absolute   inset-0 flex   `}>
+                    <div className={` absolute   inset-0 flex  ${Styled.date_container} `}>
                       <DateRangePicker
                         disabled={true}
                         startDate={stateDate?.startDate}
@@ -1062,7 +1071,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
     );
   };
 
-  if (data !== null) {
+
     return (
       <>
         <Headprivatetrip
@@ -1103,7 +1112,5 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
         </div>
       </>
     );
-  } else {
-    return <div>loading .. </div>;
-  }
+  
 };
