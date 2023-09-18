@@ -27,7 +27,8 @@ import refactorData from "utils/refactorData";
 import Styled from './page.module.css'
 
 // D:\work\telfric\web site\Telefric\src\components\departureCard\DepartureCard.module.css
-export interface RefactoredData { classes: string, travel_from: string, travel_to: string, gateway_id: string, arrival_at: string, travel_at: string }
+export interface RefactoredData { classes: string, travel_from: string, travel_to: string, 
+	gateway_id: string, arrival_at: string, travel_at: string }
 export interface City {
 	id: number;
 	name: string;
@@ -42,7 +43,6 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 
 	const [travelTo, setTravelTo] = useState<string>("");
 	const [travelFrom, setTravelFrom] = useState<string>("");
-
 	const [trips, setTrips] = useState<any>([]);
 	const [refactoredTrips, setRefactoredTrips] = useState<any>([]);
 	const [filterdTrips, setFilterdTrips] = useState<any>([]);
@@ -59,6 +59,9 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 	const [originalTrips, setOriginalTrips] = useState<any>([])
 	const [displayableData, setDisplayableData] = useState<any>([])
 	const [first, setFirst] = useState("")
+    
+	
+
 	let counter: any = []
 	let allTrips_filtered: any = [];
 	const [filterToStation, setFilerToStation] = useState<string>("");
@@ -81,7 +84,8 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 	}, [search]);
 	const [loading, setLoading] = useState<boolean>(false);
 
-     
+    
+
 
 	const getTripsBus = async () => {
 		setLoading(true);
@@ -98,7 +102,8 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 			await searchTrip({ date, city_to: travelTo, city_from: travelFrom }, page)
 				.then((res: any) => {
 					if (res?.data?.data.length) {
-						const data = refactorData([...res?.data?.data])
+						
+						const data = refactorData([...res?.data?.data] )
 
 						setTrips((prev: any) => [...prev, ...res?.data?.data]);
 						setDisplayableData((prev: any) => [...prev, ...data])
@@ -142,9 +147,13 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 
 		}
 	}, [travelTo, travelFrom, page, date]);
+     
+	let travelData: any[] = refactorData(trips )
+	let travelDataImmutable: any[] = useMemo(() => refactorData(trips ), [trips] )
 
-	let travelData: RefactoredData[] = refactorData(trips)
-	let travelDataImmutable: RefactoredData[] = useMemo(() => refactorData(trips), [trips])
+    const T_T = parseInt(travelTo)
+	const T_F = parseInt(travelFrom)
+
 
 
 	// function removeDuplicates(travelData: any) {
@@ -170,7 +179,7 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 	// 	const filtered = data.filter((each) => filterFunction(each))
 	// 	console.log(filtered)
 	// }, [filterFunction])
-	travelData = removeDuplicates(travelData, "trip_url");
+	// travelData = removeDuplicates(travelData, "trip_url");
 
 	const operatorsCompo = (type: any) => {
 		let selected_company = '';
@@ -416,7 +425,9 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 
 				{loading && page === 1 && (
 					<div className="my-4 flex  w-full justify-center">
-					<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12,23a9.63,9.63,0,0,1-8-9.5,9.51,9.51,0,0,1,6.79-9.1A1.66,1.66,0,0,0,12,2.81h0a1.67,1.67,0,0,0-1.94-1.64A11,11,0,0,0,12,23Z"><animateTransform attributeName="transform" type="rotate" dur="0.75s" values="0 12 12;360 12 12" repeatCount="indefinite"/></path></svg>
+					<svg width="80" height="80" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12,23a9.63,9.63,0,0,1-8-9.5,9.51,9.51,0,0,1,6.79-9.1A1.66,1.66,0,0,0,12,2.81h0a1.67,1.67,0,0,0-1.94-1.64A11,11,0,0,0,12,23Z"  fill="#000000">
+						<animateTransform attributeName="transform" type="rotate" dur="0.75s" values="0 12 12;360 12 12" repeatCount="indefinite"/></path></svg>
 					</div>
 				)}
 
@@ -427,7 +438,11 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 				<div className={`lg:w-[30%] md:w-0 ${Styled.Fillter_component}`} >
 						{
 							!loading && travelData.length > 0 ?
-								<BusResultsFilters className="flex-1 mr-10" refactoredData={travelDataImmutable} isLoading={loading} setData={setDisplayableData}
+								<BusResultsFilters className="flex-1 mr-10" 
+								RefactoredData={travelDataImmutable} isLoading={loading}
+								TravleFrom = {T_F} 
+								TravleTo = {T_T}
+								setData={setDisplayableData}
 								// setRefactoredData={setRefactoredTrips} setFilterFunction={setFilterFunction}
 								/> : null
 						}
@@ -442,7 +457,11 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 						<div className={`${Styled.Min_filter} w-[100%] h-[60px]`}>
 						{
 							!loading && travelData.length > 0 ?
-								<BusResultsFilters className="flex-1 mr-10" refactoredData={travelDataImmutable} isLoading={loading} setData={setDisplayableData}
+								<BusResultsFilters className="flex-1 mr-10" 
+								RefactoredData={travelDataImmutable} isLoading={loading}
+								TravleFrom = {T_F} 
+								TravleTo = {T_T}
+								setData={setDisplayableData}
 								// setRefactoredData={setRefactoredTrips} setFilterFunction={setFilterFunction}
 								/> : null
 						}

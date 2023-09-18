@@ -93,10 +93,10 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
 			
 		>
 			
-			<Helmet>
+			<Helmet >
 				<title>Contact || Telefreik For Booking</title>
 			</Helmet>
-			<div className="mb-24 lg:mb-32 z-10 h-[800px] relative">
+			<div className="mb-24  lg:mb-32 z-10 h-[800px] relative">
 				
 				<div className="container mx-auto max-w-7xl"
 				>
@@ -106,13 +106,13 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
 				src={contactPic}
 				alt=""
 			/>
-						<div className="absolute  max-md:absolute max-sm:block w-[578px] h-[792px] max-sm:h-auto max-sm:w-auto left-[120px] max-sm:m-auto max-sm:left-2 max-sm:right-2 p-[54px] max-sm:py-[24px] max-sm:px-[16px] gap-[10px] top-[134px] max-sm:mt-24 rounded-[16px] bg-white"
+						<div className="absolute max-sm:mt-[130px] max-md:absolute max-sm:block w-[578px] h-[792px] max-sm:h-auto max-sm:w-auto left-[120px] max-sm:m-auto max-sm:left-2 max-sm:right-2 p-[54px] max-sm:py-[24px] max-sm:px-[16px] gap-[10px] top-[134px] max-sm:mt-24 rounded-[16px] bg-white"
 						
 						style={{boxShadow: "0px 4px 4px 0px rgba(217, 217, 217, 0.50)",
 						// padding:"54px 54px 81px "
 						}}
 						>
-							<div className="mb-[20px]">
+							<div className="mb-[20px] ">
 								<h2 className=" flex items-center ltr:text-left  text-[20px]">
 									{t("contact")}
 								</h2>
@@ -218,7 +218,7 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
 			</div>
 
 			{/* OTHER SECTIONS */}
-			<div className="container">
+			<div className="container max-sm:mt-[100px]">
 				<div className="relative py-16">
 					{/* <BackgroundSection /> */}
 					{/* <SectionClientSay uniqueClassName="Pagecontact_" /> */}

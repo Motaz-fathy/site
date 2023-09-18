@@ -152,8 +152,20 @@ const SectionGridFilterCard: FC<SectionGridFilterCardProps> = ({
 
 		return uniqueData;
 	}
-
+	
 	refavtord_data = removeDuplicates(refavtord_data);
+	const T_T = parseInt(travelTo)
+	const T_F = parseInt(travelFrom)
+	const dataUnder = refavtord_data.filter((item: any) => {
+		
+        if(item.city_from === T_F && item.city_to === T_T ) {
+			return item
+		} else{
+			console.log(item)
+		}
+		
+	})
+
 	return (
 		<div
 			className={`nc-SectionGridFilterCard ${className} `}
@@ -163,7 +175,7 @@ const SectionGridFilterCard: FC<SectionGridFilterCardProps> = ({
 				{/* The results count and "All tickets" label */}
 			
 				{/* The flight cards themselves */}
-				<FlightCard refactoredData={refavtord_data} />
+				<FlightCard refactoredData={dataUnder}  />
 				{paginationStatus && (
 					<div className="mt-12 flex items-center justify-center">
 						<ButtonPrimary onClick={setPage} loading={isLoading}>

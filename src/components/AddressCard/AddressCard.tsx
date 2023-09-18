@@ -113,8 +113,8 @@ const AddressCard: FC<any> = (props) => {
     }
   };
   return (
-    <div className={classes.addressCard}>
-      <div className={classes.title}>
+    <div className={` max-sm:top-[-30%] container max-sm:mt-0 max-sm:m-auto  max-sm:w-[80%] ${classes.addressCard}`}>
+      <div className={` ${classes.title}`}>
         <h2>My address</h2>
         <span onClick={addAdressHandler}>Edit</span>
       </div>

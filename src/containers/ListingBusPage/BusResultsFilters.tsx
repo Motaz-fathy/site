@@ -53,12 +53,15 @@ export interface CheckBoxTypes {
     title: string,
 }
 export const CheckBox = (props: CheckBoxTypes) => {
+    
     const { checkBoxArray, name, handleChange, title } = props;
+    console.log("checkBox",props.checkBoxArray)
     return (
         <div className="mb-10 flex h-6 h-fit w-full flex-col rounded-lg bg-white p-3 shadow-md">
             <h5 className="border-w border-b-2 p-2">{title}</h5>
             <div className="flex h-fit w-full flex-col">
                 {checkBoxArray.map((item, i) => (
+                    
                     <div className="my-3 flex items-center gap-4" key={i}>
                         <input
                             type="checkbox"
@@ -82,23 +85,38 @@ export interface SelectedCheckBoxesProps {
     departureFilter: string[];
     operatorFilter: string[];
     arrivalFilter: string[];
+    
 }
 export interface BusResultsFiltersProps {
-    refactoredData: any;
+    RefactoredData: any;
     className: string;
     isLoading: boolean;
     // setRefactoredData: Function;
     // setFilterFunction: Function;
     setData: Function;
+    TravleFrom : number ,
+    TravleTo : number 
+
 }
 
 const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
     const {
         className,
-        refactoredData,
+        RefactoredData,
         isLoading,
         setData,
+        TravleFrom,
+        TravleTo
     } = props;
+    const refactoredData: any[] = RefactoredData.filter((item: any) => {
+		
+        if(item.city_from === TravleFrom && item.city_to === TravleTo ) {
+			return item
+		} else{
+			// console.log(item)
+		}
+		
+	})
     const prices = [...refactoredData]
         .map((each: any) => each.prices_start_with)
         .sort();
@@ -140,6 +158,19 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
             operatorFilter: [],
             arrivalFilter: [],
         });
+      
+    console.log("arriavl filter " , selectedCheckboxes.arrivalFilter)
+    //   const selectedCheckboxes = SelectedCheckboxes.filter((item: any) => {
+		
+        // if(item.city_from === TravleFrom && item.city_to === TravleTo ) {
+        //     return item
+        // } else{
+        //     console.log(item)
+        // }
+        
+    // })  
+
+
     // const [seatsFilter, setSeatsFilter] = useState<string[]>([])
     // const [departureFilter, setDepartureFilter] = useState<string[]>([])
     // const [operatorFilter, setOperatorFilter] = useState<string[]>([])
@@ -174,12 +205,12 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
     const nonDuplicatedPrices = removeDuplicates(
         refactoredData,
         "prices_start_with",
-    ).map((each: any) => each.prices_start_with);
+    )?.map((each: any) => each.prices_start_with);
     const nonDuplicatedClasses = removeDuplicates(refactoredData, "classes");
-    const classes = nonDuplicatedClasses.map(each => each.classes);
+    const classes = nonDuplicatedClasses?.map(each => each.classes);
 
     const nonDuplicatedOperators = removeDuplicates(refactoredData, "gateway_id");
-    const operators = nonDuplicatedOperators.map(each => each.gateway_id);
+    const operators = nonDuplicatedOperators?.map(each => each.gateway_id);
 
     const nonDuplicatedDepartureStation = removeDuplicates(
         refactoredData,
@@ -196,7 +227,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
     const arrivalStations = arrivalStation.map(
         each => each.travel_to,
     );
-
+    console.log("arrivalStations" , arrivalStations)
     const arrivalRangeFilterFunctionMoreThanFirstRangePoint = (
         each: RefactoredData,
     ) => {
@@ -266,7 +297,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
         } else {
             const filteredSeats = currentState[
                 name as keyof SelectedCheckBoxesProps
-            ].filter((each: string) => each != e.target.value);
+            ].filter((each: string) => each !== e.target.value);
             setSelectedCheckboxes({ ...selectedCheckboxes, [name]: filteredSeats });
         }
     };
@@ -435,7 +466,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
 
             </form>
 
-   <div className={`  ${Styled.scroll}`}>
+            <div className={`  ${Styled.scroll}`}>
    <form className={`w-full flex justify-around items-center  `}>
 
    <div></div>

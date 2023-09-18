@@ -35,7 +35,7 @@ const ADCard = () => {
 	);
 	if (addressList.length > 0) {
 		return (
-			<div className={classes.addressCard}>
+			<div className={` container ${classes.addressCard}`}>
 				<div className={classes.title}>
 					<h2>MyAdress</h2>
 					{/* <span > Edit </span> */}
@@ -77,7 +77,7 @@ const ADCard = () => {
 		);
 	}
 	return (
-		<div className={classes.addressCard}>
+		<div className={` z-0 ${classes.addressCard}`}>
 			{" "}
 			<p className=""> no Address </p>
 		</div>

@@ -11,7 +11,7 @@ const SectionSteps = ({
 	return (
 		<>
 			<div
-				className={`nc-SectionOurFeatures  mx-0 pt-10 rtl:gap-2 sm:mx-4 lg:flex-row
+				className={`pb-10 nc-SectionOurFeatures  mx-0 pt-10 rtl:gap-2 sm:mx-4 lg:flex-row
           ${className} overflow-hidden`}
 				data-nc-id="SectionOurFeatures"
 			>
@@ -69,7 +69,7 @@ const SectionSteps = ({
 						<p className="mt-2 w-2/3 text-base text-white">
 							{t("newsletterDesc")}
 						</p>
-						<label className="relative block pb-4 sm:pb-0 ">
+						<label className="relative block pb-0 sm:pb-0 ">
 							<span className="sr-only">Search</span>
 							<span className="absolute inset-y-0 left-0 flex items-center pl-2 rtl:inset-x-0 rtl:right-0 ">
 								<svg

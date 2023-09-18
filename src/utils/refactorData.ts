@@ -6,8 +6,9 @@ import { getDuration } from "./getDuration";
 const refactorData = (trips: any) => {
 
     const data = [...trips]
-	return data.flatMap((trip: any) =>
-		trip.stations_from.flatMap((itemFrom: any) =>
+	return data.flatMap((trip: any ) =>
+	   
+			trip.stations_from.flatMap((itemFrom: any) =>
 			trip.stations_to.map((itemTo: any) => ({
 				travel_from: itemFrom.name,
 				trip_url: `/checkout/?${trip.date}/${itemFrom.id}/${itemTo.id}/${trip.id}/${trip.price_start_with}/${itemFrom.city_id}/${itemTo.city_id}/${trip.company}/${trip.bus.category}`,
@@ -29,8 +30,14 @@ const refactorData = (trips: any) => {
 				duration: getDuration(itemFrom.arrival_at, itemTo.arrival_at),
 				prices_start_with: trip.prices_start_with.original_price, //their is more than tis opj like offer and after offer price
 				available_seats: trip.available_seats,
+				avatar : trip.company_data.avatar ,
+				comapny_name : trip.company_data.name,
+				
+
 			})),
 		),
+		
+	
 	);
 };
 export default refactorData;

@@ -70,7 +70,7 @@ const editAddressData = async () => {
             <label>Email address *</label>
             <input type='email' onChange={setValues} value={values.email} name='email'/>
         </div>
-        <div className={classes.filed}>
+        <div className={`max-sm:w-full ${classes.filed}`}>
             <label>Phone number *</label>
             <PhoneInput   className={classes.PhoneInput}
             value={mobile}

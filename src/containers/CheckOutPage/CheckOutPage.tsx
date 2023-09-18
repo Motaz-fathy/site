@@ -50,7 +50,7 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
 	const [seatsType, setSeatsType] = useState("");
 	const [end_Date, setend_Date] = useState();
 	const [flagbus, setFlagbus] = useState("any");
-
+    
 	const [ID, setID] = useState();
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -590,7 +590,7 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
 							? travle_to_bus?.name_en
 							: travle_to_bus?.name_ar}
 					</h3>
-					<h3 className="z-10">{date} . Economy class</h3>
+					<h3 className="z-10">{date} . {seatsType}</h3>
 				</div>
 			</div>
 			<main className="container mb-24 mt-11 flex w-full flex-col-reverse lg:mb-32 lg:flex-row">

@@ -75,7 +75,24 @@ export const ListFlightOneRound = () => {
 				});
 		}
 	};
-
+  function getMinimumPrice(objArray: Array<any>): number {
+    if (objArray.length === 0) {
+      return 0; // Return 0 or handle the empty array case as per your requirement
+    }
+  
+    let minPrice = Number.MAX_VALUE;
+  
+    for (let i = 0; i < objArray.length; i++) {
+      const obj = objArray[i];
+      const price = parseFloat(obj.origin_price);
+  
+      if (!isNaN(price) && price < minPrice && price !== 0)  {
+        minPrice = price;
+      }
+    }
+  
+    return minPrice;
+  }
 	useEffect(() => {
 		if (!!sessionToken) {
 			getTripsSessionToken();
@@ -214,7 +231,7 @@ export const ListFlightOneRound = () => {
                 <span className='ml-2'>Business</span>
                  </div>
                   <div className='flex flex-col'>
-                    <span>LE 10.000</span>
+                    <span>{getMinimumPrice(item?.offers)}LELE</span>
                     <span>Price per person</span>
                   </div>
                 </div>
@@ -296,7 +313,7 @@ export const ListFlightOneRound = () => {
                   </svg>
   
                   <div className='flex flex-col items-start '>
-                    <span className='text-[#69696A] text-[16px] font-[400]'>{item?.depart_trip?.segments[0]?.destinationPlace?.iata}</span>
+                    <span className='text-[#69696A] text-[16px] font-[400]'>{item?.depart_trip?.segments[item?.depart_trip?.segments.length - 1]?.destinationPlace?.iata}</span>
                     <span className='text-[#69696A] text-[12px] font-[400]'>{item?.depart_trip?.segments[0]?.departureDateTime?.substring(11)}</span>
                   </div>
   
@@ -345,7 +362,7 @@ export const ListFlightOneRound = () => {
                 </div> }
                 <div className='flex justify-around items-center mb-3'>
                   <div className='flex flex-col'>
-                    <span>LE 10.000</span>
+                    <span> {getMinimumPrice(item?.offers)}LE</span>
                     <span>Price per person</span>
                   </div>
                   <button  onClick={() => handleoffers(JSON.stringify(item))} className='ml-2 cursor-pointer flex justify-center items-center rounded-[10px] text-white bg-[#1D4179] w-[177px] h-[54px]'>select</button>

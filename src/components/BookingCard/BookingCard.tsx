@@ -350,7 +350,7 @@ const BookingCard = () => {
 		);
 	}
 	return (
-		<div className={classes.bookingCard}>
+		<div className={`m-0 p-0 container w-full ${classes.bookingCard}`}>
 			<h2 className={classes.title}>My bookings</h2>
 			<ul className={classes.bookingList}>
 				<li
