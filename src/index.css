@@ -334,3 +334,50 @@
 		
 	  }
   }
+
+
+  /* bus  sliders  */ 
+
+
+.rc-slider  {
+	background: none;
+
+}
+
+.rc-slider .rc-slider-track {
+	background: none;
+	
+	
+} 
+.rc-slider .rc-slider-track .rc-slider-track-1{
+	background: none;
+	
+	
+
+}
+.rc-slider-track-1::before{
+	background: none;
+}
+.rc-slider-rail{
+	background: none;
+	height: 30px;
+	background-image: url("../public/sliderBG.svg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+    transform: translateY(-25px);
+}
+.rc-slider-handle{
+ background-color: #1D4179;
+ border: solid 4px #1D4179 !important;
+
+} 
+.rc-slider-handle-2{
+	
+	background-color: #1D4179;
+	border: solid 4px #1D4179 !important;
+}
+
+.rc-slider-handle .rc-slider-handle-2:focus{
+ padding: 0;
+ border: 0;
+}
