@@ -655,7 +655,7 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
 
 {
 				first === "first" && dropOffLocationType !== "oneWay" ?
-				<div className="bg-white flex justify-center w-[100%] hidden  max-sm:block">
+				<div className=" flex justify-center w-[100%] hidden  max-sm:block">
 				<svg xmlns="http://www.w3.org/2000/svg" width="375" height="72" viewBox="0 0 375 72" fill="none">
 <rect width="375" height="72" fill="white"/>
 <rect x="20" y="16" width="69" height="40" rx="16" fill="#1D4179"/>
@@ -692,7 +692,7 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
 </defs>
 </svg>
 			    </div> : 
-				<div className="container w-full mt-[100px] flex justify-center hidden max-sm:block">
+				<div className=" w-[100%] mt-[100px] flex justify-center hidden max-sm:block">
 			<svg xmlns="http://www.w3.org/2000/svg" width="375" height="72" viewBox="0 0 375 72" fill="none">
 <rect width="375" height="72" fill="white"/>
 <rect x="20" y="16" width="69" height="40" rx="16" fill="#1D4179"/>
