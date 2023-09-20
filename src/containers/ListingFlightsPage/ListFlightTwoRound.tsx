@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { showApiErrorMessages } from 'utils';
 import Styled from './flight.module.css'
 import homeBg2 from "images/homeBg1.png";
+import Slider from 'rc-slider';
 
 const ListFlightTwoRound = () => {
 
@@ -147,8 +148,192 @@ const ListFlightTwoRound = () => {
    <>
    <div></div>
     <div className='container w-full h-auto mt-5 flex justify-between items-start'>
-     
-     <div className='w-[100%] '>
+
+      <div className='w-[28%] flex flex-col mt-2 max-sm:hidden'> 
+      <div className=" max-sm:hidden flex justify-between items-center w-[100%] mb-3">
+                        <div className="flex justify-start items-center">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+						<path d="M10.5 6H20.25M10.5 6C10.5 6.39782 10.342 6.77936 10.0607 7.06066C9.77936 7.34196 9.39782 7.5 9 7.5C8.60218 7.5 8.22064 7.34196 7.93934 7.06066C7.65804 6.77936 7.5 6.39782 7.5 6M10.5 6C10.5 5.60218 10.342 5.22064 10.0607 4.93934C9.77936 4.65804 9.39782 4.5 9 4.5C8.60218 4.5 8.22064 4.65804 7.93934 4.93934C7.65804 5.22064 7.5 5.60218 7.5 6M7.5 6H3.75M10.5 18H20.25M10.5 18C10.5 18.3978 10.342 18.7794 10.0607 19.0607C9.77936 19.342 9.39782 19.5 9 19.5C8.60218 19.5 8.22064 19.342 7.93934 19.0607C7.65804 18.7794 7.5 18.3978 7.5 18M10.5 18C10.5 17.6022 10.342 17.2206 10.0607 16.9393C9.77936 16.658 9.39782 16.5 9 16.5C8.60218 16.5 8.22064 16.658 7.93934 16.9393C7.65804 17.2206 7.5 17.6022 7.5 18M7.5 18H3.75M16.5 12H20.25M16.5 12C16.5 12.3978 16.342 12.7794 16.0607 13.0607C15.7794 13.342 15.3978 13.5 15 13.5C14.6022 13.5 14.2206 13.342 13.9393 13.0607C13.658 12.7794 13.5 12.3978 13.5 12M16.5 12C16.5 11.6022 16.342 11.2206 16.0607 10.9393C15.7794 10.658 15.3978 10.5 15 10.5C14.6022 10.5 14.2206 10.658 13.9393 10.9393C13.658 11.2206 13.5 11.6022 13.5 12M13.5 12H3.75" stroke="#69696A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+						<span className="ml-3">filter</span>
+						</div>
+						<span className="text-[#1D4179] text-[16px] font-[400]">Reset all </span>
+				</div>
+      <div className="mb-10 flex h-6 h-fit w-full flex-col rounded-lg bg-white p-3 shadow-md">
+            <h5 className="border-w border-b-2 p-2">Stops</h5>
+            <div className="flex h-fit w-full flex-col">
+
+                    <div className="my-3 flex items-center gap-4" >
+                        <input
+                            type="checkbox"
+                            id={"item"}
+                            name={"item"}
+                            value={"Jazeera Airways"}
+                            // onChange={e => handleChange(name, e)}  
+                        />
+                        <label htmlFor={"Jazeera Airways"}>{"I don’t mind"}</label>
+                    </div>
+
+                    <div className="my-3 flex items-center gap-4" >
+                        <input
+                            type="checkbox"
+                            id={"item"}
+                            name={"item"}
+                            value={"Flight Network"}
+                            // onChange={e => handleChange(name, e)}
+                        />
+                        <label htmlFor={"Flight Network"}>{"No stops"}</label>
+                    </div>
+
+                    <div className="my-3 flex items-center gap-4" >
+                        <input
+                            type="checkbox"
+                            id={"item"}
+                            name={"item"}
+                            value={"Flight Network"}
+                            // onChange={e => handleChange(name, e)}
+                        />
+                        <label htmlFor={"Flight Network"}>{"1 stop"}</label>
+                    </div>
+
+                    <div className="my-3 flex items-center gap-4" >
+                        <input
+                            type="checkbox"
+                            id={"item"}
+                            name={"item"}
+                            value={"Flight Network"}
+                            // onChange={e => handleChange(name, e)}
+                        />
+                        <label htmlFor={"Flight Network"}>{"2 stop"}</label>
+                    </div>
+               
+            </div>
+       </div>
+
+
+
+      <div className="mb-10 flex h-6 h-fit w-full flex-col rounded-lg bg-white p-3 shadow-md">
+                        <h5 className="border-w border-b-2 p-2">Price</h5>
+                        <div className="h-fit w-full ">
+                            <div className="my-3 flex justify-between">
+                                <span className="text-xs">{50}</span>
+                                <span className="text-xs">
+                                    {500}
+                                </span>
+                            </div>
+                            <Slider
+                                range
+                                pushable={true}
+                                className="text-red-400"
+                                min={0}
+                                max={50}
+                                defaultValue={[0, 150]}
+                                allowCross={false}
+                                step={1}
+                                // onChange={e => setPriceRange(e)}
+                            />
+                        </div>
+      </div>
+
+      <div className="mb-10 flex h-6 h-fit w-full flex-col rounded-lg bg-white p-3 shadow-md">
+                    <h5 className="border-w border-b-2 p-2">Flight times</h5>
+                    <div className="h-fit w-full ">
+                        <h6 className="my-4 text-sm text-slate-500">{`Depart from (CAI)`}</h6>
+                        <div className="my-3 flex justify-between">
+                            {/* <span className="text-xs">{travel_atTimes[0]}</span> */}4:30 pm
+                            <span className="text-xs">
+                            4:30 pm
+                                {/* {
+                                    travel_atTimes[
+                                    travel_atTimes.length - 1
+                                    ]
+                                } */}
+                            </span>
+                        </div>
+                        <Slider
+                            range
+                            pushable={true}
+                            className="text-red-400"
+                            min={0}
+                            max={50}
+                            defaultValue={[0, 150]}
+                            allowCross={false}
+                            step={1}
+                            // onChange={(e: any) => setDepartureRange(e)}
+                        />
+                        <div className="h-fit w-full ">
+                            <h6 className="my-4 text-sm text-slate-500">{`arrival to `}</h6>
+                            <div className="my-3 flex justify-between">
+                                <span className="text-xs">
+                                    {/* {arrival_atTimes[0]} */}4:30 pm
+                                </span>
+                                <span className="text-xs">
+                                4:30 pm
+                                    {/* {
+                                        arrival_atTimes[
+                                        arrival_atTimes.length - 1
+                                        ]
+                                    } */}
+                                </span>
+                            </div>
+                            <Slider
+                                range
+                                pushable={true}
+                                className="text-red-400"
+                                min={0}
+                                max={50}
+                                defaultValue={[0, 150]}
+                                allowCross={false}
+                                step={1}
+                                
+                            />
+                        </div>
+                    </div>
+      </div>
+
+      <div className="mb-10 flex h-6 h-fit w-full flex-col rounded-lg bg-white p-3 shadow-md">
+            <h5 className="border-w border-b-2 p-2">Airline</h5>
+            <div className="flex h-fit w-full flex-col">
+                
+                    
+                    <div className="my-3 flex items-center gap-4" >
+                        <input
+                            type="checkbox"
+                            id={"item"}
+                            name={"item"}
+                            value={"Flight Network"}
+                            // onChange={e => handleChange(name, e)}
+                        />
+                        <label htmlFor={"Flight Network"}>{"Flight Network"}</label>
+                    </div>
+
+                    <div className="my-3 flex items-center gap-4" >
+                        <input
+                            type="checkbox"
+                            id={"item"}
+                            name={"item"}
+                            value={"Jazeera Airways"}
+                            // onChange={e => handleChange(name, e)}  
+                        />
+                        <label htmlFor={"Jazeera Airways"}>{"Jazeera Airways"}</label>
+                    </div>
+               
+            </div>
+       </div>
+
+       </div>
+     <div className='w-[70%] '>
+     <div className=" max-sm:hidden flex justify-between items-center w-[98%] mb-3">
+                        <div className="flex justify-start items-center">
+						<span>54 results</span>
+						<span className="ml-3 text-[#1D4179]">| All tickets</span>
+						</div>
+					<div className="custom-select">
+					<select>
+					<option value="">sort by </option>
+					</select>
+					</div>
+				</div>
         {trips?.map((item : any , index: number) => {
         return (
          <div className='container flex flex-col h-auto bg-white mt-2 mb-2 rounded-[10px]' key={index}>
