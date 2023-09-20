@@ -467,7 +467,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
             </form>
 
             <div className={`  ${Styled.scroll}`}>
-            <form className={`w-full flex justify-around items-center  `}>
+            <form className={`w-[100%] flex justify-around items-center  `}>
 
                     
             <div className={`${Styled.f4}`}>
