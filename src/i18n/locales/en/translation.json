@@ -331,7 +331,9 @@
   "Operators" : "Operators",
   "seats free" : "seats free",
   "results" :"results",
-  "All tickets" : "All tickets"
+  "All tickets" : "All tickets",
+  "Passenger" : "Passenger",
+  "After Discount" : "After Discount"
   
 
 }

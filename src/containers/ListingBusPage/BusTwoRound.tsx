@@ -2,6 +2,7 @@ import React from "react";
 import Styled from './page.module.css'
 import { BusHeader } from "./BusHeader";
 import axios from "axios";
+import { t } from "i18next";
 
 export const BusTwoRound = () => {
   const B_T: any = window.localStorage.getItem(
@@ -240,7 +241,7 @@ export const BusTwoRound = () => {
                 {bus_Ticket?.data?.trips[0].total}
               </div>
               <div className="text-[12px]  font-[400]  text-[#69696A]">
-                Price per person
+                {t("Price per person")}
               </div>
             </div>
           </div>
@@ -382,7 +383,7 @@ export const BusTwoRound = () => {
                 {bus_Ticket?.data?.trips[1].total}
               </div>
               <div className=" max-sm:pb-[14px] text-[12px]  font-[400] mb-5 text-[#69696A]">
-                Price per person
+              {t("Price per person")}
               </div>
             </div>
           </div>
@@ -413,11 +414,11 @@ export const BusTwoRound = () => {
       </svg>
       <h4 className="ml-2">
         {" "}
-        {bus_Ticket?.data.trips[0].tickets?.length} Passenger{" "}
+        {bus_Ticket?.data.trips[0].tickets?.length} {t("Passenger")}{" "}
       </h4>
     </span>
   </div>
-  <span className="text-[16px] font-[400] text-[#1D4179]">Edit</span>
+  <span className="text-[16px] font-[400] text-[#1D4179]">{t("Edit")}</span>
 </div>
 
 <div className="flex w-full items-center  justify-between pb-5">
@@ -437,7 +438,7 @@ export const BusTwoRound = () => {
   <div className="flex items-baseline justify-start ">
     <span className="flex flex-col   ">
       <span className="mb-2 flex justify-end text-[16px] font-[400]">
-        Ticket Price
+        {t("Ticket Price")}
       </span>
       <h4 className="text-[16px] font-[400] text-[#1D4179]">
         {" "}
@@ -464,7 +465,7 @@ export const BusTwoRound = () => {
   <div className="flex items-baseline justify-start ">
     <span className="flex flex-col   ">
       <span className="mb-2 flex justify-end text-[16px] font-[400]">
-        Ticket Price
+      {t("Ticket Price")}
       </span>
       <h4 className="text-[16px] font-[400] text-[#1D4179]">
         {" "}
@@ -475,16 +476,16 @@ export const BusTwoRound = () => {
 </div>
 
 <div className="flex w-full items-center  justify-between pb-5">
-  <span className="text-[16px] font-[400] text-[]">After Discount</span>
+  <span className="text-[16px] font-[400] text-[]">{t("After Discount")}</span>
   <span className="text-[16px] font-[400] text-[#1D4179]">{bus_Ticket?.data?.tickets_totals_after_discount}</span>
 </div>
 <div className="flex w-full items-center  justify-between pb-5">
-  <span className="text-[16px] font-[400] text-[]">Tax Included</span>
+  <span className="text-[16px] font-[400] text-[]">{t("Tax Included")}</span>
   <span className="text-[16px] font-[400] text-[#1D4179]">{bus_Ticket?.data?.payment_fees}</span>
 </div>
 
 <div className="flex w-full items-center  justify-between pb-10">
-  <span className="text-[20px] font-[500] text-[]">Total</span>
+  <span className="text-[20px] font-[500] text-[]">{t("Total")}</span>
   <span className="text-[16px] font-[400] text-[#1D4179]">
     {bus_Ticket?.data?.total}
   </span>
@@ -495,7 +496,7 @@ export const BusTwoRound = () => {
   <button className="mt-5 h-[54px] w-[183px] rounded-lg bg-[#1D4179] text-white"
   onClick={PayNow}
   >
-    Pay Now
+    {t("Pay Now")}
     {/* {bus_Ticket?.data?.payment_url} */}
   </button>
 </div>
