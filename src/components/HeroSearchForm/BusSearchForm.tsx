@@ -157,7 +157,7 @@ const BusSearchForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 	const renderForm = () => {
 		return (
 			<div
-			className={`relative w-full  select-none	cursor-pointer  md:h-fit `}>
+			className={`container lg:w-full md:w-full md:text-xs lg:h-fil relative w-full  select-none	cursor-pointer  md:h-fit `}>
 				<span className="flex sm:hidden">{renderRadioBtn()}</span>
 				<form className="relative mt-2  w-full p-2 dark:bg-neutral-800 sm:mt-8  sm:bg-white sm:p-8 xl:rounded-xl   sm:flex-col-reverse  max-sm:flex-col-reverse  ">
 					<div className="flex h-[56px]  lg:w-full md:w-full sm:w-full  max-sm:flex-col gap-1 md:flex-row sm:justify-around ">

@@ -217,7 +217,7 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 
 	return (
 		<div
-			className={`   w-[80vw] nc-HeroSearchForm max-sm:w-[100%]  max-w-full py-5 max-sm:h-[450px] lg:py-0   ${className} rounded-t-2xl bg-white lg:rounded-b-2xl
+			className={`   w-[90vw] nc-HeroSearchForm max-sm:w-[100%]  max-w-full py-5 max-sm:h-[450px] lg:py-0   ${className} rounded-t-2xl bg-white lg:rounded-b-2xl
 			rounded-b-2xl
 			`}
 			data-nc-id="HeroSearchForm"

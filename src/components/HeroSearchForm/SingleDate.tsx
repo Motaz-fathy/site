@@ -95,7 +95,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
 					<span
 						className={`mt-1 flex text-sm font-light leading-none text-neutral-400   ${className}`}
 					>
-						{startDate ? startDate.format("DD MMM") : moment().format("DD MMM")}
+						{startDate ? startDate.format("DD MMM") : " enter date "}
 					</span>
 				</div>
 			</div>
@@ -282,7 +282,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
 	return (
 		<>
 			<div
-				className={`ExperiencesDateSingleInput relative flex    pt-3 sm:pt-0   ${className} ${
+				className={`  ExperiencesDateSingleInput relative flex lg:rtl:mr-3  max-sm:rtl:w-full  max-sm:rtl:translate-x-[0px] lg:translate-x-[5px] pt-3 sm:pt-0   ${className} ${
 					!!focusedInput ? "nc-date-focusedInput" : "nc-date-not-focusedInput"
 				}`}
 			>
@@ -313,7 +313,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
 
 				{renderInputCheckInDate()}
 			</div>
-			<div className="flex w-[20vw]  justify-between max-sm:w-full max-sm:h-[48px] ">
+			<div className="flex w-[20vw]  justify-between max-sm:w-full max-sm:h-[48px]  lg:ml-2 ">
 				{type !== "cars"?
 				(<>
 				{type !== "maritime"? <div className="flex w-[9.5vw] items-center  max-sm:h-[48px] max-sm:rounded-3xl  max-sm:w-full justify-center rounded-[4px] border-[1px] border-[#E8ECF2]  ">
