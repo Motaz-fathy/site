@@ -68,6 +68,7 @@ const LangDropdown: FC<LangDropdownProps> = ({
 												onClick={() => {
 													item.click();
 													close();
+													window.location.reload()
 												}}
 												className={`-m-3 flex cursor-pointer items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50 dark:hover:bg-neutral-700  ${
 													item.active

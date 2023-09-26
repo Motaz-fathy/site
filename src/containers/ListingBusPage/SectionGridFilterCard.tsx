@@ -169,16 +169,16 @@ const SectionGridFilterCard: FC<SectionGridFilterCardProps> = ({
 			className={`nc-SectionGridFilterCard ${className} `}
 			data-nc-id="SectionGridFilterCard"
 		>
-				<div className=" max-sm:hidden flex justify-between items-center w-[98%] mb-3">
+				<div className=" max-sm:hidden flex justify-between items-center w-[98%] mb-3 rtl:mr-[3%]">
                         <div className="flex justify-start items-center">
-						<span>{dataUnder.length} results</span>
-						<span className="ml-3 text-[#1D4179]">| All tickets</span>
+						<span className="rtl:ml-2">{dataUnder.length} {t("results")} </span>
+						<span className="ml-3 text-[#1D4179]"> | {t("All tickets")}</span>
 						</div>
-					<div className="custom-select">
+					{/* <div className="custom-select">
 					<select>
 					<option value="">sort by </option>
 					</select>
-					</div>
+					</div> */}
 				</div>
 			<div className="grid grid-cols-1 gap-6 rounded-3xl   lg:dark:bg-black/20 rtl:mr-5">
 				{/* The results count and "All tickets" label */}

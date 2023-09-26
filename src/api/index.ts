@@ -61,9 +61,9 @@ export function getSeats(data: any): Promise<any> {
 	);
 }
 export function searchTrip(data: any, page: number): Promise<any> {
-	return axios.post(
-		`${process.env.REACT_APP_API_TELE_URL}/api/transports/trips?city_from=${data?.city_from}&city_to=${data?.city_to}&date=${data?.date}&page=${page}`,
-		{},
+	return axios.get(
+		`https://app.telefreik.com/api/v2/transports/buses/search?city_from=${data?.city_from}&city_to=${data?.city_to}&date=${data?.date}&page=${page}`,
+		
 		{
 			headers: {
 				"Content-Type": "multipart/form-data",

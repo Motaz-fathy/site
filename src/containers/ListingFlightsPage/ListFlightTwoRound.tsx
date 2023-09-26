@@ -146,10 +146,11 @@ const ListFlightTwoRound = () => {
  const Max_Screen = () => {
   return (
    <>
-   <div></div>
+   
     <div className='container w-full h-auto mt-5 flex justify-between items-start'>
 
-      <div className='w-[28%] flex flex-col mt-2 max-sm:hidden'> 
+      {/* <div className='w-[28%] flex flex-col mt-2 max-sm:hidden'> 
+
       <div className=" max-sm:hidden flex justify-between items-center w-[100%] mb-3">
                         <div className="flex justify-start items-center">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -169,7 +170,7 @@ const ListFlightTwoRound = () => {
                             id={"item"}
                             name={"item"}
                             value={"Jazeera Airways"}
-                            // onChange={e => handleChange(name, e)}  
+                            onChange={e => handleChange(name, e)}  
                         />
                         <label htmlFor={"Jazeera Airways"}>{"I don’t mind"}</label>
                     </div>
@@ -180,7 +181,7 @@ const ListFlightTwoRound = () => {
                             id={"item"}
                             name={"item"}
                             value={"Flight Network"}
-                            // onChange={e => handleChange(name, e)}
+                            onChange={e => handleChange(name, e)}
                         />
                         <label htmlFor={"Flight Network"}>{"No stops"}</label>
                     </div>
@@ -191,7 +192,7 @@ const ListFlightTwoRound = () => {
                             id={"item"}
                             name={"item"}
                             value={"Flight Network"}
-                            // onChange={e => handleChange(name, e)}
+                            onChange={e => handleChange(name, e)}
                         />
                         <label htmlFor={"Flight Network"}>{"1 stop"}</label>
                     </div>
@@ -202,7 +203,7 @@ const ListFlightTwoRound = () => {
                             id={"item"}
                             name={"item"}
                             value={"Flight Network"}
-                            // onChange={e => handleChange(name, e)}
+                            onChange={e => handleChange(name, e)}
                         />
                         <label htmlFor={"Flight Network"}>{"2 stop"}</label>
                     </div>
@@ -230,7 +231,7 @@ const ListFlightTwoRound = () => {
                                 defaultValue={[0, 150]}
                                 allowCross={false}
                                 step={1}
-                                // onChange={e => setPriceRange(e)}
+                                onChange={e => setPriceRange(e)}
                             />
                         </div>
       </div>
@@ -240,14 +241,14 @@ const ListFlightTwoRound = () => {
                     <div className="h-fit w-full ">
                         <h6 className="my-4 text-sm text-slate-500">{`Depart from (CAI)`}</h6>
                         <div className="my-3 flex justify-between">
-                            {/* <span className="text-xs">{travel_atTimes[0]}</span> */}4:30 pm
+                            <span className="text-xs">{travel_atTimes[0]}</span>4:30 pm
                             <span className="text-xs">
                             4:30 pm
-                                {/* {
+                                {
                                     travel_atTimes[
                                     travel_atTimes.length - 1
                                     ]
-                                } */}
+                                }
                             </span>
                         </div>
                         <Slider
@@ -259,21 +260,21 @@ const ListFlightTwoRound = () => {
                             defaultValue={[0, 150]}
                             allowCross={false}
                             step={1}
-                            // onChange={(e: any) => setDepartureRange(e)}
+                            onChange={(e: any) => setDepartureRange(e)}
                         />
                         <div className="h-fit w-full ">
                             <h6 className="my-4 text-sm text-slate-500">{`arrival to `}</h6>
                             <div className="my-3 flex justify-between">
                                 <span className="text-xs">
-                                    {/* {arrival_atTimes[0]} */}4:30 pm
+                                     {arrival_atTimes[0]} 4:30 pm
                                 </span>
                                 <span className="text-xs">
                                 4:30 pm
-                                    {/* {
+                                    {
                                         arrival_atTimes[
                                         arrival_atTimes.length - 1
                                         ]
-                                    } */}
+                                    }
                                 </span>
                             </div>
                             <Slider
@@ -302,7 +303,7 @@ const ListFlightTwoRound = () => {
                             id={"item"}
                             name={"item"}
                             value={"Flight Network"}
-                            // onChange={e => handleChange(name, e)}
+                            onChange={e => handleChange(name, e)}
                         />
                         <label htmlFor={"Flight Network"}>{"Flight Network"}</label>
                     </div>
@@ -313,7 +314,7 @@ const ListFlightTwoRound = () => {
                             id={"item"}
                             name={"item"}
                             value={"Jazeera Airways"}
-                            // onChange={e => handleChange(name, e)}  
+                            onChange={e => handleChange(name, e)}  
                         />
                         <label htmlFor={"Jazeera Airways"}>{"Jazeera Airways"}</label>
                     </div>
@@ -321,19 +322,21 @@ const ListFlightTwoRound = () => {
             </div>
        </div>
 
-       </div>
-     <div className='w-[70%] '>
-     <div className=" max-sm:hidden flex justify-between items-center w-[98%] mb-3">
-                        <div className="flex justify-start items-center">
-						<span>54 results</span>
-						<span className="ml-3 text-[#1D4179]">| All tickets</span>
-						</div>
-					<div className="custom-select">
-					<select>
-					<option value="">sort by </option>
-					</select>
-					</div>
-				</div>
+      </div>  */}
+
+
+     <div className='w-[100%] '>
+{/* <div className=" max-sm:hidden flex justify-between items-center w-[98%] mb-3">
+<div className="flex justify-start items-center">
+<span>54 results</span>
+<span className="ml-3 text-[#1D4179]">| All tickets</span>
+</div>
+<div className="custom-select">
+<select>
+<option value="">sort by </option>
+</select>
+</div>
+</div> */}
         {trips?.map((item : any , index: number) => {
         return (
          <div className='container flex flex-col h-auto bg-white mt-2 mb-2 rounded-[10px]' key={index}>
@@ -526,6 +529,7 @@ const ListFlightTwoRound = () => {
         })}
  
      </div>
+
      </div>
    </>
   )

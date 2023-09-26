@@ -54,7 +54,7 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
     const hours = Math.floor(duration.asHours());
     const minutes = Math.floor(duration.asMinutes() % 60);
 
-    return `${hours} H ${minutes} M`;
+    return ` ${t("H")} ${hours}   ${t("M")} ${minutes}`;
   };
 
   refactoredData = removeDuplicates(refactoredData);
@@ -89,7 +89,7 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
              
                 <img
                   src={item?.avatar}
-                  className="h-[70px] w-24 flex-shrink-0 lg:w-[70px] "
+                  className="h-[40px] w-[75px] flex-shrink-0 lg:w-[70px] "
                   alt=""
                 />
              
@@ -117,7 +117,7 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
                     />
                   </svg>
                 </div>
-                <div>
+                <div className="rel:rotate-[]">
                   {" "}
                   {calculateDuration(item?.travel_at, item?.arrival_at)}
                 </div>
@@ -191,10 +191,10 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
 
             <div className="w-24 flex-shrink-0 lg:w-36">
               {item?.gateway_id?.includes("WEBUS") && (
-									<img src={miniBus} className="w-28" alt="" />
+									<img src={miniBus} className="w-[150px] h-[80px] max-sm:w-[75px] max-sm:h-[40px]" alt="" />
 								)}
-								{!item?.gateway_id?.includes("WEBUS") && (
-									<img src={bus} className="w-24 mt-2" alt="" />
+								{item?.gateway_id?.includes("BlueBus") && (
+									<img src={bus} className="w-[150px] h-[80px] max-sm:w-[100px] max-sm:h-[70px]" alt="" />
 								)}
             	
             </div>
@@ -217,20 +217,23 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
 									
 									"
               >
-                <img src={tv} className="mr-1 h-[40px] w-[40px]" alt="" />
-                <img src={conditioning} className=" h-[40px] w-[40px]" alt="" />
+                <img src={tv} className="mr-1 h-[40px] w-[40px] " alt="" />
+                <img src={conditioning} className=" h-[40px] w-[40px] rtl:mr-3" alt="" />
                 <div
-                  className="ml-4 h-[40px] w-[120px] items-center justify-center bg-[#E8ECF2] p-[8px] align-middle text-[14px] text-[#69696A]"
+                  className="ml-4 h-[40px] w-[120px] items-center
+                   justify-center bg-[#E8ECF2] p-[8px] align-middle text-[14px] text-[#69696A]
+                   rtl:mr-3
+                   "
                   style={{ borderRadius: "24px", textAlign: "center" }}
                 >
                   {item?.classes}{" "}
                 </div>
                 <div
-                  className="h-[40px]  w-[120px] justify-center p-[8px] align-middle max-sm:text-[12px]  text-[16px] text-[#69696A]"
+                  className="h-[40px]  w-[120px]  justify-center p-[8px] align-middle max-sm:text-[12px]  max-sm:leading-[15px] text-[16px] text-[#69696A]"
                   style={{ borderRadius: "24px", textAlign: "center" }}
                 >
                   {" "}
-                  {item?.available_seats} seats free{" "}
+                  {item?.available_seats} {t("seats free")}{" "}
                 </div>
               </div>
            

@@ -4,8 +4,10 @@ import { cityName } from "./findCityName";
 import { getDuration } from "./getDuration";
 
 const refactorData = (trips: any) => {
-
+ 
+	
     const data = [...trips]
+	console.log("trips" , data )
 	return data.flatMap((trip: any ) =>
 	   
 			trip.stations_from.flatMap((itemFrom: any) =>
@@ -32,6 +34,7 @@ const refactorData = (trips: any) => {
 				available_seats: trip.available_seats,
 				avatar : trip.company_data.avatar ,
 				comapny_name : trip.company_data.name,
+				company_logo : trip.company_data.bus_image
 				
 
 			})),

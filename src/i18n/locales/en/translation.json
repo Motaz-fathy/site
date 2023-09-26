@@ -318,7 +318,20 @@
   "Total" : "Total",
   "Book your ticket": "Book your ticket",
   "Price per person" : "Price per person",
-  "Egyption" : "Egyption"
+  "Egyption" : "Egyption",
+  "filter" : "filter",
+  "Reset all" : "Reset all",
+  "H" : "H",
+  "M" :"M",
+  "Bus times" : "Bus times",
+  "Price": "Price",
+  "Classes" : "Classes",
+  "departure Stations" : "departure Stations" ,
+  "Arrival Stations" : "Arrival Stations" ,
+  "Operators" : "Operators",
+  "seats free" : "seats free",
+  "results" :"results",
+  "All tickets" : "All tickets"
   
 
 }

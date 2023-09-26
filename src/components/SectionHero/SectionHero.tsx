@@ -103,18 +103,19 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
 			"
 			>
 				<div
-					className=" z-[9999]  mt-[-60px] flex  h-[220px] w-full max-w-[400px] flex-col py-1  px-4
+					className=" z-0  mt-[-60px] flex  h-[220px] w-full max-w-[400px] flex-col py-1  px-4
 				max-sm:max-w-[400px]
 
 				"
 				>
 					<div
-						className="h-full w-[512px]  rounded-[4px] bg-[#FFFFFF1A] bg-cover bg-center pl-4 duration-500
+						className="h-full w-[512px] flex justify-center items-center rounded-[4px] bg-[#FFFFFF1A] bg-cover bg-center pl-4 duration-500
 						max-sm:max-w-[380px]
 					
 					"
 					>
-						<div className="text-white">
+					<div>
+					<div className="text-white">
 							<span>{currentIndex + 1}/4</span>
 							<div
 								className="mb-6 h-1  w-[400px] bg-[#FFFFFF1A] 
@@ -138,8 +139,9 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
 							Lorem , consectetur adipiscing elit. Vestibulum porta ipsum
 						</p>
 					</div>
+					</div>
 					<div
-						className="absolute top-[30%] right-[-48px]  flex h-[42px] max-sm:right-[28%]
+						className="absolute top-[20%] right-[-48px] rtl:right-[500px] flex h-[42px] max-sm:right-[28%]
 						max-sm:rtl:right-[98%]
 						 w-[42px] translate-y-[-100%]	 translate-x-[70px] cursor-pointer 
 						 items-center justify-center rounded-full bg-[#EBEBEC70]  p-2 text-2xl text-white"
@@ -162,17 +164,17 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
 							</svg>
 						</button>
 					</div>
-					<div className="mt-2 flex cursor-pointer justify-center gap-3">
+					<div className="mt-2 flex cursor-pointer justify-center gap-3 ">
 						{slides.map((slide, slideIndex) => (
 							<button
 								key={slideIndex}
-								className="cursor-pointer text-2xl text-white "
+								className=" z-0 cursor-pointer text-2xl text-white  "
 								onClick={() => {
 									goToSlide(slideIndex);
 								}}
 							>
 								<img
-									className="h-[64px] w-[64px] cursor-pointer rounded-[4px]"
+									className="h-[64px] w-[64px] cursor-pointer rounded-[4px] "
 									src={slide.url}
 									alt=""
 								/>

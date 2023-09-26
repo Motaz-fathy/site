@@ -32,7 +32,7 @@ const MainNav1: FC<MainNav1Props> = ({ className = "" }) => {
 	}, [localStorage.getItem("token"), localStorage.getItem("name")]);
 
 	return (
-		<div className={`nc-MainNav1 relative z-[9999] ${className}`}>
+		<div className={`  nc-MainNav1 relative  ${className}`}>
 			<div className="relative flex h-20 items-center justify-between px-4 py-4 lg:container lg:py-2">
 				<div className="flex flex-1 items-center justify-start space-x-4 sm:space-x-10 md:flex">
 					<MenuBar />

@@ -170,7 +170,9 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 					return (
 						<li
 							onClick={() => setTabActive(tab)}
-							className={`inline-flex min-w-fit cursor-pointer items-center rounded-full  text-sm font-normal text-neutral-700  hover:bg-neutral-100 hover:text-neutral-900 sm:py-2 sm:px-4 xl:px-5 xl:text-base ${
+							className={`inline-flex min-w-fit cursor-pointer items-center rounded-full 
+							 text-sm font-normal text-neutral-700  hover:bg-neutral-100 hover:text-neutral-900 sm:py-2 
+							 sm:px-4 xl:px-5 xl:py-2 xl:text-base rtl:min-w-fit rtl:px-[20px] rtl:py-4 max-sm:rtl:py-2  max-sm:rtl:px-[10px]${
 								active
 									? "pointer-events-none bg-[#E8ECF2] !text-neutral-900 "
 									: ""

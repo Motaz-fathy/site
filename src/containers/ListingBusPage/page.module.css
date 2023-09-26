@@ -242,9 +242,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-   width : 120px ;
+   width : 100px ;
    height : 40px ;
-   margin-left : 400px ;
+  
+   
     border: 1px solid #B9C4D5;
     border-radius: 10px;
     cursor: pointer;
@@ -252,7 +253,7 @@
 }
 .f4_container {
     position: absolute;
-    top: 370px;
+    top: 295px;
     left: calc(0%);
     display: block;
     width: 100%;
@@ -276,7 +277,7 @@
 }
 .f1_container {
     position: absolute;
-    top: 370px;
+    top: 295px;
     left: 0;
     display: block;
 }
@@ -299,7 +300,7 @@
 }
 .f2_container {
     position: absolute;
-    top:370px;
+    top:295px;
     left: calc(0%);
     display: block;
     width: 100%;
@@ -323,7 +324,7 @@
 }
 .f3_container {
     position: absolute;
-    top: 370px;
+    top: 295px;
     left: calc(0%);
     display: block;
     width: 100%;
@@ -349,7 +350,7 @@
 }
 .f5_container {
     position: absolute;
-    top: 370px;
+    top: 295px;
     left: calc(0%);
     display: block;
     width: 100%;
@@ -371,24 +372,34 @@
 }
 .f6_container {
     position: absolute;
-    top: 370px;
+    top: 295px;
     left: calc(0%);
     display: block;
-    width: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .f6_dis{
     display: none;
 }
 /* end scroll width  */
+
+
+
+
 @media  screen and (max-width: 1024px) {
     .filter_items {
         display: none;
     }
- 
+   
 }
-@media screen  and (min-width : 1024px){
+@media screen   and  (min-width : 1011px){
     .min_filter_items {
         display: none;
+    }
+    .filter_items {
+        display: block;
     }
     .scroll {
     display: none;
@@ -397,7 +408,6 @@
         display: none;
     }
 }
-@media  screen and (max-width: 700px) {}
 @media  screen and (max-width: 700px) {
 
     .min_filter_items {

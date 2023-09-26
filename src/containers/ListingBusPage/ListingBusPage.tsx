@@ -546,41 +546,41 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 						<animateTransform attributeName="transform" type="rotate" dur="0.75s" values="0 12 12;360 12 12" repeatCount="indefinite"/></path></svg>
 					</div>
 				)}
-				<div className={`flex flex-row max-sm:hidden  w-[85vw] justify-between ${Styled.BusHome_container}`}>
+				<div className={`flex flex-row max-sm:hidden  w-[85vw] justify-between  ${Styled.BusHome_container}`}>
 		
 				
-				<div className={` lg:w-[30%] md:w-0 ${Styled.Fillter_component}`} >
-				<div className=" max-sm:hidden flex justify-between items-center w-[85%] mb-3">
-                        <div className="flex justify-start items-center">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-						<path d="M10.5 6H20.25M10.5 6C10.5 6.39782 10.342 6.77936 10.0607 7.06066C9.77936 7.34196 9.39782 7.5 9 7.5C8.60218 7.5 8.22064 7.34196 7.93934 7.06066C7.65804 6.77936 7.5 6.39782 7.5 6M10.5 6C10.5 5.60218 10.342 5.22064 10.0607 4.93934C9.77936 4.65804 9.39782 4.5 9 4.5C8.60218 4.5 8.22064 4.65804 7.93934 4.93934C7.65804 5.22064 7.5 5.60218 7.5 6M7.5 6H3.75M10.5 18H20.25M10.5 18C10.5 18.3978 10.342 18.7794 10.0607 19.0607C9.77936 19.342 9.39782 19.5 9 19.5C8.60218 19.5 8.22064 19.342 7.93934 19.0607C7.65804 18.7794 7.5 18.3978 7.5 18M10.5 18C10.5 17.6022 10.342 17.2206 10.0607 16.9393C9.77936 16.658 9.39782 16.5 9 16.5C8.60218 16.5 8.22064 16.658 7.93934 16.9393C7.65804 17.2206 7.5 17.6022 7.5 18M7.5 18H3.75M16.5 12H20.25M16.5 12C16.5 12.3978 16.342 12.7794 16.0607 13.0607C15.7794 13.342 15.3978 13.5 15 13.5C14.6022 13.5 14.2206 13.342 13.9393 13.0607C13.658 12.7794 13.5 12.3978 13.5 12M16.5 12C16.5 11.6022 16.342 11.2206 16.0607 10.9393C15.7794 10.658 15.3978 10.5 15 10.5C14.6022 10.5 14.2206 10.658 13.9393 10.9393C13.658 11.2206 13.5 11.6022 13.5 12M13.5 12H3.75" stroke="#69696A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
-						<span className="ml-3">filter</span>
+						<div className={` lg:w-[30%] lg:block md:block sm:hidden max-sm:hidden  ${Styled.Fillter_component}`} >
+						<div className=" max-sm:hidden flex justify-between items-center w-[85%] mb-3 rtl:mr-10">
+								<div className="flex justify-start items-center">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path d="M10.5 6H20.25M10.5 6C10.5 6.39782 10.342 6.77936 10.0607 7.06066C9.77936 7.34196 9.39782 7.5 9 7.5C8.60218 7.5 8.22064 7.34196 7.93934 7.06066C7.65804 6.77936 7.5 6.39782 7.5 6M10.5 6C10.5 5.60218 10.342 5.22064 10.0607 4.93934C9.77936 4.65804 9.39782 4.5 9 4.5C8.60218 4.5 8.22064 4.65804 7.93934 4.93934C7.65804 5.22064 7.5 5.60218 7.5 6M7.5 6H3.75M10.5 18H20.25M10.5 18C10.5 18.3978 10.342 18.7794 10.0607 19.0607C9.77936 19.342 9.39782 19.5 9 19.5C8.60218 19.5 8.22064 19.342 7.93934 19.0607C7.65804 18.7794 7.5 18.3978 7.5 18M10.5 18C10.5 17.6022 10.342 17.2206 10.0607 16.9393C9.77936 16.658 9.39782 16.5 9 16.5C8.60218 16.5 8.22064 16.658 7.93934 16.9393C7.65804 17.2206 7.5 17.6022 7.5 18M7.5 18H3.75M16.5 12H20.25M16.5 12C16.5 12.3978 16.342 12.7794 16.0607 13.0607C15.7794 13.342 15.3978 13.5 15 13.5C14.6022 13.5 14.2206 13.342 13.9393 13.0607C13.658 12.7794 13.5 12.3978 13.5 12M16.5 12C16.5 11.6022 16.342 11.2206 16.0607 10.9393C15.7794 10.658 15.3978 10.5 15 10.5C14.6022 10.5 14.2206 10.658 13.9393 10.9393C13.658 11.2206 13.5 11.6022 13.5 12M13.5 12H3.75" stroke="#69696A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								<span className="ml-3 rtl:mr-3">{t("filter")}</span>
+								</div>
+								<span className="text-[#1D4179] text-[16px] font-[400] ">{t("Reset all")} </span>
 						</div>
-						<span className="text-[#1D4179] text-[16px] font-[400]">Reset all </span>
-				</div>
 
-				
-						{
-							!loading && travelData.length > 0 ?
-								<BusResultsFilters className="flex-1 mr-10" 
-								RefactoredData={travelDataImmutable} isLoading={loading}
-								TravleFrom = {T_F} 
-								TravleTo = {T_T}
-								setData={setDisplayableData}
-								// setRefactoredData={setRefactoredTrips} setFilterFunction={setFilterFunction}
-								/> : null
-						}
 						
-						{/* <SeatCard height={true} /> */}
-						{/* {operatorsCompo("classes")}
-						{operatorsCompo("operators")}
-						{operatorsCompo("station_from")}
-						{operatorsCompo("station_to")} */}
+								{
+									!loading && travelData.length > 0 ?
+										<BusResultsFilters className="flex-1 mr-10" 
+										RefactoredData={travelDataImmutable} isLoading={loading}
+										TravleFrom = {T_F} 
+										TravleTo = {T_T}
+										setData={setDisplayableData}
+										// setRefactoredData={setRefactoredTrips} setFilterFunction={setFilterFunction}
+										/> : null
+								}
+								
+								{/* <SeatCard height={true} /> */}
+								{/* {operatorsCompo("classes")}
+								{operatorsCompo("operators")}
+								{operatorsCompo("station_from")}
+								{operatorsCompo("station_to")} */}
 
-				</div>
+						</div>
 
-						<div className={` ${Styled.Min_filter} w-[100%] h-[60px]`}>
+						<div className={`lg:hidden md:hidden sm:block max-sm:block ${Styled.Min_filter} w-[100%] h-[60px]`}>
 						{
 							!loading && travelData.length > 0 ?
 								<BusResultsFilters className="flex-1 mr-10" 

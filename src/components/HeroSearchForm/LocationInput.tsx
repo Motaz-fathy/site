@@ -415,7 +415,7 @@ const LocationInput: FC<LocationInputProps> = ({
 					showPopover ? "nc-hero-field-focused" : ""
 				} md:h-full`}
 			>
-				<div className="w-fit text-neutral-300 dark:text-neutral-400  ">
+				<div className="w-fit text-neutral-300 dark:text-neutral-400 rtl:ml-3 rtl:mr-1 max-sm:rtl:mr-4">
 					{type && typeIcon ? (
 						typeIcon === "from" ? (
 							SVGS_ICON[type ?? ""].from

@@ -319,5 +319,18 @@
   "Total" : " اجمالى السعر",
   "Book your ticket" : "احجز تذكرتك ",
   "Price per person" : "السعر للفرد",
-  "Egyption" : "مصرى"
+  "Egyption" : "مصرى" ,
+  "filter" : "فلتر",
+  "Reset all" : "اعادة الضبط",
+  "H" : "س",
+  "M" : "د",
+  "Bus times" : "اوقات الاتوبيسات",
+  "Price" : "السعر",
+  "Classes" : "الدرجات",
+  "departure Stations" : "اماكن الركوب",
+  "Arrival Stations" : "اماكن الوصول",
+  "Operators" : "الشركات",
+  "seats free" : "مقعد متاح",
+  "results" : "نتيجة",
+  "All tickets" : "كل التذاكر"
 }
