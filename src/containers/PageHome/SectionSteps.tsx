@@ -50,10 +50,10 @@ const SectionSteps = ({
 						</div>
 					))}
 				</div>
-				<div className="relative mt-10 flex flex-col justify-center  rtl:gap-2 sm:flex-row lg:mt-[100px]">
+				<div className="relative mt-10 flex flex-col justify-center  rtl:gap-2 sm:flex-row lg:mt-[100px]  ">
 					<div className="mt-18 relative order-2 max-w-2xl flex-shrink-0 sm:order-1 lg:mt-14 lg:w-2/5">
 						<img
-							className="absolute bottom-[-15px] mx-auto hidden lg:block"
+							className="absolute top-[30px] mx-auto hidden lg:block"
 							src={wordImg}
 						/>
 					</div>
@@ -73,8 +73,9 @@ const SectionSteps = ({
 							<span className="sr-only">Search</span>
 							<span className="absolute inset-y-0 left-0 flex items-center pl-2 rtl:inset-x-0 rtl:right-0 ">
 								<svg
-									width="24"
-									height="24"
+								className="mx-1"
+									width="20"
+									height="20"
 									viewBox="0 0 24 24"
 									fill="none"
 									xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +98,7 @@ const SectionSteps = ({
 								</svg>
 							</span>
 							<input
-								className="border-1 before:content-before mt-5 block rounded-none border border-white bg-transparent bg-white px-6 py-4 pr-6 pl-9 text-base text-white placeholder-white placeholder-opacity-50 shadow-sm placeholder:text-slate-400 before:pointer-events-none before:absolute before:inset-y-0 before:left-0 before:flex before:items-center before:pl-3 focus:border-transparent focus:outline-none focus:ring-1 rtl:before:inset-x-0 sm:w-3/5 sm:text-sm"
+								className="border-1 before:content-before mt-5 block rounded-none border border-white bg-transparent bg-white px-6 py-4   text-base text-white placeholder-white placeholder-opacity-50 shadow-sm placeholder:text-slate-400 before:pointer-events-none before:absolute before:inset-y-0 before:left-0 before:flex before:items-center before:pl-3 focus:border-transparent focus:outline-none focus:ring-1 rtl:before:inset-x-0 sm:w-3/5 sm:text-sm"
 								placeholder={t("newsletterPlaceHolder") || "Enter your email"}
 								type="email"
 								name="search"

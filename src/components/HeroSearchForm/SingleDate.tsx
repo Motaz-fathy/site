@@ -282,7 +282,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
 	return (
 		<>
 			<div
-				className={`  ExperiencesDateSingleInput relative flex lg:rtl:mr-3  max-sm:rtl:w-full  max-sm:rtl:translate-x-[0px] lg:translate-x-[5px] pt-3 sm:pt-0   ${className} ${
+				className={`  ExperiencesDateSingleInput relative flex lg:rtl:mr-3  max-sm:rtl:w-[100%]  max-sm:rtl:translate-x-[0px] lg:translate-x-[25px] pt-3 sm:pt-0   ${className} ${
 					!!focusedInput ? "nc-date-focusedInput" : "nc-date-not-focusedInput"
 				}`}
 			>
