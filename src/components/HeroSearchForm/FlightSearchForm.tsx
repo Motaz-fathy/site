@@ -155,7 +155,7 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 				>
 					<div className="relative">
 						<input type="checkbox" className="sr-only" />
-						<div className="box mr-2 flex h-5 w-5 items-center justify-center rounded-full border border-[#1D4179]">
+						<div className="box mr-2 rtl:ml-2 flex h-5 w-5 items-center justify-center rounded-full border border-[#1D4179]">
 							<span
 								className={`h-[10px] w-[10px] rounded-full
                ${
@@ -180,7 +180,7 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 				>
 					<div className="relative">
 						<input type="checkbox" id="checkboxLabelFour" className="sr-only" />
-						<div className="box mr-2 flex h-5 w-5 items-center justify-center rounded-full border border-[#1D4179]">
+						<div className="box mr-2 rtl:ml-2 flex h-5 w-5 items-center justify-center rounded-full border border-[#1D4179]">
 							<span
 								className={`h-[10px] w-[10px] rounded-full
                ${

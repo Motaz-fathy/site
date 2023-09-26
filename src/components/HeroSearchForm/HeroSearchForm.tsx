@@ -182,12 +182,13 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 							key={tab}
 						>
 							<span
-								className={`flex min-w-fit  gap-1 ltr:mx-4 ltr:py-2 rtl:ml-2 sm:gap-2  ${
-									tab === tabs[1] ? "w-fit" : ""
+								className={`flex min-w-fit  gap-1 items-center
+								ltr:mx-4 ltr:py-2 rtl:ml-2 max-sm:ltr:mx-4  max-sm:ltr:py-2  max-sm:rtl:ml-1 sm:gap-2  ${
+									tab === tabs[1] ? "w-fit " : ""
 								}`}
 							>
 								{SVGS_ICON[tab]}
-								<span className="w-full">{t(tab)}</span>
+								<span className="w-full ml-1 rtl:mr-1">{t(tab)}</span>
 							</span>
 						</li>
 					);
