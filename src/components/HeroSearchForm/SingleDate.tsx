@@ -70,7 +70,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
 
 		return (
 			<div
-				className={`relative ${type === "maritime"? 'w-[34vw]' :type === "bus"?"w-[20vw]":type === "flight"?"w-[14vw]":type === "cars"?"w-[34vw]":"w-auto"}    h-[54px] flex  max-sm:w-full  ${fieldClassName} cursor-pointer items-center  gap-1 rounded-full border-[1px]  border-[#E8ECF2] pl-2 text-left focus:outline-none sm:flex-shrink-0 sm:rounded-[4px]  ${className} ${
+				className={`relative ${type === "maritime"? 'w-[34vw]' :type === "bus"?"w-[20vw]":type === "flight"?"w-[14vw]":type === "cars"?"w-[25vw] lg:ml-3":"w-auto"}    h-[55px] flex  max-sm:w-full  ${fieldClassName} cursor-pointer items-center  gap-1 rounded-full border-[1px]  border-[#E8ECF2] pl-2 text-left focus:outline-none sm:flex-shrink-0 sm:rounded-[4px]  ${className} ${
 					focused ? "nc-hero-field-focused" : " "
 				}`}
 			>
@@ -282,11 +282,12 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
 	return (
 		<>
 			<div
-				className={`  ExperiencesDateSingleInput relative flex lg:rtl:mr-3  max-sm:rtl:w-[100%]  max-sm:rtl:translate-x-[0px] lg:translate-x-[25px] pt-3 sm:pt-0   ${className} ${
+				className={` relative  flex pt-3 sm:pt-0   ${className} ${
 					!!focusedInput ? "nc-date-focusedInput" : "nc-date-not-focusedInput"
-				}`}
+				}   max-sm:w-full ${type === "maritime"? 'w-[34vw]' :type === "bus"?" w-[25vw]":type === "cars" ? "w-[30vw] ":"w-[14vw]"}   `}
+		
 			>
-				<div className="absolute inset-0 flex">
+				<div className={`absolute inset-0   flex ${type === "maritime"? 'w-[34vw]' :type === "bus"?" w-[25vw]":type === "cars" ?"w-[30vw]   ":"w-[14vw]"}  `} >
 					<SingleDatePicker
 						date={startDate}
 						onDateChange={date => {

@@ -25,6 +25,7 @@ import { BusinessBus } from "shared/businessBus";
 import { FirstTenBus } from "shared/firstTen";
 import { FirstEightBus } from "shared/firstEight";
 import i18next from "i18next";
+import { EconomyBus } from "shared/EconomyBus";
 
 export interface CheckOutPageProps {
 	className?: string;
@@ -503,7 +504,15 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
 							selected={selectedSeatsList}
 							setSelected={setSelectedSeatsList}
 						/>
-					) : seatsType === "First10" ? (
+					) : seatsType === "economy" || seatsType === "Economy" ? (
+						<EconomyBus
+							seats={seats}
+							selected={selectedSeatsList}
+							setSelected={setSelectedSeatsList}
+						/>
+					) 
+					
+					: seatsType === "First10" ? (
 						<FirstTenBus
 							seats={seats}
 							selected={selectedSeatsList}
@@ -515,7 +524,9 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
 							selected={selectedSeatsList}
 							setSelected={setSelectedSeatsList}
 						/>
-					)}
+					)
+					
+					}
 					{!!priceData && (
 						<div className="my-3  w-full">
 							{/* <p className="text-lg text-green-500">
@@ -790,6 +801,8 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
 
         </div> */}
 			</main>
+
+			
 			<PaymentDetailsModal
 				iframe={iframe}
 				isOpenProp={isOpen}
