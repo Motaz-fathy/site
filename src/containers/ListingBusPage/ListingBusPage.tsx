@@ -37,6 +37,7 @@ export interface ListingFlightsPageProps {
 	className?: string;
 }
 const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
+	window.scrollTo(0,0)
 	const { t } = useTranslation();
 	const { search } = useLocation();
 	const [date, setDate] = useState<string>("");
@@ -61,8 +62,7 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 	const [first, setFirst] = useState("")
     
 
-	let counter: any = []
-	let allTrips_filtered: any = [];
+	
 	const [filterToStation, setFilerToStation] = useState<string>("");
 	// after filtration
 	const [FinalTrips, SetFinalTrips] = useState<any>([]);

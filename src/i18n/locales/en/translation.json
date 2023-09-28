@@ -333,7 +333,11 @@
   "results" :"results",
   "All tickets" : "All tickets",
   "Passenger" : "Passenger",
-  "After Discount" : "After Discount"
+  "After Discount" : "After Discount",
+  "Login" : "Login",
+  "LE" : "LE",
+  "Depart from" : "Depart from",
+  "arrival to" : "arrival to"
   
 
 }

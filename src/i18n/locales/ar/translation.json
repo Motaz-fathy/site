@@ -314,6 +314,7 @@
   "one round" :"اتجاه واحد",
   "Ticket Price" : "سعر التذكرة",
   "EGP " : "جنية",
+  "LE" : "جنية",
   "Discount" : "خصومات" ,
   "Tax Included" : " الضرائب" ,
   "Total" : " اجمالى السعر",
@@ -334,5 +335,8 @@
   "results" : "نتيجة",
   "All tickets" : "كل التذاكر",
   "Passenger" : "راكب",
-  "After Discount" : "بعد الخصم"
+  "After Discount" : "بعد الخصم",
+  "Login" : "تسجيل الدخول",
+  "Depart from" : "اماكن الركوب",
+  "arrival to" : "اماكن الوصول"
 }

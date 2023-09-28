@@ -87,7 +87,8 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
 		const focused = focusedInput === "startDate";
 		return (
 			<div
-				className={`relative  flex  max-sm:w-full  ${type === "maritime"? 'w-[34vw]' :type === "bus"?" w-[25vw]":type === "cars" ?"w-[30vw] max-sm:w-[100vw] rtl:translate-x-[60px]  max-sm:rtl:translate-x-[35px] ":"w-[14vw] "}   ${fieldClassName}cursor-pointer items-center  gap-[10px] rounded-full border-[1px]  border-[#E8ECF2]  text-left focus:outline-none sm:flex-shrink-0 sm:rounded-[4px]  ${className} ${
+				className={`relative  flex  max-sm:w-full 
+				 ${type === "maritime"? 'w-[34vw]' :type === "bus"?" w-[25vw]":type === "cars" ?"w-[30vw] max-sm:w-[100vw] rtl:translate-x-[60px]  max-sm:rtl:translate-x-[35px] ":"w-[14vw] "}   ${fieldClassName}cursor-pointer items-center  gap-[10px] rounded-full border-[1px]  border-[#E8ECF2]  text-left focus:outline-none sm:flex-shrink-0 sm:rounded-[4px]  ${className} ${
 					focused ? "nc-hero-field-focused" : " "
 				}`}
 			>

@@ -77,8 +77,8 @@ const MainNav1: FC<MainNav1Props> = ({ className = "" }) => {
 										/>
 									</svg>
 								</div>{" "}
-								<Link className=" text-[#1d4179] sm:block" to="/login">
-									Login
+								<Link className=" text-[#1d4179] sm:block max-sm:text-[14px]" to="/login">
+									{t("Login")}
 								</Link>
 							</>
 						)}

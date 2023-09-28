@@ -392,7 +392,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
                 <div className="mb-10 flex h-6 h-fit w-full flex-col rounded-lg bg-white p-3 shadow-md">
                     <h5 className="border-w border-b-2 p-2">{t("Bus times")}</h5>
                     <div className="h-fit w-full ">
-                        <h6 className="my-4 text-sm text-slate-500">{`Depart from (${from})`}</h6>
+                        <h6 className="my-4 text-sm text-slate-500">{t("Depart from")}{` (${from})`}</h6>
                         <div className="my-3 flex justify-between">
                             <span className="text-xs">{travel_atTimes[0]}</span>
                             <span className="text-xs">
@@ -415,7 +415,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
                             onChange={(e: any) => setDepartureRange(e)}
                         />
                         <div className="h-fit w-full ">
-                            <h6 className="my-4 text-sm text-slate-500">{`arrival to (${to})`}</h6>
+                            <h6 className="my-4 text-sm text-slate-500">{t("arrival to")}{`(${to})`}</h6>
                             <div className="my-3 flex justify-between">
                                 <span className="text-xs">
                                     {arrival_atTimes[0]}

@@ -9,12 +9,16 @@ import blue_bus_logo from "images/image 4.png";
 import miniBus from "images/bus1.png";
 import moment, { Moment } from "moment";
 import { t } from "i18next";
+import { toast } from "react-toastify";
 
 export interface FlightCardProps {
   refactoredData?: any;
 }
 
 const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
+
+  
+
   function removeDuplicates(travelData: any) {
     const uniqueData = [];
     const keySet: string[] = [];
@@ -58,10 +62,17 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
   };
 
   refactoredData = removeDuplicates(refactoredData);
+ 
   console.log("refactoredData",refactoredData)
   const navigate = useNavigate();
-  const busCardContainer = (data: any) => {
-    return refactoredData?.map((item: any ) => (
+  const busCardContainer = (refactoredData: any) => {
+    let refactory = refactoredData.filter((item: any) => {
+      if(item.available_seats === 0) {
+        return item
+      }
+      toast.info("bus no available seats")
+    })
+    return refactory?.map((item: any ) => (
      
       <div
         key={item.id}
@@ -233,17 +244,21 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
                   style={{ borderRadius: "24px", textAlign: "center" }}
                 >
                   {" "}
+                  {item?.available_seats === 0 ?
+                  
+                  "" : <>
                   {item?.available_seats} {t("seats free")}{" "}
+                  </>  } 
                 </div>
               </div>
            
           </div>
           <div className="flex flex-row justify-between">
-            <div className="flex flex-col justify-between">
-              <h4 className="text-[20px] font-[700] text-[#1E1E1E]">
-                LE {item?.prices_start_with}
+            <div className="flex flex-col justify-between lg:rtl:ml-2 md:rtl:ml-2">
+              <h4 className="text-[20px] font-[700] text-[#1E1E1E] ">
+                 {item?.prices_start_with} {t("LE")}
               </h4>
-              <h4 className="text-[10px] rtl:ml-3 max-sm:text-[8px]">{t("price per person")}</h4>
+              <h4 className="text-[10px] rtl:ml-3 max-sm:text-[8px]">{t("Price per person")}</h4>
             </div>
             <div className="h-full justify-center align-middle ">
               <button

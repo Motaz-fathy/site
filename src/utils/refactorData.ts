@@ -7,7 +7,7 @@ const refactorData = (trips: any) => {
  
 	
     const data = [...trips]
-	console.log("trips" , data )
+	
 	return data.flatMap((trip: any ) =>
 	   
 			trip.stations_from.flatMap((itemFrom: any) =>
