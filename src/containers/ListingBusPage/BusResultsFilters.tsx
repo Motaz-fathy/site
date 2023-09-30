@@ -4,7 +4,7 @@ import removeDuplicates from "utils/removeDuplicates";
 import { RefactoredData } from "./ListingBusPage";
 import { each, filter, set } from "lodash";
 import Styled from './page.module.css'
-import { t } from "i18next";
+import i18next, { t } from "i18next";
 //ingore ts
 export interface RangeFilterProps {
     filterName: string;
@@ -481,10 +481,21 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
                         <h5 className="border-w border-b-2 p-2">{t("Price")}</h5>
                         <div className="h-fit w-full ">
                             <div className="my-3 flex justify-between">
-                                <span className="text-xs">{Max_Min_prices[0]}   </span>
+                            {
+                                i18next.language === "en" ? 
+                                <>
+                                 <span className="text-xs"> {Max_Min_prices[0]}   </span>
                                 <span className="text-xs">
                                 {Max_Min_prices[Max_Min_prices.length -1]}
                                 </span>
+                                </> : 
+                                <>
+                                 <span className="text-xs">  {Max_Min_prices[Max_Min_prices.length -1]}  </span>
+                                <span className="text-xs">
+                                 {Max_Min_prices[0]}
+                                </span>
+                                </>
+                               }
                             </div>
                             <Slider
                                 range
@@ -618,22 +629,33 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
                 <div className={`${ f2 ? Styled.f2_container : Styled.f2_dis}`}>
                 {
                     nonDuplicatedPrices.length > 1 &&
-                    <div className={`mb-10 flex h-6 h-fit w-full flex-col rounded-lg bg-white p-3 shadow-md`}>
-                        <h5 className="border-w border-b-2 p-2">Price</h5>
+                    <div className="mb-10 flex h-6 h-fit w-full flex-col rounded-lg bg-white p-3 shadow-md">
+                        <h5 className="border-w border-b-2 p-2">{t("Price")}</h5>
                         <div className="h-fit w-full ">
                             <div className="my-3 flex justify-between">
-                                <span className="text-xs">{nonDuplicatedPrices[0]}</span>
+                               {
+                                i18next.language === "en" ? 
+                                <>
+                                 <span className="text-xs"> {Max_Min_prices[0]}   </span>
                                 <span className="text-xs">
-                                    {nonDuplicatedPrices[nonDuplicatedPrices.length - 1]}
+                                {Max_Min_prices[Max_Min_prices.length -1]}
                                 </span>
+                                </> : 
+                                <>
+                                 <span className="text-xs">  {Max_Min_prices[Max_Min_prices.length -1]}  </span>
+                                <span className="text-xs">
+                                 {Max_Min_prices[0]}
+                                </span>
+                                </>
+                               }
                             </div>
                             <Slider
                                 range
                                 pushable={true}
                                 className="text-red-400"
-                                min={0}
-                                max={nonDuplicatedPrices.length}
-                                defaultValue={[0, nonDuplicatedPrices.length - 1]}
+                                min={Max_Min_prices[0]}
+                                max={Max_Min_prices[Max_Min_prices.length -1]}
+                                defaultValue={[Max_Min_prices[0],Max_Min_prices[Max_Min_prices.length -1]]}
                                 allowCross={false}
                                 step={1}
                                 onChange={e => setPriceRange(e)}

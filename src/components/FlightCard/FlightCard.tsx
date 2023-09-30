@@ -215,27 +215,25 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
 			lg:h-[54px] lg:flex-row 
 			"
         >
-          <div className="">
+          <div className="container max-sm:w-full flex max-sm:justify-center max-sm:items-center  lg:justify-between lg:items-center">
            
               <div
-                className="flex flex-row 
-									
-									
-									"
+                className="max-sm:w-full  flex justify-center items-center "
               >
-                <img src={tv} className="mr-1 h-[40px] w-[40px] " alt="" />
-                <img src={conditioning} className=" h-[40px] w-[40px] rtl:mr-3" alt="" />
+                <img src={tv} className="max-sm:mr-5 h-[40px] w-[40px] lg:rtl:ml-5 md:rtl:ml-5" alt="tv" />
+                <img src={conditioning} className=" h-[40px] w-[40px] lg:ml-5 md:ml-5 rtl:mr-3" alt="conditioning" />
                 <div
-                  className="ml-2 h-[40px] w-[120px] items-center max-sm:h-[40px] max-sm:w-[120px]
+                  className="max-sm:ml-5 rtl:mr-5 h-[40px] w-[120px] lg:ml-5 md:ml-5 items-center max-sm:h-[40px] max-sm:w-[120px]
                    justify-center bg-[#E8ECF2] p-[8px] align-middle text-[14px] text-[#69696A]
-                   rtl:mr-3
+                   
+                   max-sm:rtl:mr-5
                    "
                   style={{ borderRadius: "24px", textAlign: "center" }}
                 >
                   {item?.classes}{" "}
                 </div>
                 <div
-                  className="h-[40px]  w-[120px]  justify-center p-[8px] align-middle max-sm:text-[12px]  max-sm:leading-[15px] text-[16px] text-[#69696A]"
+                  className="h-[40px]  w-[120px] md:ml-5 lg:ml-5 justify-center rtl:mr-5  p-[8px] align-middle max-sm:text-[12px]  max-sm:leading-[15px] text-[16px] text-[#69696A]"
                   style={{ borderRadius: "24px", textAlign: "center" }}
                 >
                  
@@ -251,11 +249,11 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
            
           </div>
           <div className="flex flex-row justify-between">
-            <div className="flex flex-col justify-between lg:rtl:ml-2 md:rtl:ml-2">
+            <div className="flex flex-col justify-between w-[80px] lg:rtl:ml-3 md:rtl:ml-2 ">
               <h4 className="text-[20px] font-[700] text-[#1E1E1E] ">
                  {item?.prices_start_with} {t("LE")}
               </h4>
-              <h4 className="text-[10px] rtl:ml-3 max-sm:text-[8px]">{t("Price per person")}</h4>
+              <span className="text-[10px] rtl:ml-3 max-sm:text-[8px] ">{t("Price per person")}</span>
             </div>
             <div className="h-full justify-center align-middle ">
               <button
