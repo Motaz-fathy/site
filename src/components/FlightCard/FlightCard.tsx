@@ -195,12 +195,12 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
           <div className="flex  flex-col space-y-6 sm:flex-row sm:items-center sm:space-y-0">
             {/* LOGO IMG */}
 
-            <div className="w-24 flex-shrink-0 lg:w-36">
+            <div className="w-24 flex-shrink-0 lg:w-36 lg:translate-x-[0px] md:translate-x-[-50px]">
               {item?.gateway_id?.includes("WEBUS") && (
 									<img src={miniBus} className="w-[150px] h-[80px] max-sm:w-[75px] max-sm:h-[40px]" alt="" />
 								)}
 								{item?.gateway_id?.includes("BlueBus") && (
-									<img src={bus} className="w-[150px] h-[80px] max-sm:w-[100px] max-sm:h-[70px]" alt="" />
+									<img src={bus} className="w-[150px] h-[80px] lg:w-[150px]  max-sm:w-[100px] max-sm:h-[70px]" alt="" />
 								)}
             	
             </div>

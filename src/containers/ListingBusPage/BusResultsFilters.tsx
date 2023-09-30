@@ -56,7 +56,6 @@ export interface CheckBoxTypes {
 export const CheckBox = (props: CheckBoxTypes) => {
     
     const { checkBoxArray, name, handleChange, title } = props;
-    console.log("checkBox",props.checkBoxArray)
     return (
         <div className="mb-10 flex h-6 h-fit w-full flex-col rounded-lg bg-white p-3 shadow-md">
             <h5 className="border-w border-b-2 p-2">{`${t(title)}`}</h5>
@@ -126,6 +125,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
     const rawDataForTravel_at = [...refactoredData];
     const rawDataForprices = [...refactoredData];
 
+    
     const sortedTravel_at = rawDataForTravel_at.sort(
         (a: RefactoredData, b: RefactoredData) =>
             new Date(a.travel_at).getTime() - new Date(b.travel_at).getTime(),
@@ -140,6 +140,20 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
         (each: any) => each.travel_at
     );
 
+     function remove (arr: any[])  {
+        const resulte : any[] = [] 
+        arr.forEach((item: any) => {
+                 if(!resulte.includes(item)){
+                    resulte.push(item)
+                 }
+        })
+        
+        return resulte
+        
+    }
+    const Max_Min_prices = remove(prices)
+    console.log("Max_Min_prices" , Max_Min_prices)
+    
     const [departureRange, setDepartureRange] = useState<[number, number]>([
         0,
         travel_atTimes.length,
@@ -148,10 +162,11 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
         0,
         arrival_atTimes.length,
     ]);
-    const [pricelRange, setPriceRange] = useState<Number | Number[]>([
-        0,
-        prices.length - 1,
+    const [pricelRange, setPriceRange] = useState<any | any[]>([
+        
+         Max_Min_prices[0],Max_Min_prices[Max_Min_prices.length -1],
     ]);
+    console.log("pricelRange" , pricelRange)
     const [selectedCheckboxes, setSelectedCheckboxes] =
         useState<SelectedCheckBoxesProps>({
             seatsFilter: [],
@@ -160,7 +175,6 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
             arrivalFilter: [],
         });
       
-    console.log("arriavl filter " , selectedCheckboxes.arrivalFilter)
     //   const selectedCheckboxes = SelectedCheckboxes.filter((item: any) => {
 		
         // if(item.city_from === TravleFrom && item.city_to === TravleTo ) {
@@ -237,12 +251,12 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
         refactoredData,
         "prices_start_with",
     )?.map((each: any) => each.prices_start_with);
+    
     const nonDuplicatedClasses = removeDuplicates(refactoredData, "classes");
     const classes = nonDuplicatedClasses?.map(each => each.classes);
 
     const nonDuplicatedOperators = removeDuplicates(refactoredData, "gateway_id");
     const operators = nonDuplicatedOperators?.map(each => each.gateway_id);
-     console.log("operators" , operators)
     const nonDuplicatedDepartureStation = removeDuplicates(
         refactoredData,
         "travel_from",
@@ -258,7 +272,23 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
     const arrivalStations = arrivalStation.map(
         each => each.travel_to,
     );
-    console.log("arrivalStations" , arrivalStations)
+
+    const priceRangeFilterFunctionMoreThanFirstRangePoint = (
+        each : RefactoredData
+    ) => {
+        if (each.prices_start_with <= pricelRange[1] ) {
+            return true
+        }
+        return false  
+    } 
+    const priceRangeFilterFunctionMoreThanLastRangePoint = (
+        each : RefactoredData
+    ) => {
+        if (each.prices_start_with >= pricelRange[0] ) {
+            return true
+        }
+        return false  
+    } 
     const arrivalRangeFilterFunctionMoreThanFirstRangePoint = (
         each: RefactoredData,
     ) => {
@@ -307,7 +337,9 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
             departureRangeFilterFunctionLessThanLastRangePoint(each) &&
             arrivalRangeFilterFunctionLessThanLastRangePoint(each) &&
             arrivalRangeFilterFunctionMoreThanFirstRangePoint(each) &&
-            departureRangeFilterFunctionMoreThanFirstRangePoint(each)
+            departureRangeFilterFunctionMoreThanFirstRangePoint(each)&&
+            priceRangeFilterFunctionMoreThanFirstRangePoint(each) &&
+            priceRangeFilterFunctionMoreThanLastRangePoint(each)
         );
     };
 
@@ -449,18 +481,18 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
                         <h5 className="border-w border-b-2 p-2">{t("Price")}</h5>
                         <div className="h-fit w-full ">
                             <div className="my-3 flex justify-between">
-                                <span className="text-xs">{nonDuplicatedPrices[0]}</span>
+                                <span className="text-xs">{Max_Min_prices[0]}   </span>
                                 <span className="text-xs">
-                                    {nonDuplicatedPrices[nonDuplicatedPrices.length - 1]}
+                                {Max_Min_prices[Max_Min_prices.length -1]}
                                 </span>
                             </div>
                             <Slider
                                 range
                                 pushable={true}
                                 className="text-red-400"
-                                min={0}
-                                max={nonDuplicatedPrices.length}
-                                defaultValue={[0, nonDuplicatedPrices.length - 1]}
+                                min={Max_Min_prices[0]}
+                                max={Max_Min_prices[Max_Min_prices.length -1]}
+                                defaultValue={[Max_Min_prices[0],Max_Min_prices[Max_Min_prices.length -1]]}
                                 allowCross={false}
                                 step={1}
                                 onChange={e => setPriceRange(e)}

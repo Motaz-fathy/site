@@ -26,9 +26,9 @@ import { getDuration } from "utils/getDuration";
 import refactorData from "utils/refactorData";
 import Styled from './page.module.css'
 
-// D:\work\telfric\web site\Telefric\src\components\departureCard\DepartureCard.module.css
 export interface RefactoredData { classes: string, travel_from: string, travel_to: string, 
-	gateway_id: string, arrival_at: string, travel_at: string }
+	gateway_id: string, arrival_at: string, travel_at: string , prices_start_with: number }
+
 export interface City {
 	id: number;
 	name: string;
@@ -61,7 +61,6 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 	const [displayableData, setDisplayableData] = useState<any>([])
 	const [first, setFirst] = useState("")
     
-
 	
 	const [filterToStation, setFilerToStation] = useState<string>("");
 	// after filtration
@@ -83,9 +82,6 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 	}, [search]);
 	const [loading, setLoading] = useState<boolean>(false);
 
-    
-
-
 	const getTripsBus = async () => {
 		setLoading(true);
 
@@ -100,7 +96,7 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 
 			await searchTrip({ date, city_to: travelTo, city_from: travelFrom }, page)
 				.then((res: any) => {
-					if (res?.data?.data.length) {
+					if (res?.data?.data?.length) {
 						
 						const data = refactorData([...res?.data?.data] )
 
@@ -148,7 +144,7 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 	}, [travelTo, travelFrom, page, date]);
      
 	let travelData: any[] = refactorData(trips )
-	let travelDataImmutable: any[] = useMemo(() => refactorData(trips ), [trips] )
+	let travelDataImmutable: any[] = useMemo(() => refactorData(trips), [trips] )
 
     const T_T = parseInt(travelTo)
 	const T_F = parseInt(travelFrom)
