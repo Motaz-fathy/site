@@ -37,7 +37,7 @@ export interface ListingFlightsPageProps {
 	className?: string;
 }
 const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
-	window.scrollTo(0,0)
+	
 	const { t } = useTranslation();
 	const { search } = useLocation();
 	const [date, setDate] = useState<string>("");
