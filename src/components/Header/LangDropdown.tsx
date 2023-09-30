@@ -41,7 +41,7 @@ const LangDropdown: FC<LangDropdownProps> = ({
 			 hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 dark:border-neutral-700
 			  dark:text-neutral-300 max-sm:ml-[20px]`}
 						>
-							<GlobeAltIcon className="max-sm:ml-[20px] h-[18px] w-[18px] opacity-80" />
+							<GlobeAltIcon className="max-sm:ml-[20px] max-sm:rtl:mr-[20px] h-[18px] w-[18px] opacity-80" />
 
 							<span className=" select-none">{t("language")}</span>
 							<ChevronDownIcon

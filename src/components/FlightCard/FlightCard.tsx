@@ -226,7 +226,7 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
                 <img src={tv} className="mr-1 h-[40px] w-[40px] " alt="" />
                 <img src={conditioning} className=" h-[40px] w-[40px] rtl:mr-3" alt="" />
                 <div
-                  className="ml-2 h-[40px] w-[120px] items-center
+                  className="ml-2 h-[40px] w-[120px] items-center max-sm:h-[40px] max-sm:w-[120px]
                    justify-center bg-[#E8ECF2] p-[8px] align-middle text-[14px] text-[#69696A]
                    rtl:mr-3
                    "
