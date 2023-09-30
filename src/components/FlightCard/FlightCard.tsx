@@ -66,13 +66,8 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
   console.log("refactoredData",refactoredData)
   const navigate = useNavigate();
   const busCardContainer = (refactoredData: any) => {
-    let refactory = refactoredData.filter((item: any) => {
-      if(item.available_seats === 0) {
-        return item
-      }
-      toast.info("bus no available seats")
-    })
-    return refactory?.map((item: any ) => (
+   
+    return refactoredData?.map((item: any ) => (
      
       <div
         key={item.id}
@@ -231,7 +226,7 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
                 <img src={tv} className="mr-1 h-[40px] w-[40px] " alt="" />
                 <img src={conditioning} className=" h-[40px] w-[40px] rtl:mr-3" alt="" />
                 <div
-                  className="ml-4 h-[40px] w-[120px] items-center
+                  className="ml-2 h-[40px] w-[120px] items-center
                    justify-center bg-[#E8ECF2] p-[8px] align-middle text-[14px] text-[#69696A]
                    rtl:mr-3
                    "
@@ -243,12 +238,14 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
                   className="h-[40px]  w-[120px]  justify-center p-[8px] align-middle max-sm:text-[12px]  max-sm:leading-[15px] text-[16px] text-[#69696A]"
                   style={{ borderRadius: "24px", textAlign: "center" }}
                 >
-                  {" "}
-                  {item?.available_seats === 0 ?
-                  
-                  "" : <>
+                 
+                 
+                  {item?.available_seats !== 0 &&
+                 <>
                   {item?.available_seats} {t("seats free")}{" "}
-                  </>  } 
+                 </>
+                  } 
+                  
                 </div>
               </div>
            

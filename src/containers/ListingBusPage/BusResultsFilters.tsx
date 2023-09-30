@@ -242,7 +242,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
 
     const nonDuplicatedOperators = removeDuplicates(refactoredData, "gateway_id");
     const operators = nonDuplicatedOperators?.map(each => each.gateway_id);
-
+     console.log("operators" , operators)
     const nonDuplicatedDepartureStation = removeDuplicates(
         refactoredData,
         "travel_from",
