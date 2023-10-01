@@ -517,8 +517,8 @@ setLoading(false)
       <Headprivatetrip
         seats_number={tripData?.trips[0]?.bus?.type?.seats_number}
         car={tripData?.trips[0]?.bus?.type?.name}
-        address_from={tripData?.trips[0]?.from_address?.name}
-        address_to={tripData?.trips[0]?.to_address?.name}
+        address_from={tripData?.trips[0]?.from_location?.name}
+        address_to={tripData?.trips[0]?.to_location?.name}
       />
       <div className="container m-auto mb-5 mt-10 flex w-full flex-col">
       {loading && 

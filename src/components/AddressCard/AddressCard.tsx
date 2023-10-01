@@ -160,6 +160,7 @@ const AddressCard: FC<any> = (props) => {
           <Autocomplete
             apiKey={process.env.REACT_APP_MAP_KEY!}
             onPlaceSelected={(place: any) => {
+              console.log(place);
               setLocation({
                 lat: place.geometry.location.lat(),
                 lng: place.geometry.location.lng()

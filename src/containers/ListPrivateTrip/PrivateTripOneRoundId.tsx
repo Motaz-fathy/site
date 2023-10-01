@@ -19,8 +19,9 @@ import { toast } from "react-toastify";
 
 import Styled from "./component.module.css";
 import { Headprivatetrip } from "components/ptivateTrip/Headprivatetrip";
-import AddressCard from "components/AddressCard/AddressCard";
-
+import MapAddress from "components/ptivateTrip/MapAddress";
+import ButtonClose from "shared/ButtonClose/ButtonClose";
+import ButtonPrimary from "shared/Button/ButtonPrimary";
 export interface RentalCarDatesRangeInputProps {
   defaultDateValue: DateRage;
   defaultFocus?: FocusedInputShape | null;
@@ -207,7 +208,6 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
   // navigate pages
   const nav = useNavigate();
   
-  console.log( "address " , AddressFromOne , AddressToOne )
 
   const GoToSummary = () => {
     if(dropOffLocationType === "oneWay") {
@@ -217,10 +217,12 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
         time === undefined ||
         private_oneRound_date_time === undefined
       ) {
-        toast.error("data not valid ")
+       
         nav(`/private-trip/oneRound/${trip_Id}`);
+        toast.error("fill input required ")
       } else if (AddressFromOne === AddressToOne) {
         nav(`/private-trip/oneRound/${trip_Id}`);
+        toast.error("no select same address")
       } else {
         const token = localStorage.getItem("token");
   
@@ -286,17 +288,16 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
       
 
 
-        <div className="m-auto flex w-full items-center justify-center ">
-          {modal && (
+        <div className="  flex w-full items-center justify-center ">
+        {modal && (
             <div className={Styled.modal}>
               <div onClick={toggleModal} className={Styled.overlay}></div>
-              <div className={`${Styled.modal_content}  `}>
-               <div className="">
-               <AddressCard />
-                <button className={Styled.close_modal} onClick={toggleModal}>
-                  CLOSE
-                </button>
-               </div>
+              <div className={Styled.modal_content}>
+                <MapAddress />
+                <ButtonClose 
+                className={` absolute top-[20px] left-[20px]   ` }
+                onClick={toggleModal}
+                />
               </div>
             </div>
           )}
@@ -713,15 +714,16 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
 
     return (
       <>
-        <div className="m-auto flex w-full items-center justify-center ">
-          {modal && (
+        <div className="  flex w-full items-center justify-center ">
+        {modal && (
             <div className={Styled.modal}>
               <div onClick={toggleModal} className={Styled.overlay}></div>
               <div className={Styled.modal_content}>
-                <h1>hello</h1>
-                <button className={Styled.close_modal} onClick={toggleModal}>
-                  CLOSE
-                </button>
+                <MapAddress />
+                <ButtonClose 
+                className={` absolute top-[20px] left-[20px]   ` }
+                onClick={toggleModal}
+                />
               </div>
             </div>
           )}

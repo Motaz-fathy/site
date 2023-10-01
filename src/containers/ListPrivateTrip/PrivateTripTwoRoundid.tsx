@@ -19,6 +19,8 @@ import { getAddressList } from "../../api/index";
 import Styled from "./component.module.css";
 import { Headprivatetrip } from "components/ptivateTrip/Headprivatetrip";
 import MapAddress from "components/ptivateTrip/MapAddress";
+import ButtonClose from "shared/ButtonClose/ButtonClose";
+import { toast } from "react-toastify";
 
 export interface RentalCarDatesRangeInputProps {
   defaultDateValue: DateRage;
@@ -215,8 +217,10 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
         private_oneRound_date_time === undefined
       ) {
         nav(`/private-trip/twoRound/${trip_Id}`);
+        toast.error("fill input required ")
       } else if (AddressFromOne === AddressToOne) {
         nav(`/private-trip/twoRound/${trip_Id}`);
+        toast.error("no select same address")
       } else {
        
         nav("/private-trip/twoRound/summary");
@@ -244,9 +248,10 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
               <div onClick={toggleModal} className={Styled.overlay}></div>
               <div className={Styled.modal_content}>
                 <MapAddress />
-                <button className={Styled.close_modal} onClick={toggleModal}>
-                  CLOSE
-                </button>
+                <ButtonClose 
+                className={` absolute top-[20px] left-[20px]   ` }
+                onClick={toggleModal}
+                />
               </div>
             </div>
           )}
@@ -659,15 +664,16 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
 
     return (
       <>
-        <div className="m-auto flex w-full items-center justify-center ">
+       <div className="m-auto flex w-full items-center justify-center ">
           {modal && (
             <div className={Styled.modal}>
               <div onClick={toggleModal} className={Styled.overlay}></div>
               <div className={Styled.modal_content}>
-                <h1>hello</h1>
-                <button className={Styled.close_modal} onClick={toggleModal}>
-                  CLOSE
-                </button>
+                <MapAddress />
+                <ButtonClose 
+                className={` absolute top-[20px] left-[20px]   ` }
+                onClick={toggleModal}
+                />
               </div>
             </div>
           )}

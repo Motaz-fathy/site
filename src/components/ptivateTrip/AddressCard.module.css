@@ -1,0 +1,52 @@
+
+ .title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: translateY(30%);
+}
+ 
+ .input{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    width: 80%;
+    padding: 5px;
+    outline: none;
+}
+ .input label{
+    color: var(--sub, #69696A);
+/* B1/B1: Regular */
+font-family: Spline Sans;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+}
+ .input input ,  .input select{
+    /* width: 50%; */
+    border: 1px solid #DDE2EB;
+    padding: 10px;
+    border-radius: 0px;
+    height: 50px ;
+    width: 100%;
+}
+ .layout{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.layout > * {
+    margin-top: 30px;
+}
+.Edit{
+    border-radius: 9px;
+    background: var(--primary-color, #1D4179);
+    /* Drop Shadow */
+    color: #FFF;
+    cursor: pointer;
+    transform: translateY(30%);
+    width: 200px;
+    height: 50px;
+    margin-left: auto;
+    margin-bottom: 20px;
+}
