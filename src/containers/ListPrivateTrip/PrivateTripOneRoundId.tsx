@@ -292,7 +292,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
         {modal && (
             <div className={Styled.modal}>
               <div onClick={toggleModal} className={Styled.overlay}></div>
-              <div className={Styled.modal_content}>
+              <div className={`translate-x-[10%] translate-y-[20%] rtl:translate-x-[-10%] ${Styled.modal_content}`}>
                 <MapAddress />
                 <ButtonClose 
                 className={` absolute top-[20px] left-[20px]   ` }
@@ -718,7 +718,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
         {modal && (
             <div className={Styled.modal}>
               <div onClick={toggleModal} className={Styled.overlay}></div>
-              <div className={Styled.modal_content}>
+              <div className={`translate-x-[10%] translate-y-[20%] rtl:translate-x-[-10%] ${Styled.modal_content}`}>
                 <MapAddress />
                 <ButtonClose 
                 className={` absolute top-[20px] left-[20px]   ` }

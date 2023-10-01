@@ -28,7 +28,7 @@
 }
 .modal_content {
     
-    transform: translate(10%, 20%);
+    
     line-height: 1.4;
     padding: 14px 28px;
     border-radius: 3px;
@@ -131,9 +131,14 @@
   }
   .itemAddress {
     width: 100%;
-    border-radius: 8px;
-    border: 1px solid #dddddd;
     text-align: left;
+    transition: all ease-in-out 0.3s;
+  }
+  
+  .itemAddress:hover {
+    width: 100%;
+    text-align: left;
+    background-color: #dddddd;
   }
   .pop_container{
       position: absolute;

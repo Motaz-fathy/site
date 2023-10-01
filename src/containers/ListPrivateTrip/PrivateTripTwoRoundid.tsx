@@ -246,7 +246,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
           {modal && (
             <div className={Styled.modal}>
               <div onClick={toggleModal} className={Styled.overlay}></div>
-              <div className={Styled.modal_content}>
+              <div className={`translate-x-[10%] translate-y-[20%] rtl:translate-x-[-10%] ${Styled.modal_content}`}>
                 <MapAddress />
                 <ButtonClose 
                 className={` absolute top-[20px] left-[20px]   ` }
@@ -479,13 +479,13 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
                         stroke-linejoin="round"
                       />
                     </svg>
-                    <span className=" text-[12px] font-[400] text-[#B9C4D5]">
+                    <span className=" text-[12px] font-[400] text-[#B9C4D5] rtl:mx-2">
                       {t("address")}
                     </span>
                   </div>
 
                   <div
-                    className={`ml-5 flex h-[40px] items-center  justify-start  `}
+                    className={`max-sm:text-[8px] max-sm:font-[400] ml-5 flex h-[40px] items-center  justify-start  `}
                   >
                     {AddressFromOne?.name}
                   </div>
@@ -569,7 +569,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
                       />
                     </svg>
 
-                    <span className=" text-[12px] font-[400] text-[#B9C4D5]">
+                    <span className=" text-[12px] font-[400] text-[#B9C4D5] rtl:mx-2">
                       {t("address")}
                     </span>
                   </div>
@@ -668,7 +668,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
           {modal && (
             <div className={Styled.modal}>
               <div onClick={toggleModal} className={Styled.overlay}></div>
-              <div className={Styled.modal_content}>
+              <div className={`translate-x-[10%] translate-y-[20%] rtl:translate-x-[-10%] ${Styled.modal_content}`}>
                 <MapAddress />
                 <ButtonClose 
                 className={` absolute top-[20px] left-[20px]   ` }
@@ -859,12 +859,13 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
                   {t("Confirm Pickup Time")}
                 </span>
                 <input
+                
                   onChange={handelTimeChange}
                   min="00:00"
                   max="23:59"
                   step="60"
                   type="time"
-                  className="rounded-[4px] text-[#B9C4D5]  focus:border-[0px] focus:border-white after:focus:outline-none "
+                  className="rounded-[4px] text-[#B9C4D5]  focus:border-[0px]  w-auto"
                 />
               </div>
             </div>
@@ -912,9 +913,9 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
                   </div>
 
                   <div
-                    className={`ml-5 flex h-[40px] items-center  justify-start  `}
+                    className={`text-[10px] ml-5 flex h-[40px] items-center  justify-start  `}
                   >
-                    <span className="text-[14px] font-[400] text-[#1E1E1E]">
+                    <span className="text-[10px] font-[400] text-[#1E1E1E]">
                       {AddressFromOne?.name}
                     </span>
                   </div>
@@ -931,7 +932,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
                             className={`container mt-2 flex h-[40px] w-full cursor-pointer items-center justify-start  ${Styled.itemAddress}`}
                             onClick={() => handlesetfromaddress(item)}
                           >
-                            <span className="text-[16px] text-[#1E1E1E]">
+                            <span className="text-[16px] text-[#1E1E1E] max-sm:text-[10px]">
                               {item.name}
                             </span>
                           </div>
@@ -1004,7 +1005,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
                   </div>
 
                   <div
-                    className=" ml-5 flex h-[40px] w-full cursor-pointer   items-center justify-start"
+                    className=" max-sm:text-[10px] ml-5 flex h-[40px] w-full cursor-pointer   items-center justify-start"
                     onClick={PopAddressto}
                   >
                     {AddressToOne?.name}
@@ -1014,7 +1015,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
                       enableto ? Styled.pop_container_to : Styled.popHide_to
                     } `}
                   >
-                    <div className="container mt-3 w-full ">
+                    <div className="container mt-3 w-full z-[999999]">
                       {addressapito?.map((itemTo: any, index: any) => {
                         return (
                           <div
@@ -1022,7 +1023,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
                             className={`container mt-2 flex h-[40px] w-full cursor-pointer items-center justify-start  ${Styled.itemAddress_to}`}
                             onClick={() => handlesettoaddress(itemTo)}
                           >
-                            <span className="text-[16px] text-[#1E1E1E]">
+                            <span className="text-[16px] text-[#1E1E1E] max-sm:text-[10px] ">
                               {itemTo.name}
                             </span>
                           </div>
