@@ -18,6 +18,7 @@ import webus from "images/image 6 (1).png";
 import skyscanner from "images/image 3.png";
 import elgesrElAraby from "images/image 5.png";
 import ontimebus from "images/image 8.png";
+import { SliderOurPartner } from "components/SectionSliderNewCategories/SliderOurPartner";
 function PageHome() {
 	const { t } = useTranslation();
 	return (
@@ -57,9 +58,12 @@ function PageHome() {
 							vulputate libero et velit interdum, ac aliquet odio mattis.
 						</p>
 
-						<ScrollableList
+						{/* <ScrollableList
 							items={[swvel, paymob, skyscanner, elgesrElAraby, ontimebus]}
-						/>
+						/> */}
+						<div className="container w-full ">
+						<SliderOurPartner />
+						</div>
 					</div>
 				</div>
 				<div className=" max-sm:mb-[80px] flex flex-col items-center justify-center  bg-[#E8ECF2] rtl:flex-row-reverse">
