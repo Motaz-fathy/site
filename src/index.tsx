@@ -9,7 +9,7 @@ import "./styles/index.scss";
 import "./index.css";
 import "./fonts/line-awesome-1.3.0/css/line-awesome.css";
 import "./i18n/index";
-
+import './fonts/Alkatra-VariableFont_wght.ttf'
 //
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";

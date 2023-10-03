@@ -2,7 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 /* @import url("https://fonts.googleapis.com/css2?family=Alkatra&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Spline+Sans&display=swap");
-
+@font-face {
+	font-family: "Alkatra";
+	src: local("Alkatra"),
+	 url("./fonts/Alkatra-VariableFont_wght.ttf") format("truetype");
+	
+   }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -28,7 +33,7 @@
 	}
 }
 * {
-	@apply ltr:font-alkatra rtl:font-messiri;
+	@apply font-alkatra font-messiri;
 }
 @layer utilities {
     @variants responsive {
@@ -431,4 +436,6 @@
 
   /* input time  */
 
-  
+  body, html { 
+	font-family: 'Alkatra';
+  }

@@ -697,7 +697,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
                   </h3>
                   <p className=" rtl:text-right ">
                     {" "}
-                    {data?.bus?.model} & {data?.bus?.year} or similar{" "}
+                    {data?.bus?.model} & {data?.bus?.year} {" "}
                   </p>
                 </div>
                 <div className="flex items-start flex-col text-[#69696A] rtl:justify-start">

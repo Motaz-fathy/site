@@ -215,23 +215,58 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
 			lg:h-[54px] lg:flex-row 
 			"
         >
-          <div className="container max-sm:w-full flex max-sm:justify-center max-sm:items-center  lg:justify-between lg:items-center">
+          <div className=" max-sm:w-full flex max-sm:justify-center max-sm:items-center  lg:justify-between lg:items-center">
            
               <div
                 className="max-sm:w-full  flex justify-center items-center "
               >
                 <img src={tv} className="max-sm:mr-5 h-[40px] w-[40px] lg:rtl:ml-5 md:rtl:ml-5" alt="tv" />
                 <img src={conditioning} className=" h-[40px] w-[40px] lg:ml-5 md:ml-5 rtl:mr-3" alt="conditioning" />
+                
+               {
+                item?.classes === "Prime_Mix" && 
                 <div
-                  className="max-sm:ml-5 rtl:mr-5 h-[40px] w-[120px] lg:ml-5 md:ml-5 items-center max-sm:h-[40px] max-sm:w-[120px]
-                   justify-center bg-[#E8ECF2] p-[8px] align-middle text-[14px] text-[#69696A]
-                   
-                   max-sm:rtl:mr-5
-                   "
-                  style={{ borderRadius: "24px", textAlign: "center" }}
-                >
-                  {item?.classes}{" "}
-                </div>
+                className="max-sm:ml-5 rtl:mr-5 h-[40px] w-[120px] lg:ml-5 md:ml-5 items-center max-sm:h-[40px] max-sm:w-[120px]
+                 justify-center bg-[#F9B35F] p-[8px] align-middle text-[14px] text-[#69696A] max-sm:rtl:mr-5"
+                style={{ borderRadius: "24px", textAlign: "center" }}
+              >
+                {item?.classes}{" "}
+              </div>
+               }
+                {
+                item?.classes === "Comfort" && 
+                <div
+                className="max-sm:ml-5 rtl:mr-5 h-[40px] w-[120px] lg:ml-5 md:ml-5 items-center max-sm:h-[40px] max-sm:w-[120px]
+                 justify-center bg-[#BEC1BE] p-[8px] align-middle text-[14px] text-[#525252] max-sm:rtl:mr-5"
+                style={{ borderRadius: "24px", textAlign: "center" }}
+              >
+                {item?.classes}{" "}
+              </div>
+               }
+
+               {
+                item?.classes === "First10" && 
+                <div
+                className="max-sm:ml-5 rtl:mr-5 h-[40px] w-[120px] lg:ml-5 md:ml-5 items-center max-sm:h-[40px] max-sm:w-[120px]
+                 justify-center bg-[#6D706B] p-[8px] align-middle text-[14px] text-[#D3D5D3] max-sm:rtl:mr-5"
+                style={{ borderRadius: "24px", textAlign: "center" }}
+              >
+                {item?.classes}{" "}
+              </div>
+               }
+
+               {
+                item?.classes === "Business 40" && 
+                <div
+                className="max-sm:ml-5 rtl:mr-5 h-[40px] w-[120px] lg:ml-5 md:ml-5 items-center max-sm:h-[40px] max-sm:w-[120px]
+                 justify-center bg-[#7591FF] p-[8px] align-middle text-[14px] text-[#D3D5D3] max-sm:rtl:mr-5"
+                style={{ borderRadius: "24px", textAlign: "center" }}
+              >
+                {item?.classes}{" "}
+              </div>
+               }
+
+
                 <div
                   className="h-[40px]  w-[120px] md:ml-5 lg:ml-5 justify-center rtl:mr-5  p-[8px] align-middle max-sm:text-[12px]  max-sm:leading-[15px] text-[16px] text-[#69696A]"
                   style={{ borderRadius: "24px", textAlign: "center" }}

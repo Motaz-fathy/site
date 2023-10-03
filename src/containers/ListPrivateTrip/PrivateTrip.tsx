@@ -61,7 +61,6 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
   const date = JSON.parse(dd)
   const travelFrom = window.localStorage.getItem("travelFrom");
   const travelTo = window.localStorage.getItem("travelTo");
-
   const fromhead_en: string | null  = window.localStorage.getItem("fromhead_en");
   const tohead_en: string | null  = window.localStorage.getItem("tohead_en");
   const fromhead_ar: string | null  = window.localStorage.getItem("fromhead_ar");
@@ -84,16 +83,6 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
  } , [data ])
     
 
-  const handleApi = () => {
-    axios
-    .get(
-      `${process.env.REACT_APP_API_TELE_URL}/api/transports/private/trips?from_location_id=${travelFrom}&to_location_id=${travelTo}&date=${date}&page=1&price_from=${minValue}&price_to=${maxValue}`
-    )
-    .then((res: any) => {
-      setData(res.data.data);
-      console.log("data" ,res.data.data)
-    });
-  }
 
   useEffect(() => {
     setLoading(true)
@@ -159,7 +148,7 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
                        {" "}
                        {item?.bus?.name}{" "}
                      </h3>
-                     <p className="text-[12px] text-[#69696A] font-[400]"> {item?.bus?.model} , or similar </p>
+                     <p className="text-[12px] text-[#69696A] font-[400]"> {item?.bus?.model}  </p>
                    </div>
     
                    <div className="mt-5 flex flex-col items-start text-[#69696A]">
@@ -363,7 +352,7 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
 
        <div className="flex w-full items-end justify-start ">
          <div className="mr-[auto] rtl:mr-[auto] flex justify-start " >
-           <h3> 3 {t('Results')} </h3>
+           <h3> {data?.length} {t('Results')} </h3>
            <span className="text-[#1d4179]"> | {t("All")} </span>
          </div>
          {/* <div className="ml-[auto]  ">

@@ -95,7 +95,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
 					<span
 						className={`mt-1 flex text-sm font-light leading-none text-neutral-400   ${className}`}
 					>
-						{startDate ? startDate.format("DD MMM") : " enter date "}
+						{startDate ? startDate.format("DD MMM") : " Enter date "}
 					</span>
 				</div>
 			</div>
