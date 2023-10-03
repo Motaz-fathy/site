@@ -393,7 +393,7 @@ const LocationInput: FC<LocationInputProps> = ({
 									/>
 								</svg>
 							</span>
-							<span className="block font-medium text-neutral-700 dark:text-neutral-200">
+							<span className="block font-medium text-neutral-700 dark:text-neutral-200 text-[16px]">
 								{i18next.language === "en"
 									? item?.name_en ?? item?.name
 									: item?.name_ar ?? item?.name}

@@ -62,7 +62,7 @@ export function getSeats(data: any): Promise<any> {
 }
 export function searchTrip(data: any, page: number): Promise<any> {
 	return axios.get(
-		`https://app.telefreik.com/api/v2/transports/buses/search?city_from=${data?.city_from}&city_to=${data?.city_to}&date=${data?.date}&page=${page}`,
+		`${process.env.REACT_APP_API_TELE_URL}/api/v2/transports/buses/search?city_from=${data?.city_from}&city_to=${data?.city_to}&date=${data?.date}&page=${page}`,
 		
 		{
 			headers: {
