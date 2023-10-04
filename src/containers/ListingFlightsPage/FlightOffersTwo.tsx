@@ -417,7 +417,7 @@ export const FlightOffersTwo = () => {
                     <div key={index} className='w-full flex justify-between items-center mt-3 border-b-2 border-[#B9C4D5] pb-2' >
 
                <div className='flex justify-start items-center '>
-               <img  src={Flight_Offers?.depart_trip?.carriers[0]?.imageUrl} alt="image here " />
+               <img src={item?.agent?.imageUrl} />
                 <div className='flex justify-center items-center'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M10.788 3.20997C11.236 2.13297 12.764 2.13297 13.212 3.20997L15.294 8.21697L20.698 8.64997C21.862 8.74297 22.334 10.195 21.447 10.955L17.33 14.482L18.587 19.755C18.858 20.891 17.623 21.788 16.627 21.18L12 18.354L7.373 21.18C6.377 21.788 5.142 20.89 5.413 19.755L6.67 14.482L2.553 10.955C1.666 10.195 2.138 8.74297 3.302 8.64997L8.706 8.21697L10.788 3.20997Z" fill="#FFB229"/>
