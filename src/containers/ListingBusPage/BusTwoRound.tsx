@@ -5,11 +5,14 @@ import axios from "axios";
 import { t } from "i18next";
 
 export const BusTwoRound = () => {
+  const dropOffLocationType = window.localStorage.getItem("dropOffLocationType")
   const B_T: any = window.localStorage.getItem(
     "bus_Return_Ticket"
   );
   const bus_Ticket = JSON.parse(B_T);
   console.log(bus_Ticket,'bus_Ticket');
+
+  
   const PayNow = async () => {
     const busTicket = bus_Ticket;
     const paymentUrl = busTicket?.data.payment_url;
@@ -63,7 +66,7 @@ export const BusTwoRound = () => {
 <rect width="24" height="24" fill="white" transform="translate(628 19)"/>
 </clipPath>
 </defs>
-</svg>
+      </svg>
 				</div>
         <div className=" w-[100%]  flex justify-center hidden max-sm:block">
 			<svg xmlns="http://www.w3.org/2000/svg" width="375" height="72" viewBox="0 0 375 72" fill="none">
@@ -111,7 +114,7 @@ export const BusTwoRound = () => {
           <div className="mt-3 flex h-auto w-full justify-between ">
             <div className="flex justify-start text-start ">
               <span className="text-[16px] font-[400] text-[#1E1E1E]">
-                one way 
+                {t("oneWay")}
               </span>
               <span className="ml-3 text-[16px] font-[400] text-[#1E1E1E] rtl:mr-2">
                 {bus_Ticket?.data?.date}{" "}
@@ -235,7 +238,11 @@ export const BusTwoRound = () => {
                     stroke-linejoin="round"
                   />
                 </svg>
-                <span>{bus_Ticket?.data?.trips[0].tickets[0]?.seat_number}</span>
+                       
+                <span className="flex justify-around items-center" >{bus_Ticket?.data?.trips[0]?.tickets?.map((item:any , index : number) => {
+                return <span key={index} className="ml-1">{item?.seat_number}</span>
+                })}</span> 
+              
               </div>
               <div className="text-[20px] font-[500]  text-[#1E1E1E]">
                 {bus_Ticket?.data?.trips[0].total}
@@ -254,7 +261,7 @@ export const BusTwoRound = () => {
           <div className="mt-3 flex h-auto w-full justify-between ">
             <div className="flex justify-start text-start ">
               <span className="text-[16px] font-[400] text-[#1E1E1E]">
-                one way
+              {t(JSON.stringify(dropOffLocationType))}
               </span>
               <span className="ml-3 text-[16px] font-[400] text-[#1E1E1E] rtl:mr-2">
                 {bus_Ticket?.data?.date}{" "}
@@ -377,7 +384,9 @@ export const BusTwoRound = () => {
                     stroke-linejoin="round"
                   />
                 </svg>
-                <span>{bus_Ticket?.data?.trips[1].tickets[0]?.seat_number}</span>
+                <span className="flex justify-around items-center" >{bus_Ticket?.data?.trips[1]?.tickets?.map((item:any , index : number) => {
+                return <span key={index} className="ml-1">{item?.seat_number}</span>
+                })}</span> 
               </div>
               <div className="text-[20px] font-[500] text-[#1E1E1E]">
                 {bus_Ticket?.data?.trips[1].total}
