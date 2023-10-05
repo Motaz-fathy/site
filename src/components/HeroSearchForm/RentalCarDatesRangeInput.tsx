@@ -307,7 +307,7 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
             : type === "bus"
             ? " w-[25vw] "
             : type === "cars"
-            ? "w-[30vw] lg:translate-x-[-20px]"
+            ? "w-[30vw] lg:translate-x-[-20px] lg:rtl:translate-x-[-5px]"
             : "w-[14vw]"
         }   `}
       >
@@ -318,7 +318,7 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
               : type === "bus"
               ? " w-[20vw]"
               : type === "cars"
-              ? "w-[30vw]   "
+              ? "w-[30vw]  "
               : "w-[14vw]"
           }  `}
         >

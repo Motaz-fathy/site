@@ -298,18 +298,18 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
           type === "maritime"
             ? "w-[34vw]"
             : type === "bus"
-            ? " w-[25vw]"
+            ? " w-[25vw] lg:rtl:mx-3"
             : type === "cars"
-            ? "w-[30vw] "
+            ? "w-[30vw] lg:rtl:translate-x-[25px]"
             : "w-[14vw]"
         }   `}
       >
         <div
           className={`absolute inset-0   flex ${
             type === "maritime"
-              ? "w-[34vw]"
+              ? "w-[34vw] "
               : type === "bus"
-              ? " w-[25vw]"
+              ? " w-[25vw] "
               : type === "cars"
               ? "w-[30vw]   "
               : "w-[14vw]"
