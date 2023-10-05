@@ -195,12 +195,12 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
           <div className="flex  flex-col space-y-6 sm:flex-row sm:items-center sm:space-y-0">
             {/* LOGO IMG */}
 
-            <div className="w-24 flex-shrink-0 lg:w-36 lg:translate-x-[0px] md:translate-x-[-50px]">
+            <div className="w-24 flex-shrink-0 lg:w-36 xl:translate-x-[10px] lg:translate-x-[-30px] md:translate-x-[0px] ">
               {item?.gateway_id?.includes("WEBUS") && (
-									<img src={miniBus} className="w-[150px] h-[80px] max-sm:w-[75px] max-sm:h-[40px]" alt="" />
+									<img src={miniBus} className="lg:w-[130px] md:w-[120px] h-[80px] max-sm:w-[75px] max-sm:h-[40px]" alt="" />
 								)}
 								{item?.gateway_id?.includes("BlueBus") && (
-									<img src={bus} className="w-[150px] h-[80px] lg:w-[150px]  max-sm:w-[100px] max-sm:h-[70px]" alt="" />
+									<img src={bus} className="lg:w-[130px] md:w-[120px] h-[80px] max-sm:w-[75px] max-sm:h-[40px]" alt="" />
 								)}
             	
             </div>
@@ -245,14 +245,14 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
                }
 
                {
-                item?.classes === "First10" && 
+                item?.classes === "First10" ||  item?.classes === "First"  || item?.classes === "First8" ?
                 <div
                 className="max-sm:ml-5 rtl:mr-5 h-[40px] w-[120px] lg:ml-5 md:ml-5 items-center max-sm:h-[40px] max-sm:w-[120px]
                  justify-center bg-[#6D706B] p-[8px] align-middle text-[14px] text-[#D3D5D3] max-sm:rtl:mr-5"
                 style={{ borderRadius: "24px", textAlign: "center" }}
               >
                 {item?.classes}{" "}
-              </div>
+              </div>  : ""
                }
 
                {

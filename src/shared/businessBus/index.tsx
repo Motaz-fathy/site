@@ -163,83 +163,83 @@ export const BusinessBus = ({ setSelected, seats }: any) => {
 
 						<div className="container" onClick={(e: any) => setContainer(e)}>
 							<div className="row">
-								<div className="seat" title={"1"} id={"1"}></div>
-								<div className="seat" title={"2"} id={"2"}></div>
-								<div className="seat opacity-0"></div>
-								<div className="seat" title={"3"} id={"3"}></div>
-								<div className="seat" title={"4"} id={"4"}></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"1"} id={"1"}>1</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"2"} id={"2"}>2</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  opacity-0"></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"3"} id={"3"}>3</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"4"} id={"4"}>4</div>
 							</div>
 							<div className="row">
-								<div className="seat" title={"5"} id={"5"}></div>
-								<div className="seat" title={"6"} id={"6"}></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"5"} id={"5"}>5</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"6"} id={"6"}>6</div>
 
-								<div className="seat opacity-0"></div>
-								<div className="seat" title={"7"} id={"7"}></div>
-								<div className="seat" title={"8"} id={"8"}></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  opacity-0"></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"7"} id={"7"}>7</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"8"} id={"8"}>8</div>
 							</div>
 							<div className="row">
-								<div className="seat" title={"9"} id={"9"}></div>
-								<div className="seat" title={"10"} id={"10"}></div>
-								<div className="seat opacity-0"></div>
-								<div className="seat" title={"11"} id={"11"}></div>
-								<div className="seat" title={"12"} id={"12"}></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"9"} id={"9"}>9</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"10"} id={"10"}>10</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  opacity-0"></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"11"} id={"11"}>11</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"12"} id={"12"}>12</div>
 							</div>
 							<div className="row">
-								<div className="seat " title={"13"} id={"13"}></div>
-								<div className="seat" title={"14"} id={"14"}></div>
-								<div className="seat opacity-0"></div>
-								<div className="seat" title={"15"} id={"15"}></div>
-								<div className="seat" title={"16"} id={"16"}></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  " title={"13"} id={"13"}>13</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"14"} id={"14"}>14</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  opacity-0"></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"15"} id={"15"}>15</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"16"} id={"16"}>16</div>
 							</div>
 							<div className="row">
-								<div className="seat " title={"17"} id={"17"}></div>
-								<div className="seat" title={"18"} id={"18"}></div>
-								<div className="seat opacity-0"></div>
-								<div className="seat opacity-0"></div>
-								<div className="seat opacity-0"></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  " title={"17"} id={"17"}>17</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"18"} id={"18"}>18</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  opacity-0"></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  opacity-0"></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  opacity-0"></div>
 							</div>
 							<div className="row">
-								<div className="seat" title={"19"} id={"19"}></div>
-								<div className="seat" title={"20"} id={"20"}></div>
-								<div className="seat opacity-0"></div>
-								<div className="seat opacity-0"></div>
-								<div className="seat opacity-0"></div>
-								<div className="seat opacity-0"></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"19"} id={"19"}>19</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"20"} id={"20"}>20</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  opacity-0"></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  opacity-0"></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  opacity-0"></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  opacity-0"></div>
 							</div>
 							<div className="row">
-								<div className="seat " title={"21"} id={"21"}></div>
-								<div className="seat" title={"22"} id={"22"}></div>
-								<div className="seat opacity-0"></div>
-								<div className="seat" title={"23"} id={"23"}></div>
-								<div className="seat" title={"24"} id={"24"}></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  " title={"21"} id={"21"}>21</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"22"} id={"22"}>22</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  opacity-0"></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"23"} id={"23"}>23</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"24"} id={"24"}>24</div>
 							</div>
 							<div className="row">
-								<div className="seat " title={"25"} id={"25"}></div>
-								<div className="seat" title={"26"} id={"26"}></div>
-								<div className="seat opacity-0"></div>
-								<div className="seat" title={"27"} id={"27"}></div>
-								<div className="seat" title={"28"} id={"28"}></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  " title={"25"} id={"25"}>25</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"26"} id={"26"}>26</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  opacity-0"></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"27"} id={"27"}>27</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"28"} id={"28"}>28</div>
 							</div>
 							<div className="row">
-								<div className="seat " title={"29"} id={"29"}></div>
-								<div className="seat" title={"30"} id={"30"}></div>
-								<div className="seat opacity-0"></div>
-								<div className="seat" title={"31"} id={"31"}></div>
-								<div className="seat" title={"32"} id={"32"}></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  " title={"29"} id={"29"}>29</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"30"} id={"30"}>30</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  opacity-0"></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"31"} id={"31"}>31</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"32"} id={"32"}>32</div>
 							</div>
 							<div className="row">
-								<div className="seat " title={"33"} id={"33"}></div>
-								<div className="seat" title={"34"} id={"34"}></div>
-								<div className="seat opacity-0"></div>
-								<div className="seat" title={"35"} id={"35"}></div>
-								<div className="seat" title={"36"} id={"36"}></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  " title={"33"} id={"33"}>33</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"34"} id={"34"}>34</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  opacity-0"></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"35"} id={"35"}>35</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"36"} id={"36"}>36</div>
 							</div>
 							<div className="row">
-								<div className="seat" title={"37"} id={"37"}></div>
-								<div className="seat " title={"38"} id={"38"}></div>
-								<div className="seat opacity-0"></div>
-								<div className="seat " title={"39"} id={"39"}></div>
-								<div className="seat" title={"40"} id={"40"}></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"37"} id={"37"}>37</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  " title={"38"} id={"38"}>38</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  opacity-0"></div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center  " title={"39"} id={"39"}>39</div>
+								<div className="seat text-[16px] font-[600] text-[#1D4179] flex justify-center items-center " title={"40"} id={"40"}>40</div>
 							</div>
 						</div>
 					</div>
