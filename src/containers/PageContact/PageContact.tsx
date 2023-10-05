@@ -26,10 +26,10 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
 	const [loading, setLoading] = useState<boolean>(false);
 
 	const [values, setValues] = useForm({
-		name: localStorage.getItem("name") ?? "",
-		email: localStorage.getItem("email") ?? "",
+		name:  "",
+		email:  "",
 		message: "",
-		phone: localStorage.getItem("phone") ?? "",
+		phone:  "",
 	});
 
 	const info = [
@@ -52,7 +52,7 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
 	];
 
 	const editAddressData = async (e: any) => {
-		e.preventDefault();
+		
 		setLoading(true);
 
 		if (!!values) {
@@ -61,11 +61,12 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
 					setLoading(false);
 					toast.success(t("successSending"));
 					setValues({
-						name: "",
-						email: "",
-						message: "",
-						phone: "",
-					});
+							name:  "",
+							email:  "",
+							message: "",
+							phone:  ""
+					})
+					e.preventDefault();
 				})
 				.catch((err: any) => {
 					// setLoading(false);
@@ -123,7 +124,7 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
 							
 							<form
 								className="grid grid-cols-1 gap-[10px]"
-								onSubmit={editAddressData}
+								
 							>
 								<label className="block">
 									<Label className="text-[16px]">{t("fullName")}</Label>
@@ -135,7 +136,7 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
 										id="name"
 										name="name"
 										onChange={setValues}
-										value={values.name}
+										
 										required
 									/>
 								</label>
@@ -149,7 +150,7 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
 										id="email"
 										name="email"
 										onChange={setValues}
-										value={values.email}
+										
 										required
 									/>
 								</label>
@@ -183,7 +184,7 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
 										id="phone"
 										name="phone"
 										onChange={setValues}
-										value={values.phone}
+										
 										required
 										pattern="[0-9]{11}"
 									/>
@@ -197,19 +198,19 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
 										id="message"
 										name="message"
 										onChange={setValues}
-										value={values.message}
+										
 										className="mt-1 rounded-[4px]"
 										rows={6}
 										required
 									/>
 								</label>
 								<div className="flex justify-end">
-									<ButtonPrimary loading={loading} type="submit" className="bg-blue-500 p">
-										{t("sendMessage")} <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15.042 22.172L13.684 17.1M13.684 17.1L11.174 19.325L11.743 9.855L16.97 17.772L13.684 17.1ZM12 2.75V5M17.834 5.166L16.243 6.757M20.25 11H18M7.757 15.243L6.167 16.833M6 11H3.75M7.757 6.757L6.167 5.167" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-									</ButtonPrimary>
+									<button  type="submit" onClick={editAddressData} className="bg-blue-500 w-[35%] h-[45px] rounded-[20px]  text-white flex justify-center items-center">
+										{t("sendMessage")}
+										<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M15.042 22.172L13.684 17.1M13.684 17.1L11.174 19.325L11.743 9.855L16.97 17.772L13.684 17.1ZM12 2.75V5M17.834 5.166L16.243 6.757M20.25 11H18M7.757 15.243L6.167 16.833M6 11H3.75M7.757 6.757L6.167 5.167" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+									</button>
 								</div>
 							</form>
 						</div>
