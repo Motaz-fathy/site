@@ -238,7 +238,9 @@ export const BusOneRound = () => {
                     stroke-linejoin="round"
                   />
                 </svg>
-                <span>{bus_Ticket?.trips[0].tickets[0]?.seat_number}</span>
+                <span className="flex justify-around items-center" >{bus_Ticket?.trips[0].tickets?.map((item:any , index : number) => {
+                return <span key={index} className="ml-1">{item?.seat_number}</span>
+                })}</span> 
               </div>
               <div className="text-[20px] font-[500] text-[#1E1E1E]">
                 {bus_Ticket?.data?.original_tickets_totals}
