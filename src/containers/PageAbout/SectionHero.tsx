@@ -35,8 +35,8 @@ const SectionHero: FC<SectionHeroProps> = ({
 						<ButtonPrimary href="/login">{btnText}</ButtonPrimary>
 					)}
 				</div>
-				<div className="  max-sm:w-[600px] lg:w-[100vw] ">
-					<img className=" object-fit" src={rightImg} alt="" />
+				<div className="  max-sm:w-[600px] lg:w-[100vw]  ">
+					<img className=" " src={rightImg} alt="" />
 				</div>
 			</div>
 		</div>

@@ -300,15 +300,6 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
 
 		setLoading(true);
 		if (seatsList?.length) {
-			// >>>>>>>>>>>>> err let seat_id = seatsList[0]?.seat_id;
-			// "trip_id": 37422,
-			// "from_city_id": 2,
-			// "to_city_id": 1,
-			// "from_location_id": 22,
-			// "to_location_id": 53,
-			// "date": "2023-10-01",
-			// let seat_type_id = seatsList[0]?.seat_type_id;\
-
 			const data = {
 				trip_id: id,
 				from_city_id: cityFrom,
@@ -328,7 +319,6 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
 					window.localStorage.setItem("bus_Return_Ticket", busTicket);
 					console.log("create return  ticket", res?.data);
 					navigate(`/bus-trip/twoRound/summary`);
-					setFlagbus("a");
 					setLoading(false);
 				})
 				.catch(err => {
@@ -365,9 +355,6 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
 
 		setLoading(true);
 		if (seatsList?.length) {
-			let seat_id = seatsList[0]?.seat_id;
-			let seat_type_id = seatsList[0]?.seat_type_id;
-
 			const data = {
 				round: 1,
 				boarding: {
@@ -377,12 +364,7 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
 					from_location_id: travelFrom,
 					to_location_id: travelTo,
 					date: date,
-					seats: [
-						{
-							seat_type_id: seat_type_id,
-							seat_id: seat_id,
-						},
-					],
+					seats: seatsList
 				},
 			};
 			await createOneRoundTrip(data)
