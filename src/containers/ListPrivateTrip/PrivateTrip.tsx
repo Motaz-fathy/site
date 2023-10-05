@@ -310,7 +310,7 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
     
                  <div className="flex flex-col ">
                    <h3> <span>{t('LE')}</span> {item?.price}</h3>
-                   <span>{t("round trip")} </span>
+                   <span>{t(`${dropOffLocationType}`)}</span>
                  </div>
     
               { dropOffLocationType === "oneWay" ? <Link

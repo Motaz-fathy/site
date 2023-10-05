@@ -106,7 +106,7 @@ const BusSearchForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 			<div className=" [ nc-hero-field-padding ] flex flex-row  flex-wrap gap-3 py-5 ">
 				<label
 					onClick={e => setlocationType("oneWay")}
-					className="flex cursor-pointer select-none items-center text-[#B9C4D5]"
+					className="flex cursor-pointer select-none items-center text-[#B9C4D5] text-[16px]"
 				>
 					<div className="relative">
 						<input type="checkbox" className="sr-only" />
@@ -128,7 +128,7 @@ const BusSearchForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 				</label>
 				<label
 					htmlFor="checkboxLabelFour"
-					className="flex cursor-pointer select-none items-center text-[#B9C4D5]"
+					className="flex cursor-pointer select-none items-center text-[#B9C4D5] text-[16px]"
 					onClick={e => {
 						setlocationType("roundTrip");
 					}}

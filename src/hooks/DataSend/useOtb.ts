@@ -27,9 +27,7 @@ export const useAddOtb = () => {
 			await localStorage.setItem("email", data?.data?.data?.email);
 			await localStorage.setItem("phone", data?.data?.data?.mobile);
 			await localStorage.setItem("name", data?.data?.data?.name);
-
-			if (!!path) navigate(path);
-			else navigate("/");
+			 navigate("/");
 		},
 		onError: (errors: any) => {
 			const err = errors.response.data.errors;

@@ -604,7 +604,7 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
 					<h3 className="z-10">{date} . {seatsType}</h3>
 				</div>
 			</div>
-			{
+			{/* {
 				first === "first" && dropOffLocationType !== "oneWay" ?
 				<div className="container w-full mt-[100px] flex justify-center block max-sm:hidden">
 				<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="61" viewBox="0 0 1300 61" fill="none">
@@ -740,7 +740,7 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
 </defs>
 </svg>
 			    </div>
-			}
+			} */}
 		
 			<main className="container mb-24 mt-11 flex w-full flex-col-reverse lg:mb-32 lg:flex-row">
 				<div className=" itmes-start flex justify-between   lg:w-3/5 lg:pr-10 xl:w-2/3 ">

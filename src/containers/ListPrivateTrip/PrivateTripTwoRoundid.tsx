@@ -21,6 +21,7 @@ import { Headprivatetrip } from "components/ptivateTrip/Headprivatetrip";
 import MapAddress from "components/ptivateTrip/MapAddress";
 import ButtonClose from "shared/ButtonClose/ButtonClose";
 import { toast } from "react-toastify";
+import i18next from "i18next";
 
 export interface RentalCarDatesRangeInputProps {
   defaultDateValue: DateRage;
@@ -356,7 +357,9 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
                 <h3 className="text-[20px] font-[500] text-[black]">
                   LE <span className="ml-2">{data?.price}</span>{" "}
                 </h3>
-                <span>{t(`${dropOffLocationType}`)}</span>
+                <span>{
+                  i18next.language === 'en' ? <> {dropOffLocationType}</>: <>{t(`${dropOffLocationType}`)}</>
+                  }</span>
               </div>
             </div>
           </div>

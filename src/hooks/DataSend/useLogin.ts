@@ -36,15 +36,15 @@ export const useAddLogin = () => {
 	return useMutation("addLoginData", addLogin, {
 		onSuccess: async data => {
 			toast.success(data?.data?.message);
-			if (data?.data?.need_verfication) {
+			if (data?.data?.need_verfication === true) {
 				navigate("/otp");
 			} else if (!!data?.data?.data?.api_token) {
 				await localStorage.setItem("token", data?.data?.data?.api_token);
 				await localStorage.setItem("email", data?.data?.data?.email);
 				await localStorage.setItem("phone", data?.data?.data?.mobile);
 				await localStorage.setItem("name", data?.data?.data?.name);
-				if (!!path) navigate(path);
-				else navigate("/");
+				window.history.back()
+				window.history.back()
 			}
 		},
 		onError: (errors: any) => {

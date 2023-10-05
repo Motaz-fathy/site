@@ -357,7 +357,7 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 			</div>
 
 			
-
+{/* 
 			{first !== "first" ? 
 		<div className="container w-full mt-3 flex justify-center block max-sm:hidden">
 		<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="62" viewBox="0 0 1300 62" fill="none">
@@ -467,7 +467,7 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 </defs>
 </svg>
 			</div>
-			}
+			} */}
 
 			<Helmet>
 				<title>Telefreik For Booking Travels</title>

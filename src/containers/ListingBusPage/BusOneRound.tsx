@@ -45,7 +45,7 @@ useEffect(() => {
 
     <div>
       <BusHeader />
-        <div className="container w-full mt-3 flex justify-center block max-sm:hidden">
+        {/* <div className="container w-full mt-3 flex justify-center block max-sm:hidden">
 		<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="62" viewBox="0 0 1300 62" fill="none">
 		<path d="M16 61L407 61L484 31L407 1L387 1L16 1C7.16342 1 -3.05176e-05 8.16344 -3.05176e-05 17V31V45C-3.05176e-05 53.8366 7.16342 61 16 61Z" fill="#1D4179"/>
 		<path d="M407 61H891L990.5 31L891 1H407.5L483.5 31L407 61Z" fill="#DDE2EB"/>
@@ -72,8 +72,8 @@ useEffect(() => {
 		</clipPath>
 		</defs>
 		</svg>
-	     	</div>
-        <div className=" w-[100%]  flex justify-center hidden max-sm:block">
+	     	</div> */}
+        {/* <div className=" w-[100%]  flex justify-center hidden max-sm:block">
 			<svg xmlns="http://www.w3.org/2000/svg" width="375" height="72" viewBox="0 0 375 72" fill="none">
 <rect width="375" height="72" fill="white"/>
 <rect x="20" y="16" width="69" height="40" rx="16" fill="#1D4179"/>
@@ -110,7 +110,7 @@ useEffect(() => {
 </clipPath>
 </defs>
 			</svg>
-				</div>
+				</div> */}
         <div className='container flex flex-col w-full h-auto mt-10 '>
 
         <div className={`container flex h-auto mt-10 w-full flex-col rounded-[16px] border-[16px] border-[#B9C4D5] bg-white ${Styled.contentMin}`} >
@@ -170,11 +170,11 @@ useEffect(() => {
             </svg>
 
             <div className="ml-3 flex flex-col rtl:mr-3">
-              <span>Alexandria ( {bus_Ticket?.trips[0]?.station_from?.name} )</span>
+              <span>{bus_Ticket?.trips[0]?.station_from?.city_name}  ( {bus_Ticket?.trips[0]?.station_from?.name} )</span>
               <span className="pb-[15px]">
                 {bus_Ticket?.trips[0]?.station_from?.arrival_at}
               </span>
-              <span>Alexandria ( {bus_Ticket?.trips[0]?.station_to?.name})</span>
+              <span>{bus_Ticket?.trips[0]?.station_to?.city_name} ( {bus_Ticket?.trips[0]?.station_to?.name})</span>
               <span className="">
                 {bus_Ticket?.trips[0]?.station_to?.arrival_at}
               </span>

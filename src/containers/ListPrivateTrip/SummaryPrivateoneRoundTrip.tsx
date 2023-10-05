@@ -37,7 +37,6 @@ export const SummaryPrivateoneRoundTrip: FC<SummaryOneRoundProp> = () => {
       window.removeEventListener("resize", updateDimension);
     };
   }, [screenSize]);
-console.log('tripData',tripData);
   useEffect(() => {
 setLoading(false)
 
