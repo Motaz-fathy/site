@@ -6,11 +6,10 @@ import axios from 'axios'
 
 export const BusOneRound = () => {
     
-    const B_T:any = window.localStorage.getItem("bus_Ticket")
-    const bus_Ticket = JSON.parse(B_T)
-    console.log(bus_Ticket)
-      const [time , setTime ] = useState()
-useEffect(() => {
+  const B_T:any = window.localStorage.getItem("bus_Ticket")
+  const bus_Ticket = JSON.parse(B_T)
+  const [time , setTime ] = useState()
+  useEffect(() => {
   const date_and_time = bus_Ticket?.trips[0]?.date_time
   const time = date_and_time?.split(" ")
   setTime(time[1])
@@ -34,7 +33,6 @@ useEffect(() => {
           try {
             const response = await axios.post(paymentUrl, null, config);
             const { url } = response?.data?.data;
-            console.log(url)
             window.location.href = url;
           } catch (error:any) {
             console.log(error.message);

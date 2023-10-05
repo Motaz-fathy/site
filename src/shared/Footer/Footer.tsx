@@ -87,8 +87,8 @@ const Footer: React.FC = () => {
 	};
 
 	return (
-		<>
-			<div className="relative h-fit border-t border-neutral-200 bg-[#0A162A] text-[#FFFFFF] dark:border-neutral-700 sm:pt-24 lg:pt-28">
+		
+			<div className="z-0 h-fit border-t border-neutral-200 bg-[#0A162A] text-[#FFFFFF] dark:border-neutral-700  ">
 				<div className="container gap-y-10 gap-x-5 sm:grid sm:grid-cols-2 sm:gap-x-8 md:grid-cols-4 lg:grid-cols-4 lg:gap-x-10 ">
 					<div className=" col-span-2 grid gap-5 sm:grid-cols-4 md:col-span-4 lg:md:col-span-1 lg:relative lg:flex lg:flex-col">
 						<div className=" mx-auto  h-[174px] w-[285px] md:col-span-1 lg:absolute lg:top-[-25px]">
@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
 					<span>©{t("copyRight", { year: new Date().getFullYear() })}</span>
 				</div>
 			</div>
-		</>
+		
 	);
 };
 

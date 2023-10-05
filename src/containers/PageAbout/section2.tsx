@@ -8,12 +8,12 @@ import card_flight2 from "images/small_card flyu.png";
 
 export  const Section2  =()=> {
 return (
-    <div className="w-[99vw]  flex flex-col  justify-between mt-[100px]">
+    <div className=" container w-full  z-0  block flex flex-col  justify-between mt-[100px]">
             
             
-            <div className=" flex flex-row items-center justify-around w-[80%] sm:w-[90%] max-sm:w-[90%]   m-auto  max-sm:flex-col max-md:flex-col  ">
+            <div className="  flex  items-center justify-around w-[80%] sm:w-[90%] max-sm:w-[90%]   m-auto  max-sm:flex-col max-md:flex-col  ">
                 <div className="flex flex-col  items-center   max-sm:w-[80%] max-md:w-full">
-                    <div className="flex flex-row h-[244px] w-[216px] justify-center ">
+                    <div className="flex  h-[244px] w-[216px] justify-center ">
                         <img
                             className=" object-fill w-[117px] "
                             src={salonPic}

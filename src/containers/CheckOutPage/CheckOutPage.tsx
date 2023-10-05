@@ -224,9 +224,10 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
 				}
 			});
 		}
-
 		setLoading(true);
 		if (seatsList?.length) {
+			
+
 			const data = {
 				round: 1,
 				boarding: {
@@ -239,6 +240,7 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
 					seats: seatsList,
 				},
 			};
+			console.log('seatsList' , data)
 			await createFirstTrip(data)
 				.then(res => {
 					setOrderId(res?.data?.data?.gateway_order_id);

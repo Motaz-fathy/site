@@ -20,27 +20,27 @@ export const SliderOurPartner = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div className='w-[150px] h-[150px] flex justify-center items-center'><img src={`${ paymob}`} />
+          <div className='w-[150px] h-[150px] flex justify-center items-center max-sm:w-[50px] max-sm:h-[50px]'><img src={`${ paymob}`} />
           </div> 
        </SwiperSlide>
         <SwiperSlide>
-          <div className='w-[150px] h-[150px] flex justify-center items-center'><img src={`${swvel}`} />
+          <div className='w-[150px] h-[150px] flex justify-center items-center max-sm:w-[50px] max-sm:h-[50px]'><img src={`${swvel}`} />
           </div> 
        </SwiperSlide>
         <SwiperSlide>
-          <div className='w-[150px] h-[150px] flex justify-center items-center'><img src={`${webus}`} />
+          <div className='w-[150px] h-[150px] flex justify-center items-center max-sm:w-[50px] max-sm:h-[50px]'><img src={`${webus}`} />
           </div> 
        </SwiperSlide>
         <SwiperSlide>
-          <div className='w-[150px] h-[150px] flex justify-center items-center'><img src={`${skyscanner}`} />
+          <div className='w-[150px] h-[150px] flex justify-center items-center max-sm:w-[50px] max-sm:h-[50px]'><img src={`${skyscanner}`} />
           </div> 
        </SwiperSlide>
         <SwiperSlide>
-          <div className='w-[150px] h-[150px] flex justify-center items-center'><img src={`${elgesrElAraby}`} /></div>
+          <div className='w-[150px] h-[150px] flex justify-center items-center max-sm:w-[50px] max-sm:h-[50px]'><img src={`${elgesrElAraby}`} /></div>
 
         </SwiperSlide>
         <SwiperSlide>
-          <div className='w-[150px] h-[150px] flex justify-center items-center'><img src={`${ontimebus}`} />
+          <div className='w-[150px] h-[150px] flex justify-center items-center max-sm:w-[50px] max-sm:h-[50px]'><img src={`${ontimebus}`} />
           </div> 
        </SwiperSlide>
        

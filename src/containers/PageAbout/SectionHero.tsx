@@ -20,7 +20,7 @@ const SectionHero: FC<SectionHeroProps> = ({
 	const { token } = useContext(AppContext);
 	return (
 		<div
-			className={`nc-SectionHero flex  flex-col lg:justify-center ${className}  h-[667px] w-[99vw] bg-gradient-to-r from-[#242932] to-[#2B356E] max-sm:justify-center sm:justify-center `}
+			className={`nc-SectionHero flex  flex-col lg:justify-center ${className}  h-full w-[100%] bg-gradient-to-r from-[#242932] to-[#2B356E] max-sm:justify-center sm:justify-center `}
 			data-nc-id="SectionHero"
 		>
 			<div className=" flex items-center text-center align-middle max-sm:m-0  max-sm:flex-col-reverse max-sm:justify-between sm:m-0  sm:flex-col-reverse sm:justify-between  lg:mt-20  lg:flex-row lg:justify-around ">

@@ -205,7 +205,7 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
 									/>
 								</label>
 								<div className="flex justify-end">
-									<button  type="submit" onClick={editAddressData} className="bg-blue-500 w-[35%] h-[45px] rounded-[20px]  text-white flex justify-center items-center">
+									<button  type="submit" onClick={editAddressData} className="bg-blue-500 w-[35%] h-[45px] rounded-[20px]  text-white flex justify-center items-center max-sm:w-[50%]">
 										{t("sendMessage")}
 										<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M15.042 22.172L13.684 17.1M13.684 17.1L11.174 19.325L11.743 9.855L16.97 17.772L13.684 17.1ZM12 2.75V5M17.834 5.166L16.243 6.757M20.25 11H18M7.757 15.243L6.167 16.833M6 11H3.75M7.757 6.757L6.167 5.167" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
