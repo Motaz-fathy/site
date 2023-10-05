@@ -223,7 +223,6 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 								defaultValue={pickUpInputValue}
 								onChange={(e) => setPickUpInputValue(e)}
 								onInputDone={(value: any) => {
-									console.log("origin value " , value)
 									setFieldFocused("dropOffInput");
 									setTravelFrom(value);
 									setPickUpInputValue(
@@ -324,7 +323,7 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 										startDate: data,
 									} as any);
 								}}
-								defaultFocus={fieldFocused === "dropOffInput" ? false : true}
+								
 								onFocusChange={focus => setFieldFocused(focus as any)}
 								buttonSubmitHref={navigateFightTrips}
 							/>
