@@ -80,6 +80,13 @@ const ADCard = () => {
 		<div className={` z-0 ${classes.addressCard}`}>
 			{" "}
 			<p className=""> no Address </p>
+			<button
+					className={classes.Edit}
+					onClick={() => navigate("/addaddress")}
+				>
+					{" "}
+					Add  address
+				</button>
 		</div>
 	);
 };

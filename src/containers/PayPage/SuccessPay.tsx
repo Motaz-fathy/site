@@ -1,6 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export const SuccessPay = () => {
+  const navigation = useNavigate()
+  const handletoBooking = () => {
+    navigation('/booking')
+  }
+  const handletoHome = () => {
+    navigation('/')
+  }
   return (
     <div>
         <div className='container w-full h-auto'>
@@ -22,10 +30,10 @@ export const SuccessPay = () => {
                </div>
                 <h2 className='text-[#1E1E1E] text-[24px] text-[500] max-sm:text-[14px] mt-4'>Successful Payment</h2>
                 <span className='text-[#69696A] text-[24px] text-[500] max-sm:text-[14px] mt-4 '>Booking confirmed, thank you for your booking</span>
-                <button
+                <button onClick={handletoHome}
                  className='w-[300px] rounded-[9px] max-sm:w-[200px] h-[54px] mt-4 max-sm:h-[40px] text-[20px] font-[500] text-white bg-[#1D4179]'>
                     New booking</button>
-                <button
+                <button onClick={handletoBooking}
                  className='w-[300px] rounded-[9px] max-sm:w-[200px] h-[54px] mt-4 mb-4 max-sm:h-[40px] text-[20px] font-[500] text-[#1D4179] bg-white border-[1px] border-[#1D4179]'
                 >View a ticket</button>
             </div>
