@@ -69,9 +69,9 @@ const SectionSteps = ({
 						<p className="mt-2 w-2/3 text-base text-white">
 							{t("newsletterDesc")}
 						</p>
-						<label className="relative block pb-0 sm:pb-0 ">
+						<label className="relative block pb-0 sm:pb-0 px-3 ">
 							<span className="sr-only">Search</span>
-							<span className="absolute inset-y-0 left-0 flex items-center pl-2 rtl:inset-x-0 rtl:right-0 ">
+							<span className="absolute inset-y-0 left-1 flex items-center pl-2 rtl:inset-x-0 rtl:right-0  rtl:translate-x-[-15px]">
 								<svg
 								className="mx-1"
 									width="20"
@@ -98,7 +98,7 @@ const SectionSteps = ({
 								</svg>
 							</span>
 							<input
-								className="border-1 before:content-before mt-5 block rounded-none border border-white bg-transparent bg-white px-6 py-4   text-base text-white placeholder-white placeholder-opacity-50 shadow-sm placeholder:text-slate-400 before:pointer-events-none before:absolute before:inset-y-0 before:left-0 before:flex before:items-center before:pl-3 focus:border-transparent focus:outline-none focus:ring-1 rtl:before:inset-x-0 sm:w-3/5 sm:text-sm"
+								className="border-1 before:content-before mt-5 block rounded-none border border-white bg-transparent bg-white px-8 py-4   text-base text-white placeholder-white placeholder-opacity-50 shadow-sm placeholder:text-slate-400 before:pointer-events-none before:absolute before:inset-y-0 before:left-0 before:flex before:items-center before:pl-3 focus:border-transparent focus:outline-none focus:ring-1 rtl:before:inset-x-0 sm:w-3/5 sm:text-sm"
 								placeholder={t("newsletterPlaceHolder") || "Enter your email"}
 								type="email"
 								name="search"

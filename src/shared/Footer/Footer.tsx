@@ -64,17 +64,17 @@ const Footer: React.FC = () => {
 				<h2 className="font-semibold text-white sm:mt-0">{menu.title}</h2>
 				<ul className="space-y-4">
 					{menu.menus.map((item, index) => (
-						<li key={index}>
+						<li key={index} className="mt-3">
 							{!!item?.href ? (
 								<a
 									key={index}
-									className="text-[10px] text-white sm:text-[12px]"
+									className="text-[10px] text-white sm:text-[12px] "
 									href={item?.href}
 								>
 									{item.label}
 								</a>
 							) : (
-								<p className="text-[10px] text-white sm:text-[12px]">
+								<p className="text-[10px] text-white sm:text-[12px] ">
 									{item.label}
 								</p>
 							)}
@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
 
 	return (
 		
-			<div className="z-0 h-fit border-t border-neutral-200 bg-[#0A162A] text-[#FFFFFF] dark:border-neutral-700  ">
+			<div className="h-fit pt-[30px]  bg-[#0A162A] text-[#FFFFFF]   ">
 				<div className="container gap-y-10 gap-x-5 sm:grid sm:grid-cols-2 sm:gap-x-8 md:grid-cols-4 lg:grid-cols-4 lg:gap-x-10 ">
 					<div className=" col-span-2 grid gap-5 sm:grid-cols-4 md:col-span-4 lg:md:col-span-1 lg:relative lg:flex lg:flex-col">
 						<div className=" mx-auto  h-[174px] w-[285px] md:col-span-1 lg:absolute lg:top-[-25px]">

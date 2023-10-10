@@ -13,54 +13,64 @@ import { Section2 } from "./section2";
 import SectionFeatures from "containers/PageHome/SectionFeatures";
 
 export interface PageAboutProps {
-	className?: string;
+  className?: string;
 }
 
 const PageAbout: FC<PageAboutProps> = ({ className = "" }) => {
-	const { t } = useTranslation();
-	return (
-		<div
-			className={`nc-PageAbout relative overflow-hidden ${className} h-fit h-screen bg-[#DDE2EB] `}
-			data-nc-id="PageAbout"
-		>
-			<Helmet>
-				<title>About || Booking</title>
-			</Helmet>
+  const { t } = useTranslation();
+  return (
+    <div
+      className={` relative h-[100%]  overflow-hidden bg-[#DDE2EB] `}
+      data-nc-id="PageAbout"
+    >
+      <Helmet>
+        <title>About || Booking</title>
+      </Helmet>
+      <div className=" flex h-[50vh] max-sm-:h-[80vh] w-[100%] items-center justify-center bg-gradient-to-r from-[#242932] to-[#2B356E]">
+        <div className=" container w-[80%] flex items-start justify-between max-sm:flex-col-reverse ">
+          <div className="flex flex-col items-start w-[50%] text-white max-sm:w-full">
+            <h3 className="text-[30px] max-sm:text-[16px] font-[500] mb-5 max-sm:mb-1 ">About Us.</h3>
+            <p className="max-sm:text-[10px]">
+              Telefreik is a safe, easy and fast application that enables you to
+              search and compare prices and different modes in different times,
+              classes and classes of trips. It's like searching more than 10
+              search engines simultaneously with just a click of a button.
+            </p>
+          </div>
+          <img
+            src={rightImg}
+            alt="telefreik logo "
+            className="h-[50%] w-[50%]"
+          />
+        </div>
+      </div>
+      {/* ======== BG GLASS ======== */}
+      {/* <BgGlassmorphism /> */}
 
-			{/* ======== BG GLASS ======== */}
-			{/* <BgGlassmorphism /> */}
+      <div className="container m-0 w-[100vw] p-0 ">
+        {/* <SectionFounder /> */}
+        <Section2 />
 
-			<div className="container m-0 w-[100vw] p-0 ">
-				<SectionHero
-					rightImg={rightImg}
-					heading={t("aboutTitle")}
-					btnText=""
-					subHeading={t("aboutDesc")}
-				/>
+        {/* <SectionStatistic /> */}
 
-				{/* <SectionFounder /> */}
-				<Section2 />
-
-				{/* <SectionStatistic /> */}
-
-				{/* <SectionSubscribe2 /> */}
-			</div>
-			<div className=" h-fit w-full pb-[20vh]">
-				<div
-					className="h-fit 
+        {/* <SectionSubscribe2 /> */}
+      </div>
+      <div className=" h-fit w-full pb-[20vh]">
+        <div
+          className="h-fit 
 				
 				min-h-full
 		bg-[#1D4179]
 				"
-				>
-					{/* margin top changes depends on search form  */}
-					<div className="container ">
-						<SectionFeatures />
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+        >
+          {/* margin top changes depends on search form  */}
+          <div className="container ">
+            <SectionFeatures />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default PageAbout;

@@ -55,7 +55,9 @@ const SectionDowloadApp = ({
 					<div className="relative flex ">
 						<div className="w-full ">
 							<div className="mt-5 flex flex-col justify-start gap-2 sm:mt-7 sm:flex-row">
-								<button className="flex w-[120px] items-center justify-center gap-2 rounded-lg bg-[#1D4179] py-2 px-2 text-white rtl:flex-row-reverse sm:w-[200px] sm:py-4 sm:px-10">
+								<button className="flex w-[120px] items-center justify-center gap-2 rounded-lg  py-2 px-2 text-white 
+							    btn-hover
+								rtl:flex-row-reverse sm:w-[200px] sm:py-4 sm:px-10">
 									<span>
 										<svg
 											width="24"
@@ -84,7 +86,7 @@ const SectionDowloadApp = ({
 									</span>
 									<span className="sm:text-2xl">{t("iphone")}</span>
 								</button>
-								<button className="flex w-[120px] items-center justify-center gap-2 rounded-lg bg-[#1D4179] py-2 px-2 text-white rtl:flex-row-reverse sm:w-[200px] sm:py-4 sm:px-10">
+								<button className="flex w-[120px] items-center   btn-hover justify-center gap-2 rounded-lg bg-[#1D4179] py-2 px-2 text-white rtl:flex-row-reverse sm:w-[200px] sm:py-4 sm:px-10">
 									<span>
 										<svg
 											width="24"

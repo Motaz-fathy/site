@@ -61,9 +61,9 @@ function PageHome() {
 						{/* <ScrollableList
 							items={[swvel, paymob, skyscanner, elgesrElAraby, ontimebus]}
 						/> */}
-						<div className="container w-full ">
+						
 						<SliderOurPartner />
-						</div>
+						
 					</div>
 				</div>
 				<div className=" max-sm:mb-[80px] flex flex-col items-center justify-center  bg-[#E8ECF2] rtl:flex-row-reverse">

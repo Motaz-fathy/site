@@ -6,18 +6,22 @@ import skyscanner from "images/image 3.png";
 import elgesrElAraby from "images/image 5.png";
 import ontimebus from "images/image 8.png";
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import { Autoplay } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 
 export const SliderOurPartner = () => {
   return (
-    <>
+    <div className='px-[-200px]'>
          <Swiper
-        slidesPerView={4}
-        spaceBetween={5}
-        
-        className="mySwiper"
+        slidesPerView={3}
+        spaceBetween={100}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay]}
+        className="mySwiper "
       >
         <SwiperSlide>
           <div className='w-[150px] h-[150px] flex justify-center items-center max-sm:w-[50px] max-sm:h-[50px]'><img src={`${ paymob}`} />
@@ -43,9 +47,10 @@ export const SliderOurPartner = () => {
           <div className='w-[150px] h-[150px] flex justify-center items-center max-sm:w-[50px] max-sm:h-[50px]'><img src={`${ontimebus}`} />
           </div> 
        </SwiperSlide>
+
+     
        
-       
-      </Swiper>
-    </>
+         </Swiper>
+    </div>
   )
 }

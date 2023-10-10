@@ -8,7 +8,7 @@ import card_flight2 from "images/small_card flyu.png";
 
 export  const Section2  =()=> {
 return (
-    <div className=" container w-full  z-0  block flex flex-col  justify-between mt-[100px]">
+    <div className=" container w-full    block flex flex-col  justify-between mt-[100px]">
             
             
             <div className="  flex  items-center justify-around w-[80%] sm:w-[90%] max-sm:w-[90%]   m-auto  max-sm:flex-col max-md:flex-col  ">
@@ -56,7 +56,7 @@ return (
                     <h4 className="text-center text-[16px] text-[400] text-[#1D4078]">Mobile app</h4>
                 </div>
             </div>
-            <div className="  flex flex-col items-start justify-around max-sm:container ">
+            <div className="  flex flex-col items-start justify-around max-sm:container w-[80%] m-auto">
                 {/* title and p  */}
                 <h4 className="text-[24px] text-[500] text-[#1E1E1E] mb-[16px]">What we do</h4>
                 <p className="text-20 text-400 text-[#69696A]">
