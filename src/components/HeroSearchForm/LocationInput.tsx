@@ -361,7 +361,7 @@ const LocationInput: FC<LocationInputProps> = ({
 	};
 
 	const renderSearchValue = () => {
-		// console.log(cities,"citeties")
+		
 		return (
 			<>
 				{cities?.length! > 0 &&
@@ -459,6 +459,7 @@ const LocationInput: FC<LocationInputProps> = ({
 							onChange && onChange(e.currentTarget.value);
 
 							if (type === "flight") {
+								
 								searchFlightItems(e.currentTarget.value);
 							} else {
 								searchItems(e.currentTarget.value);
@@ -476,7 +477,7 @@ const LocationInput: FC<LocationInputProps> = ({
 					{value && showPopover && (
 						<ClearDataButton
 							onClick={() => {
-								setValue("");
+								setValue(value);
 								onChange && onChange("");
 								setCities(citiesWrapper);
 							}}
@@ -488,7 +489,9 @@ const LocationInput: FC<LocationInputProps> = ({
 				<div className="absolute    top-full z-50 mt-3 max-h-96 w-full min-w-[300px] overflow-y-auto rounded-3xl bg-white  py-3 shadow-xl ltr:left-0 rtl:right-0 dark:bg-neutral-800 sm:min-w-[500px] sm:py-6">
 					{value && renderSearchValue()}
 				</div>
-			) : null}
+			) : 
+			    null
+			}
 		</div>
 	);
 };

@@ -11,7 +11,7 @@ export interface HeroSearchFormProps {
 }
 
 export type SearchTab = "" | "Bus" | "Maritime transport" | "Cars" | "Flights";
-const tabs: SearchTab[] = ["Flights", "Maritime transport", "Bus", "Cars"];
+const tabs: SearchTab[] = ["Bus", "Flights", "Maritime transport",  "Cars"];
 
 const SVGS_ICON: any = {
 	Flights: (
@@ -144,18 +144,22 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 	window.removeEventListener("storage", () => {});
 	function handleActiveTab() {
 		switch (tabActive) {
-			case "Flights":
-				sessionStorage.setItem("currentActiveTab", "Flights");
-				break;
+
 			case "Bus":
 				sessionStorage.setItem("currentActiveTab", "Bus");
 				break;
+
+			case "Flights":
+				sessionStorage.setItem("currentActiveTab", "Flights");
+				break;
+			
 			case "Cars":
 				sessionStorage.setItem("currentActiveTab", "Cars");
 				break;
 			case "Maritime transport":
 				sessionStorage.setItem("currentActiveTab", "Maritime transport");
 				break;
+		
 		}
 		window.dispatchEvent(new Event("storage"));
 	}
@@ -167,6 +171,7 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 			<ul className="hiddenScrollbar ml-2  flex w-full overflow-x-auto sm:mt-6 sm:mb-0 sm:justify-around sm:gap-8 sm:pt-0  ">
 				{tabs.map((tab: any) => {
 					const active = tab === tabActive;
+					
 					return (
 						<li
 							onClick={() => setTabActive(tab)}
@@ -210,7 +215,7 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 				return <MaritimeTransportForm haveDefaultValue={isArchivePage} />;
 			default:
 				return (
-					<FlightSearchForm disabled={true} haveDefaultValue={isArchivePage} />
+					<ExperiencesSearchForm haveDefaultValue={isArchivePage} />
 				);
 		}
 	};

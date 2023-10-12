@@ -24,7 +24,6 @@ function PageHome() {
 	return (
 		<div className=" max-sm:mb-[20px] relative overflow-hidden  bg-[#E8ECF2] ">
 			{/* GLASSMOPHIN */}
-			<BgGlassmorphism />
 
 			<div className="relative mb-24 lg:mb-28  ">
 				{/* SECTION HERO */}

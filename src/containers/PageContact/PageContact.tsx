@@ -103,11 +103,11 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
 				>
 					<div className="grid flex-shrink-0 sm:flex grid-cols-1 gap-12 sm:grid-cols-2 ">
 						<img
-				className="lg:absolute max-md:absolute left-0 top-0  object-cover h-full w-full max-sm:block max-sm:w-fit max-sm:h-fit "
+				className="lg:absolute max-md:absolute left-0 top-0  object-cover h-[100vh] w-full max-sm:block max-sm:w-fit max-sm:h-fit "
 				src={contactPic}
 				alt=""
 			/>
-						<div className="absolute max-sm:mt-[130px] max-md:absolute max-sm:block w-[578px] h-[792px] max-sm:h-auto max-sm:w-auto left-[120px] max-sm:m-auto max-sm:left-2 max-sm:right-2 p-[54px] max-sm:py-[24px] max-sm:px-[16px] gap-[10px] top-[134px] max-sm:mt-24 rounded-[16px] bg-white"
+						<div className="absolute max-sm:mt-[130px] max-md:absolute max-sm:block w-[578px] h-auto max-sm:h-auto max-sm:w-auto left-[120px] max-sm:m-auto max-sm:left-2 max-sm:right-2 p-[54px] max-sm:py-[24px] max-sm:px-[16px] gap-[10px] top-[200px] max-sm:top-[60px] max-sm:mt-24 rounded-[16px] bg-white"
 						
 						style={{boxShadow: "0px 4px 4px 0px rgba(217, 217, 217, 0.50)",
 						// padding:"54px 54px 81px "
@@ -117,7 +117,7 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
 								<h2 className=" flex items-center ltr:text-left  text-[20px]">
 									{t("contact")}
 								</h2>
-								<h6 className=" flex items-center ltr:text-left  text-[20px] " style={{color:"#69696A"}}>
+								<h6 className=" flex items-center ltr:text-left  text-[20px] mt-2" style={{color:"#69696A"}}>
 									Lorem ipsum dolor sit amet, 
 								</h6>
 							</div>
@@ -205,8 +205,8 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
 									/>
 								</label>
 								<div className="flex justify-end">
-									<button  type="submit" onClick={editAddressData} className="bg-blue-500 w-[35%] h-[45px] rounded-[20px]  text-white flex justify-center items-center max-sm:w-[50%]">
-										{t("sendMessage")}
+									<button  type="submit" onClick={editAddressData} className="btn-hover  w-[139px] h-[55px] rounded-[30px] mt-3 text-white flex justify-center items-center max-sm:w-[50%]">
+										{t("send")}
 										<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M15.042 22.172L13.684 17.1M13.684 17.1L11.174 19.325L11.743 9.855L16.97 17.772L13.684 17.1ZM12 2.75V5M17.834 5.166L16.243 6.757M20.25 11H18M7.757 15.243L6.167 16.833M6 11H3.75M7.757 6.757L6.167 5.167" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 										</svg>

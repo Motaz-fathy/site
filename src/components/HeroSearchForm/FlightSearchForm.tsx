@@ -207,12 +207,7 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 					disabled ? "cursor-not-allowed   select-none	" : "cursor-pointer"
 				}  md:h-fit `}
 			>
-				{!!disabled && (
-					<div className="absolute top-0    left-0 z-[9999] flex   h-full max-sm:h-[400px]  w-full items-center justify-center rounded-[40px] rounded-t-2xl   bg-gray-50 bg-opacity-70 text-lg   font-semibold text-black dark:bg-opacity-50 xl:rounded-[49px] xl:rounded-t-3xl xl:text-2xl">
-						{t("shouldSelectTripType")}
-					</div>
-				)}
-
+				
 				<form className="relative mt-2  w-full p-2 dark:bg-neutral-800 sm:mt-8  sm:bg-white sm:p-8 xl:rounded-xl   sm:flex-col-reverse  max-sm:flex-col-reverse  ">
 					<span className="flex sm:hidden">{renderRadioBtn()}</span>
 					<div className="flex h-[56px]  lg:w-full md:w-full sm:w-full  max-sm:flex-col gap-1 md:flex-row sm:justify-around ">

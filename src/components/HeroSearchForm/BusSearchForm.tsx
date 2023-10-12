@@ -35,8 +35,9 @@ const BusSearchForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 
 	const [dateValue, setdateValue] = useState<moment.Moment | null>(null);
 	const [dateFocused, setDateFocused] = useState<boolean>(false);
-
+  
 	const [pickUpInputValue, setPickUpInputValue] = useState("");
+	console.log("pickUpInputValue" , pickUpInputValue)
 	const [dropOffInputValue, setDropOffInputValue] = useState("");
 	const [fieldFocused, setFieldFocused] = useState<
 		FocusedInputShape | "dropOffInput" | null
@@ -49,7 +50,6 @@ const BusSearchForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 	>("roundTrip");
 	const [guests, setGuests] = useState(1);
 	const [date, setDate] = useState<string>("");
-	const [ result_end_date , set_result_end_date ] = useState()
 	const [dateRangeValue, setDateRangeValue] = useState<DateRage>({
 		startDate: null,
 		endDate: null,

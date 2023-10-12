@@ -52,19 +52,35 @@ export interface CheckBoxTypes {
     name: string;
     handleChange: Function;
     title: string,
+    
 }
 export const CheckBox = (props: CheckBoxTypes) => {
-    
-    const { checkBoxArray, name, handleChange, title } = props;
+    const handleClick = (event : React.MouseEvent<HTMLElement>) => {
+        if(event.currentTarget.id === "Classes") {
+            const Classes = document.getElementById("Classesdiv") 
+            Classes?.classList.toggle('hidden')
+            }  
+        if(event.currentTarget.id === "departure Stations") {
+            const departure_Stations = document.getElementById("departure Stationsdiv") 
+            departure_Stations?.classList.toggle('hidden')
+            }   
+            
+            if(event.currentTarget.id === "Arrival Stations") {
+                const Arrival_Stations = document.getElementById("Arrival Stationsdiv") 
+                Arrival_Stations?.classList.toggle('hidden')
+                }  
+    }
+    const { checkBoxArray, name, handleChange, title  } = props;
     return (
         <div className="mb-10 flex h-6 h-fit w-full flex-col rounded-lg bg-white p-3 shadow-md">
-            <h5 className="border-w border-b-2 p-2">{`${t(title)}`}</h5>
-            <div className="flex h-fit w-full flex-col">
+            <h5 className="border-w border-b-2 p-2 cursor-pointer" onClick={handleClick} id={title}>{`${t(title)}`}</h5>
+            <div className="flex h-fit w-full flex-col" id={`${title}div`}>
                 {checkBoxArray.map((item, i) => (
                     
                     <div className="my-3 flex items-center gap-4" key={i}>
                         <input
                             type="checkbox"
+                            className="rounded-[3px] focus:bg-transparent text-[#1D4179]"
                             id={item}
                             name={item}
                             value={item}
@@ -418,12 +434,30 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
         setData(filteredData)
     }, [filterFunctionsCombinator])
 
+    const [flag , setFlag] = useState(false)
+    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+         
+         if(event.currentTarget.id === "1") {
+          const busTime = document.getElementById("toggle1") 
+          busTime?.classList.toggle('hidden')
+         } 
+
+         if(event.currentTarget.id === "2") {
+            const price = document.getElementById("toggle2") 
+            price?.classList.toggle('hidden')
+           } 
+
+        
+
+       
+          
+      };
     return (
         <>
             <form className={`${Styled.filter_items }  ${className} `}>
                 <div className="mb-10 flex h-6 h-fit w-full flex-col rounded-lg bg-white p-3 shadow-md">
-                    <h5 className="border-w border-b-2 p-2">{t("Bus times")}</h5>
-                    <div className="h-fit w-full ">
+                    <h5 className="border-w border-b-2 p-2 cursor-pointer" onClick={handleClick} id={"1"}>{t("Bus times")}</h5>
+                    <div className={'   h-fit w-full'} id="toggle1">
                         <h6 className="my-4 text-sm text-slate-500">{t("Depart from")}{` (${from})`}</h6>
                         <div className="my-3 flex justify-between">
                             <span className="text-xs">{travel_atTimes[0]}</span>
@@ -478,8 +512,8 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
                 {
                     nonDuplicatedPrices.length > 1 &&
                     <div className="mb-10 flex h-6 h-fit w-full flex-col rounded-lg bg-white p-3 shadow-md">
-                        <h5 className="border-w border-b-2 p-2">{t("Price")}</h5>
-                        <div className="h-fit w-full ">
+                        <h5 className="border-w border-b-2 p-2 cursor-pointer" onClick={handleClick} id={"2"}>{t("Price")}</h5>
+                        <div className="h-fit w-full " id="toggle2">
                             <div className="my-3 flex justify-between">
                             {
                                 i18next.language === "en" ? 
@@ -513,6 +547,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
                 }
 
                 {classes.length > 1 && <CheckBox
+                    
                     handleChange={handleChange}
                     name="seatsFilter"
                     checkBoxArray={classes}
@@ -523,6 +558,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
                     name="operatorFilter"
                     checkBoxArray={operators}
                     title="Operators"
+
                 />}
                 {departureStations.length > 1 && <CheckBox
                     handleChange={handleChange}
@@ -530,12 +566,14 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
                     checkBoxArray={departureStations}
                     title="departure Stations"
 
+
                 />}
                 {arrivalStations.length > 1 && <CheckBox
                     handleChange={handleChange}
                     name="arrivalFilter"
                     checkBoxArray={arrivalStations}
                     title="Arrival Stations"
+
                 />}
 
             </form>

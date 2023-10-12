@@ -9,21 +9,26 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
+import i18next from 'i18next';
 
 export const SliderOurPartner = () => {
   return (
-    <div className='px-[-200px]'>
+    <div className=' w-full '>
          <Swiper
-        slidesPerView={3}
-        spaceBetween={100}
+        slidesPerView={4}
+        spaceBetween={5}
+        dir="rtl"
         autoplay={{
-          delay: 2500,
+          delay: 1000,
           disableOnInteraction: false,
+
         }}
         modules={[Autoplay]}
-        className="mySwiper "
+        className="  mySwiper "
       >
-        <SwiperSlide>
+      
+       
+         <SwiperSlide>
           <div className='w-[150px] h-[150px] flex justify-center items-center max-sm:w-[50px] max-sm:h-[50px]'><img src={`${ paymob}`} />
           </div> 
        </SwiperSlide>
@@ -47,8 +52,13 @@ export const SliderOurPartner = () => {
           <div className='w-[150px] h-[150px] flex justify-center items-center max-sm:w-[50px] max-sm:h-[50px]'><img src={`${ontimebus}`} />
           </div> 
        </SwiperSlide>
+      
 
-     
+        
+    
+       
+
+      
        
          </Swiper>
     </div>

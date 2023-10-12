@@ -26,9 +26,9 @@ const PageAbout: FC<PageAboutProps> = ({ className = "" }) => {
       <Helmet>
         <title>About || Booking</title>
       </Helmet>
-      <div className=" flex h-[50vh] max-sm-:h-[80vh] w-[100%] items-center justify-center bg-gradient-to-r from-[#242932] to-[#2B356E]">
+      <div className=" flex h-[60vh] max-sm-:h-[800px] w-[100%] items-center justify-center bg-gradient-to-r from-[#242932] to-[#2B356E]">
         <div className=" container w-[80%] flex items-start justify-between max-sm:flex-col-reverse ">
-          <div className="flex flex-col items-start w-[50%] text-white max-sm:w-full">
+          <div className="flex flex-col items-start w-[50%] text-white max-sm:w-full max-sm-:h-[500px]">
             <h3 className="text-[30px] max-sm:text-[16px] font-[500] mb-5 max-sm:mb-1 ">About Us.</h3>
             <p className="max-sm:text-[10px]">
               Telefreik is a safe, easy and fast application that enables you to
@@ -40,7 +40,7 @@ const PageAbout: FC<PageAboutProps> = ({ className = "" }) => {
           <img
             src={rightImg}
             alt="telefreik logo "
-            className="h-[50%] w-[50%]"
+            className="h-[50%] w-[50%] max-sm:w-full  max-sm:h-[300px] m-auto"
           />
         </div>
       </div>
