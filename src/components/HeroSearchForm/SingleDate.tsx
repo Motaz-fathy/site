@@ -298,7 +298,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
           type === "maritime"
             ? "w-[34vw]"
             : type === "bus"
-            ? " w-[25vw] lg:rtl:mx-3"
+            ? " w-[25vw] ml-3 lg:rtl:mx-3"
             : type === "cars"
             ? "w-[30vw] lg:rtl:translate-x-[25px]"
             : "w-[14vw]"
@@ -344,7 +344,15 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
       <div className="flex w-[20vw]  justify-between max-sm:h-[48px] max-sm:w-full  lg:ml-2 ">
         {type !== "cars" ? (
           <>
-            {type !== "maritime" ? (
+            {type === "bus" ? (
+              <div className="flex w-[9.5vw] items-center lg:translate-x-[30px] md:translate-x-[30px]  sm:translate-x-[20px] max-sm:translate-x-[0px] justify-center rounded-[4px]  border-[1px] border-[#E8ECF2] max-sm:h-[48px] max-sm:w-full max-sm:rounded-3xl  ">
+                {renderGuest()}
+              </div>
+            ) : (
+              ""
+            )}
+
+            {type === "flight" ? (
               <div className="flex w-[9.5vw] items-center  justify-center rounded-[4px]  border-[1px] border-[#E8ECF2] max-sm:h-[48px] max-sm:w-full max-sm:rounded-3xl  ">
                 {renderGuest()}
               </div>

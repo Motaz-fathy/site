@@ -437,12 +437,12 @@
   /* input time  */
 
   .btn-hover {
-	background-color: #1D4179;
-	transition:  ease-in-out 0.3s;
+	background: var(--222, linear-gradient(90deg, #1D4179, #1D4179 ));
+	transition: all ease-in-out 0.4s;
 
   }
  .btn-hover:hover {
-  background: var(--222, linear-gradient(90deg, #242932 0%, #2B356E 100%));
+  background: var(--222, linear-gradient(90deg, #242932 , #2B356E ));
 
  }
   body, html { 

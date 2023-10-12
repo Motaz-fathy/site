@@ -535,9 +535,7 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
               </p> */}
 						</div>
 					)}
-					<div className="mt-6">
-						<div className="pt-8">{!orderId && RenderButton()}</div>
-					</div>
+					
 				</div>
 			</div>
 		);
@@ -552,12 +550,13 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
 				{/* top nav */}
 				<div className="relative mx-auto flex h-[50px] w-[80vw] flex-row  justify-between text-white ">
 					<button
-						className="flex w-[3vw] items-center justify-between"
+						className="flex w-[4vw] items-center justify-around"
 						onClick={handleBackClick}
 					>
 						<svg
-							width="10"
-							height="17"
+						
+							width="12"
+							height="12"
 							viewBox="0 0 10 17"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
@@ -570,11 +569,11 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
 								stroke-linejoin="round"
 							/>
 						</svg>
-						back
+						<span className="mt-1">back</span>
 					</button>
 				</div>
 				{/* center data */}
-				<div className="flex flex-col items-center justify-center text-white">
+				<div className="flex flex-col items-center justify-center text-white pb-10">
 					<span className="absolute z-0 h-[20vh] w-[20vh]   rotate-45 rounded bg-[#1d4179]"></span>
 					<h3 className="z-10">
 						{i18next.language === "en"
@@ -726,11 +725,13 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
 			    </div>
 			} */}
 		
-			<main className="container mb-24 mt-11 flex w-full flex-col-reverse lg:mb-32 lg:flex-row">
-				<div className=" itmes-start flex justify-between   lg:w-3/5 lg:pr-10 xl:w-2/3 ">
+			<main className=" flex w-full h-full flex-col  ">
+				<div className="container mb-24 mt-11 flex w-full flex-col lg:mb-32 lg:flex-row">
+<div className=" itmes-start flex justify-between   lg:w-3/5 lg:pr-10 xl:w-2/3 ">
 					{renderMain()}
 				</div>
-				{/* <div className=" container bg-white w-[30%] h-[300px] rounded-lg mt-[120px] flex flex-col">
+				
+				<div className=" container bg-white lg:w-[30%] lg:h-[300px] xl:w-[30%] xl:h-[300px] rounded-lg lg:mt-[120px] md:mt-[0px] md:w-[92%] max-sm:mt-[0px] flex flex-col max-sm:w-full md:w-full">
           <div className="flex justify-start items-center mt-3">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path d="M12 6V12H16.5M21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4442 20.3149C14.3522 20.7672 13.1819 21 12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 9.61305 3.94821 7.32387 5.63604 5.63604C7.32387 3.94821 9.61305 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12Z" stroke="#FFB229" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -783,7 +784,12 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
             <span className="text-[16px] font-[400] text-[#1D4179]">LE 987</span>
           </div>
 
-        </div> */}
+               </div>
+				</div>
+				
+			   <div className="container lg:w-[95%] xl:w-[95%] md:w-[80%] max-md:w-[80%] sm:w-[80%]  lg:translate-y-[-100px] md:translate-y-[-70px] max-sm:translate-y-[-10px]">
+						<div className="">{!orderId && RenderButton()}</div>
+		       </div>
 			</main>
 
 			

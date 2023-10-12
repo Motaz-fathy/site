@@ -208,7 +208,8 @@ const LocationInput: FC<LocationInputProps> = ({
 	const [showPopover, setShowPopover] = useState(autoFocus);
 	const [cities, setCities] = useState<Cities[]>([]);
 	const [citiesWrapper, setCitiesWrapper] = useState<Cities[]>([]);
-
+   
+	
 	const searchFlightItems = async (value: string) => {
 		if (!!value) {
 			await getFlightsCountries(value).then((res: any) => {
@@ -219,6 +220,14 @@ const LocationInput: FC<LocationInputProps> = ({
 		}
 	};
 	// console.log(cities,"cities")
+    useEffect(() => {
+		if(type === 'flight') {
+			searchFlightItems(value)
+		}
+		else {
+			searchItems(value)
+		}
+	} , [value]) 
 
 	useEffect(() => {
 		setValue(defaultValue);
@@ -348,7 +357,7 @@ const LocationInput: FC<LocationInputProps> = ({
 										/>
 									</svg>
 								</span>
-								<span className="block font-medium text-neutral-700 dark:text-neutral-200">
+								<span className="block text-[16px] text-neutral-700 dark:text-neutral-200">
 									{i18next.language === "en"
 										? item?.name_en ?? item?.name
 										: item?.name_ar ?? item?.name}
@@ -485,12 +494,20 @@ const LocationInput: FC<LocationInputProps> = ({
 					)}
 				</div>
 			</div>
-			{showPopover && value ? (
-				<div className="absolute    top-full z-50 mt-3 max-h-96 w-full min-w-[300px] overflow-y-auto rounded-3xl bg-white  py-3 shadow-xl ltr:left-0 rtl:right-0 dark:bg-neutral-800 sm:min-w-[500px] sm:py-6">
-					{value && renderSearchValue()}
-				</div>
-			) : 
-			    null
+			{
+				type !== 'flight' && showPopover && !value ?
+				 <div className="absolute    top-full z-50 mt-3 max-h-96 w-full min-w-[300px] overflow-y-auto rounded-3xl bg-white  py-3 shadow-xl ltr:left-0 rtl:right-0 dark:bg-neutral-800 sm:min-w-[500px] sm:py-6">
+				{ renderRecentSearches()}
+			    </div> :
+				null
+			}
+
+            {
+				type === 'flight' && showPopover && value ?
+				 <div className="absolute    top-full z-50 mt-3 max-h-96 w-full min-w-[300px] overflow-y-auto rounded-3xl bg-white  py-3 shadow-xl ltr:left-0 rtl:right-0 dark:bg-neutral-800 sm:min-w-[500px] sm:py-6">
+				{value && renderSearchValue()}
+			    </div> :
+				null
 			}
 		</div>
 	);

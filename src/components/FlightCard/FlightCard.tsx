@@ -245,10 +245,21 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
                }
 
                {
-                item?.classes === "First10" ||  item?.classes === "First"  || item?.classes === "First8" ?
+                item?.classes === "First10" ||  item?.classes === "First"  || item?.classes === "First8"  ?
                 <div
                 className="max-sm:ml-5 rtl:mr-5 h-[40px] w-[120px] lg:ml-5 md:ml-5 items-center max-sm:h-[40px] max-sm:w-[120px]
                  justify-center bg-[#6D706B] p-[8px] align-middle text-[14px] text-[#D3D5D3] max-sm:rtl:mr-5"
+                style={{ borderRadius: "24px", textAlign: "center" }}
+              >
+                {item?.classes}{" "}
+              </div>  : ""
+               }
+
+              {
+                item?.classes === "first_class"   ?
+                <div
+                className="max-sm:ml-5 rtl:mr-5 h-[40px] w-[120px] lg:ml-5 md:ml-5 items-center max-sm:h-[40px] max-sm:w-[120px]
+                 justify-center bg-blue-300 p-[8px] align-middle text-[14px] text-[#525252] max-sm:rtl:mr-5"
                 style={{ borderRadius: "24px", textAlign: "center" }}
               >
                 {item?.classes}{" "}
@@ -292,7 +303,7 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
             </div>
             <div className="h-full justify-center align-middle ">
               <button
-                className="ml-[16px] h-full w-[110px] bg-[#1D4179] text-[20px] text-white"
+                className="ml-[16px] h-full w-[110px]  text-[20px] text-white btn-hover"
                 style={{ borderRadius: "9px" }}
                 onClick={() => {
                   navigate(item?.trip_url);
