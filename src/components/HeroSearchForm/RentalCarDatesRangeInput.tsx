@@ -91,9 +91,9 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
            type === "maritime"
              ? "w-[34vw]"
              : type === "bus"
-             ? " lg:w-[20vw] md:w-[20vw]  sm:lg:w-[25vw]  max-sm:w-[25vw] "
+             ? " xl:w-[20vw]  lg:w-[20vw] md:w-[20vw] xl:translate-x-[-18px] lg:translate-x-[2px] xl:rtl:bg-red-300 xl:rtl:translate-x-[18px] lg:rtl:translate-x-[-10px]"
              : type === "cars"
-             ? "lg:w-[24vw] md:w-[24vw] max-sm:w-[20vw] rtl:translate-x-[60px] max-sm:w-[100vw]  max-sm:rtl:translate-x-[35px] "
+             ? "lg:w-[24vw] md:w-[24vw]  xl:rtl:translate-x-[45px] lg:rtl:translate-x-[40px]   max-sm:rtl:translate-x-[35px] "
              : "w-[14vw] "
          }   ${fieldClassName}cursor-pointer items-center  gap-[10px] rounded-full border-[1px]  border-[#E8ECF2]  text-left focus:outline-none sm:flex-shrink-0 sm:rounded-[4px]  ${className} ${
           focused ? "nc-hero-field-focused" : " "
@@ -299,30 +299,29 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
   return (
     <>
       <div
-        className={`  relative flex pt-3 sm:pt-0 ${className} ${
-          !!focusedInput ? "nc-date-focusedInput" : "nc-date-not-focusedInput"
-        }   max-sm:w-full ${
+        className={`  relative flex pt-3 sm:pt-0  ${
           type === "maritime"
             ? "w-[34vw]"
             : type === "bus"
-            ? " w-[25vw] "
+            ? " w-[25vw]    md:w-[20vw] max-sm:w-[90vw] "
             : type === "cars"
             ? "w-[30vw] lg:translate-x-[-20px] lg:rtl:translate-x-[-5px]"
             : "w-[14vw]"
         }   `}
       >
         <div
-          className={`absolute inset-0   flex ${
+          className={`absolute inset-0    flex ${
             type === "maritime"
               ? "w-[34vw]"
               : type === "bus"
-              ? " w-[20vw]"
+              ? " lg:w-[20vw] md:w-[20vw] max-sm:w-[90vw]   "
               : type === "cars"
               ? "w-[30vw]  "
               : "w-[14vw]"
           }  `}
         >
           <DateRangePicker
+            
             startDate={stateDate.startDate}
             endDate={stateDate.endDate}
             focusedInput={focusedInput}
@@ -347,6 +346,7 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
             }
             reopenPickerOnClearDates
             isRTL={i18n.language === "ar" ? true : false}
+            
           />
         </div>
 
@@ -368,7 +368,7 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
         {type !== "cars" ? (
           <>
             {type === "bus" ? (
-              <div className="flex w-[9.5vw] items-center lg:translate-x-[-30px] lg:rtl:translate-x-[60px] md:translate-x-[-30px] md:rtl:translate-x-[50px]  sm:translate-x-[-20px] max-sm:translate-x-[0px] justify-center rounded-[4px]  border-[1px] border-[#E8ECF2] max-sm:h-[48px] max-sm:w-full max-sm:rounded-3xl  ">
+              <div className="flex w-[9.5vw] items-center xl:translate-x-[-30px] xl:rtl:translate-x-[30px]  lg:translate-x-[5px] lg:rtl:translate-x-[-20px] md:translate-x-[-30px] md:rtl:translate-x-[50px]  sm:translate-x-[-20px] max-sm:translate-x-[0px] justify-center rounded-[4px]  border-[1px] border-[#E8ECF2] max-sm:h-[48px] max-sm:w-full max-sm:rounded-3xl  ">
                 {renderGuest()}
               </div>
             ) : (
@@ -397,13 +397,15 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
         <button
           onClick={buttonSubmitHref}
           type="button"
-          className="hover:bg-primary-700 flex h-[45px] w-[45px] items-center justify-center rounded-full bg-[#1D4078] p-2 text-neutral-50  focus:outline-none max-sm:w-full max-sm:py-6 sm:mt-0  sm:py-0"
+          className=" flex h-[45px] w-[45px] items-center justify-center rounded-full btn-hover
+          lg:rtl:mr-8
+          p-2 text-neutral-50  focus:outline-none max-sm:w-full max-sm:py-6 sm:mt-0  sm:py-0"
         >
           <span className="mr-3 hidden max-sm:block">Search & compare</span>
           <svg
             width="33"
-            height="34"
-            viewBox="0 0 33 34"
+            height="33"
+            viewBox="0 0 33 33"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >

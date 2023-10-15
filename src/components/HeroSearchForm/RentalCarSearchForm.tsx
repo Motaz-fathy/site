@@ -64,7 +64,7 @@ const RentalCarSearchForm: FC<FlightSearchFormProps> = ({
 
 	const [dropOffLocationType, setDropOffLocationType] = useState<
 		`roundTrip` | `oneWay` | ``
-	>(`roundTrip`);
+	>(`oneWay`);
 
 	const [guests, setGuests] = useState(1);
 	const [dateRangeValue, setDateRangeValue] = useState<DateRage>({

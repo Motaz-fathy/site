@@ -27,7 +27,7 @@ const BusSearchForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 	// DEFAULT DATA FOR ARCHIVE PAGE
 	const defaultPickUpInputValue = "";
 	const defaultDropOffInputValue = "";
-	const { t, i18n } = useTranslation();
+	const { t } = useTranslation();
 
 	const navigate = useNavigate();
 
@@ -47,7 +47,7 @@ const BusSearchForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 	const { search } = useLocation();
 	const [locationType, setlocationType] = useState<
 		"roundTrip" | "oneWay" | ""
-	>("roundTrip");
+	>("oneWay");
 	const [guests, setGuests] = useState(1);
 	const [date, setDate] = useState<string>("");
 	const [dateRangeValue, setDateRangeValue] = useState<DateRage>({

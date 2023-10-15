@@ -74,17 +74,17 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
           type === "maritime"
             ? "w-[34vw]"
             : type === "bus"
-            ? "w-[20vw]"
+            ? "w-[20vw] max-sm:w-[88vw]"
             : type === "flight"
             ? "w-[14vw]"
             : type === "cars"
-            ? "w-[25vw] lg:ml-3"
+            ? "w-[25vw]  xl:rtl:translate-x-[10px] lg:rtl:translate-x-[5px]"
             : "w-auto"
         }    flex h-[55px]  max-sm:w-full  ${fieldClassName} cursor-pointer items-center  gap-1 rounded-full border-[1px]  border-[#E8ECF2]  text-left focus:outline-none sm:flex-shrink-0 sm:rounded-[4px]  ${className} ${
-          focused ? "nc-hero-field-focused" : " "
+          focused ? "nc-hero-field-focused " : " "
         }`}
       >
-        <div className="text-neutral-300 dark:text-neutral-400">
+        <div className="text-neutral-300 dark:text-neutral-400 ">
           <svg
             width="24"
             height="24"
@@ -298,9 +298,9 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
           type === "maritime"
             ? "w-[34vw]"
             : type === "bus"
-            ? " w-[25vw] ml-3 lg:rtl:mx-3"
+            ? " w-[25vw] ml-3 lg:rtl:mx-3 max-sm:mx-0 max-sm:w-[90vw]"
             : type === "cars"
-            ? "w-[30vw] lg:rtl:translate-x-[25px]"
+            ? "w-[30vw] lg:rtl:translate-x-[25px] max-sm:w-[100vw] max-sm:m-auto max-sm:rtl:translate-x-[0px] max-sm:translate-x-[0px] "
             : "w-[14vw]"
         }   `}
       >
@@ -309,9 +309,9 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
             type === "maritime"
               ? "w-[34vw] "
               : type === "bus"
-              ? " w-[25vw] "
+              ? " w-[20vw] max-sm:w-[90vw]"
               : type === "cars"
-              ? "w-[30vw]   "
+              ? "w-[30vw]  max-sm:w-[100vw] "
               : "w-[14vw]"
           }  `}
         >
@@ -345,7 +345,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
         {type !== "cars" ? (
           <>
             {type === "bus" ? (
-              <div className="flex w-[9.5vw] items-center lg:translate-x-[30px] lg:rtl:translate-x-[2px] md:translate-x-[30px]  sm:translate-x-[20px] max-sm:translate-x-[0px] justify-center rounded-[4px]  border-[1px] border-[#E8ECF2] max-sm:h-[48px] max-sm:w-full max-sm:rounded-3xl  ">
+              <div className="flex w-[9.5vw] items-center  xl:translate-x-[0px] lg:translate-x-[0px] lg:rtl:translate-x-[2px] md:translate-x-[30px]  sm:translate-x-[0px]  max-sm:translate-x-[0px] justify-center rounded-[4px]  border-[1px] border-[#E8ECF2] max-sm:h-[48px] max-sm:w-full max-sm:rounded-3xl  ">
                 {renderGuest()}
               </div>
             ) : (
@@ -375,9 +375,10 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
           <button
             onClick={buttonSubmitHref}
             type="button"
-            className="hover:bg-primary-700 flex h-[45px] w-[45px] items-center justify-center rounded-full bg-[#1D4078] p-2 text-neutral-50  focus:outline-none max-sm:w-full max-sm:py-6 sm:mt-0  sm:py-0"
+            className="btn-hover flex h-[45px] w-[45px] items-center justify-center rounded-full   text-neutral-50 
+             focus:outline-none max-sm:w-full max-sm:py-6 sm:mt-0  sm:py-0"
             >
-            <span className="mr-3 hidden max-sm:block">Search & compare</span>
+            <span className="mr-3 hidden max-sm:block btn-hover">Search & compare</span>
             <svg
               width="33"
               height="33"

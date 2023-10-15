@@ -55,7 +55,7 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 	>(null);
 	const [dropOffLocationType, setDropOffLocationType] = useState<
 		"roundTrip" | "oneWay" | ""
-	>("roundTrip");
+	>("oneWay");
 	const [guests, setGuests] = useState(1);
 	const navigate = useNavigate();
 	const [flightClassState, setFlightClassState] = useState("");
