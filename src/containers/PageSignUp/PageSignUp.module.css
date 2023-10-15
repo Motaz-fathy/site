@@ -8,27 +8,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 .FormCard{
-    width: 70%;
+    width: 80%;
+    height: 80%;
     background: white;
     padding: 20px;
     border-radius: 12px;
     
-    box-shadow: 0px 4px 4px 0px rgba(217, 217, 217, 0.25);
 }
 .actions{
     width: 70%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
+.actions > * {
+    margin: 0 10px;
+}
 .actions button{
-    width: 170px;
-    height: 45px;
+    width: 45%;
+    height: 40px;
     background: #fff;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    color: var(--black, #171717);
+    
     /* Title 2 */
     font-family: Roboto;
     font-size: 16px;
@@ -86,6 +89,11 @@ font-weight: 400;
 font-size: 20px;
 /* margin-right: 2rem; */
 }
+.signuo_btn {
+    height: 50px;
+    width: 100%;
+    background-color: #1D4179;
+  }
 .otp{
     
     height: 4.2rem;
@@ -111,17 +119,21 @@ font-size: 20px;
   
     .actions {
     
+        display: flex;
+        flex-direction: column;
+        align-items: center;
      
     }
     .actions button{
+        width: 100%;
         padding: 4px 3rem;
     }
   
     .element{
      width: 90%;   
      overflow: hidden;
-    align-self: flex-start;
-    margin-left: 1rem;
+     align-self: flex-start;
+     margin-left: 1rem;
     }
     
     .element input{
@@ -132,7 +144,12 @@ font-size: 20px;
         height: 90%;
         
      }
-  
+  .signuo_btn {
+    margin: 10px 0;
+    height: 40px;
+    width: 100%;
+    background-color: #1D4179;
+  }
 }
 /* .phoneNumber {
     display: flex !important;

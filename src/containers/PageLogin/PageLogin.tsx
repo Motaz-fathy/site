@@ -230,7 +230,7 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
 								</span>
 							</Link>
 						</label>
-						<ButtonPrimary type="submit" className="  rounded-[16px]">{t("continue")}</ButtonPrimary>
+						<button type="submit" className=" btn-hover rounded-[20px] h-[55px] text-white">{t("continue")}</button>
 					</form>
 					{/* ==== */}
 					{/* OR */}

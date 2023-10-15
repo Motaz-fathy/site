@@ -355,22 +355,22 @@ const PageSignUp: FC<PageSignUpProps> = ({ className = "" }) => {
   // );
   return (
     <div
-      className={`flex items-center justify-center bg-red-300 ${classes.Form}`}
+      className={`flex items-center justify-center  ${classes.Form}`}
     >
       <form className={`  ${classes.FormCard} `} onSubmit={submitHandler}>
-        <div className="m-auto flex w-full flex-col items-center">
+        <div className=" flex w-full flex-col items-center">
           <div
-            className={`justify-around max-sm:flex max-sm:flex-col max-sm:items-center  ${classes.actions}`}
+            className={`   ${classes.actions}`}
           >
             <button
               onClick={() => navigate("/login")}
-              className=" h-[50px] w-[200px] max-sm:mt-2 max-sm:text-[20px] "
+              className="  max-sm:mt-2 max-sm:text-[20px] "
             >
               Sign in{" "}
             </button>
             <button
               onClick={() => navigate("/signup")}
-              className={`max-sm:mt-0 ${classes.active} h-[50px] w-[200px] `}
+              className={`max-sm:mt-0 ${classes.active}  `}
             >
               Sign up
             </button>
@@ -676,7 +676,7 @@ const PageSignUp: FC<PageSignUpProps> = ({ className = "" }) => {
 										)}
 									</label> */}
           {/* <ButtonPrimary type="submit">{t("continue")}</ButtonPrimary> */}
-          <button className={classes.confirm} type="submit">
+          <button className={"btn-hover w-[50%] h-[50px] rounded-[20px] text-white max-sm:w-[100%] max-sm:h-[40px] max-sm:mt-[20px] max-sm:btn-hover "} type="submit">
             {t("continue")}
           </button>
         </div>
