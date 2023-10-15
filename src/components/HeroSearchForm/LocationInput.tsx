@@ -495,9 +495,9 @@ const LocationInput: FC<LocationInputProps> = ({
 				</div>
 			</div>
 			{
-				type !== 'flight' && showPopover && !value ?
+				type !== 'flight' && showPopover  ?
 				 <div className="absolute    top-full z-50 mt-3 max-h-96 w-full min-w-[300px] overflow-y-auto rounded-3xl bg-white  py-3 shadow-xl ltr:left-0 rtl:right-0 dark:bg-neutral-800 sm:min-w-[500px] sm:py-6">
-				{ renderRecentSearches()}
+				{value ? renderSearchValue() : renderRecentSearches()}
 			    </div> :
 				null
 			}

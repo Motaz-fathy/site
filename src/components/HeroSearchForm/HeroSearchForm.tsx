@@ -143,6 +143,7 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 	const [tabActive, setTabActive] = useState<SearchTab>(currentTab);
 	window.removeEventListener("storage", () => {});
 	function handleActiveTab() {
+		
 		switch (tabActive) {
 
 			case "Bus":
@@ -169,6 +170,7 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 	const renderTab = () => {
 		return (
 			<ul className="hiddenScrollbar ml-2  flex w-full overflow-x-auto sm:mt-6 sm:mb-0 sm:justify-around sm:gap-8 sm:pt-0  ">
+				
 				{tabs.map((tab: any) => {
 					const active = tab === tabActive;
 					
@@ -189,7 +191,7 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 							<span
 								className={`flex min-w-fit  gap-1 items-center
 								ltr:mx-4 ltr:py-2 rtl:ml-2 max-sm:ltr:mx-4  max-sm:ltr:py-2  max-sm:rtl:ml-1 sm:gap-2  ${
-									tab === tabs[1] ? "w-fit " : ""
+									tab === tabs[3] ? "w-fit " : ""
 								}`}
 							>
 								{SVGS_ICON[tab]}

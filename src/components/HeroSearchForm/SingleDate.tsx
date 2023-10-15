@@ -345,7 +345,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
         {type !== "cars" ? (
           <>
             {type === "bus" ? (
-              <div className="flex w-[9.5vw] items-center lg:translate-x-[30px] md:translate-x-[30px]  sm:translate-x-[20px] max-sm:translate-x-[0px] justify-center rounded-[4px]  border-[1px] border-[#E8ECF2] max-sm:h-[48px] max-sm:w-full max-sm:rounded-3xl  ">
+              <div className="flex w-[9.5vw] items-center lg:translate-x-[30px] lg:rtl:translate-x-[2px] md:translate-x-[30px]  sm:translate-x-[20px] max-sm:translate-x-[0px] justify-center rounded-[4px]  border-[1px] border-[#E8ECF2] max-sm:h-[48px] max-sm:w-full max-sm:rounded-3xl  ">
                 {renderGuest()}
               </div>
             ) : (
@@ -375,8 +375,8 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
           <button
             onClick={buttonSubmitHref}
             type="button"
-            className="hover:bg-primary-700  m-auto flex    h-[48px] w-[48px] items-center  justify-center rounded-full bg-[#1D4078] text-neutral-50 shadow focus:outline-none max-sm:h-[48px] max-sm:w-full"
-          >
+            className="hover:bg-primary-700 flex h-[45px] w-[45px] items-center justify-center rounded-full bg-[#1D4078] p-2 text-neutral-50  focus:outline-none max-sm:w-full max-sm:py-6 sm:mt-0  sm:py-0"
+            >
             <span className="mr-3 hidden max-sm:block">Search & compare</span>
             <svg
               width="33"

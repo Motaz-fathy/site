@@ -5,6 +5,7 @@ import { RefactoredData } from "./ListingBusPage";
 import { each, filter, set } from "lodash";
 import Styled from './page.module.css'
 import i18next, { t } from "i18next";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 //ingore ts
 export interface RangeFilterProps {
     filterName: string;
@@ -55,25 +56,35 @@ export interface CheckBoxTypes {
     
 }
 export const CheckBox = (props: CheckBoxTypes) => {
+    const [open , setOpen] = useState(false)
     const handleClick = (event : React.MouseEvent<HTMLElement>) => {
         if(event.currentTarget.id === "Classes") {
             const Classes = document.getElementById("Classesdiv") 
             Classes?.classList.toggle('hidden')
+            setOpen(!open)
             }  
         if(event.currentTarget.id === "departure Stations") {
             const departure_Stations = document.getElementById("departure Stationsdiv") 
             departure_Stations?.classList.toggle('hidden')
+            setOpen(!open)
             }   
             
             if(event.currentTarget.id === "Arrival Stations") {
                 const Arrival_Stations = document.getElementById("Arrival Stationsdiv") 
                 Arrival_Stations?.classList.toggle('hidden')
+                setOpen(!open)
                 }  
     }
     const { checkBoxArray, name, handleChange, title  } = props;
     return (
         <div className="mb-10 flex h-6 h-fit w-full flex-col rounded-lg bg-white p-3 shadow-md">
-            <h5 className="border-w border-b-2 p-2 cursor-pointer" onClick={handleClick} id={title}>{`${t(title)}`}</h5>
+            <h5 className="border-w border-b-2 p-2 cursor-pointer flex justify-between items-center"  onClick={handleClick} id={title}><span>{`${t(title)}`}</span>
+            <ChevronDownIcon
+								className={`${open ? "-rotate-180" : "text-opacity-70"}
+                  ml-2 h-4 w-4  transition duration-150 ease-in-out group-hover:text-opacity-80`}
+								aria-hidden="true"
+							/>
+            </h5>
             <div className="flex h-fit w-full flex-col" id={`${title}div`}>
                 {checkBoxArray.map((item, i) => (
                     
@@ -434,17 +445,20 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
         setData(filteredData)
     }, [filterFunctionsCombinator])
 
-    const [flag , setFlag] = useState(false)
+    const [openbusTime , setopenbusTime] = useState(false)
+    const [openPrices , setopenPrices] = useState(false)
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
          
          if(event.currentTarget.id === "1") {
           const busTime = document.getElementById("toggle1") 
           busTime?.classList.toggle('hidden')
+          setopenbusTime(!openbusTime)
          } 
 
          if(event.currentTarget.id === "2") {
             const price = document.getElementById("toggle2") 
             price?.classList.toggle('hidden')
+            setopenPrices(!openPrices)
            } 
 
         
@@ -456,7 +470,16 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
         <>
             <form className={`${Styled.filter_items }  ${className} `}>
                 <div className="mb-10 flex h-6 h-fit w-full flex-col rounded-lg bg-white p-3 shadow-md">
-                    <h5 className="border-w border-b-2 p-2 cursor-pointer" onClick={handleClick} id={"1"}>{t("Bus times")}</h5>
+                    <h5 className="border-w border-b-2 p-2 cursor-pointer flex justify-between items-center" onClick={handleClick} id={"1"}>
+                        <span>{t("Bus times")}</span>
+                    <span>
+                    <ChevronDownIcon
+								className={`${openbusTime ? "-rotate-180" : "text-opacity-70"}
+                  ml-2 h-4 w-4  transition duration-150 ease-in-out group-hover:text-opacity-80`}
+								aria-hidden="true"
+							/>
+                    </span>
+                    </h5>
                     <div className={'   h-fit w-full'} id="toggle1">
                         <h6 className="my-4 text-sm text-slate-500">{t("Depart from")}{` (${from})`}</h6>
                         <div className="my-3 flex justify-between">
@@ -512,7 +535,16 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
                 {
                     nonDuplicatedPrices.length > 1 &&
                     <div className="mb-10 flex h-6 h-fit w-full flex-col rounded-lg bg-white p-3 shadow-md">
-                        <h5 className="border-w border-b-2 p-2 cursor-pointer" onClick={handleClick} id={"2"}>{t("Price")}</h5>
+                        <h5 className="border-w border-b-2 p-2 cursor-pointer flex justify-between items-center" onClick={handleClick} id={"2"}>
+                            <span>{t("Price")}</span>
+                        <span>
+                    <ChevronDownIcon
+								className={`${openPrices ? "-rotate-180" : "text-opacity-70"}
+                  ml-2 h-4 w-4  transition duration-150 ease-in-out group-hover:text-opacity-80`}
+								aria-hidden="true"
+							/>
+                    </span>
+                        </h5>
                         <div className="h-fit w-full " id="toggle2">
                             <div className="my-3 flex justify-between">
                             {

@@ -25,7 +25,6 @@ import changeFromHHmmFormatToDateFormate from "utils/changeFromHHmmFormatToDateF
 import { getDuration } from "utils/getDuration";
 import refactorData from "utils/refactorData";
 import Styled from './page.module.css'
-import HeroSearchForm from '../../components/HeroSearchForm/HeroSearchForm'
 export interface RefactoredData { classes: string, travel_from: string, travel_to: string, 
 	gateway_id: string, arrival_at: string, travel_at: string , prices_start_with: number }
 
@@ -364,8 +363,8 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 					objectFit: "contain",
 				}}> 
 				<img src={homeBg2} className="object-cover w-[100%]  mb-0 mt-0 p-0  lg:h-[30vh] max-sm:h-[150px]  max-sm:w-[100%]"></img>
-			   
 				</div>
+				
 				<div className=" flex flex-col items-center  mt-10 ">
 					
 					

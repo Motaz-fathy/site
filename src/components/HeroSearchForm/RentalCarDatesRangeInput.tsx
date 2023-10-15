@@ -368,7 +368,7 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
         {type !== "cars" ? (
           <>
             {type === "bus" ? (
-              <div className="flex w-[9.5vw] items-center lg:translate-x-[-30px] md:translate-x-[-30px]  sm:translate-x-[-20px] max-sm:translate-x-[0px] justify-center rounded-[4px]  border-[1px] border-[#E8ECF2] max-sm:h-[48px] max-sm:w-full max-sm:rounded-3xl  ">
+              <div className="flex w-[9.5vw] items-center lg:translate-x-[-30px] lg:rtl:translate-x-[60px] md:translate-x-[-30px] md:rtl:translate-x-[50px]  sm:translate-x-[-20px] max-sm:translate-x-[0px] justify-center rounded-[4px]  border-[1px] border-[#E8ECF2] max-sm:h-[48px] max-sm:w-full max-sm:rounded-3xl  ">
                 {renderGuest()}
               </div>
             ) : (
