@@ -103,7 +103,7 @@ const BusSearchForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 
 	const renderRadioBtn = () => {
 		return (
-			<div className=" [ nc-hero-field-padding ] flex flex-row  flex-wrap gap-3 py-5 ">
+			<div className={`${locationType  === "oneWay" ? "" : 'xl:translate-x-[10px]'} flex flex-row  flex-wrap gap-3 py-5`} >
 				<label
 					onClick={e => setlocationType("oneWay")}
 					className="flex cursor-pointer select-none items-center text-[#B9C4D5] text-[16px]"

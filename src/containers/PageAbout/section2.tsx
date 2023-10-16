@@ -56,7 +56,7 @@ return (
                     <h4 className="text-center text-[16px] text-[400] text-[#1D4078]">Mobile app</h4>
                 </div>
             </div>
-            <div className="  flex flex-col items-start justify-around max-sm:container w-[80%] m-auto">
+            <div className="  flex flex-col items-start justify-around max-sm:container w-[80%] xl:mt-10 lg:mt-10 md:mt-10 m-auto">
                 {/* title and p  */}
                 <h4 className="text-[24px] text-[500] text-[#1E1E1E] mb-[16px]">What we do</h4>
                 <p className="text-20 text-400 text-[#69696A]">
@@ -64,7 +64,7 @@ return (
                 </p>
             </div>
             
-            <div className=" flex flex-col items-start justify-around max-sm: w-[80%]  m-auto my-[60px]">
+            <div className=" flex flex-col items-start justify-around max-sm: w-[80%]  m-auto xl:mt-10 lg:mt-10 md:mt-10">
                 {/* title and p  */}
                 <h4 className="text-[24px] text-[500] text-[#1E1E1E] mb-[16px]">Our vision</h4>
                 <p className="text-20 text-400 text-[#69696A]">

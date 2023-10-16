@@ -78,7 +78,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
             : type === "flight"
             ? "w-[14vw]"
             : type === "cars"
-            ? "w-[25vw]  xl:rtl:translate-x-[10px] lg:rtl:translate-x-[5px]"
+            ? "w-[25vw]  xl:rtl:translate-x-[10px] lg:rtl:translate-x-[5px] xl:translate-x-[10px] lg:translate-x-[5px]"
             : "w-auto"
         }    flex h-[55px]  max-sm:w-full  ${fieldClassName} cursor-pointer items-center  gap-1 rounded-full border-[1px]  border-[#E8ECF2]  text-left focus:outline-none sm:flex-shrink-0 sm:rounded-[4px]  ${className} ${
           focused ? "nc-hero-field-focused " : " "

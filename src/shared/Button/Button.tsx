@@ -65,7 +65,7 @@ const Button: FC<ButtonProps> = ({
 			<Link
 				to={href}
 				target={targetBlank ? "_blank" : undefined}
-				className={`btn-hover text-[20px] text-white rounded-[20px] w-[170px] h-[50px]`}
+				className={`btn-hover text-[20px] text-white rounded-[9px] w-[170px] h-[50px] font-[500]`}
 				onClick={onClick}
 				rel="noopener noreferrer"
 			>
@@ -77,7 +77,7 @@ const Button: FC<ButtonProps> = ({
 	return (
 		<button
 			disabled={disabled || loading}
-			className={`btn-hover text-[16px] w-[170px] h-[50px] text-white rounded-[20px]`}
+			className={`btn-hover text-[16px] w-[170px] h-[50px] text-white rounded-[9px] font-[500]`}
 			onClick={onClick}
 			type={type}
 		>

@@ -440,7 +440,7 @@ export const ListFlightOneRound = () => {
 				</div> */}
          {trips?.map((item : any , index: number) => {
          return (
-          <div className='container flex flex-col h-auto bg-white mt-2 mb-2 rounded-[10px]' key={index}>
+          <div className='container flex flex-col h-auto bg-white mt-2 mb-5 rounded-[10px]' key={index}>
   
               <div className='flex justify-start w-full mt-3 text-[#1E1E1E] text-[16px] font-[400]'>
                 <span className='mr-1'>{item?.depart_trip?.segments[0]?.originPlace?.name}</span>

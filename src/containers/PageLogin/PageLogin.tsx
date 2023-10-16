@@ -82,7 +82,7 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
 		alert("logout success");
 	}, []);
 	return (
-		<div className={`nc-PageLogin ${className} mb-[15vh] bg-gradient-to-r from-[#242932] to-[#2B356E] h-[80vh]  relative`} data-nc-id="PageLogin ">
+		<div className={`nc-PageLogin ${className} mb-[20%] bg-gradient-to-r from-[#242932] to-[#2B356E] h-[80vh]  relative`} data-nc-id="PageLogin ">
 			<Helmet>
 				<title>Login || Telefreik For Booking</title>
 			</Helmet>
