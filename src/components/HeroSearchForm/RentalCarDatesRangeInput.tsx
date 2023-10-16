@@ -86,15 +86,15 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
     const focused = focusedInput === "startDate";
     return (
       <div
-        className={`relative  flex  max-sm:w-full 
+        className={`relative  flex  
 				 ${
            type === "maritime"
              ? "w-[34vw]"
              : type === "bus"
-             ? " xl:w-[20vw]  lg:w-[20vw] md:w-[20vw] xl:translate-x-[-18px] lg:translate-x-[2px]  xl:rtl:translate-x-[18px] lg:rtl:translate-x-[-10px]"
+             ? " xl:w-[20vw]  lg:w-[20vw] md:w-[20vw] xl:translate-x-[-18px] lg:translate-x-[2px]  xl:rtl:translate-x-[18px] lg:rtl:translate-x-[-10px] max-sm:w-full  max-sm:rtl:w-full"
              : type === "cars"
-             ? "lg:w-[24vw] md:w-[24vw]  xl:rtl:translate-x-[45px] lg:rtl:translate-x-[40px]   max-sm:rtl:translate-x-[35px] "
-             : "w-[14vw] "
+             ? "lg:w-[24vw] md:w-[24vw]  xl:rtl:translate-x-[45px] lg:rtl:translate-x-[40px]   max-sm:rtl:translate-x-[20px] max-sm:w-full  max-sm:rtl:w-full"
+             : "lg:w-[14vw] md:w-[14vw] max-sm:w-[100vw]  max-sm:rtl:w-[100vw]"
          }   ${fieldClassName}cursor-pointer items-center  gap-[10px] rounded-full border-[1px]  border-[#E8ECF2]  text-left focus:outline-none sm:flex-shrink-0 sm:rounded-[4px]  ${className} ${
           focused ? "nc-hero-field-focused" : " "
         }`}
@@ -305,19 +305,19 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
             : type === "bus"
             ? " w-[25vw]    md:w-[20vw] max-sm:w-[90vw] "
             : type === "cars"
-            ? "w-[30vw] lg:translate-x-[-20px] lg:rtl:translate-x-[-5px]"
-            : "w-[14vw]"
+            ? "w-[30vw] lg:translate-x-[-20px] lg:rtl:translate-x-[-5px] max-sm:w-[100vw]"
+            : "lg:w-[14vw] md:w-[14vw] max-sm:w-[100%]  max-sm:rtl:w-[100%] "
         }   `}
       >
         <div
-          className={`absolute inset-0    flex ${
+          className={`absolute inset-0    flex  ${
             type === "maritime"
               ? "w-[34vw]"
               : type === "bus"
-              ? " lg:w-[20vw] md:w-[20vw] max-sm:w-[90vw]   "
+              ? " lg:w-[20vw] md:w-[20vw] max-sm:w-[100%]  max-sm:rtl:w-[100%]   "
               : type === "cars"
-              ? "w-[30vw]  "
-              : "w-[14vw]"
+              ? "lg:w-[20vw] md:w-[20vw] max-sm:w-[100%]  max-sm:rtl:w-[100%]  "
+              : "lg:w-[14vw] md:w-[14vw] max-sm:w-[100%]  max-sm:rtl:w-[100%] "
           }  `}
         >
           <DateRangePicker
