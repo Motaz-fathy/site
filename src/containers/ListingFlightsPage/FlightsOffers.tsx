@@ -142,7 +142,7 @@ export const FlightsOffers = () => {
                 <div className='flex justify-end items-center '>
                     <span className='text-[24px] text-[#1D4179] font-[500]'>{item?.price}</span>
                     <a  href={`${item?.url}`}
-                     className='ml-2 cursor-pointer flex justify-center items-center rounded-[10px] text-white bg-[#1D4179] w-[177px] h-[54px]'>select</a>
+                     className='ml-2 cursor-pointer flex justify-center items-center rounded-[10px] text-white btn-hover w-[177px] h-[54px]'>select</a>
                 </div>
                     </div>
                    )
@@ -268,7 +268,7 @@ export const FlightsOffers = () => {
                 <span className='text-[24px] text-[#1D4179] font-[500] mt-2'>{item?.price}</span>
                </div>
                     <a  href={`${item?.url}`}
-                     className='ml-2 cursor-pointer flex justify-center items-center rounded-[10px] text-white bg-[#1D4179] w-[177px] h-[54px]'>select</a>
+                     className='ml-2 cursor-pointer flex justify-center items-center rounded-[10px] text-white btn-hover w-[177px] h-[54px]'>select</a>
                     </div> 
                    )
                 })

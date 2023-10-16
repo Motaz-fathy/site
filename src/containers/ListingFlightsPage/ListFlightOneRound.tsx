@@ -144,7 +144,7 @@ export const ListFlightOneRound = () => {
       <div className='w-[100%] '>
          {trips?.map((item : any , index: number) => {
          return (
-          <div className='container flex flex-col h-auto bg-white mt-2 mb-2 rounded-[10px]' key={index}>
+          <div className='container flex flex-col h-auto bg-white mt-2 mb-5 rounded-[10px]' key={index}>
   
               <div className='flex justify-start w-full mt-3 text-[#1E1E1E] text-[16px] font-[400]'>
                 <span className='mr-1'>{item?.depart_trip?.segments[0]?.originPlace?.name}</span>
@@ -232,7 +232,7 @@ export const ListFlightOneRound = () => {
                 <span className='ml-2'>Business</span>
                  </div>
                   <div className='flex flex-col'>
-                    <span>{getMinimumPrice(item?.offers)}LELE</span>
+                    <span className='text-black text-[20px] font-[600]'>{getMinimumPrice(item?.offers)}LELE</span>
                     <span>Price per person</span>
                   </div>
                 </div>
@@ -546,7 +546,7 @@ export const ListFlightOneRound = () => {
                 </div> }
                 <div className='flex justify-around items-center mb-3'>
                   <div className='flex flex-col'>
-                    <span> {getMinimumPrice(item?.offers)}LE</span>
+                    <span className='text-black text-[20px] font-[600]'> {getMinimumPrice(item?.offers)}LE</span>
                     <span>Price per person</span>
                   </div>
                   <button  onClick={() => handleoffers(JSON.stringify(item))} className='ml-2 cursor-pointer flex justify-center items-center rounded-[10px] text-white btn-hover w-[177px] h-[54px]'>select</button>
