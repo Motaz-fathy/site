@@ -238,7 +238,7 @@ export const ListFlightOneRound = () => {
                 </div>
                 <div className='w-full flex justify-end items-center mb-3 mt-3'>
                  
-                  <button  onClick={() => handleoffers(JSON.stringify(item))} className='ml-2 cursor-pointer flex justify-center items-center rounded-[10px] text-white bg-[#1D4179] w-[177px] h-[54px]'>select</button>
+                  <button  onClick={() => handleoffers(JSON.stringify(item))} className='ml-2 cursor-pointer flex justify-center items-center rounded-[10px] text-white btn-hover w-[177px] h-[54px]'>select</button>
                 </div>
               </div>
   
@@ -549,7 +549,7 @@ export const ListFlightOneRound = () => {
                     <span> {getMinimumPrice(item?.offers)}LE</span>
                     <span>Price per person</span>
                   </div>
-                  <button  onClick={() => handleoffers(JSON.stringify(item))} className='ml-2 cursor-pointer flex justify-center items-center rounded-[10px] text-white bg-[#1D4179] w-[177px] h-[54px]'>select</button>
+                  <button  onClick={() => handleoffers(JSON.stringify(item))} className='ml-2 cursor-pointer flex justify-center items-center rounded-[10px] text-white btn-hover w-[177px] h-[54px]'>select</button>
                 </div>
               </div>
   

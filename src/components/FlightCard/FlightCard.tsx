@@ -220,8 +220,8 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
               <div
                 className="max-sm:w-full  flex justify-center items-center "
               >
-                <img src={tv} className="max-sm:mr-5 h-[40px] w-[40px] lg:rtl:ml-5 md:rtl:ml-5" alt="tv" />
-                <img src={conditioning} className=" h-[40px] w-[40px] lg:ml-5 md:ml-5 rtl:mr-3" alt="conditioning" />
+                <img src={tv} className="max-sm:mr-5 h-[24px] w-[24px] lg:rtl:ml-5 md:rtl:ml-5" alt="tv" />
+                <img src={conditioning} className=" h-[24px] w-[24px] lg:ml-5 md:ml-5 rtl:mr-3" alt="conditioning" />
                 
                {
                 item?.classes === "Prime_Mix" && 
