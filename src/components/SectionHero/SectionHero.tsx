@@ -14,7 +14,7 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
 	const { t } = useTranslation();
 	const slides = [
 		{
-			url: homeBg1,
+			url: homeBg3,
 			progress: "25%",
 		},
 		{
@@ -22,7 +22,7 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
 			progress: "50%",
 		},
 		{
-			url: homeBg3,
+			url: homeBg1,
 			progress: "75%",
 		},
 
@@ -44,10 +44,10 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
 		});
 		switch (openTab) {
 			case "Flights":
-				setCurrentIndex(0);
+				setCurrentIndex(2);
 				break;
 			case "Bus":
-				setCurrentIndex(2);
+				setCurrentIndex(0);
 
 				break;
 			case "Cars":
