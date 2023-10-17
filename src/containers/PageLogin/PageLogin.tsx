@@ -94,8 +94,8 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
 			>
 				{/* taps container */}
 				<div className="flex justify-center mt-[42px] ">
-					<div className="w-[255px] h-[40px] rounded-[24px] p-[10px] bg-[#1D4179] text-white text-center ">{t("login")}</div>
-					<div className="w-[255px] h-[40px] rounded-[24px] p-[10px]  text-center "> {!token && (
+					<div className="w-[170px] h-[50px] rounded-[24px] flex justify-center items-center bg-[#1D4179] text-white text-center ">{t("login")}</div>
+					<div className="w-[170px] h-[50px] rounded-[24px] flex justify-center items-center  text-center "> {!token && (
 						<span className="block text-center  dark:text-neutral-300 ">
 							{/* {t("newUser")} */}
 							 {` `}
@@ -230,7 +230,7 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
 								</span>
 							</Link>
 						</label>
-						<button type="submit" className=" btn-hover rounded-[20px] h-[55px] text-white">{t("continue")}</button>
+						<button type="submit" className=" btn-hover rounded-[20px] h-[50px] text-white">{t("continue")}</button>
 					</form>
 					{/* ==== */}
 					{/* OR */}
