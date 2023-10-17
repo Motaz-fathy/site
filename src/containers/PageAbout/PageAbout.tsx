@@ -10,7 +10,7 @@ import SectionHero from "./SectionHero";
 import SectionClientSay from "components/SectionClientSay/SectionClientSay";
 import { useTranslation } from "react-i18next";
 import { Section2 } from "./section2";
-import SectionFeatures from "containers/PageHome/SectionFeatures";
+import SectionFeatures from "./SectionFeatures";
 
 export interface PageAboutProps {
   className?: string;
@@ -20,7 +20,7 @@ const PageAbout: FC<PageAboutProps> = ({ className = "" }) => {
   const { t } = useTranslation();
   return (
     <div
-      className={` relative h-[100%]  overflow-hidden bg-[#DDE2EB] `}
+      className={`  h-[100%]  overflow-hidden bg-[#DDE2EB] `}
       data-nc-id="PageAbout"
     >
       <Helmet>

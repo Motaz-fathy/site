@@ -56,7 +56,7 @@ return (
                     <h4 className="text-center text-[16px] text-[400] text-[#1D4078]">Mobile app</h4>
                 </div>
             </div>
-            <div className="  flex flex-col items-start justify-around max-sm:container w-[80%] xl:mt-10 lg:mt-10 md:mt-10 m-auto">
+            <div className="  flex flex-col items-start justify-around max-sm:container w-[90%] xl:mt-10 lg:mt-10 md:mt-10 m-auto max-sm:mt-5">
                 {/* title and p  */}
                 <h4 className="text-[24px] text-[500] text-[#1E1E1E] mb-[16px]">What we do</h4>
                 <p className="text-20 text-400 text-[#69696A]">
@@ -64,9 +64,9 @@ return (
                 </p>
             </div>
             
-            <div className=" flex flex-col items-start justify-around max-sm: w-[80%]  m-auto xl:mt-10 lg:mt-10 md:mt-10">
+            <div className=" flex flex-col items-start justify-around max-sm: w-[90%] max-sm:mt-5 m-auto xl:mt-10 lg:mt-10 md:mt-10">
                 {/* title and p  */}
-                <h4 className="text-[24px] text-[500] text-[#1E1E1E] mb-[16px]">Our vision</h4>
+                <h4 className="text-[24px] text-[500] text-[#1E1E1E] mb-10">Our vision</h4>
                 <p className="text-20 text-400 text-[#69696A]">
                     Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
                 </p>
