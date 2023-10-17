@@ -378,7 +378,7 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 					<div className={`flex flex-row max-sm:hidden  w-[85vw] justify-between  ${Styled.BusHome_container}`}>
 			
 					
-							<div className={` lg:w-[30%] lg:block md:block sm:hidden max-sm:hidden  ${Styled.Fillter_component}`} >
+							<div className={` lg:w-[30%] max-md:w-[40%]    ${Styled.Fillter_component}  lg:block xl:block md:block  max-md:hidden sm:hidden max-sm:hidden`} >
 							<div className=" max-sm:hidden flex justify-between items-center w-[85%] mb-3 rtl:mr-10">
 									<div className="flex justify-start items-center">
 									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -405,7 +405,7 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 	
 							</div>
 	
-							<div className={`lg:hidden md:hidden sm:block max-sm:block ${Styled.Min_filter} w-[100%] h-[60px]`}>
+							<div className={` ${Styled.Min_filter} lg:hidden md:hidden  sm:block max-sm:block w-[100%] h-[60px]`}>
 							{
 								!loading && travelData.length > 0 ?
 									<BusResultsFilters className="flex-1 mr-10" 

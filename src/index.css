@@ -389,14 +389,91 @@
  padding: 0;
  border: 0;
 }
-@media only screen and (min-width : 1024px) {
+@media only  screen and (min-width : 360px) {
 	.rc-slider-rail{
 		background: none;
-		height: 50px;
+		height: 52px;
 		background-image: url("../public/sliderBG.svg");
 		background-size: 100%;
 		background-repeat: no-repeat;
-		transform: translateY(-25px);
+		transform: translateY(-42px);
+	}
+}
+
+@media only  screen and (min-width : 412px) {
+	.rc-slider-rail{
+		background: none;
+		height: 70px;
+		background-image: url("../public/sliderBG.svg");
+		background-size: 100%;
+		background-repeat: no-repeat;
+		transform: translateY(-48px);
+	}
+}
+
+@media only  screen and (min-width : 540px) {
+	.rc-slider-rail{
+		background: none;
+		height: 75px;
+		background-image: url("../public/sliderBG.svg");
+		background-size: 100%;
+		background-repeat: no-repeat;
+		transform: translateY(-63px);
+	}
+}
+
+@media only  screen and (min-width : 768px) {
+	.rc-slider-rail{
+		background: none;
+		height: 120px;
+		background-image: url("../public/sliderBG.svg");
+		background-size: 100%;
+		background-repeat: no-repeat;
+		transform: translateY(-100px);
+	}
+}
+
+@media only  screen and (min-width : 820px) {
+	.rc-slider-rail{
+		background: none;
+		height: 120px;
+		background-image: url("../public/sliderBG.svg");
+		background-size: 100%;
+		background-repeat: no-repeat;
+		transform: translateY(-105px);
+	}
+}
+
+@media only  screen and (min-width : 912px) {
+	.rc-slider-rail{
+		background: none;
+		height: 130px;
+		background-image: url("../public/sliderBG.svg");
+		background-size: 100%;
+		background-repeat: no-repeat;
+		transform: translateY(-115px);
+	}
+}
+
+@media only  screen and (min-width : 1024px) {
+	.rc-slider-rail{
+		background: none;
+		height: 130px;
+		background-image: url("../public/sliderBG.svg");
+		background-size: 100%;
+		background-repeat: no-repeat;
+		transform: translateY(-22px);
+	}
+}
+
+@media only  screen and (min-width : 1280px) {
+	.rc-slider-rail{
+		background: none;
+		height: 130px;
+		background-image: url("../public/sliderBG.svg");
+		background-size: 100%;
+		background-repeat: no-repeat;
+		transform: translateY(-30px);
 	}
 }
 /* select item  */

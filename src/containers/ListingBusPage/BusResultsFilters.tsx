@@ -610,7 +610,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
 
             </form>
 
-            <div className={`  ${Styled.scroll}`}>
+            <div className={`  ${Styled.scroll}  xl:hidden lg:hidden   `}>
             <form className={` flex justify-around items-center ml-[365px] mr-[365px] `}>
 
                     
@@ -637,7 +637,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
             <div className={`${Styled.f1}`}>
                 <div className={`${Styled.f1_icon}` }  onClick={handleF1}> time Bus </div>
 
-                <div className={`${ f1 ?  Styled.f1_container : Styled.f1_dis } mb-10 flex h-6 h-fit w-full flex-col rounded-lg bg-white p-3 shadow-md`}>
+                <div className={`${ f1 ?  Styled.f1_container : Styled.f1_dis } mb-10 flex h-6 h-fit  flex-col rounded-lg bg-white p-3 shadow-md`}>
                     <h5 className="border-w border-b-2 p-2">Bus times</h5>
                     <div className="h-fit w-full ">
                         <h6 className="my-4 text-sm text-slate-500">{`Depart from (${from})`}</h6>
@@ -782,7 +782,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
 
 
             </form>
-   </div>
+            </div>
         </>
     );
 })
