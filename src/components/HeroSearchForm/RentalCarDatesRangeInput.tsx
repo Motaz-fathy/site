@@ -83,23 +83,25 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
   };
 
   const renderInputpickUpDate = () => {
-    const focused = focusedInput === "startDate";
+    const focused = focusedInput;
+
     return (
       <div
-        className={`relative  flex  
-				 ${
-           type === "maritime"
-             ? "w-[34vw]"
-             : type === "bus"
-             ? " xl:w-[20vw]  lg:w-[20vw] md:w-[20vw] xl:translate-x-[-18px] lg:translate-x-[2px]  xl:rtl:translate-x-[18px] lg:rtl:translate-x-[-10px] max-sm:w-full  max-sm:rtl:w-full"
-             : type === "cars"
-             ? "lg:w-[24vw] md:w-[24vw]  xl:rtl:translate-x-[45px] lg:rtl:translate-x-[40px]   max-sm:rtl:translate-x-[20px] max-sm:w-full  max-sm:rtl:w-full"
-             : "lg:w-[14vw] md:w-[14vw] max-sm:w-[100vw]  max-sm:rtl:w-[100vw]"
-         }   ${fieldClassName}cursor-pointer items-center  gap-[10px] rounded-full border-[1px]  border-[#E8ECF2]  text-left focus:outline-none sm:flex-shrink-0 sm:rounded-[4px]  ${className} ${
-          focused ? "nc-hero-field-focused" : " "
+        className={`relative ${
+          type === "maritime"
+            ? "w-[34vw]"
+            : type === "bus"
+            ? "w-[20vw] max-sm:w-[88vw]"
+            : type === "flight"
+            ? "w-[14vw]"
+            : type === "cars"
+            ? "w-[25vw]  "
+            : "w-auto"
+        }    flex h-[55px]  max-sm:w-full  ${fieldClassName} cursor-pointer items-center  gap-1 rounded-full border-[1px]  border-[#E8ECF2]  text-left focus:outline-none sm:flex-shrink-0 sm:rounded-[4px]  ${className} ${
+          focused ? "nc-hero-field-focused " : " "
         }`}
       >
-        <div className="text-neutral-300 dark:text-neutral-400">
+        <div className="text-neutral-300 dark:text-neutral-400 ">
           <svg
             width="24"
             height="24"
@@ -118,21 +120,23 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
         </div>
         <div>
           <span
-            className={`mt-1 flex text-sm font-light leading-none text-neutral-400 ${className}`}
+            className={`mt-1 flex text-sm font-light leading-none text-neutral-400   ${className}`}
           >
-            {stateDate.startDate && stateDate.endDate ? (
-              <div className="text-[12px]">
-                {stateDate.startDate.format("DD MMM")} to{" "}
-                {stateDate.endDate.format("DD MMM")}
-              </div>
-            ) : (
-              "Enter date"
-            )}
+              {stateDate.startDate && stateDate.endDate ? (
+     <div className="text-[12px]">
+       {stateDate.startDate.format("DD MMM")} to{" "}
+       {stateDate.endDate.format("DD MMM")}
+     </div>
+   ) : (
+     t("enter date")
+   )}
           </span>
         </div>
       </div>
     );
   };
+
+ 
 
   const renderGuest = () => {
     return (
@@ -298,29 +302,31 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
 
   return (
     <>
-      <div
-        className={`  relative flex pt-3 sm:pt-0  ${
+  <div
+        className={` relative  flex pt-3 sm:pt-0   ${className} ${
+          !!focusedInput ? "nc-date-focusedInput" : "nc-date-not-focusedInput"
+        }   max-sm:w-full ${
           type === "maritime"
             ? "w-[34vw]"
             : type === "bus"
-            ? " w-[25vw]    md:w-[20vw] max-sm:w-[90vw] "
+            ? " w-[25vw] ml-3 lg:rtl:mx-3 max-sm:mx-0 max-sm:w-[90vw]"
             : type === "cars"
-            ? "w-[30vw] lg:translate-x-[-20px] lg:rtl:translate-x-[-5px] max-sm:w-[100vw]"
-            : "lg:w-[14vw] md:w-[14vw] max-sm:w-[100%]  max-sm:rtl:w-[100%] "
+            ? "w-[30vw] lg:rtl:translate-x-[25px] max-sm:w-[100vw] max-sm:m-auto max-sm:rtl:translate-x-[0px] max-sm:translate-x-[0px] "
+            : "w-[14vw]"
         }   `}
       >
         <div
-          className={`absolute inset-0    flex  ${
+          className={`absolute inset-0   flex ${
             type === "maritime"
-              ? "w-[34vw]"
+              ? "w-[34vw] "
               : type === "bus"
-              ? " lg:w-[20vw] md:w-[20vw] max-sm:w-[100%]  max-sm:rtl:w-[100%]   "
+              ? " w-[20vw] max-sm:w-[90vw]"
               : type === "cars"
-              ? "lg:w-[20vw] md:w-[20vw] max-sm:w-[100%]  max-sm:rtl:w-[100%]  "
-              : "lg:w-[14vw] md:w-[14vw] max-sm:w-[100%]  max-sm:rtl:w-[100%] "
+              ? "w-[30vw]  max-sm:w-[100vw] "
+              : "w-[14vw]"
           }  `}
         >
-          <DateRangePicker
+        <DateRangePicker
             
             startDate={stateDate.startDate}
             endDate={stateDate.endDate}
@@ -347,28 +353,16 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
             reopenPickerOnClearDates
             isRTL={i18n.language === "ar" ? true : false}
             
-          />
+            /> 
         </div>
 
         {renderInputpickUpDate()}
-        {/* {renderInputdropOffDate()} */}
       </div>
-
-      <div
-        className={`mt-2  flex justify-between ${
-          type === "flight"
-            ? "w-[20vw] "
-            : type === "bus"
-            ? "w-[10vw]"
-            : type === "cars"
-            ? "bg-black"
-            : "ml-[8vw] w-[12vw]"
-        }   h-[56px] max-sm:ml-0 max-sm:w-full max-sm:gap-2 sm:mt-0  sm:flex-row sm:justify-start sm:gap-8 md:gap-1 lg:gap-[10px]`}
-      >
+      <div className="flex w-[20vw]  justify-between max-sm:h-[48px] max-sm:w-full  lg:ml-2 ">
         {type !== "cars" ? (
           <>
             {type === "bus" ? (
-              <div className="flex w-[9.5vw] items-center xl:translate-x-[-30px] xl:rtl:translate-x-[30px]  lg:translate-x-[5px] lg:rtl:translate-x-[-20px] md:translate-x-[-30px] md:rtl:translate-x-[50px]  sm:translate-x-[-20px] max-sm:translate-x-[0px] justify-center rounded-[4px]  border-[1px] border-[#E8ECF2] max-sm:h-[48px] max-sm:w-full max-sm:rounded-3xl  ">
+              <div className="flex w-[9.5vw] items-center  xl:translate-x-[0px] lg:translate-x-[0px] lg:rtl:translate-x-[2px] md:translate-x-[30px]  sm:translate-x-[0px]  max-sm:translate-x-[0px] justify-center rounded-[4px]  border-[1px] border-[#E8ECF2] max-sm:h-[48px] max-sm:w-full max-sm:rounded-3xl  ">
                 {renderGuest()}
               </div>
             ) : (
@@ -388,7 +382,7 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
         )}
 
         {type === "flight" && (
-          <div className="flex w-[9.5vw]  items-center justify-center rounded-full  border-[1px] border-[#E8ECF2] py-3 max-sm:w-full  sm:rounded-[4px]  sm:py-[25px]">
+          <div className="flex w-[9.5vw] items-center  justify-center rounded-[4px] border-[1px]   border-[#E8ECF2] max-sm:h-[48px] max-sm:w-full max-sm:rounded-3xl  ">
             {renderSelectClass()}
           </div>
         )}
@@ -423,3 +417,5 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
 };
 
 export default RentalCarDatesRangeInput;
+
+

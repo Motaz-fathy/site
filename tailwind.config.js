@@ -14,7 +14,9 @@ function customColors(cssVar) {
 }
 
 module.exports = {
-	content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+	content: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html" ,
+    "./node_modules/tailwind-datepicker-react/dist/**/*.js",
+    ],
 	darkMode: "class",
 	theme: {
 		container: {

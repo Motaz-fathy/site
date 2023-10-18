@@ -82,7 +82,7 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
 		alert("logout success");
 	}, []);
 	return (
-		<div className={`nc-PageLogin ${className} mb-[20%] bg-gradient-to-r from-[#242932] to-[#2B356E] h-[80vh]  relative`} data-nc-id="PageLogin ">
+		<div className={`nc-PageLogin ${className} mb-[20%] max-sm:mb-[35%] bg-gradient-to-r from-[#242932] to-[#2B356E] h-[80vh]  relative`} data-nc-id="PageLogin ">
 			<Helmet>
 				<title>Login || Telefreik For Booking</title>
 			</Helmet>
@@ -102,7 +102,7 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
 							<Link to="/signup">
 								<span className="">
 									{/* {t("createAnAccount")} */}
-									Sign up
+									{t("Sign up")}
 								</span>
 							</Link>
 							
@@ -196,7 +196,7 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
 								value={password}
 								inputStyle={{
 									height: "100%",
-									width: '100%',
+									width: '70%',
 									border: "1px solid rgb(67,56,202)",
 									borderRadius: 4,
 									color: "text-neutral-800 dark:text-neutral-200",
@@ -204,6 +204,8 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
 									fontSize: "1rem",
 									marginTop: "0.5rem",
 								}}
+								className="max-sm:w-[80%]"
+
 								hasErrored={password?.length <= 6}
 								onChange={(e: any) => {
 									const event: any = {

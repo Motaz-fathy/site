@@ -203,12 +203,12 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 	const renderForm = () => {
 		return (
 			<div
-				className={`relative w-full  ${
+				className={`relative w-full  m-auto ${
 					disabled ? "cursor-not-allowed   select-none	" : "cursor-pointer"
 				}  md:h-fit `}
 			>
 				
-				<form className="relative mt-2  w-full p-2 dark:bg-neutral-800 sm:mt-8  sm:bg-white sm:p-8 xl:rounded-xl   sm:flex-col-reverse  max-sm:flex-col-reverse  ">
+				<form className="relative mt-2  w-full p-2 dark:bg-neutral-800   sm:bg-white  xl:rounded-xl   sm:flex-col-reverse  max-sm:flex-col-reverse  ">
 					<span className="flex sm:hidden">{renderRadioBtn()}</span>
 					<div className="flex h-[56px]  lg:w-full md:w-full sm:w-full  max-sm:flex-col gap-1 md:flex-row sm:justify-around ">
 						<div className="relative flex lg:flex-row w-[40vw] max-sm:flex-col gap-y-2   sm:gap-1  max-sm:w-full ">

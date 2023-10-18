@@ -23,7 +23,7 @@ export interface FlightSearchFormProps {
 	haveDefaultValue?: boolean;
 }
 
-const BusSearchForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
+const BusForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 	// DEFAULT DATA FOR ARCHIVE PAGE
 	const defaultPickUpInputValue = "";
 	const defaultDropOffInputValue = "";
@@ -103,7 +103,7 @@ const BusSearchForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 
 	const renderRadioBtn = () => {
 		return (
-			<div className={`${locationType  === "oneWay" ? "xl:translate-x-[-15px] lg:translate-x-[-20px] md:translate-x-[0px] " : 'xl:translate-x-[-10px] lg:translate-x-[-20px] md:translate-x-[0px]'} flex flex-row  flex-wrap gap-3 py-5`} >
+			<div className={` flex flex-row  flex-wrap gap-3 py-5`} >
 				<label
 					onClick={e => setlocationType("oneWay")}
 					className="flex cursor-pointer select-none items-center text-[#B9C4D5] text-[16px]"
@@ -159,8 +159,11 @@ const BusSearchForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 			<div
 			className={`container lg:w-full md:w-full md:text-xs lg:h-fil relative w-full  select-none	cursor-pointer  md:h-fit `}>
 				<span className="flex sm:hidden">{renderRadioBtn()}</span>
-				<form className="relative mt-2  w-full  dark:bg-neutral-800 sm:mt-8  sm:bg-white sm:p-8 xl:rounded-xl   sm:flex-col-reverse  max-sm:flex-col-reverse  ">
-					<div className="flex h-[56px]  lg:w-full md:w-full sm:w-full  max-sm:flex-col gap-1 md:flex-row sm:justify-around ">
+				<form 
+                className="xl:w-full lg:w-full md:w-full  flex flex-col items-start "
+                >
+                   <div className="w-full h-[80px]  flex justify-between items-center max-sm:flex-col">
+                   <div className="flex h-[56px]  lg:w-full md:w-full sm:w-full  max-sm:flex-col gap-1 md:flex-row sm:justify-around ">
 						<div className="relative flex lg:flex-row w-[40vw] max-sm:flex-col gap-y-2   sm:gap-1  max-sm:w-full ">
 							<LocationInput
 								key={1}
@@ -294,7 +297,9 @@ const BusSearchForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 								}
 							/>
 						)}
-					</div>
+</div>
+                   </div>
+                			
 					<span className="hidden sm:flex">{renderRadioBtn()}</span>
 				</form>
 			</div>
@@ -304,4 +309,6 @@ const BusSearchForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 	return renderForm();
 };
 
-export default BusSearchForm;
+export default BusForm;
+
+

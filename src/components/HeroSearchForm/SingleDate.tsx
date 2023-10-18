@@ -3,6 +3,7 @@ import { SingleDatePicker, AnchorDirectionShape } from "react-dates";
 import { FC } from "react";
 import moment from "moment";
 import useWindowSize from "hooks/useWindowResize";
+import 'react-dates/lib/css/_datepicker.css'
 import useNcId from "hooks/useNcId";
 import ButtonSubmit from "./ButtonSubmit";
 import i18n from "i18n";
@@ -78,7 +79,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
             : type === "flight"
             ? "w-[14vw]"
             : type === "cars"
-            ? "w-[25vw]  xl:rtl:translate-x-[10px] lg:rtl:translate-x-[5px] xl:translate-x-[10px] lg:translate-x-[5px]"
+            ? "w-[25vw]  "
             : "w-auto"
         }    flex h-[55px]  max-sm:w-full  ${fieldClassName} cursor-pointer items-center  gap-1 rounded-full border-[1px]  border-[#E8ECF2]  text-left focus:outline-none sm:flex-shrink-0 sm:rounded-[4px]  ${className} ${
           focused ? "nc-hero-field-focused " : " "
@@ -105,7 +106,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
           <span
             className={`mt-1 flex text-sm font-light leading-none text-neutral-400   ${className}`}
           >
-            {startDate ? startDate.format("DD MMM") : " Enter date "}
+            {startDate ? startDate.format("DD MMM") : t("enter date") }
           </span>
         </div>
       </div>
@@ -341,7 +342,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
 
         {renderInputCheckInDate()}
       </div>
-      <div className="flex w-[20vw]  justify-between max-sm:h-[48px] max-sm:w-full  lg:ml-2 ">
+      <div className="flex w-[20vw]  justify-between max-sm:h-[48px] max-sm:w-full   ">
         {type !== "cars" ? (
           <>
             {type === "bus" ? (
@@ -370,32 +371,31 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
           </div>
         )}
       </div>
-      <div className=" flex h-[48px] align-middle ">
-        {hasButtonSubmit && (
-          <button
-            onClick={buttonSubmitHref}
-            type="button"
-            className="btn-hover flex h-[45px] w-[45px] items-center justify-center rounded-full   text-neutral-50 
-             focus:outline-none max-sm:w-full max-sm:py-6 sm:mt-0  sm:py-0"
-            >
-            <span className="mr-3 hidden max-sm:block btn-hover">Search & compare</span>
-            <svg
-              width="33"
-              height="33"
-              viewBox="0 0 33 33"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M14.4375 5.65628C13.2187 5.65628 12.0118 5.89635 10.8857 6.36277C9.75967 6.8292 8.73651 7.51285 7.87467 8.3747C7.01282 9.23654 6.32917 10.2597 5.86274 11.3857C5.39632 12.5118 5.15625 13.7187 5.15625 14.9375C5.15625 16.1564 5.39632 17.3633 5.86274 18.4893C6.32917 19.6154 7.01282 20.6385 7.87467 21.5004C8.73651 22.3622 9.75967 23.0459 10.8857 23.5123C12.0118 23.9787 13.2187 24.2188 14.4375 24.2188C16.899 24.2188 19.2598 23.2409 21.0003 21.5004C22.7409 19.7598 23.7188 17.3991 23.7188 14.9375C23.7188 12.476 22.7409 10.1153 21.0003 8.3747C19.2598 6.63412 16.899 5.65628 14.4375 5.65628ZM3.09375 14.9375C3.09399 13.1158 3.53298 11.3209 4.37359 9.70469C5.21419 8.08848 6.43168 6.6985 7.92307 5.65232C9.41447 4.60614 11.1359 3.93454 12.9417 3.69433C14.7476 3.45411 16.5847 3.65235 18.2977 4.27228C20.0107 4.89221 21.5492 5.91559 22.7831 7.25585C24.017 8.59611 24.9099 10.2138 25.3864 11.9722C25.8629 13.7305 25.9088 15.5777 25.5204 17.3576C25.132 19.1374 24.3207 20.7976 23.155 22.1975L29.6038 28.6463C29.7051 28.7407 29.7863 28.8545 29.8427 28.981C29.8991 29.1075 29.9294 29.2441 29.9318 29.3826C29.9343 29.521 29.9088 29.6586 29.8569 29.787C29.8051 29.9154 29.7279 30.032 29.6299 30.13C29.532 30.2279 29.4154 30.3051 29.2869 30.3569C29.1585 30.4088 29.021 30.4343 28.8825 30.4318C28.7441 30.4294 28.6075 30.3991 28.481 30.3427C28.3545 30.2864 28.2407 30.2051 28.1462 30.1038L21.6975 23.655C20.0409 25.0348 18.0255 25.914 15.8872 26.1895C13.7489 26.465 11.5764 26.1255 9.62419 25.2107C7.67195 24.2959 6.02083 22.8437 4.86424 21.0243C3.70766 19.2048 3.09351 17.0935 3.09375 14.9375Z"
-                fill="white"
-              />
-            </svg>
-          </button>
-        )}
-      </div>
+      {hasButtonSubmit && (
+        <button
+          onClick={buttonSubmitHref}
+          type="button"
+          className=" flex h-[45px] w-[45px] items-center justify-center rounded-full btn-hover
+          lg:rtl:mr-8
+          p-2 text-neutral-50  focus:outline-none max-sm:w-full max-sm:py-6 sm:mt-0  sm:py-0"
+        >
+          <span className="mr-3 hidden max-sm:block">Search & compare</span>
+          <svg
+            width="33"
+            height="33"
+            viewBox="0 0 33 33"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M14.4375 5.65628C13.2187 5.65628 12.0118 5.89635 10.8857 6.36277C9.75967 6.8292 8.73651 7.51285 7.87467 8.3747C7.01282 9.23654 6.32917 10.2597 5.86274 11.3857C5.39632 12.5118 5.15625 13.7187 5.15625 14.9375C5.15625 16.1564 5.39632 17.3633 5.86274 18.4893C6.32917 19.6154 7.01282 20.6385 7.87467 21.5004C8.73651 22.3622 9.75967 23.0459 10.8857 23.5123C12.0118 23.9787 13.2187 24.2188 14.4375 24.2188C16.899 24.2188 19.2598 23.2409 21.0003 21.5004C22.7409 19.7598 23.7188 17.3991 23.7188 14.9375C23.7188 12.476 22.7409 10.1153 21.0003 8.3747C19.2598 6.63412 16.899 5.65628 14.4375 5.65628ZM3.09375 14.9375C3.09399 13.1158 3.53298 11.3209 4.37359 9.70469C5.21419 8.08848 6.43168 6.6985 7.92307 5.65232C9.41447 4.60614 11.1359 3.93454 12.9417 3.69433C14.7476 3.45411 16.5847 3.65235 18.2977 4.27228C20.0107 4.89221 21.5492 5.91559 22.7831 7.25585C24.017 8.59611 24.9099 10.2138 25.3864 11.9722C25.8629 13.7305 25.9088 15.5777 25.5204 17.3576C25.132 19.1374 24.3207 20.7976 23.155 22.1975L29.6038 28.6463C29.7051 28.7407 29.7863 28.8545 29.8427 28.981C29.8991 29.1075 29.9294 29.2441 29.9318 29.3826C29.9343 29.521 29.9088 29.6586 29.8569 29.787C29.8051 29.9154 29.7279 30.032 29.6299 30.13C29.532 30.2279 29.4154 30.3051 29.2869 30.3569C29.1585 30.4088 29.021 30.4343 28.8825 30.4318C28.7441 30.4294 28.6075 30.3991 28.481 30.3427C28.3545 30.2864 28.2407 30.2051 28.1462 30.1038L21.6975 23.655C20.0409 25.0348 18.0255 25.914 15.8872 26.1895C13.7489 26.465 11.5764 26.1255 9.62419 25.2107C7.67195 24.2959 6.02083 22.8437 4.86424 21.0243C3.70766 19.2048 3.09351 17.0935 3.09375 14.9375Z"
+              fill="white"
+            />
+          </svg>
+        </button>
+      )}
     </>
   );
 };

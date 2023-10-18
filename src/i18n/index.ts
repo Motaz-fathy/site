@@ -8,12 +8,13 @@ export const AR_LANG = "ar";
 export const EN_LANG = "en";
 export const SUPPORTED_LANGUAGES = [AR_LANG, EN_LANG];
 const resources = {
-	en: {
-		translations: translationEn,
-	},
 	ar: {
 		translations: translationAr,
 	},
+	en: {
+		translations: translationEn,
+	},
+	
 };
 
 i18n

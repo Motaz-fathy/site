@@ -63,7 +63,6 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
 
   refactoredData = removeDuplicates(refactoredData);
  
-  console.log("refactoredData",refactoredData)
   const navigate = useNavigate();
   const busCardContainer = (refactoredData: any) => {
    

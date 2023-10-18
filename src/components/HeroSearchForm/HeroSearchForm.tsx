@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import ExperiencesSearchForm from "./BusSearchForm";
+import BusForm from "./BusForm";
 import RentalCarSearchForm from "./RentalCarSearchForm";
 import FlightSearchForm from "./FlightSearchForm";
 import MaritimeTransportForm from "./MaritimeTransportForm";
@@ -208,7 +208,7 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 		const isArchivePage = !!currentPage && !!currentTab;
 		switch (tabActive) {
 			case "Bus":
-				return <ExperiencesSearchForm haveDefaultValue={isArchivePage} />;
+				return <BusForm haveDefaultValue={isArchivePage} />;
 			case "Cars":
 				return <RentalCarSearchForm haveDefaultValue={isArchivePage} />;
 			case "Flights":
@@ -217,14 +217,14 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 				return <MaritimeTransportForm haveDefaultValue={isArchivePage} />;
 			default:
 				return (
-					<ExperiencesSearchForm haveDefaultValue={isArchivePage} />
+					<BusForm haveDefaultValue={isArchivePage} />
 				);
 		}
 	};
 
 	return (
 		<div
-			className={`   w-[90vw] nc-HeroSearchForm max-sm:w-[100%]  max-w-full py-5 max-sm:h-[450px] lg:py-0   ${className} rounded-t-2xl bg-white lg:rounded-b-2xl
+			className={`   w-[85vw] nc-HeroSearchForm max-sm:w-[100%]  max-w-full py-5 max-sm:h-[450px] lg:py-0   ${className} rounded-t-2xl bg-white lg:rounded-b-2xl
 			rounded-b-2xl
 			`}
 			data-nc-id="HeroSearchForm"

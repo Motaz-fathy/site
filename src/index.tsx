@@ -10,11 +10,15 @@ import "./index.css";
 import "./fonts/line-awesome-1.3.0/css/line-awesome.css";
 import "./i18n/index";
 import './fonts/Alkatra-VariableFont_wght.ttf'
+import 'react-dates/lib/css/_datepicker.css'
+
 //
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+
 const root = ReactDOM.createRoot(
+	
 	document.getElementById("root") as HTMLElement,
 );
 
