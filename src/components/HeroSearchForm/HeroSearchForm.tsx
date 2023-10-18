@@ -226,6 +226,7 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 		<div
 			className={`   w-[85vw] nc-HeroSearchForm max-sm:w-[100%]  max-w-full py-5 max-sm:h-[450px] lg:py-0   ${className} rounded-t-2xl bg-white lg:rounded-b-2xl
 			rounded-b-2xl
+			${tabActive === "Maritime transport" && "w-[90%]"}
 			`}
 			data-nc-id="HeroSearchForm"
 		>

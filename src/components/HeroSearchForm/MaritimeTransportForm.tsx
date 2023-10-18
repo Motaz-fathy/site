@@ -77,8 +77,10 @@ const MaritimeTransportForm: FC<FlightSearchFormProps> = ({
 
 	const renderForm = () => {
 		return (
-			<div className="w-full">
-				<form className="relative mt-8 w-full bg-white p-4 shadow-xl dark:bg-neutral-800   xl:rounded-xl  max-sm:flex-col-reverse  max-sm:h-[48vh] ">
+			<div className={`relative w-[95%]  m-auto 
+				 cursor-pointer
+			  md:h-fit `}>
+				<form className="relative mt-2  w-full p-3     xl:rounded-xl   sm:flex-col-reverse  max-sm:flex-col-reverse  ">
 					<div className="flex  max-sm:-[35vh] w-full  justify-around gap-1  max-sm:w-[95vw] max-sm:flex-col  ">
 						<div className="relative flex gap-y-2  max-sm:flex-col  ">
 							<LocationInput
