@@ -8,6 +8,7 @@ import i18next from "i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 import SingleDate from "components/HeroSearchForm/SingleDate";
 import RentalCarDatesRangeInput from "components/HeroSearchForm/RentalCarDatesRangeInput";
+import { toast } from "react-toastify";
 
 export interface DateRage {
 	startDate: moment.Moment | null;
@@ -37,7 +38,6 @@ const BusForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 	const [dateFocused, setDateFocused] = useState<boolean>(false);
   
 	const [pickUpInputValue, setPickUpInputValue] = useState("");
-	console.log("pickUpInputValue" , pickUpInputValue)
 	const [dropOffInputValue, setDropOffInputValue] = useState("");
 	const [fieldFocused, setFieldFocused] = useState<
 		FocusedInputShape | "dropOffInput" | null
@@ -54,6 +54,7 @@ const BusForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 		startDate: null,
 		endDate: null,
 	});
+
     const travle_from_bus:any = JSON.stringify(travelFrom) 
 	window.localStorage.setItem("travle_from_bus" , travle_from_bus)
 	
@@ -62,6 +63,24 @@ const BusForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 	
 
 	window.localStorage.setItem("dropOffLocationType" , locationType)
+	const [valid , setvalid]   = useState<boolean>()
+
+	const Validate = () => {
+      if(locationType === 'oneWay' ) {
+        if(dateValue === null ) {
+			setvalid(false) 
+			
+		} else {
+			setvalid(true)
+		}
+	  } else {
+		if(dateRangeValue === null ) {
+			setvalid(false) 
+			toast.error("please enter start and end date ")
+		}
+	  }
+	}
+
 	// USER EFFECT
 	useEffect(() => {
 		if (haveDefaultValue) {
@@ -269,35 +288,55 @@ const BusForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 								}
 							/>
 						) : (
-							<SingleDate
-								type="bus"
-								guests={guests}
-								onChangeGuests={(value: any) => setGuests(value)}
-								defaultValue={dateValue}
-								onChange={date => setdateValue(date)}
-								defaultFocus={dateFocused}
-								onFocusChange={(focus: boolean) => {
-									setDateFocused(focus);
-								}}
-								className="w-auto"
-								buttonSubmitHref={() =>
-									navigate(
-										`/listing-bus?${dateValue?.format("YYYY-MM-DD")}/${
-											travelTo?.id
-										}/${travelFrom?.id}/${
-											i18next.language === "en"
-												? travelTo?.name_en
-												: travelTo?.name_ar
-										}/${
-											i18next.language === "en"
-												? travelFrom?.name_en
-												: travelFrom?.name_ar
-										}`,
-									)
+							 <SingleDate
+							type="bus"
+							guests={guests}
+							onChangeGuests={(value: any) => setGuests(value)}
+							defaultValue={dateValue}
+							onChange={date => {
+								setdateValue(date)
+								if(date === null ) {
+									setvalid(false)
+									toast.error("enter start date ")
+								} else {
+									setvalid(true)
 								}
-							/>
+								
+								
+							}}
+							defaultFocus={dateFocused}
+							onFocusChange={(focus: boolean) => {
+								setDateFocused(focus);
+							}}
+							className="w-auto"
+							buttonSubmitHref={() =>
+								{
+									if(valid === true) {
+										navigate(
+											`/listing-bus?${dateValue?.format("YYYY-MM-DD")}/${
+												travelTo?.id
+											}/${travelFrom?.id}/${
+												i18next.language === "en"
+													? travelTo?.name_en
+													: travelTo?.name_ar
+											}/${
+												i18next.language === "en"
+													? travelFrom?.name_en
+													: travelFrom?.name_ar
+											}`,
+										)
+									} else {
+										
+										navigate(
+											`/`,
+										)
+										
+									}
+								}
+							}
+						/>
 						)}
-</div>
+                   </div>
                    </div>
                 			
 					<span className="hidden sm:flex">{renderRadioBtn()}</span>

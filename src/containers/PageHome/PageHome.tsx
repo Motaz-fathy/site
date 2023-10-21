@@ -30,21 +30,17 @@ function PageHome() {
 				<SectionHero className="pt-10 lg:pt-16 lg:pb-2" />
 
 				<div
-					className="bg-[#1D4179] 
-				
-				
-
-				"
+					className=""
 				>
 					{/* margin top changes depends on search form  */}
-					<div className="container ">
+					<div className=" ">
 						<SectionFeatures />
 					</div>
 				</div>
 
 				<div
 					className="mt-[250px] bg-white pt-12 pb-12 
-				max-sm:mt-[900px]
+				max-sm:mt-[1100px] 
 				
 				"
 				>

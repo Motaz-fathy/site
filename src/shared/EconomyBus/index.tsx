@@ -91,6 +91,7 @@ export const EconomyBus = ({ setSelected, seats }: any) => {
 			}
 		});
 	};
+	
 	const setOccupiedSeats = () => {
 		// const seats = document.querySelectorAll(".row .seat:not(.occupied)");
 		const list = [
@@ -144,6 +145,7 @@ export const EconomyBus = ({ setSelected, seats }: any) => {
 			ele.classList.add("occupied");
 		});
 	};
+
 	useEffect(() => {
 		if (seats?.length > 0) {
 			setSelectedSeats();

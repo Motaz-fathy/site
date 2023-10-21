@@ -26,6 +26,7 @@ import { FirstTenBus } from "shared/firstTen";
 import { FirstEightBus } from "shared/firstEight";
 import i18next from "i18next";
 import { EconomyBus } from "shared/EconomyBus";
+import { Draw_Bus } from "shared/Draw_Bus/Draw_Bus";
 
 export interface CheckOutPageProps {
   className?: string;
@@ -103,6 +104,7 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
       );
     }
   }, [search]);
+  
   const { data } = useQuery(
     ["getSeats", travelFrom, travelTo, id],
     () => {
@@ -138,6 +140,7 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
     }
   );
 
+  console.log("available seats " , data)
   
   const createFirsttrip = async () => {
     const seatsList: any = [];
