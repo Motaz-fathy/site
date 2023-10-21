@@ -24,7 +24,7 @@ const SectionFeatures = ({
          
         </div>
     
-	    <div className="container flex-col items-center gap-12 pt-5 pb-10 text-white">
+	    <div className="container flex-col items-center gap-12 pt-5  text-white">
 				<h2 className="xl:text-[24px]  max-sm:text-[20] font-[500]  pb-5">Why choose Teleferic? </h2>
                 <h4 className="xl:text-[16px]  max-sm:text-[16] font-[500] ">1- We provide you with a variety of transportation options.</h4>
                 <h4 className="xl:text-[16px]  max-sm:text-[16] font-[500] ">2- With us, there is no need to use many platforms and applications to book your trip because we provide you with everything you need in one platform</h4>
