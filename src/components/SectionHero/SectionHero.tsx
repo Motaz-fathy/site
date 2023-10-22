@@ -68,15 +68,7 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
 	// 	setCurrentIndex(newIndex);
 	// };
 
-	const nextSlide = () => {
-		const isLastSlide = currentIndex === slides.length - 1;
-		const newIndex = isLastSlide ? 0 : currentIndex + 1;
-		setCurrentIndex(newIndex);
-	};
 
-	const goToSlide = (slideIndex: any) => {
-		setCurrentIndex(slideIndex);
-	};
 	return (
 		<div
 			className={`nc-SectionHero  relative flex w-full   bg-cover bg-center lg:flex-col ${className} h-[80vh]  max-sm:h-[70vh]
@@ -106,10 +98,10 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
 			>
 			
 			</div>
-			<div className="container  xl:w-[89%] lg:w-[89%]   xl:translate-y-[-150px] lg:translate-y-[-150px] md:translate-y-[-150px]
+			<div className="container  xl:w-[89%] lg:w-[89%]   xl:translate-y-[-90px] lg:translate-y-[-150px] md:translate-y-[-150px]
 			 sm:translate-y-[-150px]   max-sm:translate-y-[-190px] 
 			">
-			<h1 className="w-[40%] max-sm:w-full lx:leading-[40px] lg:leading-[40px] text-white xl:text-[30px] lg:text-[30px] md:text-[24px] sm:text-[20px] max-sm:text-[20px] font-[500]">Welcome to Teleferik The ideal solution to transportation reservation problems in one place</h1>
+			<h1 className="w-[40%] max-sm:w-full lx:leading-[40px] lg:leading-[40px] text-white xl:text-[30px] lg:text-[30px] md:text-[24px] sm:text-[20px] max-sm:text-[20px] font-[500]">{t('telefreik_title')}</h1>
 			</div>
 			<div
 				className="relative z-10 mb-12 xl:translate-y-[-170px] lg:translate-y-[-200px] md:translate-y-[-20px] max-sm:translate-y-[-170px]

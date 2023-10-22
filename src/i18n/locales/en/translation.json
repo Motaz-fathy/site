@@ -338,7 +338,12 @@
   "LE" : "LE",
   "Depart from" : "Depart from",
   "arrival to" : "arrival to",
-  "enter date" : "enter date"
-  
+  "enter date" : "enter date",
+  "telefreik_title" : "Welcome to Teleferik The ideal solution to transportation reservation problems in one place",
+  "Why choose Teleferic?" : "Why choose Teleferic?",
+  "1- We provide you with a variety of transportation options." : "1- We provide you with a variety of transportation options.",
+  "2- With us, there is no need to use many platforms and applications to book your trip because we provide you with everything you need in one platform" : "2- With us, there is no need to use many platforms and applications to book your trip because we provide you with everything you need in one platform",
+  "3- Your safety and comfort are our priority, so we partner with the largest reliable transportation companies" : "3- Your safety and comfort are our priority, so we partner with the largest reliable transportation companies",
+  "4- We are in constant contact with you and sending updates about your trip (flight date, cancellation, delay, etc.)" : "4- We are in constant contact with you and sending updates about your trip (flight date, cancellation, delay, etc.)"
 
 }

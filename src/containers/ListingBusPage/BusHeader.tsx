@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { FC } from 'react'
 import Styled from './page.module.css'
 import { useTranslation } from 'react-i18next';
 
-export const BusHeader = () => {
+interface busHeaderProp {
+  seatsNumber ?: any
+}
+export const BusHeader:FC<busHeaderProp> = ({seatsNumber}) => {
 
     const { t } = useTranslation();
     const handleBackClick = () => {
       window.history.back();
     };
-
+  const dropOffLocationType = window.localStorage.getItem("dropOffLocationType")
   return (
     <div className={`${Styled.HideOver}`}>
       <div
@@ -94,13 +97,13 @@ export const BusHeader = () => {
               </svg>
               <span className="text-[14px] font-[400]">
                 {" "}
-               4 {t("Adult")} .
+               {seatsNumber} {t("Adult")} .
               </span>
-              <span className="text-[14px] font-[400]"> {t("Return")} . </span>
+              <span className="text-[14px] font-[400]"> {t(`${dropOffLocationType}`)} . </span>
               <span className="text-[14px] font-[400]">
                 {" "}
                 
-                {t("Van")}
+                {t("bus")}
               </span>
             </div>
           </div>

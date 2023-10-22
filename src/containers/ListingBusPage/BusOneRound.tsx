@@ -42,7 +42,7 @@ export const BusOneRound = () => {
   return (
 
     <div>
-      <BusHeader />
+      <BusHeader seatsNumber= {bus_Ticket?.trips[0].tickets.length}/>
         {/* <div className="container w-full mt-3 flex justify-center block max-sm:hidden">
 		<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="62" viewBox="0 0 1300 62" fill="none">
 		<path d="M16 61L407 61L484 31L407 1L387 1L16 1C7.16342 1 -3.05176e-05 8.16344 -3.05176e-05 17V31V45C-3.05176e-05 53.8366 7.16342 61 16 61Z" fill="#1D4179"/>

@@ -24,17 +24,19 @@ const SectionFeatures = ({
          
         </div>
     
-	    <div className="container flex-col items-center gap-12 pt-5  text-white xl:mb-0 lg:mb-0 md:mb-0 sm:mb-[100px] ">
-				<h2 className="xl:text-[24px]  max-sm:text-[20] font-[500]  pb-5 max-sm:pb-2">Why choose Teleferic? </h2>
-                <h4 className="xl:text-[16px]  max-sm:text-[12px] font-[500] ">1- We provide you with a variety of transportation options.</h4>
-                <h4 className="xl:text-[16px]  max-sm:text-[12px] font-[500] ">2- With us, there is no need to use many platforms and applications to book your trip because we provide you with everything you need in one platform</h4>
-                <h4 className="xl:text-[16px]  max-sm:text-[12px] font-[500] ">3- Your safety and comfort are our priority, so we partner with the largest reliable transportation companies</h4>
-                <h4 className="xl:text-[16px]  max-sm:text-[12px] font-[500] ">4- We are in constant contact with you and sending updates about your trip (flight date, cancellation, delay, etc.)</h4>
+	    <div className="container flex-col items-center gap-12 pt-5  text-white xl:mb-0 lg:mb-0 md:mb-0  ">
+				<h2 className="xl:text-[24px]  max-sm:text-[20] font-[500]  pb-5 max-sm:pb-2">{t('Why choose Teleferic?')}</h2>
+                <h4 className="xl:text-[16px]  max-sm:text-[12px] max-sm:rtl:text-[14px] max-sm:rtl:mb-[30px] font-[500] ">{t('1- We provide you with a variety of transportation options.')}</h4>
+                <h4 className="xl:text-[16px]  max-sm:text-[12px] max-sm:rtl:text-[14px] max-sm:rtl:mb-[30px] font-[500] ">{t('2- With us, there is no need to use many platforms and applications to book your trip because we provide you with everything you need in one platform')}</h4>
+                <h4 className="xl:text-[16px]  max-sm:text-[12px] max-sm:rtl:text-[14px] max-sm:rtl:mb-[30px] font-[500] ">{t('3- Your safety and comfort are our priority, so we partner with the largest reliable transportation companies')}</h4>
+                <h4 className="xl:text-[16px]  max-sm:text-[12px] max-sm:rtl:text-[14px] max-sm:rtl:mb-[30px] font-[500] ">{t('4- We are in constant contact with you and sending updates about your trip (flight date, cancellation, delay, etc.)')}</h4>
 		</div>
 
         <div
           className="  flex  items-center justify-center gap-12 max-sm:flex-col  
-		  h-auto max-sm:gap-3 xl:translate-y-[120px] lg:translate-y-[120px] md:translate-y-[120px]  sm:translate-y-[0px] max-sm:translate-y-[150px] "
+		  h-auto max-sm:gap-3 xl:translate-y-[120px] lg:translate-y-[120px] md:translate-y-[120px]  sm:translate-y-[0px] max-sm:translate-y-[150px]
+      xl:rtl:translate-y-[120px] lg:rtl:translate-y-[120px] md:rtl:translate-y-[120px]  sm:rtl:translate-y-[0px] max-sm:rtl:translate-y-[150px]
+      "
         >
           {/* #1 */}
           <div className="flex w-[184px]  items-center justify-center gap-4 rounded-lg border border-gray-100 bg-white p-1 pt-12  max-sm:mt-[2px] lg:p-4">

@@ -339,5 +339,12 @@
   "Login" : "تسجيل الدخول",
   "Depart from" : "اماكن الركوب",
   "arrival to" : "اماكن الوصول",
-  "enter date" : "ادخل التاريخ"
+  "enter date" : "ادخل التاريخ",
+  "telefreik_title" : "مرحبا بك في تيليفريك الحل الامثل لمشاكل حجز المواصلات في مكان واحد ",
+  "Why choose Teleferic?" : "لماذا تختار تيليفريك؟",
+  "1- We provide you with a variety of transportation options." : " 1- نحن نوفر لك مجموعة متنوعة من خيارات التنقل .",
+  "2- With us, there is no need to use many platforms and applications to book your trip because we provide you with everything you need in one platform" : " 2- معنا لا يوجد حاجة لاستخدام العديد من المنصات و التطبيقات لحجز رحلتك لأننا نوفر لك كل ما تحتاج إليه في منصة واحدة",
+  "3- Your safety and comfort are our priority, so we partner with the largest reliable transportation companies" : " 3- سلامتك وراحتك هي اولويتنا لذلك نحن شركاء مع اكبر الشركات الموثوقة للنقل و المواصلات  " ,
+  "4- We are in constant contact with you and sending updates about your trip (flight date, cancellation, delay, etc.)": " 4- على تواصل مستمر معك و ارسال التحديثات عن رحلتك ( موعد الرحلة ، الالغاء ، التأخير ، …..)"
+
 }
