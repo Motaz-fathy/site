@@ -10,11 +10,11 @@ const SectionFeatures = ({
   return (
     <>
       <div
-        className={` mx-4 mb-8 mt-20 flex h-auto flex-col items-center  py-12 rtl:gap-2  bg-[#1D4179] w-full
-		max-sm:mb-10 max-sm:mb-[2px] max-sm:mt-[50px] max-sm:h-[800px] 
+        className={` mx-4 mb-8 mt-20 flex h-auto flex-col items-center  py-12 rtl:gap-2  bg-[#1D4179] 
+		max-sm:mb-10 max-sm:mb-[2px] max-sm:mt-[50px] max-sm:h-[920px] 
            `}
       >
-        <div className="container flex flex-col  text-2xl text-white max-sm:mt-[300px] max-sm:pb-3 bg-[#1D4179] py-5 ">
+        <div className="container flex flex-col  text-2xl text-white max-sm:mt-[200px] max-sm:pb-3 bg-[#1D4179] py-5 ">
           <h2 className="text-3xl font-extrabold tracking-wide">
             {t("featuresHeader")}
           </h2>
@@ -24,16 +24,17 @@ const SectionFeatures = ({
          
         </div>
     
-	    <div className="container flex-col items-center gap-12 pt-5  text-white">
-				<h2 className="xl:text-[24px]  max-sm:text-[20] font-[500]  pb-5">Why choose Teleferic? </h2>
-                <h4 className="xl:text-[16px]  max-sm:text-[16] font-[500] ">1- We provide you with a variety of transportation options.</h4>
-                <h4 className="xl:text-[16px]  max-sm:text-[16] font-[500] ">2- With us, there is no need to use many platforms and applications to book your trip because we provide you with everything you need in one platform</h4>
-                <h4 className="xl:text-[16px]  max-sm:text-[16] font-[500] ">3- Your safety and comfort are our priority, so we partner with the largest reliable transportation companies</h4>
-                <h4 className="xl:text-[16px]  max-sm:text-[16] font-[500] ">4- We are in constant contact with you and sending updates about your trip (flight date, cancellation, delay, etc.)</h4>
+	    <div className="container flex-col items-center gap-12 pt-5  text-white xl:mb-0 lg:mb-0 md:mb-0 sm:mb-[100px] ">
+				<h2 className="xl:text-[24px]  max-sm:text-[20] font-[500]  pb-5 max-sm:pb-2">Why choose Teleferic? </h2>
+                <h4 className="xl:text-[16px]  max-sm:text-[12px] font-[500] ">1- We provide you with a variety of transportation options.</h4>
+                <h4 className="xl:text-[16px]  max-sm:text-[12px] font-[500] ">2- With us, there is no need to use many platforms and applications to book your trip because we provide you with everything you need in one platform</h4>
+                <h4 className="xl:text-[16px]  max-sm:text-[12px] font-[500] ">3- Your safety and comfort are our priority, so we partner with the largest reliable transportation companies</h4>
+                <h4 className="xl:text-[16px]  max-sm:text-[12px] font-[500] ">4- We are in constant contact with you and sending updates about your trip (flight date, cancellation, delay, etc.)</h4>
 		</div>
 
         <div
-          className="  flex  items-center justify-center gap-12 max-sm:flex-col  h-auto max-sm:gap-3 xl:translate-y-[120px] lg:translate-y-[120px] md:translate-y-[120px]"
+          className="  flex  items-center justify-center gap-12 max-sm:flex-col  
+		  h-auto max-sm:gap-3 xl:translate-y-[120px] lg:translate-y-[120px] md:translate-y-[120px]  sm:translate-y-[0px] max-sm:translate-y-[150px] "
         >
           {/* #1 */}
           <div className="flex w-[184px]  items-center justify-center gap-4 rounded-lg border border-gray-100 bg-white p-1 pt-12  max-sm:mt-[2px] lg:p-4">

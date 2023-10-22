@@ -106,11 +106,19 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
 			>
 			
 			</div>
+			<div className="container  xl:w-[89%] lg:w-[89%]   xl:translate-y-[-150px] lg:translate-y-[-150px] md:translate-y-[-150px]
+			 sm:translate-y-[-150px]   max-sm:translate-y-[-190px] 
+			">
+			<h1 className="w-[40%] max-sm:w-full lx:leading-[40px] lg:leading-[40px] text-white xl:text-[30px] lg:text-[30px] md:text-[24px] sm:text-[20px] max-sm:text-[20px] font-[500]">Welcome to Teleferik The ideal solution to transportation reservation problems in one place</h1>
+			</div>
 			<div
-				className="relative z-10 mb-12 flex w-full flex-col items-center justify-center text-center lg:mb-0 lg:mt-40 lg:justify-end
+				className="relative z-10 mb-12 xl:translate-y-[-170px] lg:translate-y-[-200px] md:translate-y-[-20px] max-sm:translate-y-[-170px]
+				 flex w-full flex-col items-center justify-center text-center lg:mb-0 lg:mt-40 lg:justify-end
 			
 			"
 			>
+					
+
 				<div
 					className=" flex h-[60vh] w-full justify-center text-justify sm:h-min sm:px-5 
 				"
