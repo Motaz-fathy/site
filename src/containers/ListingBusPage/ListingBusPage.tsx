@@ -356,8 +356,7 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 			</Helmet>
 
 			
-			{
-				!loading && travelData.length > 0 ? <div>
+			<div>
 				<div className="m-0 p-0  w-[100%]  block" style={{
 					
 					objectFit: "contain",
@@ -441,12 +440,8 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 	
 					{/* SECTION */}
 				</div>
-				</div> : <div className="h-[100vh] flex  w-full justify-center items-center">
-						<svg width="80" height="80" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-							<path d="M12,23a9.63,9.63,0,0,1-8-9.5,9.51,9.51,0,0,1,6.79-9.1A1.66,1.66,0,0,0,12,2.81h0a1.67,1.67,0,0,0-1.94-1.64A11,11,0,0,0,12,23Z"  fill="#000000">
-							<animateTransform attributeName="transform" type="rotate" dur="0.75s" values="0 12 12;360 12 12" repeatCount="indefinite"/></path></svg>
-						</div>
-			}
+				</div> 
+			
 
 
 		 </div>
