@@ -66,10 +66,19 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
   const tohead_ar: string | null = window.localStorage.getItem("tohead_ar");
   // code will be enhance
 
+  const [empty , setEmpty] = useState(false)
   useEffect(() => {
     getAddressList().then((res: any) => {
-      setAddressapifrom(res.data.data);
-      setAddressapito(res.data.data);
+      setAddressapifrom(res?.data?.data);
+      setAddressapito(res?.data?.data);
+
+      if(addressapifrom ) {
+        setEmpty(false)
+
+      }else {
+        setEmpty(true)
+      }
+      
     });
   }, []);
   useEffect(() => {
@@ -125,6 +134,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
     );
   };
 
+
   // handle data of trip
   useEffect(() => {
     setLoading(true)
@@ -155,7 +165,6 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
   };
 
   if (modal) {
-    console.log("cklicked");
     document.body.classList.add("active_modal");
   } else {
     document.body.classList.remove("active_modal");
@@ -292,10 +301,10 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
         {modal && (
             <div className={Styled.modal}>
               <div onClick={toggleModal} className={Styled.overlay}></div>
-              <div className={`translate-x-[10%] translate-y-[20%] rtl:translate-x-[-10%] ${Styled.modal_content}`}>
+              <div className={`translate-x-[10%] translate-y-[20%] rtl:translate-x-[-10%] ${Styled.modal_content} `}>
                 <MapAddress />
                 <ButtonClose 
-                className={` absolute top-[20px] left-[20px]   ` }
+                className={` absolute top-[20px] left-[20px]   z-[99999]` }
                 onClick={toggleModal}
                 />
               </div>
@@ -500,66 +509,138 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                   {t("Address from")}
                 </span>
 
+               {
+                empty === true ? 
                 <div
-                   className={`relative  flex cursor-pointer items-center justify-start border-[1px] border-[#E8ECF2] block w-full h-[50px] rounded-[0px] cursor-pointer border-neutral-200 bg-white focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 dark:border-neutral-700 dark:bg-neutral-900 dark:focus:ring-primary-6000 dark:focus:ring-opacity-25 `}
-                  onClick={PopAddressfrom}
-                >
-                  <div className=" flex items-center  justify-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <path
-                        d="M15 10.5C15 11.2956 14.6839 12.0587 14.1213 12.6213C13.5587 13.1839 12.7956 13.5 12 13.5C11.2044 13.5 10.4413 13.1839 9.87868 12.6213C9.31607 12.0587 9 11.2956 9 10.5C9 9.70435 9.31607 8.94129 9.87868 8.37868C10.4413 7.81607 11.2044 7.5 12 7.5C12.7956 7.5 13.5587 7.81607 14.1213 8.37868C14.6839 8.94129 15 9.70435 15 10.5Z"
-                        stroke="#B9C4D5"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M19.5 10.5C19.5 17.642 12 21.75 12 21.75C12 21.75 4.5 17.642 4.5 10.5C4.5 8.51088 5.29018 6.60322 6.6967 5.1967C8.10322 3.79018 10.0109 3 12 3C13.9891 3 15.8968 3.79018 17.3033 5.1967C18.7098 6.60322 19.5 8.51088 19.5 10.5Z"
-                        stroke="#B9C4D5"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <span className=" text-[12px] font-[400] text-[#B9C4D5]">
-                      {t("address")}
-                    </span>
-                  </div>
+                className={`relative  flex cursor-pointer items-center justify-start border-[1px] border-[#E8ECF2] block w-full h-[50px] rounded-[0px] cursor-pointer  `}
+               onClick={PopAddressfrom}
+             >
+               <div className=" flex items-center  justify-start">
+                 <svg
+                   xmlns="http://www.w3.org/2000/svg"
+                   width="24"
+                   height="24"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                 >
+                   <path
+                     d="M15 10.5C15 11.2956 14.6839 12.0587 14.1213 12.6213C13.5587 13.1839 12.7956 13.5 12 13.5C11.2044 13.5 10.4413 13.1839 9.87868 12.6213C9.31607 12.0587 9 11.2956 9 10.5C9 9.70435 9.31607 8.94129 9.87868 8.37868C10.4413 7.81607 11.2044 7.5 12 7.5C12.7956 7.5 13.5587 7.81607 14.1213 8.37868C14.6839 8.94129 15 9.70435 15 10.5Z"
+                     stroke="#B9C4D5"
+                     stroke-width="1.5"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                   />
+                   <path
+                     d="M19.5 10.5C19.5 17.642 12 21.75 12 21.75C12 21.75 4.5 17.642 4.5 10.5C4.5 8.51088 5.29018 6.60322 6.6967 5.1967C8.10322 3.79018 10.0109 3 12 3C13.9891 3 15.8968 3.79018 17.3033 5.1967C18.7098 6.60322 19.5 8.51088 19.5 10.5Z"
+                     stroke="#B9C4D5"
+                     stroke-width="1.5"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                   />
+                 </svg>
+                 <span className=" text-[12px] font-[400] text-[#B9C4D5]">
+                   {t("address")}
+                 </span>
+               </div>
 
-                  <div
-                    className={`ml-5 flex h-[40px] items-center  justify-start  `}
+               <div
+                 className={`ml-5 flex h-[40px] items-center  justify-start  `}
+               >
+                 {AddressFromOne?.name}
+               </div>
+               <div
+                 className={` ${
+                   enablefrom ? Styled.pop_container : Styled.popHide
+                 } `}
+               >
+               <div className="container mt-3 w-full ">
+
+                 {addressapifrom?.map((item: any, index: any) => {
+                   
+                   return (
+                     <div
+                       key={index}
+                       className={`container mt-2 flex h-[40px] w-full cursor-pointer items-center justify-start  ${Styled.itemAddress}`}
+                       onClick={() => handlesetfromaddress(item)}
+                     >
+                       <span className="text-[16px] text-[#1E1E1E]">
+                         {item.name}
+                       </span>
+                     </div>
+                   );
+                 })}
+
+                 
+               </div> 
+               
+               </div>
+                </div> : 
+                 <div
+                 className={`relative  flex cursor-pointer items-center justify-start border-[1px] border-[#E8ECF2] block w-full h-[50px] rounded-[0px] cursor-pointer  `}
+                onClick={toggleModal}
+              >
+                <div className=" flex items-center  justify-start">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
                   >
-                    {AddressFromOne?.name}
-                  </div>
-                  <div
-                    className={` ${
-                      enablefrom ? Styled.pop_container : Styled.popHide
-                    } `}
-                  >
-                    <div className="container mt-3 w-full ">
-                      {addressapifrom?.map((item: any, index: any) => {
-                        
-                        return (
-                          <div
-                            key={index}
-                            className={`container mt-2 flex h-[40px] w-full cursor-pointer items-center justify-start  ${Styled.itemAddress}`}
-                            onClick={() => handlesetfromaddress(item)}
-                          >
-                            <span className="text-[16px] text-[#1E1E1E]">
-                              {item.name}
-                            </span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
+                    <path
+                      d="M15 10.5C15 11.2956 14.6839 12.0587 14.1213 12.6213C13.5587 13.1839 12.7956 13.5 12 13.5C11.2044 13.5 10.4413 13.1839 9.87868 12.6213C9.31607 12.0587 9 11.2956 9 10.5C9 9.70435 9.31607 8.94129 9.87868 8.37868C10.4413 7.81607 11.2044 7.5 12 7.5C12.7956 7.5 13.5587 7.81607 14.1213 8.37868C14.6839 8.94129 15 9.70435 15 10.5Z"
+                      stroke="#B9C4D5"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M19.5 10.5C19.5 17.642 12 21.75 12 21.75C12 21.75 4.5 17.642 4.5 10.5C4.5 8.51088 5.29018 6.60322 6.6967 5.1967C8.10322 3.79018 10.0109 3 12 3C13.9891 3 15.8968 3.79018 17.3033 5.1967C18.7098 6.60322 19.5 8.51088 19.5 10.5Z"
+                      stroke="#B9C4D5"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span className=" text-[12px] font-[400] text-[#B9C4D5]">
+                    {t("address")}
+                  </span>
                 </div>
+ 
+                <div
+                  className={`ml-5 flex h-[40px] items-center  justify-start  `}
+                >
+                  {AddressFromOne?.name}
+                </div>
+                <div
+                  className={` ${
+                    enablefrom ? Styled.pop_container : Styled.popHide
+                  } `}
+                >
+                <div className="container mt-3 w-full ">
+ 
+                  {addressapifrom?.map((item: any, index: any) => {
+                    
+                    return (
+                      <div
+                        key={index}
+                        className={`container mt-2 flex h-[40px] w-full cursor-pointer items-center justify-start  ${Styled.itemAddress}`}
+                        onClick={() => handlesetfromaddress(item)}
+                      >
+                        <span className="text-[16px] text-[#1E1E1E]">
+                          {item.name}
+                        </span>
+                      </div>
+                    );
+                  })}
+ 
+                  
+                </div> 
+                
+                </div>
+                 </div> 
+
+               }
 
                 <div className=" mb-5 mt-3 flex w-full cursor-pointer items-center justify-start">
                   <svg
@@ -591,68 +672,135 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                   {t("address")} {t("to")}
                 </span>
 
+               {
+                empty === true ? 
                 <div
-                   className={`relative  flex cursor-pointer items-center justify-start border-[1px] border-[#E8ECF2] block w-full h-[50px] rounded-[0px] cursor-pointer border-neutral-200 bg-white focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 dark:border-neutral-700 dark:bg-neutral-900 dark:focus:ring-primary-6000 dark:focus:ring-opacity-25 `}
-                >
-                  <div className="flex items-center  justify-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <path
-                        d="M15 10.5C15 11.2956 14.6839 12.0587 14.1213 12.6213C13.5587 13.1839 12.7956 13.5 12 13.5C11.2044 13.5 10.4413 13.1839 9.87868 12.6213C9.31607 12.0587 9 11.2956 9 10.5C9 9.70435 9.31607 8.94129 9.87868 8.37868C10.4413 7.81607 11.2044 7.5 12 7.5C12.7956 7.5 13.5587 7.81607 14.1213 8.37868C14.6839 8.94129 15 9.70435 15 10.5Z"
-                        stroke="#B9C4D5"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M19.5 10.5C19.5 17.642 12 21.75 12 21.75C12 21.75 4.5 17.642 4.5 10.5C4.5 8.51088 5.29018 6.60322 6.6967 5.1967C8.10322 3.79018 10.0109 3 12 3C13.9891 3 15.8968 3.79018 17.3033 5.1967C18.7098 6.60322 19.5 8.51088 19.5 10.5Z"
-                        stroke="#B9C4D5"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
+                className={`relative  flex cursor-pointer items-center justify-start border-[1px] 
+                border-[#E8ECF2] block w-full h-[50px] rounded-[0px]   `}
+             >
+               <div className="flex items-center  justify-start">
+                 <svg
+                   xmlns="http://www.w3.org/2000/svg"
+                   width="24"
+                   height="24"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                 >
+                   <path
+                     d="M15 10.5C15 11.2956 14.6839 12.0587 14.1213 12.6213C13.5587 13.1839 12.7956 13.5 12 13.5C11.2044 13.5 10.4413 13.1839 9.87868 12.6213C9.31607 12.0587 9 11.2956 9 10.5C9 9.70435 9.31607 8.94129 9.87868 8.37868C10.4413 7.81607 11.2044 7.5 12 7.5C12.7956 7.5 13.5587 7.81607 14.1213 8.37868C14.6839 8.94129 15 9.70435 15 10.5Z"
+                     stroke="#B9C4D5"
+                     stroke-width="1.5"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                   />
+                   <path
+                     d="M19.5 10.5C19.5 17.642 12 21.75 12 21.75C12 21.75 4.5 17.642 4.5 10.5C4.5 8.51088 5.29018 6.60322 6.6967 5.1967C8.10322 3.79018 10.0109 3 12 3C13.9891 3 15.8968 3.79018 17.3033 5.1967C18.7098 6.60322 19.5 8.51088 19.5 10.5Z"
+                     stroke="#B9C4D5"
+                     stroke-width="1.5"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                   />
+                 </svg>
 
-                    <span className=" text-[12px] font-[400] text-[#B9C4D5]">
-                      {t("address")}
-                    </span>
-                  </div>
+                 <span className=" text-[12px] font-[400] text-[#B9C4D5]">
+                   {t("address")}
+                 </span>
+               </div>
 
-                  <div
-                    className=" ml-5 flex h-[40px] w-full cursor-pointer   items-center justify-start"
-                    onClick={PopAddressto}
-                  >
-                    {AddressToOne?.name}
-                  </div>
-                  <div
-                    className={` ${
-                      enableto ? Styled.pop_container_to : Styled.popHide_to
-                    } `}
-                  >
-                    <div className="container mt-3 w-full ">
-                      {addressapito?.map((itemTo: any, index: any) => {
-                        return (
-                          <div
-                            key={index}
-                            className={`container mt-2 flex h-[40px] w-full cursor-pointer items-center justify-start  ${Styled.itemAddress_to}`}
-                            onClick={() => handlesettoaddress(itemTo)}
-                          >
-                            <span className="text-[16px] text-[#1E1E1E]">
-                              {itemTo.name}
-                            </span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
+               <div
+                 className=" ml-5 flex h-[40px] w-full cursor-pointer   items-center justify-start"
+                 onClick={PopAddressto}
+               >
+                 {AddressToOne?.name}
+               </div>
+               <div
+                 className={` ${
+                   enableto ? Styled.pop_container_to : Styled.popHide_to
+                 } `}
+               >
+                 <div className="container mt-3 w-full ">
+                   {addressapito?.map((itemTo: any, index: any) => {
+                     return (
+                       <div
+                         key={index}
+                         className={`container mt-2 flex h-[40px] w-full cursor-pointer items-center justify-start  ${Styled.itemAddress_to} `}
+                         onClick={() => handlesettoaddress(itemTo)} 
+                       >
+                         <span className="text-[16px] text-[#1E1E1E]">
+                           {itemTo.name}
+                         </span>
+                       </div>
+                     );
+                   })}
 
-                <div className="z-0  mt-3 flex w-full cursor-pointer items-center justify-start">
+                 </div>
+               </div>
+             </div> : 
+              <div
+              className={`relative  flex cursor-pointer items-center justify-start border-[1px] 
+              border-[#E8ECF2] block w-full h-[50px] rounded-[0px]   `}
+           >
+             <div className="flex items-center  justify-start">
+               <svg
+                 xmlns="http://www.w3.org/2000/svg"
+                 width="24"
+                 height="24"
+                 viewBox="0 0 24 24"
+                 fill="none"
+               >
+                 <path
+                   d="M15 10.5C15 11.2956 14.6839 12.0587 14.1213 12.6213C13.5587 13.1839 12.7956 13.5 12 13.5C11.2044 13.5 10.4413 13.1839 9.87868 12.6213C9.31607 12.0587 9 11.2956 9 10.5C9 9.70435 9.31607 8.94129 9.87868 8.37868C10.4413 7.81607 11.2044 7.5 12 7.5C12.7956 7.5 13.5587 7.81607 14.1213 8.37868C14.6839 8.94129 15 9.70435 15 10.5Z"
+                   stroke="#B9C4D5"
+                   stroke-width="1.5"
+                   stroke-linecap="round"
+                   stroke-linejoin="round"
+                 />
+                 <path
+                   d="M19.5 10.5C19.5 17.642 12 21.75 12 21.75C12 21.75 4.5 17.642 4.5 10.5C4.5 8.51088 5.29018 6.60322 6.6967 5.1967C8.10322 3.79018 10.0109 3 12 3C13.9891 3 15.8968 3.79018 17.3033 5.1967C18.7098 6.60322 19.5 8.51088 19.5 10.5Z"
+                   stroke="#B9C4D5"
+                   stroke-width="1.5"
+                   stroke-linecap="round"
+                   stroke-linejoin="round"
+                 />
+               </svg>
+
+               <span className=" text-[12px] font-[400] text-[#B9C4D5]">
+                 {t("address")}
+               </span>
+             </div>
+
+             <div
+               className=" ml-5 flex h-[40px] w-full cursor-pointer   items-center justify-start"
+               onClick={toggleModal}
+             >
+               {AddressToOne?.name}
+             </div>
+             <div
+               className={` ${
+                 enableto ? Styled.pop_container_to : Styled.popHide_to
+               } `}
+             >
+               <div className="container mt-3 w-full ">
+                 {addressapito?.map((itemTo: any, index: any) => {
+                   return (
+                     <div
+                       key={index}
+                       className={`container mt-2 flex h-[40px] w-full cursor-pointer items-center justify-start  ${Styled.itemAddress_to} `}
+                       onClick={() => handlesettoaddress(itemTo)} 
+                     >
+                       <span className="text-[16px] text-[#1E1E1E]">
+                         {itemTo.name}
+                       </span>
+                     </div>
+                   );
+                 })}
+
+               </div>
+             </div>
+           </div>
+               }
+
+                <div className="  mt-3 flex w-full cursor-pointer items-center justify-start">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -824,7 +972,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
             <div className=" ">
               <div className="flex flex-col">
                 <h3 className="text-[20px] font-[500] text-[black]">
-                  LE <span className="ml-2">{data?.price}</span>{" "}
+                  {t("LE")} <span className="ml-2">{data?.price}</span>{" "}
                 </h3>
                 <span>{t(`${dropOffLocationType}`)}</span>
               </div>
@@ -929,67 +1077,131 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                   {t("Address from")}
                 </span>
 
+               {
+                empty === true ? 
                 <div
-                  className={`relative  flex cursor-pointer items-center justify-start border-[1px] border-[#E8ECF2] `}
-                  onClick={PopAddressfrom}
-                >
-                  <div className=" flex items-center  justify-start">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <path
-                        d="M15 10.5C15 11.2956 14.6839 12.0587 14.1213 12.6213C13.5587 13.1839 12.7956 13.5 12 13.5C11.2044 13.5 10.4413 13.1839 9.87868 12.6213C9.31607 12.0587 9 11.2956 9 10.5C9 9.70435 9.31607 8.94129 9.87868 8.37868C10.4413 7.81607 11.2044 7.5 12 7.5C12.7956 7.5 13.5587 7.81607 14.1213 8.37868C14.6839 8.94129 15 9.70435 15 10.5Z"
-                        stroke="#B9C4D5"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                      <path
-                        d="M19.5 10.5C19.5 17.642 12 21.75 12 21.75C12 21.75 4.5 17.642 4.5 10.5C4.5 8.51088 5.29018 6.60322 6.6967 5.1967C8.10322 3.79018 10.0109 3 12 3C13.9891 3 15.8968 3.79018 17.3033 5.1967C18.7098 6.60322 19.5 8.51088 19.5 10.5Z"
-                        stroke="#B9C4D5"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                    <span className=" text-[12px] font-[400] text-[#B9C4D5]">
-                      {t("address")}
-                    </span>
-                  </div>
+                className={`relative  flex cursor-pointer items-center justify-start border-[1px] border-[#E8ECF2] `}
+                onClick={PopAddressfrom}
+              >
+                <div className=" flex items-center  justify-start">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
+                    <path
+                      d="M15 10.5C15 11.2956 14.6839 12.0587 14.1213 12.6213C13.5587 13.1839 12.7956 13.5 12 13.5C11.2044 13.5 10.4413 13.1839 9.87868 12.6213C9.31607 12.0587 9 11.2956 9 10.5C9 9.70435 9.31607 8.94129 9.87868 8.37868C10.4413 7.81607 11.2044 7.5 12 7.5C12.7956 7.5 13.5587 7.81607 14.1213 8.37868C14.6839 8.94129 15 9.70435 15 10.5Z"
+                      stroke="#B9C4D5"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M19.5 10.5C19.5 17.642 12 21.75 12 21.75C12 21.75 4.5 17.642 4.5 10.5C4.5 8.51088 5.29018 6.60322 6.6967 5.1967C8.10322 3.79018 10.0109 3 12 3C13.9891 3 15.8968 3.79018 17.3033 5.1967C18.7098 6.60322 19.5 8.51088 19.5 10.5Z"
+                      stroke="#B9C4D5"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span className=" text-[12px] font-[400] text-[#B9C4D5]">
+                    {t("address")}
+                  </span>
+                </div>
 
-                  <div
-                    className={`ml-5 flex h-[40px] items-center  justify-start  `}
-                  >
-                    <span className="text-[14px] font-[400] text-[#1E1E1E]">
-                      {AddressFromOne?.name}
-                    </span>
-                  </div>
-                  <div
-                    className={` ${
-                      enablefrom ? Styled.pop_container : Styled.popHide
-                    } `}
-                  >
-                    <div className="container mt-3 w-full ">
-                      {addressapifrom?.map((item: any, index: any) => {
-                        return (
-                          <div
-                            key={index}
-                            className={`container mt-2 flex h-[40px] w-full cursor-pointer items-center justify-start  ${Styled.itemAddress}`}
-                            onClick={() => handlesetfromaddress(item)}
-                          >
-                            <span className="text-[16px] text-[#1E1E1E]">
-                              {item.name}
-                            </span>
-                          </div>
-                        );
-                      })}
-                    </div>
+                <div
+                  className={`ml-5 flex h-[40px] items-center  justify-start  `}
+                >
+                  <span className="text-[14px] font-[400] text-[#1E1E1E] max-sm:text-[8px]">
+                    {AddressFromOne?.name}
+                  </span>
+                </div>
+                <div
+                  className={` ${
+                    enablefrom ? Styled.pop_container : Styled.popHide
+                  } `}
+                >
+                  <div className="container mt-3 w-full ">
+                    {addressapifrom?.map((item: any, index: any) => {
+                      return (
+                        <div
+                          key={index}
+                          className={`container mt-2 flex h-[40px] w-full cursor-pointer items-center justify-start  ${Styled.itemAddress}`}
+                          onClick={() => handlesetfromaddress(item)}
+                        >
+                          <span className="text-[14px] text-[#1E1E1E]">
+                            {item?.name}
+                          </span>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
+              </div> : 
+               <div
+               className={`relative  flex cursor-pointer items-center justify-start border-[1px] border-[#E8ECF2] `}
+               onClick={toggleModal}
+             >
+               <div className=" flex items-center  justify-start">
+                 <svg
+                   xmlns="http://www.w3.org/2000/svg"
+                   width="24"
+                   height="24"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                 >
+                   <path
+                     d="M15 10.5C15 11.2956 14.6839 12.0587 14.1213 12.6213C13.5587 13.1839 12.7956 13.5 12 13.5C11.2044 13.5 10.4413 13.1839 9.87868 12.6213C9.31607 12.0587 9 11.2956 9 10.5C9 9.70435 9.31607 8.94129 9.87868 8.37868C10.4413 7.81607 11.2044 7.5 12 7.5C12.7956 7.5 13.5587 7.81607 14.1213 8.37868C14.6839 8.94129 15 9.70435 15 10.5Z"
+                     stroke="#B9C4D5"
+                     stroke-width="1.5"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                   />
+                   <path
+                     d="M19.5 10.5C19.5 17.642 12 21.75 12 21.75C12 21.75 4.5 17.642 4.5 10.5C4.5 8.51088 5.29018 6.60322 6.6967 5.1967C8.10322 3.79018 10.0109 3 12 3C13.9891 3 15.8968 3.79018 17.3033 5.1967C18.7098 6.60322 19.5 8.51088 19.5 10.5Z"
+                     stroke="#B9C4D5"
+                     stroke-width="1.5"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                   />
+                 </svg>
+                 <span className=" text-[12px] font-[400] text-[#B9C4D5]">
+                   {t("address")}
+                 </span>
+               </div>
+
+               <div
+                 className={`ml-5 flex h-[40px] items-center  justify-start  `}
+               >
+                 <span className="text-[14px] font-[400] text-[#1E1E1E]">
+                   {AddressFromOne?.name}
+                 </span>
+               </div>
+               <div
+                 className={` ${
+                   enablefrom ? Styled.pop_container : Styled.popHide
+                 } `}
+               >
+                 <div className="container mt-3 w-full ">
+                   {addressapifrom?.map((item: any, index: any) => {
+                     return (
+                       <div
+                         key={index}
+                         className={`container mt-2 flex h-[40px] w-full cursor-pointer items-center justify-start  ${Styled.itemAddress}`}
+                         onClick={() => handlesetfromaddress(item)}
+                       >
+                         <span className="text-[16px] text-[#1E1E1E]">
+                           {item.name}
+                         </span>
+                       </div>
+                     );
+                   })}
+                 </div>
+               </div>
+             </div>
+               }
 
                 <div className=" mb-5 mt-3 flex w-full cursor-pointer items-center justify-start">
                   <svg
@@ -1053,12 +1265,23 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                     </span>
                   </div>
 
+                 {
+                  empty === true ? 
                   <div
-                    className=" ml-5 flex h-[40px] w-full cursor-pointer   items-center justify-start"
-                    onClick={PopAddressto}
-                  >
-                    {AddressToOne?.name}
-                  </div>
+                  className=" ml-5 flex h-[40px] w-full cursor-pointer   items-center justify-start"
+                  onClick={PopAddressto}
+                >
+                  {AddressToOne?.name}
+                </div>
+                : 
+                <div
+                className=" ml-5 flex h-[40px] w-full cursor-pointer   items-center justify-start max-sm:text-[8px]"
+                onClick={toggleModal}
+              >
+                {AddressToOne?.name}
+              </div>
+              
+                 }
                   <div
                     className={` ${
                       enableto ? Styled.pop_container_to : Styled.popHide_to
@@ -1072,8 +1295,8 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                             className={`container mt-2 flex h-[40px] w-full cursor-pointer items-center justify-start  ${Styled.itemAddress_to}`}
                             onClick={() => handlesettoaddress(itemTo)}
                           >
-                            <span className="text-[16px] text-[#1E1E1E]">
-                              {itemTo.name}
+                            <span className="text-[14px] text-[#1E1E1E]">
+                              {itemTo?.name}
                             </span>
                           </div>
                         );

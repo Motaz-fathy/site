@@ -198,9 +198,21 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
               {item?.gateway_id?.includes("WEBUS") && (
 									<img src={miniBus} className="lg:w-[130px] md:w-[120px] h-[80px] max-sm:w-[75px] max-sm:h-[40px]" alt="" />
 								)}
+
 								{item?.gateway_id?.includes("BlueBus") && (
 									<img src={bus} className="lg:w-[130px] md:w-[120px] h-[80px] max-sm:w-[75px] max-sm:h-[40px]" alt="" />
 								)}
+
+                {item?.gateway_id?.includes("Bellman") && (
+									<img src={item?.company_logo} className="lg:w-[130px] md:w-[120px] h-[80px] max-sm:w-[75px] max-sm:h-[40px]" alt="" />
+								)}
+
+                {item?.gateway_id?.includes("OnTime") && (
+									<img src={item?.company_logo} className="lg:w-[130px] md:w-[120px] h-[80px] max-sm:w-[75px] max-sm:h-[40px]" alt="" />
+								)}
+
+
+
             	
             </div>
           </div>

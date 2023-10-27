@@ -141,7 +141,12 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 	currentPage,
 }) => {
 	const [tabActive, setTabActive] = useState<SearchTab>(currentTab);
+	const [busActive , setBusActive ] = useState(true)
+	const [flight , setflight ] = useState(false)
+	const [maritime , setmaritime ] = useState(false)
+	const [Private , setprivate ] = useState(false)
 	window.removeEventListener("storage", () => {});
+
 	function handleActiveTab() {
 		
 		switch (tabActive) {
@@ -152,10 +157,12 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 
 			case "Flights":
 				sessionStorage.setItem("currentActiveTab", "Flights");
+
 				break;
 			
 			case "Cars":
 				sessionStorage.setItem("currentActiveTab", "Cars");
+
 				break;
 			case "Maritime transport":
 				sessionStorage.setItem("currentActiveTab", "Maritime transport");
@@ -166,40 +173,154 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 	}
 	handleActiveTab();
 	const { t } = useTranslation();
+    console.log("busActive" , busActive)
 
+	const handleShadow = (str : string) => {
+       switch(str) {
+			case "Bus":
+				setBusActive(!busActive)
+				setflight(false)
+				setmaritime(false)
+				setprivate(false)
+				break;
+			case "Flights":
+				setflight(!flight)
+				setBusActive(false)
+				setprivate(false)
+				setmaritime(false)
+			   break;
+			   
+			   case "Cars":
+				setprivate(!Private)
+				setBusActive(false)
+				setmaritime(false)
+				setflight(false)
+
+			break;
+
+			case "Maritime transport":
+		
+
+				setmaritime(!maritime)
+				setprivate(false)
+				setBusActive(false)
+				setflight(false)
+
+			break;
+	   }
+	}
 	const renderTab = () => {
 		return (
 			<ul className="hiddenScrollbar ml-2  flex w-full overflow-x-auto sm:mt-6 sm:mb-0 sm:justify-around sm:gap-8 sm:pt-0  ">
 				
-				{tabs.map((tab: any) => {
-					const active = tab === tabActive;
-					
-					return (
-						<li
-							onClick={() => setTabActive(tab)}
-							className={`inline-flex min-w-fit cursor-pointer items-center rounded-full 
-							 text-sm font-normal text-neutral-700  hover:bg-neutral-100 hover:text-neutral-900 sm:py-2 
-							 sm:px-4 xl:px-5 xl:py-2 xl:text-base rtl:min-w-fit rtl:px-[20px] rtl:py-4 max-sm:rtl:py-2  max-sm:rtl:px-[10px]${
-								active
-									? "pointer-events-none bg-[#E8ECF2] !text-neutral-900 "
-									: ""
-							}
+					<li
+					onClick={() => {
+						setTabActive(tabs[0])
+						handleShadow(tabs[0])
+					}}
+					className={`inline-flex min-w-fit cursor-pointer items-center rounded-full 
+					text-sm font-normal text-neutral-700  hover:bg-neutral-100 hover:text-neutral-900 sm:py-2 
+					sm:px-4 xl:px-5 xl:py-2 xl:text-base rtl:min-w-fit rtl:px-[20px] rtl:py-4 max-sm:rtl:py-2  max-sm:rtl:px-[10px] ${
+					   busActive === true
+						? "pointer-events-none bg-[#E8ECF2] !text-neutral-900 "
+						: ""
+					}
 
-								`}
-							key={tab}
-						>
-							<span
-								className={`flex min-w-fit  gap-1 items-center
-								ltr:mx-4 ltr:py-2 rtl:ml-2 max-sm:ltr:mx-4  max-sm:ltr:py-2  max-sm:rtl:ml-1 sm:gap-2  ${
-									tab === tabs[3] ? "w-fit " : ""
-								}`}
-							>
-								{SVGS_ICON[tab]}
-								<span className="w-full ml-1 rtl:mr-1">{t(tab)}</span>
-							</span>
-						</li>
-					);
-				})}
+					`}
+					key={tabs[0]}
+					>
+					<span
+					className={`flex min-w-fit  gap-1 items-center
+					ltr:mx-4 ltr:py-2 rtl:ml-2 max-sm:ltr:mx-4  max-sm:ltr:py-2  max-sm:rtl:ml-1 sm:gap-2  ${
+						tabs[0] === tabs[0] ? "w-fit " : ""
+					}`}
+					>
+					{SVGS_ICON[tabs[0]]}
+					<span className="w-full ml-1 rtl:mr-1">{t(tabs[0])}</span>
+					</span>
+					</li>
+
+					<li
+					onClick={() => {
+						setTabActive(tabs[1])
+						handleShadow(tabs[1] )
+					}}
+					className={`inline-flex min-w-fit cursor-pointer items-center rounded-full 
+					text-sm font-normal text-neutral-700  hover:bg-neutral-100 hover:text-neutral-900 sm:py-2 
+					sm:px-4 xl:px-5 xl:py-2 xl:text-base rtl:min-w-fit rtl:px-[20px] rtl:py-4 max-sm:rtl:py-2  max-sm:rtl:px-[10px]${
+						flight === true
+						? "pointer-events-none bg-[#E8ECF2] !text-neutral-900 "
+						: ""
+					}
+
+					`}
+					key={tabs[1]}
+					>
+					<span
+					className={`flex min-w-fit  gap-1 items-center
+					ltr:mx-4 ltr:py-2 rtl:ml-2 max-sm:ltr:mx-4  max-sm:ltr:py-2  max-sm:rtl:ml-1 sm:gap-2  ${
+						tabs[1] === tabs[1] ? "w-fit " : ""
+					}`}
+					>
+					{SVGS_ICON[tabs[1]]}
+					<span className="w-full ml-1 rtl:mr-1">{t(tabs[1])}</span>
+					</span>
+					</li>
+
+					<li
+					onClick={() => {
+						setTabActive(tabs[2])
+						handleShadow(tabs[2])
+					}}
+					className={`inline-flex min-w-fit cursor-pointer items-center rounded-full 
+					text-sm font-normal text-neutral-700  hover:bg-neutral-100 hover:text-neutral-900 sm:py-2 
+					sm:px-4 xl:px-5 xl:py-2 xl:text-base rtl:min-w-fit rtl:px-[20px] rtl:py-4 max-sm:rtl:py-2  max-sm:rtl:px-[10px]${
+						maritime === true
+						? "pointer-events-none bg-[#E8ECF2] !text-neutral-900 "
+						: ""
+					}
+
+					`}
+					key={tabs[2]}
+					>
+					<span
+					className={`flex min-w-fit  gap-1 items-center
+					ltr:mx-4 ltr:py-2 rtl:ml-2 max-sm:ltr:mx-4  max-sm:ltr:py-2  max-sm:rtl:ml-1 sm:gap-2  ${
+						tabs[2] === tabs[2] ? "w-fit " : ""
+					}`}
+					>
+					{SVGS_ICON[tabs[2]]}
+					<span className="w-full ml-1 rtl:mr-1">{t(tabs[2])}</span>
+					</span>
+					</li>
+
+					<li
+					onClick={() => {
+						setTabActive(tabs[3])
+						handleShadow(tabs[3])
+					}}
+					className={`inline-flex min-w-fit cursor-pointer items-center rounded-full 
+					text-sm font-normal text-neutral-700  hover:bg-neutral-100 hover:text-neutral-900 sm:py-2 
+					sm:px-4 xl:px-5 xl:py-2 xl:text-base rtl:min-w-fit rtl:px-[20px] rtl:py-4 max-sm:rtl:py-2  max-sm:rtl:px-[10px]${
+						Private === true
+						? "pointer-events-none bg-[#E8ECF2] !text-neutral-900 "
+						: ""
+					}
+
+					`}
+					key={tabs[3]}
+					>
+					<span
+					className={`flex min-w-fit  gap-1 items-center
+					ltr:mx-4 ltr:py-2 rtl:ml-2 max-sm:ltr:mx-4  max-sm:ltr:py-2  max-sm:rtl:ml-1 sm:gap-2  ${
+						tabs[3] === tabs[3] ? "w-fit " : ""
+					}`}
+					>
+					{SVGS_ICON[tabs[3]]}
+					<span className="w-full ml-1 rtl:mr-1">{t(tabs[3])}</span>
+					</span>
+					</li>
+
 			</ul>
 		);
 	};

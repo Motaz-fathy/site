@@ -101,7 +101,14 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
 			<div className="container  xl:w-[89%] lg:w-[89%]   xl:translate-y-[-90px] lg:translate-y-[-150px] md:translate-y-[-150px]
 			 sm:translate-y-[-150px]   max-sm:translate-y-[-190px] 
 			">
-			<h1 className="w-[40%] max-sm:w-full lx:leading-[40px] lg:leading-[40px] text-white xl:text-[30px] lg:text-[30px] md:text-[24px] sm:text-[20px] max-sm:text-[20px] font-[500]">{t('telefreik_title')}</h1>
+			<div className="w-[40%] max-sm:w-full  text-white xl:text-[30px] lg:text-[30px] md:text-[24px] sm:text-[20px] max-sm:text-[20px] font-[500] block">
+		    <span className="xl:text-[34px] lg:text-[34px] md:text-[24px] sm:text-[20px] max-sm:text-[20px] font-[500] block mb-3">
+			{t("telefreik_header")}	
+			</span>		
+			<span className="xl:text-[20px] lg:text-[20px] md:text-[18px] sm:text-[16px] max-sm:text-[14px] font-[500]">
+			{t('telefreik_title')}
+			</span>
+			</div>
 			</div>
 			<div
 				className="relative z-10 mb-12 xl:translate-y-[-170px] lg:translate-y-[-200px] md:translate-y-[-20px] max-sm:translate-y-[-170px]

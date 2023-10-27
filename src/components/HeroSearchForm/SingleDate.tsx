@@ -28,6 +28,8 @@ export interface ExperiencesDateSingleInputProps {
   guests?: any;
   onChangeGuests?: any;
   type?: string;
+  openDirection?:string
+
 }
 
 const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
@@ -45,7 +47,8 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
   onChangeFlightClass,
   guests,
   onChangeGuests,
-  type
+  type,
+
 }) => {
   const [focusedInput, setFocusedInput] = useState(defaultFocus);
   const [startDate, setStartDate] = useState(defaultValue);
@@ -79,7 +82,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
             : type === "flight"
             ? "w-[14vw]"
             : type === "cars"
-            ? "w-[25vw]  "
+            ? "w-[14vw]  "
             : "w-auto"
         }    flex h-[55px]  max-sm:w-full  ${fieldClassName} cursor-pointer items-center  gap-1 rounded-full border-[1px]  border-[#E8ECF2]  text-left focus:outline-none sm:flex-shrink-0 sm:rounded-[4px]  ${className} ${
           focused ? "nc-hero-field-focused " : " "
@@ -113,67 +116,6 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
     );
   };
 
-  // const renderInputCheckInDate = () => {
-  //   const focused = focusedInput;
-  //   return (
-  //     <div
-  //       className={`flex-1 flex relative ${fieldClassName} items-center space-x-3 cursor-pointer ${
-  //         focused ? "nc-hero-field-focused" : ""
-  //       }`}
-  //     >
-  //       <div className="text-neutral-300 dark:text-neutral-400">
-  //         <svg
-  //           xmlns="http://www.w3.org/2000/svg"
-  //           className="nc-icon-field"
-  //           fill="none"
-  //           viewBox="0 0 24 24"
-  //           stroke="currentColor"
-  //         >
-  //           <path
-  //             strokeLinecap="round"
-  //             strokeLinejoin="round"
-  //             strokeWidth={1.5}
-  //             d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-  //           />
-  //         </svg>
-  //       </div>
-  //       <div className="flex-grow">
-  //         <span className="block font-semibold xl:text-lg">
-  //           {startDate ? startDate.format("DD MMM") : moment().format("DD MMM")}
-  //         </span>
-  //         <span className="block mt-1 text-sm font-light leading-none text-neutral-400">
-  //           {startDate ? t("date") : t("addDate")}
-  //         </span>
-  //       </div>
-
-  //       {hasButtonSubmit && (
-  //         <div className="relative z-40 pr-2 xl:pr-4">
-  //           <button
-  //             onClick={buttonSubmitHref}
-  //             type="button"
-  //             className="flex items-center justify-center w-full rounded-full h-14 md:h-16 md:w-16 bg-primary-6000 hover:bg-primary-700 text-neutral-50 focus:outline-none"
-  //           >
-  //             <span className="mr-3 md:hidden">Search</span>
-  //             <svg
-  //               xmlns="http://www.w3.org/2000/svg"
-  //               className="w-6 h-6"
-  //               fill="none"
-  //               viewBox="0 0 24 24"
-  //               stroke="currentColor"
-  //             >
-  //               <path
-  //                 strokeLinecap="round"
-  //                 strokeLinejoin="round"
-  //                 strokeWidth={1.5}
-  //                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-  //               />
-  //             </svg>
-  //           </button>
-  //         </div>
-  //       )}
-  //     </div>
-  //   );
-  // };
 
   const renderGuest = () => {
     return (
@@ -306,7 +248,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
         }   `}
       >
         <div
-          className={`absolute inset-0   flex ${
+          className={`absolute inset-0   flex   cursor-pointer ${
             type === "maritime"
               ? "w-[34vw] "
               : type === "bus"
@@ -317,6 +259,8 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
           }  `}
         >
           <SingleDatePicker
+            
+            
             date={startDate}
             onDateChange={(date) => {
               setStartDate(date);
@@ -337,8 +281,9 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
               moment(month).locale(i18n.language).format("MMMM YYYY")
             }
             isRTL={true}
+            openDirection = {"up"}
           />
-        </div>
+         </div>
 
         {renderInputCheckInDate()}
       </div>

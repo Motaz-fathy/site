@@ -10,26 +10,26 @@ const SectionFeatures = ({
   return (
     <>
       <div
-        className={` mx-4 mb-8 mt-20 flex h-auto flex-col items-center  py-12 rtl:gap-2  bg-[#1D4179] 
+        className={`  mb-8 mt-20 flex h-auto flex-col items-center  py-12 rtl:gap-2  bg-[#1D4179] w-full 
 		max-sm:mb-10 max-sm:mb-[2px] max-sm:mt-[50px] max-sm:h-[920px] 
            `}
       >
         <div className="container flex flex-col  text-2xl text-white max-sm:mt-[200px] max-sm:pb-3 bg-[#1D4179] py-5 ">
-          <h2 className="text-3xl font-extrabold tracking-wide">
+          <h2 className="text-3xl font-[500]">
             {t("featuresHeader")}
           </h2>
-          <p className="mt-5 text-base font-thin text-white lg:w-3/4">
+          <p className="mt-5 text-base  text-white lg:w-3/4">
             {t("featuresDesc")}
           </p>
          
         </div>
     
 	    <div className="container flex-col items-center gap-12 pt-5  text-white xl:mb-0 lg:mb-0 md:mb-0  ">
-				<h2 className="xl:text-[24px]  max-sm:text-[20] font-[500]  pb-5 max-sm:pb-2">{t('Why choose Teleferic?')}</h2>
-                <h4 className="xl:text-[16px]  max-sm:text-[12px] max-sm:rtl:text-[14px] max-sm:rtl:mb-[30px] font-[500] ">{t('1- We provide you with a variety of transportation options.')}</h4>
-                <h4 className="xl:text-[16px]  max-sm:text-[12px] max-sm:rtl:text-[14px] max-sm:rtl:mb-[30px] font-[500] ">{t('2- With us, there is no need to use many platforms and applications to book your trip because we provide you with everything you need in one platform')}</h4>
-                <h4 className="xl:text-[16px]  max-sm:text-[12px] max-sm:rtl:text-[14px] max-sm:rtl:mb-[30px] font-[500] ">{t('3- Your safety and comfort are our priority, so we partner with the largest reliable transportation companies')}</h4>
-                <h4 className="xl:text-[16px]  max-sm:text-[12px] max-sm:rtl:text-[14px] max-sm:rtl:mb-[30px] font-[500] ">{t('4- We are in constant contact with you and sending updates about your trip (flight date, cancellation, delay, etc.)')}</h4>
+			        	<div className="xl:text-[24px]  max-sm:text-[20] font-[500]  pb-5 max-sm:pb-2">{t('Why choose Teleferic?')}</div>
+                <div className="xl:text-[16px]  max-sm:text-[12px] max-sm:rtl:text-[14px] max-sm:rtl:mb-[30px]  ">{t('1- We provide you with a variety of transportation options.')}</div>
+                <div className="xl:text-[16px]  max-sm:text-[12px] max-sm:rtl:text-[14px] max-sm:rtl:mb-[30px]  ">{t('2- With us, there is no need to use many platforms and applications to book your trip because we provide you with everything you need in one platform')}</div>
+                <div className="xl:text-[16px]  max-sm:text-[12px] max-sm:rtl:text-[14px] max-sm:rtl:mb-[30px]  ">{t('3- Your safety and comfort are our priority, so we partner with the largest reliable transportation companies')}</div>
+                <div className="xl:text-[16px]  max-sm:text-[12px] max-sm:rtl:text-[14px] max-sm:rtl:mb-[30px]  ">{t('4- We are in constant contact with you and sending updates about your trip (flight date, cancellation, delay, etc.)')}</div>
 		</div>
 
         <div

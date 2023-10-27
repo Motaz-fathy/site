@@ -47,7 +47,7 @@ const SectionGridFilterCard: FC<SectionGridFilterCardProps> = ({
       </div> */}
 			<div className="grid grid-cols-1 gap-6 rounded-3xl  lg:p-10  ">
 				{trips?.length > 0 &&
-					trips.map((item: any, index: number) => {
+					trips?.map((item: any, index: number) => {
 						return (
 							<MarinTimeCard
 						        className="cursor-pointer"

@@ -28,7 +28,7 @@ i18n
 	.init({
 		defaultNS: "translations",
 		debug: false,
-		fallbackLng: AR_LANG,
+		fallbackLng: "ar",
 		supportedLngs: SUPPORTED_LANGUAGES,
 		interpolation: {
 			escapeValue: false, // not needed for react as it escapes by default
@@ -37,6 +37,7 @@ i18n
 		react: {
 			useSuspense: false,
 		},
+
 	});
 
 export default i18n;

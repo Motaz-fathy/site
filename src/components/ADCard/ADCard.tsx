@@ -22,12 +22,12 @@ const ADCard = () => {
 				}
 			},
 			onError: (errors: any) => {
-				if (Object.keys(errors.response.data.errors)?.length) {
-					showApiErrorMessages(errors.response.data.errors);
+				if (Object.keys(errors?.response?.data?.errors)?.length) {
+					showApiErrorMessages(errors?.response?.data?.errors);
 				} else {
-					toast.error(errors.response.data.message);
+					toast.error(errors?.response?.data?.message);
 				}
-				if (errors.response.status === 401) {
+				if (errors?.response?.status === 401) {
 					navigate("/login");
 				}
 			},
@@ -45,21 +45,21 @@ const ADCard = () => {
 						<div className={classes.layout}>
 							<div className={classes.input}>
 								<label>Phone Number *</label>
-								<input placeholder={item.phone} readOnly={true} />
+								<input placeholder={item?.phone} readOnly={true} />
 							</div>
 							<div className={classes.input}>
 								<label>city *</label>
-								<input placeholder={item.city.name} readOnly={true} />
+								<input placeholder={item?.city?.name} readOnly={true} />
 							</div>
 						</div>
 						<div className={classes.layout}>
 							<div className={classes.input}>
 								<label>Street Name *</label>
-								<input placeholder={item.name} readOnly={true} />
+								<input placeholder={item?.name} readOnly={true} />
 							</div>
 							<div className={classes.input}>
 								<label>Location *</label>
-								<input placeholder={item.name} readOnly={true} />
+								<input placeholder={item?.name} readOnly={true} />
 							</div>
 						</div>
 						<hr />

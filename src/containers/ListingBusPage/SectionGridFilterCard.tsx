@@ -182,10 +182,10 @@ const SectionGridFilterCard: FC<SectionGridFilterCardProps> = ({
 				{/* The flight cards themselves */}
 				<FlightCard refactoredData={dataUnder}  />
 				{paginationStatus && (
-					<div className="mt-12 flex items-center justify-center btn-hover w-[30%] m-auto rounded-xl ">
-						<ButtonPrimary onClick={setPage} >
+					<div className="mt-12 flex items-center justify-center btn-hover w-[30%] m-auto rounded-xl h-[50px] text-white cursor-pointer">
+						<button onClick={setPage} >
 							{t("showMore")}
-						</ButtonPrimary>
+						</button>
 					</div>
 				)}
 			</div>

@@ -45,8 +45,8 @@ function PageHome() {
 				"
 				>
 					<div className="container w-full ">
-						<h1 className="m-3 text-center text-[32px] text-[700] text-[#1E1E1E]">
-							Our partner
+						<h1 className="m-3 text-center text-[32px]  text-[#1E1E1E]">
+							{t("Our partner")}
 						</h1>
 						<p className="text-[#69696A]w-[589px] mb-[32px] text-center text-[16px]  text-[400]">
 							Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc

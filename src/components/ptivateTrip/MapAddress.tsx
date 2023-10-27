@@ -13,15 +13,15 @@ const MapAddress: FC<any> = (props) => {
     lat: 30.033333,
     lng: 31.233334
   });
-  console.log("location", location);
+
   const [name, setName] = useState<string>("");
   const [phonenumber, setPhonenumber] = useState<string>("");
   const [cityName, setCityName] = useState("");
   const [address_details, setAddress_details] = useState("");
   const phone_number = window.localStorage.getItem("phone");
   const [AddressfromMarker,setAddressfromMarker]: any =useState()
-  console.log("AddressfromMarker" , AddressfromMarker)
-  const navigate = useNavigate();
+
+  const navigate = useNavigate();       
 
   const mapStyles = {
     height: "45%",
@@ -88,7 +88,7 @@ const MapAddress: FC<any> = (props) => {
           <label>Location Search *</label>
 
           <Autocomplete
-            className="z-[2736289347203] h-[50px] w-full"
+            className= {`h-[50px] w-full ${classes.autocomplete_min}`}
             apiKey={process.env.REACT_APP_MAP_KEY!}
             onPlaceSelected={(place: any) => {
               setAddress_details(place?.formatted_address);

@@ -566,7 +566,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
                             <Slider
                                 range
                                 pushable={true}
-                                className="text-red-400"
+                                className="bg-red-300"
                                 min={Max_Min_prices[0]}
                                 max={Max_Min_prices[Max_Min_prices.length -1]}
                                 defaultValue={[Max_Min_prices[0],Max_Min_prices[Max_Min_prices.length -1]]}

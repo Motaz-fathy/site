@@ -87,7 +87,7 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
 
     return (
       <div
-        className={`relative ${
+        className={`relative   ${
           type === "maritime"
             ? "w-[34vw]"
             : type === "bus"
@@ -95,7 +95,7 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
             : type === "flight"
             ? "w-[14vw]"
             : type === "cars"
-            ? "w-[25vw]  "
+            ? "w-[14vw]  "
             : "w-auto"
         }    flex h-[55px]  max-sm:w-full  ${fieldClassName} cursor-pointer items-center  gap-1 rounded-full border-[1px]  border-[#E8ECF2]  text-left focus:outline-none sm:flex-shrink-0 sm:rounded-[4px]  ${className} ${
           focused ? "nc-hero-field-focused " : " "
@@ -123,7 +123,7 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
             className={`mt-1 flex text-sm font-light leading-none text-neutral-400   ${className}`}
           >
               {stateDate.startDate && stateDate.endDate ? (
-     <div className="text-[12px]">
+     <div className="text-[12px] w-[85px]">
        {stateDate.startDate.format("DD MMM")} to{" "}
        {stateDate.endDate.format("DD MMM")}
      </div>

@@ -3,6 +3,7 @@ import download1Img from "images/iphone1.svg";
 import rightImgPng from "images/our-features.png";
 import NcImage from "shared/NcImage/NcImage";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const SectionDowloadApp = ({
 	className = "",
@@ -42,22 +43,25 @@ const SectionDowloadApp = ({
 						type === "type1" ? "lg:pl-10" : "lg:pr-10"
 					}`}
 				>
-					<h2 className="mt-5 hidden text-4xl font-extrabold text-[#1E1E1E] sm:flex">
+					<h2 className="mt-5 hidden text-4xl  text-[#1E1E1E] sm:flex font-[500]">
 						{t("downLoadHeader")}
 					</h2>
 					<p className="mt-5 text-[12px] text-[#69696A] sm:text-base">
 						{t("downLoadDes")}
 					</p>
-					<h5 className="mt-5 text-[12px] font-semibold text-[#1E1E1E] sm:text-lg">
+					<h5 className="mt-5 text-[12px]  text-[#1E1E1E] sm:text-lg">
 						{t("downloadApp")}
 					</h5>
 
 					<div className="relative flex ">
 						<div className="w-full ">
 							<div className="mt-5 flex flex-col justify-start gap-2 sm:mt-7 sm:flex-row">
-								<button className="flex w-[120px] items-center justify-center gap-2 rounded-lg  py-2 px-2 text-white 
+								<a className="flex w-[120px] items-center justify-center gap-2 rounded-lg  py-2 px-2 text-white 
 							    btn-hover
-								rtl:flex-row-reverse sm:w-[200px] sm:py-4 sm:px-10">
+								rtl:flex-row-reverse sm:w-[200px] sm:py-4 sm:px-10"
+								href={'https://play.google.com/store/apps/details?id=com.teleferik'}
+								target="_blank" rel="noopener noreferrer"
+								>
 									<span>
 										<svg
 											width="24"
@@ -85,8 +89,12 @@ const SectionDowloadApp = ({
 										</svg>
 									</span>
 									<span className="sm:text-2xl">{t("iphone")}</span>
-								</button>
-								<button className="flex w-[120px] items-center   btn-hover justify-center gap-2 rounded-lg bg-[#1D4179] py-2 px-2 text-white rtl:flex-row-reverse sm:w-[200px] sm:py-4 sm:px-10">
+								</a>
+								<a className="flex w-[120px] items-center   btn-hover justify-center gap-2 rounded-lg bg-[#1D4179] py-2 px-2
+								 text-white rtl:flex-row-reverse sm:w-[200px] sm:py-4 sm:px-10"
+								 href={'https://play.google.com/store/apps/details?id=com.teleferik'}
+								 target="_blank" rel="noopener noreferrer"
+								 >
 									<span>
 										<svg
 											width="24"
@@ -122,7 +130,7 @@ const SectionDowloadApp = ({
 										</svg>
 									</span>
 									<span className="sm:text-2xl">{t("Android")}</span>
-								</button>
+								</a>
 							</div>
 						</div>
 					</div>

@@ -264,7 +264,7 @@ setLoading(false)
             <div className="flex items-baseline justify-start ">
               <span className="flex flex-col   ">
                 <span className="mb-2 flex justify-end text-[16px] font-[400]">
-                  Ticket Price
+                  {t("Ticket Price")}
                 </span>
                 <h4 className="text-[16px] font-[400] text-[#1D4179]">
                   {" "}
@@ -275,16 +275,16 @@ setLoading(false)
           </div>
 
           <div className="flex w-full items-center  justify-between pb-5">
-            <span className="text-[16px] font-[400] text-[]">Discount</span>
+            <span className="text-[16px] font-[400] text-[]">{t("Discount")}</span>
             <span className="text-[16px] font-[400] text-[#1D4179]">{create_ticket?.payment_fees_value}</span>
           </div>
           <div className="flex w-full items-center  justify-between pb-5">
-            <span className="text-[16px] font-[400] text-[]">Tax Included</span>
+            <span className="text-[16px] font-[400] text-[]">{t("Tax Included")}</span>
             <span className="text-[16px] font-[400] text-[#1D4179]">{create_ticket?.payment_fees_percentage}</span>
           </div>
 
           <div className="flex w-full items-center  justify-between pb-10">
-            <span className="text-[20px] font-[500] text-[]">Total</span>
+            <span className="text-[20px] font-[500] text-[]">{t("Total")}</span>
             <span className="text-[16px] font-[400] text-[#1D4179]">
             {create_ticket?.tickets_totals}
             </span>
@@ -296,7 +296,7 @@ setLoading(false)
               className="mt-5 h-[54px] w-[183px] rounded-lg bg-[#1D4179] text-white"
               onClick={PayNow}
             >
-              Pay Now
+              {t("Pay Now")}
             </button>
           </div>
         </div>

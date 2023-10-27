@@ -333,13 +333,13 @@ const LocationInput: FC<LocationInputProps> = ({
 				<h3 className="mt-2 block px-4 text-base font-semibold text-neutral-800 dark:text-neutral-100 sm:mt-0 sm:px-8 sm:text-lg ">
 					{t("availableCities")}
 				</h3>
-				<div className="mt-2 w-fit ">
+				<div className="mt-2 w-[100%] ">
 					{cities?.length! > 0 &&
 						cities!.map((item: any) => (
 							<span
 								onClick={() => handleSelectLocation(item)}
 								key={item?.id}
-								className="mt-0 flex cursor-pointer items-center space-x-3 bg-white px-4 py-4 hover:bg-neutral-100 dark:hover:bg-neutral-700 sm:space-x-4 sm:px-8 sm:py-5"
+								className="mt-0  flex cursor-pointer items-center space-x-3 bg-white px-4 py-4 hover:bg-neutral-100 dark:hover:bg-neutral-700 sm:space-x-4 sm:px-8 sm:py-5 w-[100%]"
 							>
 								<span className="block text-neutral-400">
 									<svg
@@ -403,9 +403,34 @@ const LocationInput: FC<LocationInputProps> = ({
 								</svg>
 							</span>
 							<span className="block font-medium text-neutral-700 dark:text-neutral-200 text-[16px]">
-								{i18next.language === "en"
+								{
+								i18next.language === "en"
 									? item?.name_en ?? item?.name
-									: item?.name_ar ?? item?.name}
+									: item?.name_ar ?? item?.name
+								}
+
+								<span className="ml-2 rtl:mr-2">
+									(
+										{
+								    i18next.language === "en"
+									? item?.name_en ?? item?.id
+									: item?.name_ar ?? item?.id
+								      }
+									)
+								</span>
+
+								<span className="ml-2 rtl:mr-2 text-[12px]">
+									
+										{
+								    i18next.language === "en"
+									? item?.name_en ?? item?.countryName
+									: item?.name_ar ?? item?.countryName
+								      }
+									
+								</span>
+
+                                    
+									
 							</span>
 						</span>
 					))}
@@ -457,7 +482,7 @@ const LocationInput: FC<LocationInputProps> = ({
 				<div className="flex-grow ">
 					<input
 						className={`block  w-[70%] truncate border-none bg-transparent bg-white p-0 placeholder-[#B9C4D5] 
-						
+						cursor-pointer
 						focus:placeholder-neutral-300  focus:outline-none focus:ring-0 xl:text-lg`}
 						placeholder={noPlaceHolder ? placeHolder : ""}
 						value={value}
@@ -496,15 +521,15 @@ const LocationInput: FC<LocationInputProps> = ({
 			</div>
 			{
 				type !== 'flight' && showPopover  ?
-				 <div className="absolute    top-full z-50 mt-3 max-h-96 w-[300px] min-w-[300px] overflow-y-auto rounded-3xl bg-white  py-3 shadow-xl ltr:left-0 rtl:right-0 dark:bg-neutral-800  ">
-				{value ? renderSearchValue() : renderRecentSearches()}
+				 <div className="absolute    top-full z-50 mt-3 max-h-96 w-[300px] min-w-[300px] overflow-y-auto rounded-3xl bg-white  py-3 shadow-xl ltr:left-0 rtl:right-0   ">
+				{ renderRecentSearches()}
 			    </div> :
 				null
 			}
 
             {
 				type === 'flight' && showPopover && value ?
-				 <div className="absolute    top-full z-50 mt-3 max-h-96 w-[300px] min-w-[300px] overflow-y-auto rounded-3xl bg-white  py-3 shadow-xl ltr:left-0 rtl:right-0 dark:bg-neutral-800  ">
+				 <div className="absolute    top-full z-50 mt-3 max-h-96 w-[300px] min-w-[300px] overflow-y-auto rounded-3xl bg-white  py-3 shadow-xl ltr:left-0 rtl:right-0   ">
 				{value && renderSearchValue()}
 			    </div> :
 				null
