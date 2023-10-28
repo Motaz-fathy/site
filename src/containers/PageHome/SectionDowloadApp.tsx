@@ -16,11 +16,11 @@ const SectionDowloadApp = ({
 			className={`nc-SectionOurFeatures relative mt-10  `}
 			data-nc-id="SectionOurFeatures"
 		>
-			<h2
+			<span
 				className={`mt-5 flex justify-center text-center text-xl font-extrabold text-[#1E1E1E] sm:hidden  `}
 			>
 				{t("downLoadHeader")}
-			</h2>
+			</span>
 			<div
 				className={`flex  h-[317px]  gap-3 px-4 rtl:flex-row-reverse sm:h-full lg:mt-[100px] ${
 					type === "type1"

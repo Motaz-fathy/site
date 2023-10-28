@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
 	const renderWidgetMenuItem = (menu: WidgetFooterMenu, index: number) => {
 		return (
 			<div key={index} className="text-sm">
-				<h2 className=" text-white sm:mt-0 font-[400]">{menu.title}</h2>
+				<span className=" text-white sm:mt-0 font-[400]">{menu.title}</span>
 				<ul className="space-y-5">
 					{menu.menus.map((item, index) => (
 						<li key={index} className="mt-3">

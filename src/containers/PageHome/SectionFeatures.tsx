@@ -15,9 +15,9 @@ const SectionFeatures = ({
            `}
       >
         <div className="container flex flex-col  text-2xl text-white max-sm:mt-[200px] max-sm:pb-3 bg-[#1D4179] py-5 ">
-          <h2 className="text-3xl font-[500]">
+          <span className="text-3xl font-[500]">
             {t("featuresHeader")}
-          </h2>
+          </span>
           <p className="mt-5 text-base  text-white lg:w-3/4">
             {t("featuresDesc")}
           </p>
