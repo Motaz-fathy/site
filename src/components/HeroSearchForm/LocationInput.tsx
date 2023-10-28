@@ -210,7 +210,7 @@ const LocationInput: FC<LocationInputProps> = ({
 	const [citiesWrapper, setCitiesWrapper] = useState<Cities[]>([]);
 	const pop = useRef<any>(null)
 	const handelPopScrolling = () => {
-		pop.current?.scrollIntoView({behavior : "smooth"})
+		pop.current?.scrollIntoView({behavior : "smooth" , block : "center"})
 	  }
 	const searchFlightItems = async (value: string) => {
 		if (!!value) {
