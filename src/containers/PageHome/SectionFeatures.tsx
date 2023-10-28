@@ -39,7 +39,7 @@ const SectionFeatures = ({
       "
         >
           {/* #1 */}
-          <div className="flex w-[184px]  items-center justify-center gap-4 rounded-lg border border-gray-100 bg-white p-1 pt-12  max-sm:mt-[2px] lg:p-4">
+          <div className="flex w-[180px] rtl:w-[180px]  items-center justify-center gap-4 rounded-lg border border-gray-100 bg-white p-1 pt-12  max-sm:mt-[2px] lg:p-4">
             <div className="pt-2 text-center text-gray-500">
               <div className="mx-auto w-fit bg-[#FFF7EA]">
                 <svg
@@ -56,13 +56,13 @@ const SectionFeatures = ({
                   />
                 </svg>
               </div>
-              <p className="mt-4 text-center text-sm font-semibold text-[#FFB229]">
+              <p className="mt-4 text-center text-[12px] font-semibold text-[#FFB229]">
                 {t("feature1")}
               </p>
             </div>
           </div>
           {/* #2 */}
-          <div className="flex w-[184px]  items-center  justify-center gap-4 rounded-lg border border-gray-100 bg-white p-1 pt-12  max-sm:mt-[2px] lg:p-4">
+          <div className="flex w-[180px] rtl:w-[180px]  items-center  justify-center gap-4 rounded-lg border border-gray-100 bg-white p-1 pt-12  max-sm:mt-[2px] lg:p-4">
             <div className="pt-2 text-center text-gray-500">
               <div className="mx-auto w-fit bg-[#FFF7EA]">
                 <svg
@@ -97,7 +97,7 @@ const SectionFeatures = ({
             </div>
           </div>
           {/* #3 */}
-          <div className=" flex w-[180px]  items-center justify-center gap-4 rounded-lg border border-gray-100 bg-white p-1 pt-12  max-sm:mt-[2px] lg:p-4">
+          <div className=" flex w-[180px] rtl:w-[180px]  items-center justify-center gap-4 rounded-lg border border-gray-100 bg-white p-1 pt-12  max-sm:mt-[2px] lg:p-4">
             <div className="pt-2 text-center text-gray-500">
               <div className="mx-auto w-fit bg-[#FFF7EA]">
                 <svg
@@ -124,7 +124,7 @@ const SectionFeatures = ({
             </div>
           </div>
           {/* #4 */}
-          <div className="my-[4px] flex w-[180px]  items-center justify-center gap-4 rounded-lg border border-gray-100 bg-white p-1  pt-12 lg:p-4">
+          <div className="my-[4px] flex w-[180px] rtl:w-[180px]  items-center justify-center gap-4 rounded-lg border border-gray-100 bg-white p-1  pt-12 lg:p-4">
             <div className="pt-2 text-center text-gray-500">
               <div className="mx-auto w-fit bg-[#FFF7EA]">
                 <svg

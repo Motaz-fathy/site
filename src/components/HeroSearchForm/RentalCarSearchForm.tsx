@@ -122,7 +122,7 @@ const RentalCarSearchForm: FC<FlightSearchFormProps> = ({
 
 	const renderRadioBtn = () => {
 		return (
-			<div className={` flex flex-row  flex-wrap gap-3 py-5`}>
+			<div className={` flex flex-row  flex-wrap gap-3 py-2`}>
 				<label
 					onClick={e => setDropOffLocationType("oneWay")}
 					className="flex cursor-pointer select-none items-center text-[#B9C4D5]"
@@ -177,7 +177,7 @@ const RentalCarSearchForm: FC<FlightSearchFormProps> = ({
 	const renderForm = () => {
 		return (
 			<div className="w-full">
-				<form className="relative   w-full  p-2    rounded-xl sm:flex-col-reverse  
+				<form className="relative   w-full  px-2    rounded-xl sm:flex-col-reverse  
 				max-sm:flex-col-reverse  ">
 					<span className="flex sm:hidden">{renderRadioBtn()}</span>
 					<div className="flex   lg:w-full md:w-full sm:w-full  max-sm:flex-col gap-1 md:flex-row sm:justify-around ">

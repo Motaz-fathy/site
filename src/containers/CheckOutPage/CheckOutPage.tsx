@@ -56,7 +56,8 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
   const [ID, setID] = useState();
   const navigate = useNavigate();
   const location = useLocation();
-
+  const page_path_name = window.location.pathname
+  window.localStorage.setItem("page_path_name" ,page_path_name)
   const dropOffLocationType = window.localStorage.getItem(
     "dropOffLocationType"
   );
@@ -140,8 +141,7 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
     }
   );
 
-  console.log("available seats " , data)
-  
+
   const createFirsttrip = async () => {
     const seatsList: any = [];
     for (const property in selectedSeatsList) {

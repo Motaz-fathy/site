@@ -9,8 +9,9 @@ import homeBg2 from "images/homeBg1.png";
 import Slider from 'rc-slider';
 
 const ListFlightTwoRound = () => {
-
-    const { t } = useTranslation();
+  const page_path_name = window.location.pathname
+  window.localStorage.setItem("page_path_name" ,page_path_name)
+  const { t } = useTranslation();
 	const [page, setPage] = useState<number>(1);
   
 	const [loading, setLoading] = useState<boolean>(false);

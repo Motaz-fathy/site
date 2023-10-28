@@ -148,7 +148,7 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 	};
 	const renderRadioBtn = () => {
 		return (
-			<div className={`${dropOffLocationType  === "oneWay" ? "xl:translate-x-[10px]" : 'xl:translate-x-[10px]'} flex flex-row  flex-wrap gap-3 py-5`}>
+			<div className={`${dropOffLocationType  === "oneWay" ? "xl:translate-x-[10px]" : 'xl:translate-x-[10px]'} flex flex-row  flex-wrap gap-3 py-2`}>
 				<label
 					onClick={e => setDropOffLocationType("oneWay")}
 					className="flex cursor-pointer select-none items-center text-[#B9C4D5]"
@@ -208,7 +208,8 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 				}  md:h-fit `}
 			>
 				
-				<form className="relative mt-2  w-full p-2 dark:bg-neutral-800   sm:bg-white  xl:rounded-xl   sm:flex-col-reverse  max-sm:flex-col-reverse  ">
+				<form className="relative mt-2  w-full px-2 dark:bg-neutral-800   sm:bg-white  xl:rounded-xl lg:rounded-xl md:rounded-xl 
+				 sm:flex-col-reverse  max-sm:flex-col-reverse  ">
 					<span className="flex sm:hidden">{renderRadioBtn()}</span>
 					<div className="flex h-[56px]  lg:w-full md:w-full sm:w-full  max-sm:flex-col gap-1 md:flex-row sm:justify-around ">
 						<div className="relative flex lg:flex-row w-[40vw] max-sm:flex-col gap-y-2   sm:gap-1  max-sm:w-full ">

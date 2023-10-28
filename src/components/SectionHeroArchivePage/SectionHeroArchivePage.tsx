@@ -43,13 +43,11 @@ const SectionHeroArchivePage: FC<SectionHeroArchivePageProps> = ({
 			data-nc-id="SectionHeroArchivePage "
 		>
 			
-			<div className="flex flex-col lg:flex-row lg:items-center">
-				
-			</div>
+			
 
-			<div className="z-50 hidden lg:flow-root">
+			<div className="z-50 hidden lg:flow-root ">
 
-				<div className="z-50 lg:-mt-40 xl:-mt-56 ">
+				<div className="z-50 lg:-mt-40 xl:-mt-56 w-[90%] m-auto">
 					<HeroSearchForm currentPage={currentPage} currentTab={currentTab} />
 				</div>
 			</div>

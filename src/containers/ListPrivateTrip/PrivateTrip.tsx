@@ -65,7 +65,8 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
   const tohead_en: string | null  = window.localStorage.getItem("tohead_en");
   const fromhead_ar: string | null  = window.localStorage.getItem("fromhead_ar");
   const tohead_ar: string | null  = window.localStorage.getItem("tohead_ar");
-
+  const page_path_name = window.location.pathname
+  window.localStorage.setItem("page_path_name" ,page_path_name)
   const dropOffLocationType = window.localStorage.getItem("dropOffLocationType")
   const [MIN , setMin]  = useState<number>() 
   const [MAX , setMax]  = useState<number>() 

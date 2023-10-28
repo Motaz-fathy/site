@@ -208,8 +208,10 @@ const LocationInput: FC<LocationInputProps> = ({
 	const [showPopover, setShowPopover] = useState(autoFocus);
 	const [cities, setCities] = useState<Cities[]>([]);
 	const [citiesWrapper, setCitiesWrapper] = useState<Cities[]>([]);
-   
-	
+	const pop = useRef<any>(null)
+	const handelPopScrolling = () => {
+		pop.current?.scrollIntoView({behavior : "smooth"})
+	  }
 	const searchFlightItems = async (value: string) => {
 		if (!!value) {
 			await getFlightsCountries(value).then((res: any) => {
@@ -444,7 +446,13 @@ const LocationInput: FC<LocationInputProps> = ({
 			ref={containerRef}
 		>
 			<div
-				onClick={() => setShowPopover(true)}
+			     ref={pop}
+				 
+				onClick={() => {
+					handelPopScrolling()
+					setShowPopover(true)
+				    
+				}}
 				className={`relative flex flex-1  flex-shrink-0 cursor-pointer items-center  space-x-3 rounded-full border-[1px] border-[#E8ECF2] pl-2 text-left focus:outline-none sm:rounded-[4px]  ${
 					showPopover ? "nc-hero-field-focused" : ""
 				} md:h-full`}

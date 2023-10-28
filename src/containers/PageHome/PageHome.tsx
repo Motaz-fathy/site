@@ -20,6 +20,8 @@ import elgesrElAraby from "images/image 5.png";
 import ontimebus from "images/image 8.png";
 import { SliderOurPartner } from "components/SectionSliderNewCategories/SliderOurPartner";
 function PageHome() {
+	const page_path_name = window.location.pathname
+	window.localStorage.setItem("page_path_name" ,page_path_name)
 	const { t } = useTranslation();
 	return (
 		<div className=" max-sm:mb-[20px] relative overflow-hidden  bg-[#E8ECF2] ">

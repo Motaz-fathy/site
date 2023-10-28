@@ -1,17 +1,19 @@
 import React, { FC, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./AddressCard.module.css";
-import ProfileButtom from "components/ProfileButtom/ProfileButtom";
+
 import { GoogleApiWrapper, Map, Marker } from "google-maps-react";
-import HomeIcon from "./HomeIcon";
+
 import Autocomplete from "react-google-autocomplete";
 import i18next from "i18next";
 import { useQuery } from "react-query";
 import { addAddress, getAddressList, getCitiesPrivate } from "api";
 import { showApiErrorMessages } from "utils";
 import { toast } from "react-toastify";
-import Select from "shared/Select/Select";
+import { useTranslation } from "react-i18next";
+
 const AddressCard: FC<any> = (props) => {
+  const {t} = useTranslation()
   const [loading, setLoading] = useState<boolean>(false);
   const [location, setLocation] = useState({
     lat: 30.033333,
@@ -174,7 +176,7 @@ const AddressCard: FC<any> = (props) => {
           />
         </div>
       </div>
-      <div className="">
+      <div className="container">
         {/* @ts-ignore */}
         <Map
           google={props.google}
@@ -191,8 +193,8 @@ const AddressCard: FC<any> = (props) => {
         >
           {/* @ts-ignore */}
           <Marker position={location} />
-          <button className={classes.Edit} onClick={addAdressHandler}>
-            Add another address
+          <button className={`${classes.Edit} btn-hover`} onClick={addAdressHandler}>
+            {t("Add another address")}
           </button>
         </Map>
       </div>

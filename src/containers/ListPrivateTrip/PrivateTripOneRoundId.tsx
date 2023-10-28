@@ -42,6 +42,8 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
   numberOfMonths,
   anchorDirection
 }) => {
+  const page_path_name = window.location.pathname
+  window.localStorage.setItem("page_path_name" ,page_path_name)
   const { trip_Id } = useParams();
   const [data, setData]: any = useState();
 	const [loading, setLoading] = useState<boolean>(false);

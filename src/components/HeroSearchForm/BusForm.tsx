@@ -122,7 +122,7 @@ const BusForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 
 	const renderRadioBtn = () => {
 		return (
-			<div className={` flex flex-row  flex-wrap gap-3 py-5`} >
+			<div className={` flex flex-row  flex-wrap gap-3 py-2`} >
 				<label
 					onClick={e => setlocationType("oneWay")}
 					className="flex cursor-pointer select-none items-center text-[#B9C4D5] text-[16px]"
@@ -181,9 +181,9 @@ const BusForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 				<form 
                 className="xl:w-full lg:w-full md:w-full  flex flex-col items-start "
                 >
-                   <div className="w-full h-[80px]  flex justify-between items-center max-sm:flex-col">
+                   <div className="w-full h-[70px]  flex justify-between items-center max-sm:flex-col">
                    <div className="flex h-[56px]  lg:w-full md:w-full sm:w-full  max-sm:flex-col gap-1 md:flex-row sm:justify-around ">
-						<div className="relative flex lg:flex-row w-[40vw] max-sm:flex-col gap-y-2   sm:gap-1  max-sm:w-full ">
+						<div className="relative flex lg:flex-row w-[40vw] max-sm:flex-col    sm:gap-1  max-sm:w-full ">
 							<LocationInput
 								key={1}
 								defaultValue={pickUpInputValue}

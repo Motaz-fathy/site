@@ -43,8 +43,8 @@ export const useAddLogin = () => {
 				await localStorage.setItem("email", data?.data?.data?.email);
 				await localStorage.setItem("phone", data?.data?.data?.mobile);
 				await localStorage.setItem("name", data?.data?.data?.name);
-				window.history.back()
-				window.history.back()
+				const path = window.localStorage.getItem("page_path_name")
+				navigate(`${path}`)
 			}
 		},
 		onError: (errors: any) => {

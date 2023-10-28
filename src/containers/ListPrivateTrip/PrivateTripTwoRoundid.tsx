@@ -191,22 +191,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
     setEnableTo(!enableto);
   };
 
-  const ref1 = useRef<any>(null);
-  const ref2 = useRef<any>(null);
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (!ref1?.current?.contains(event.target)) {
-        setEnableFrom(false);
-        
-      }
-      if (!ref2?.current?.contains(event.target)) {
-        setEnableTo(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-  }, [ref1 , ref2]);
-
+  
   // { get screen dimensions }
 
   const [screenSize, setScreenSize] = useState(getCurrentDimension());
@@ -972,7 +957,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
               </div> : 
                <div
                className={`relative  flex cursor-pointer items-center justify-start border-[1px] border-[#E8ECF2] `}
-               onClick={toggleModal} ref={ref1}
+               onClick={toggleModal} 
              >
                <div className=" flex items-center  justify-start">
                  <svg
@@ -1105,7 +1090,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
                 </div> : 
                   <div
                   className=" max-sm:text-[10px] ml-5 flex h-[40px] w-full cursor-pointer   items-center justify-start"
-                  onClick={toggleModal} ref={ref2}
+                  onClick={toggleModal} 
                 >
                   {AddressToOne?.name}
                 </div>

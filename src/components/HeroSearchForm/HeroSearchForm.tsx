@@ -301,7 +301,7 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 					}}
 					className={`inline-flex min-w-fit cursor-pointer items-center rounded-full 
 					text-sm font-normal text-neutral-700  hover:bg-neutral-100 hover:text-neutral-900 sm:py-2 
-					sm:px-4 xl:px-5 xl:py-2 xl:text-base rtl:min-w-fit rtl:px-[20px] rtl:py-4 max-sm:rtl:py-2  max-sm:rtl:px-[10px]${
+					sm:px-4 xl:px-5 xl:py-2 xl:text-base lg:px-5 lg:py-2 lg:text-base rtl:min-w-fit rtl:px-[20px] rtl:py-4 max-sm:rtl:py-2  max-sm:rtl:px-[10px]${
 						Private === true
 						? "pointer-events-none bg-[#E8ECF2] !text-neutral-900 "
 						: ""
@@ -347,7 +347,7 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 		<div
 			className={`   w-[85vw]  max-sm:w-[100%]  max-w-full py-5 max-sm:h-[450px] lg:py-0    rounded-t-2xl bg-white lg:rounded-b-2xl
 			rounded-b-2xl
-			${tabActive === "Maritime transport" && "w-[90%]"}
+			${tabActive === "Maritime transport" && "w-[90%] m-auto"}
 			`}
 			data-nc-id="HeroSearchForm"
 		>
