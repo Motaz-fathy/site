@@ -97,51 +97,8 @@ const SectionSteps = ({
 					<span>{t("stepHeader")}</span>
 				</div>
 
-				<div className="container w-[95%] flex flex-col items-center justify-center gap-4  sm:flex-row sm:px-0 ">
-					{static_trips_row1.map(i => (
-						<div className="xl:w-[25%]  lg:w-[25%] md:w-[25%] sm:w-full max-sm:w-full rounded-xl border-[1px] border-[#FFB229]">
-							<div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white p-1 pt-4 sm:pt-12  lg:p-4">
-								<div className="container w-[95%] text-gray-500 sm:pt-2">
-									<div className="w-full  flex justify-between items-center max-sm:gap-2">
-							
-									<span className="max-sm:text-[12px] md:text-center text-[12px]">{i.to}</span>
-									
-									<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-									<g clip-path="url(#clip0_2649_688)">
-									<path d="M24.3203 10.7198L23.0836 7.99424C22.6383 7.0251 21.6705 6.40283 20.6039 6.3999H2.87207C1.5625 6.40127 0.501367 7.4624 0.5 8.77197V14.6999C0.500977 15.4175 1.08242 15.9989 1.8 15.9999H3.74004C3.9293 16.9321 4.74883 17.6019 5.7 17.6019C6.65117 17.6019 7.4707 16.9321 7.65996 15.9999H17.34C17.5293 16.9321 18.3488 17.6019 19.3 17.6019C20.2512 17.6019 21.0707 16.9321 21.26 15.9999H23.3881C24.002 15.9993 24.4994 15.5019 24.5 14.888V11.5479C24.5002 11.2622 24.4389 10.9798 24.3203 10.7198ZM23.4531 10.746L19.7 10.4319V8.75186L22.3969 8.41475L23.4531 10.746ZM5.7 16.7999C5.0373 16.7999 4.5 16.2626 4.5 15.5999C4.5 14.9372 5.0373 14.3999 5.7 14.3999C6.36269 14.3999 6.9 14.9372 6.9 15.5999C6.9 16.2626 6.36269 16.7999 5.7 16.7999ZM19.3 16.7999C18.6373 16.7999 18.1 16.2626 18.1 15.5999C18.1 14.9372 18.6373 14.3999 19.3 14.3999C19.9627 14.3999 20.5 14.9372 20.5 15.5999C20.5 16.2626 19.9627 16.7999 19.3 16.7999ZM23.3881 15.1999H21.26C21.0707 14.2677 20.2512 13.5979 19.3 13.5979C18.3488 13.5979 17.5293 14.2677 17.34 15.1999H7.65996C7.4707 14.2677 6.65117 13.5979 5.7 13.5979C4.74883 13.5979 3.9293 14.2677 3.74004 15.1999H1.8C1.52402 15.1995 1.30039 14.9759 1.3 14.6999V8.77197C1.30098 7.904 2.0041 7.20088 2.87207 7.1999H20.6039C21.0691 7.20088 21.5182 7.37002 21.8684 7.67588L19.2752 7.9999H3.7C3.4791 7.9999 3.3 8.179 3.3 8.3999V10.7999C3.3 11.0208 3.4791 11.1999 3.7 11.1999H19.2832L23.7 11.5679V14.888C23.6998 15.0601 23.5602 15.1997 23.3881 15.1999ZM4.1 10.3999V8.7999H6.9V10.3999H4.1ZM7.7 8.7999H10.9V10.3999H7.7V8.7999ZM11.7 8.7999H14.5V10.3999H11.7V8.7999ZM15.3 8.7999H18.9V10.3999H15.3V8.7999Z" fill="#1E1E1E"/>
-									</g>
-									<defs>
-									<clipPath id="clip0_2649_688">
-									<rect width="24" height="24" fill="white" transform="translate(0.5)"/>
-									</clipPath>
-									</defs>
-									</svg>
-
-									<span className="max-sm:text-[12px]  text-[12px]">{i.from}</span>
-
-									</div>
-
-									<div className="flex justify-between items-center py-2">
-									<span className="text-[12px]  text-[#1E1E1E] w-[50%]">
-										{i.date}
-									</span>
-                                    <button className="btn-hover md:w-[50%] md:h-[30px] max-sm:w-[60%] max-sm:h-[30px] rounded-xl text-white"
-									onClick={() => handle_to_search(i.date , i.from ,i.to ,i.from_id , i.to_id)}
-									>
-                                       {t("select")}
-									</button>
-                                      
-									</div>
-								</div>
-							</div>
-						</div>
-					))}
-
-                
-
-				</div>
-
-				<div className="container w-[95%] flex flex-col items-center justify-center gap-4  sm:flex-row sm:px-0 mt-5">
+			
+				<div className="container w-full m-auto flex flex-col items-center justify-center gap-4  sm:flex-row sm:px-0 ">
 					
 						<div className="xl:w-[25%]  lg:w-[25%] md:w-[25%] sm:w-full max-sm:w-full rounded-xl border-[1px] border-[#FFB229]">
 							<div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white p-1 pt-4 sm:pt-12  lg:p-4">
@@ -236,8 +193,6 @@ const SectionSteps = ({
 							</div>
 						</div>
 
-
-						
 						<div className="xl:w-[25%]  lg:w-[25%] md:w-[25%] sm:w-full max-sm:w-full rounded-xl border-[1px] border-[#FFB229]">
 							<div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white p-1 pt-4 sm:pt-12  lg:p-4">
 								<div className="container w-[95%] text-gray-500 sm:pt-2">
@@ -283,12 +238,52 @@ const SectionSteps = ({
 								</div>
 							</div>
 						</div>
+				</div>
 
+				<div className="container w-full m-auto flex flex-col items-center justify-center gap-4  sm:flex-row sm:px-0 mt-5">
+					{static_trips_row1.map(i => (
+						<div className="xl:w-[25%]  lg:w-[25%] md:w-[25%] sm:w-full max-sm:w-full rounded-xl border-[1px] border-[#FFB229]">
+							<div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white p-1 pt-4 sm:pt-12  lg:p-4">
+								<div className="container w-[95%] text-gray-500 sm:pt-2">
+									<div className="w-full  flex justify-between items-center max-sm:gap-2">
+							
+									<span className="max-sm:text-[12px] md:text-center text-[12px]">{i.to}</span>
+									
+									<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+									<g clip-path="url(#clip0_2649_688)">
+									<path d="M24.3203 10.7198L23.0836 7.99424C22.6383 7.0251 21.6705 6.40283 20.6039 6.3999H2.87207C1.5625 6.40127 0.501367 7.4624 0.5 8.77197V14.6999C0.500977 15.4175 1.08242 15.9989 1.8 15.9999H3.74004C3.9293 16.9321 4.74883 17.6019 5.7 17.6019C6.65117 17.6019 7.4707 16.9321 7.65996 15.9999H17.34C17.5293 16.9321 18.3488 17.6019 19.3 17.6019C20.2512 17.6019 21.0707 16.9321 21.26 15.9999H23.3881C24.002 15.9993 24.4994 15.5019 24.5 14.888V11.5479C24.5002 11.2622 24.4389 10.9798 24.3203 10.7198ZM23.4531 10.746L19.7 10.4319V8.75186L22.3969 8.41475L23.4531 10.746ZM5.7 16.7999C5.0373 16.7999 4.5 16.2626 4.5 15.5999C4.5 14.9372 5.0373 14.3999 5.7 14.3999C6.36269 14.3999 6.9 14.9372 6.9 15.5999C6.9 16.2626 6.36269 16.7999 5.7 16.7999ZM19.3 16.7999C18.6373 16.7999 18.1 16.2626 18.1 15.5999C18.1 14.9372 18.6373 14.3999 19.3 14.3999C19.9627 14.3999 20.5 14.9372 20.5 15.5999C20.5 16.2626 19.9627 16.7999 19.3 16.7999ZM23.3881 15.1999H21.26C21.0707 14.2677 20.2512 13.5979 19.3 13.5979C18.3488 13.5979 17.5293 14.2677 17.34 15.1999H7.65996C7.4707 14.2677 6.65117 13.5979 5.7 13.5979C4.74883 13.5979 3.9293 14.2677 3.74004 15.1999H1.8C1.52402 15.1995 1.30039 14.9759 1.3 14.6999V8.77197C1.30098 7.904 2.0041 7.20088 2.87207 7.1999H20.6039C21.0691 7.20088 21.5182 7.37002 21.8684 7.67588L19.2752 7.9999H3.7C3.4791 7.9999 3.3 8.179 3.3 8.3999V10.7999C3.3 11.0208 3.4791 11.1999 3.7 11.1999H19.2832L23.7 11.5679V14.888C23.6998 15.0601 23.5602 15.1997 23.3881 15.1999ZM4.1 10.3999V8.7999H6.9V10.3999H4.1ZM7.7 8.7999H10.9V10.3999H7.7V8.7999ZM11.7 8.7999H14.5V10.3999H11.7V8.7999ZM15.3 8.7999H18.9V10.3999H15.3V8.7999Z" fill="#1E1E1E"/>
+									</g>
+									<defs>
+									<clipPath id="clip0_2649_688">
+									<rect width="24" height="24" fill="white" transform="translate(0.5)"/>
+									</clipPath>
+									</defs>
+									</svg>
 
-				
+									<span className="max-sm:text-[12px]  text-[12px]">{i.from}</span>
+
+									</div>
+
+									<div className="flex justify-between items-center py-2">
+									<span className="text-[12px]  text-[#1E1E1E] w-[50%]">
+										{i.date}
+									</span>
+                                    <button className="btn-hover md:w-[50%] md:h-[30px] max-sm:w-[60%] max-sm:h-[30px] rounded-xl text-white"
+									onClick={() => handle_to_search(i.date , i.from ,i.to ,i.from_id , i.to_id)}
+									>
+                                       {t("select")}
+									</button>
+                                      
+									</div>
+								</div>
+							</div>
+						</div>
+					))}
+
                 
 
 				</div>
+
 
 
 				<div className="relative mt-10 flex flex-col justify-center  rtl:gap-2 sm:flex-row   ">

@@ -43,15 +43,15 @@ const SectionDowloadApp = ({
 						type === "type1" ? "lg:pl-10" : "lg:pr-10"
 					}`}
 				>
-					<h2 className="mt-5 hidden text-4xl  text-[#1E1E1E] sm:flex font-[500]">
+					<span className="mt-5 hidden text-4xl  text-[#1E1E1E] sm:flex font-[500]">
 						{t("downLoadHeader")}
-					</h2>
+					</span>
 					<p className="mt-5 text-[12px] text-[#69696A] sm:text-base">
 						{t("downLoadDes")}
 					</p>
-					<h5 className="mt-5 text-[12px]  text-[#1E1E1E] sm:text-lg">
+					<span className="mt-5 text-[12px]  text-[#1E1E1E] sm:text-lg">
 						{t("downloadApp")}
-					</h5>
+					</span>
 
 					<div className="relative flex ">
 						<div className="w-full ">
@@ -59,7 +59,7 @@ const SectionDowloadApp = ({
 								<a className="flex w-[120px] items-center justify-center gap-2 rounded-lg  py-2 px-2 text-white 
 							    btn-hover
 								rtl:flex-row-reverse sm:w-[200px] sm:py-4 sm:px-10"
-								href={'https://play.google.com/store/apps/details?id=com.teleferik'}
+								href={'https://apps.apple.com/us/app/telefreik/id6447812019'}
 								target="_blank" rel="noopener noreferrer"
 								>
 									<span>
