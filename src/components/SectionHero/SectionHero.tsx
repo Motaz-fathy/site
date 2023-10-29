@@ -101,7 +101,7 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
 			
 			</div>
 			<div className="container  xl:w-[89%] lg:w-[89%]   xl:translate-y-[-90px] lg:translate-y-[-150px] md:translate-y-[-150px]
-			 sm:translate-y-[-150px]   max-sm:translate-y-[0px]  
+			 sm:translate-y-[-150px]   max-sm:translate-y-[-200px]  
 			">
 			<div className="w-[40%] max-sm:w-full  text-white xl:text-[30px] lg:text-[30px] md:text-[24px] sm:text-[20px] max-sm:text-[20px] font-[500] block">
 		    <span className="xl:text-[34px] lg:text-[34px] md:text-[24px] sm:text-[20px] max-sm:text-[32px] font-[500] block mb-3 max-sm:mb-8">
@@ -113,7 +113,7 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
 			</div>
 			</div>
 			<div
-				className="relative z-10 mb-12 xl:translate-y-[-170px] lg:translate-y-[-200px] md:translate-y-[-20px] max-sm:translate-y-[-170px]
+				className="relative z-10 mb-12 xl:translate-y-[-170px] lg:translate-y-[-200px] md:translate-y-[-20px] max-sm:translate-y-[-500px]
 				 flex w-full flex-col items-center justify-center text-center lg:mb-0 lg:mt-40 lg:justify-end
 			
 			"

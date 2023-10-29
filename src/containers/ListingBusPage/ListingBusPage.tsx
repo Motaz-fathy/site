@@ -72,8 +72,11 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 			setDate(data?.[0]);
 			setTravelTo(data?.[1]);
 			setTravelFrom(data?.[2]);
-			setCity(data?.[3]);
-			setCityFrom(data?.[4]);
+			const re = /\%20/gi;
+			const from = data?.[3].replace(re , "")
+			const to = data?.[4].replace(re , "")
+			setCity(from);
+			setCityFrom(to);
 			setFirst(data?.[5]);
 			setTrips([]);
 			setPage(1);

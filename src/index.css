@@ -497,14 +497,77 @@
 
   /* datepicker */ 
 
+  .DateInput {
+	width: 150px;
+    height: 55px;
+	cursor: pointer;
+  }
   #nc__rf_.DateInput_input .DateInput_input_1 .DateInput_input__focused 
   .DateInput_input__focused_2 , #nc__rf_.DateInput_input .DateInput_input_1 ,
   #nc__r3_ , #nc__rh_  , #nc__ru_.DateInput_input .DateInput_input_1 , #nc__ra_.DateInput_input .DateInput_input_1 ,
   #nc__r1 .DateInput_input .DateInput_input_1 .DateInput_input__focused .DateInput_input__focused_2 
   {
-	width: 150px;
+	width: 170px;
     height: 55px;
 	cursor: pointer;
   }
 
+  #nc__rf_,
+  #nc__rf_,
+  #nc__r3_,
+  #nc__rh_,
+  #nc__ru_,
+  #nc__ra_,
+  #nc__r1 ,
+  #nc__r7 ,
+  #nc__rg_{
+	width: 170px;
+    height: 55px;
+	cursor: pointer;
+	background-color: #242932;
+  }
 
+  .DateInput_input .DateInput_input_1 ,#nc__rg_ .DateInput_input .DateInput_input_1 , #nc__r7_.DateInput_input.DateInput_input_1 {
+	width: 170px;
+    height: 55px;
+	cursor: pointer;
+  }
+ 
+  @media screen and (max-width: 480px) {
+	.DateInput {
+		width: 300px;
+		height: 55px;
+		cursor: pointer;
+	  }
+	  #nc__rf_.DateInput_input .DateInput_input_1 .DateInput_input__focused 
+	  .DateInput_input__focused_2 , #nc__rf_.DateInput_input .DateInput_input_1 ,
+	  #nc__r3_ , #nc__rh_  , #nc__ru_.DateInput_input .DateInput_input_1 , #nc__ra_.DateInput_input .DateInput_input_1 ,
+	  #nc__r1 .DateInput_input .DateInput_input_1 .DateInput_input__focused .DateInput_input__focused_2 
+	  {
+		width: 300px;
+		height: 55px;
+		cursor: pointer;
+	  }
+	
+	  #nc__rf_,
+	  #nc__rf_,
+	  #nc__r3_,
+	  #nc__rh_,
+	  #nc__ru_,
+	  #nc__ra_,
+	  #nc__r1 ,
+	  #nc__r7 ,
+	  #nc__rg_{
+		width: 300px;
+		height: 55px;
+		cursor: pointer;
+		background-color: #242932;
+	  }
+	
+	  .DateInput_input .DateInput_input_1 ,#nc__rg_ .DateInput_input .DateInput_input_1 , #nc__r7_.DateInput_input.DateInput_input_1 {
+		width: 300px;
+		height: 55px;
+		cursor: pointer;
+	  }
+	 
+  }
