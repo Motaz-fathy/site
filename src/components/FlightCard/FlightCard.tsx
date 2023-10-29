@@ -70,7 +70,7 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
      
       <div
         key={item.id}
-        className="lg:h-100 md:h-100 m-0 flex h-[80%] w-[98%] 
+        className="lg:h-100 md:h-100 m-0 flex h-[80%] w-[100%] 
 			flex-col
 			bg-white
 			max-sm:h-[100%]
@@ -194,7 +194,7 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
           <div className="flex  flex-col space-y-6 sm:flex-row sm:items-center sm:space-y-0">
             {/* LOGO IMG */}
 
-            <div className="w-24 flex-shrink-0 lg:w-36 xl:translate-x-[10px] lg:translate-x-[-30px] md:translate-x-[0px] ">
+            <div className="w-[130px] flex-shrink-0 lg:w-[130px] xl:translate-x-[10px] lg:translate-x-[-40px] lg:rtl:translate-x-[50px] md:translate-x-[0px] bg-red-300">
               {item?.gateway_id?.includes("WEBUS") && (
 									<img src={miniBus} className="lg:w-[130px] md:w-[120px] h-[80px] max-sm:w-[75px] max-sm:h-[40px]" alt="" />
 								)}
@@ -305,16 +305,16 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
               </div>
            
           </div>
-          <div className="flex flex-row justify-between">
-            <div className="flex flex-col justify-between w-[80px] lg:rtl:ml-3 md:rtl:ml-2 ">
+          <div className=" flex justify-between ">
+            <div className="flex flex-col justify-between w-[80px]  ">
               <h4 className="text-[20px] font-[700] text-[#1E1E1E] ">
                  {item?.prices_start_with} {t("LE")}
               </h4>
-              <span className="text-[10px] rtl:ml-3 max-sm:text-[8px] ">{t("Price per person")}</span>
+              <span className="text-[10px]  max-sm:text-[8px] ">{t("Price per person")}</span>
             </div>
             <div className="h-full justify-center align-middle ">
               <button
-                className="ml-[16px] h-full w-[110px]  text-[20px] text-white btn-hover"
+                className=" h-full w-[110px] lg:w-[100px]  text-[20px] text-white btn-hover"
                 style={{ borderRadius: "9px" }}
                 onClick={() => {
                   navigate(item?.trip_url);

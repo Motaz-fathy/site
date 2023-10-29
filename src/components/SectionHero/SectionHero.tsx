@@ -71,18 +71,20 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
 
 	return (
 		<div
-			className={`nc-SectionHero  relative flex w-full   bg-cover bg-center lg:flex-col ${className} h-[80vh]  max-sm:h-[70vh]
+			className={`nc-SectionHero  relative flex w-full   bg-cover bg-center lg:flex-col ${className} xl:h-[80vh] lg:h-[85vh] md:h-[65vh]  max-sm:h-fit
 			
-			bg-black max-md:mt-0 max-md:h-[484px] 
+			xl:bg-cover lg:bg-contain md:bg-cover max-md:bg-cover max-sm:bg-auto 
 			 
-			max-sm:mt-0 max-sm:h-[484px] max-sm:flex-col 
+			max-sm:mt-0  max-sm:flex-col 
 			sm:flex-col
 			`}
 			data-nc-id="SectionHero"
 			style={{
 				backgroundImage: `url(${slides[currentIndex].url})`,
 				backgroundAttachment: "fixed",
-				backgroundSize: "cover"
+				
+				backgroundRepeat: "no-repeat"
+				
 				// WebkitBorderBottomLeftRadius:"0"
 			}}
 		>
@@ -99,13 +101,13 @@ const SectionHero: FC<SectionHeroProps> = ({ className = "" }) => {
 			
 			</div>
 			<div className="container  xl:w-[89%] lg:w-[89%]   xl:translate-y-[-90px] lg:translate-y-[-150px] md:translate-y-[-150px]
-			 sm:translate-y-[-150px]   max-sm:translate-y-[-190px] 
+			 sm:translate-y-[-150px]   max-sm:translate-y-[0px]  
 			">
 			<div className="w-[40%] max-sm:w-full  text-white xl:text-[30px] lg:text-[30px] md:text-[24px] sm:text-[20px] max-sm:text-[20px] font-[500] block">
-		    <span className="xl:text-[34px] lg:text-[34px] md:text-[24px] sm:text-[20px] max-sm:text-[20px] font-[500] block mb-3">
+		    <span className="xl:text-[34px] lg:text-[34px] md:text-[24px] sm:text-[20px] max-sm:text-[32px] font-[500] block mb-3 max-sm:mb-8">
 			{t("telefreik_header")}	
 			</span>		
-			<span className="xl:text-[20px] lg:text-[20px] md:text-[18px] sm:text-[16px] max-sm:text-[14px] font-[500]">
+			<span className="xl:text-[20px] lg:text-[20px] md:text-[18px] sm:text-[16px] max-sm:text-[20px] font-[500] max-sm:font-[400]">
 			{t('telefreik_title')}
 			</span>
 			</div>

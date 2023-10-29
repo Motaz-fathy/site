@@ -33,7 +33,7 @@ const SectionFeatures = ({
 		</div>
 
         <div
-          className="  flex  items-center justify-center gap-12 max-sm:flex-col  
+          className="container  flex  items-center justify-center gap-12 max-sm:flex-col  
 		  h-auto max-sm:gap-3 xl:translate-y-[120px] lg:translate-y-[120px] md:translate-y-[120px]  sm:translate-y-[0px] max-sm:translate-y-[150px]
       xl:rtl:translate-y-[120px] lg:rtl:translate-y-[120px] md:rtl:translate-y-[120px]  sm:rtl:translate-y-[0px] max-sm:rtl:translate-y-[150px]
       "

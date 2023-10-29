@@ -54,6 +54,13 @@ const SectionSteps = ({
 		}
 	const static_trips_row1 = [
 		{
+			from_id : 1 ,
+			to_id : 9 ,
+			from : "Cairo" ,
+			to : "Sharm El Sheikh",
+			date : tomorrow 
+		},
+		{
            from_id : 1 ,
            to_id : 2 ,
 		   from : "Cairo" ,
@@ -74,13 +81,7 @@ const SectionSteps = ({
 			to : "Dahab",
 			date : tomorrow 
 		},
-		{
-			from_id : 1 ,
-			to_id : 9 ,
-			from : "Cairo" ,
-			to : "Sharm El Sheikh",
-			date : tomorrow 
-		}
+		
 		
 		
 	]
@@ -98,10 +99,56 @@ const SectionSteps = ({
 				</div>
 
 			
-				<div className="container w-full m-auto flex flex-col items-center justify-center gap-4  sm:flex-row sm:px-0 ">
+				<div className="container w-full m-auto flex flex-col items-center justify-center gap-3  sm:flex-row sm:px-0 ">
+
+			        	<div className="xl:w-[23%]  lg:w-[23%] md:w-[23%] max-md:w-[23%] sm:w-full max-sm:w-full rounded-xl border-[1px] border-[#FFB229] md:text-[12px]">
+							<div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white  pt-4 md:pt-2 sm:pt-12  lg:p-4">
+								<div className="container w-[95%] text-gray-500 sm:pt-2">
+									<div className="w-full  flex justify-between items-center max-sm:gap-2">
+							
+									<span className="max-sm:text-[12px] md:text-center text-[12px] ">{t("Marsa Alam")}</span>
+
+									<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2654_2103)">
+<path d="M4.99998 13C3.622 13 2.5 14.122 2.5 15.5C2.5 16.878 3.622 18 4.99998 18C6.37797 18 7.49997 16.878 7.49997 15.5C7.49997 14.122 6.37797 13 4.99998 13ZM4.99998 17C4.17297 17 3.49998 16.327 3.49998 15.5C3.49998 14.673 4.17297 14 4.99998 14C5.827 14 6.49998 14.673 6.49998 15.5C6.49998 16.327 5.827 17 4.99998 17Z" fill="black"/>
+<path d="M20 13C18.622 13 17.5 14.122 17.5 15.5C17.5 16.878 18.622 18 20 18C21.378 18 22.5 16.878 22.5 15.5C22.5 14.122 21.378 13 20 13ZM20 17C19.173 17 18.5 16.327 18.5 15.5C18.5 14.673 19.173 14 20 14C20.827 14 21.5 14.673 21.5 15.5C21.5 16.327 20.827 17 20 17Z" fill="black"/>
+<path d="M21.5 9.99998H20.654C20.345 9.99998 20.042 9.894 19.8 9.69998L15.86 6.54797C15.418 6.195 14.863 6 14.298 6H7.07C6.23202 6 5.45502 6.41602 4.99002 7.113L4.139 8.391C3.884 8.772 3.458 9 2.99998 9C1.622 9 0.5 10.122 0.5 11.5V13.5C0.5 14.878 1.622 16 2.99998 16C3.27598 16 3.5 15.776 3.5 15.5C3.5 15.224 3.27598 15 2.99998 15C2.17297 15 1.49998 14.327 1.49998 13.5V11.5C1.49998 10.673 2.17297 9.99998 2.99998 9.99998C3.794 9.99998 4.52998 9.606 4.97098 8.94497L5.822 7.66795C6.101 7.24997 6.56802 6.99994 7.07 6.99994H14.298C14.638 6.99994 14.97 7.11694 15.236 7.32895L19.176 10.4799C19.593 10.815 20.119 10.9999 20.655 10.9999H21.5C22.967 10.9999 23.5 12.4949 23.5 13.4999C23.5 14.4849 22.746 14.9999 22 14.9999C21.724 14.9999 21.5 15.2239 21.5 15.4999C21.5 15.7759 21.724 15.9999 22 15.9999C23.425 16 24.5 14.925 24.5 13.5C24.5 11.803 23.449 9.99998 21.5 9.99998Z" fill="black"/>
+<path d="M18 15H7.00002C6.72402 15 6.5 15.224 6.5 15.5C6.5 15.776 6.72402 16 7.00002 16H18C18.276 16 18.5 15.776 18.5 15.5C18.5 15.224 18.276 15 18 15Z" fill="black"/>
+<path d="M17 10H12.5V8.50002C12.5 8.22402 12.276 8 12 8C11.724 8 11.5 8.22402 11.5 8.50002V10.5C11.5 10.776 11.724 11 12 11H17C17.276 11 17.5 10.776 17.5 10.5C17.5 10.224 17.276 10 17 10Z" fill="black"/>
+<path d="M9.99994 9.99978H6.80892L7.44792 8.7238C7.57092 8.47681 7.47094 8.17681 7.22391 8.05278C6.97589 7.92978 6.67692 8.02878 6.55289 8.2768L5.55291 10.2768C5.47491 10.4308 5.48391 10.6158 5.57489 10.7628C5.66588 10.9098 5.82689 10.9998 5.99991 10.9998H9.99989C10.2759 10.9998 10.4999 10.7758 10.4999 10.4998C10.4999 10.2238 10.2759 9.99978 9.99994 9.99978Z" fill="black"/>
+<path d="M14 12H13C12.724 12 12.5 12.224 12.5 12.5C12.5 12.776 12.724 13 13 13H14C14.276 13 14.5 12.776 14.5 12.5C14.5 12.224 14.276 12 14 12Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_2654_2103">
+<rect width="24" height="24" fill="white" transform="translate(0.5)"/>
+</clipPath>
+</defs>
+                                    </svg>
+
+
+									<span className="max-sm:text-[12px] ">{t("cairo")}</span>
+
+									</div>
+
+									<div className="flex justify-around items-center py-2">
+									<span className="text-[12px]  text-[#1E1E1E] w-[40%]">
+										{tomorrow}
+									</span>
+                                    <button className="btn-hover md:w-[60%] md:h-[30px] max-sm:w-[60%] max-sm:h-[30px] rounded-xl text-white"
+									onClick={() => {
+										navigate(`/private-trip?${tomorrow}/34/1/Marsa%20Alam/Cairo`)
+									}}
+									>
+                                       {t("select")}
+									</button>
+                                      
+									</div>
+								</div>
+							</div>
+						</div>
 					
-						<div className="xl:w-[25%]  lg:w-[25%] md:w-[25%] sm:w-full max-sm:w-full rounded-xl border-[1px] border-[#FFB229]">
-							<div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white p-1 pt-4 sm:pt-12  lg:p-4">
+						<div className="xl:w-[23%]  lg:w-[23%] md:w-[23%] max-md:w-[23%] sm:w-full max-sm:w-full rounded-xl border-[1px] border-[#FFB229] md:text-[12px]">
+							<div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white  pt-4 md:pt-2 sm:pt-12  lg:p-4">
 								<div className="container w-[95%] text-gray-500 sm:pt-2">
 									<div className="w-full  flex justify-between items-center max-sm:gap-2">
 							
@@ -130,8 +177,8 @@ const SectionSteps = ({
 							</div>
 						</div>
 
-						<div className="xl:w-[25%]  lg:w-[25%] md:w-[25%] sm:w-full max-sm:w-full rounded-xl border-[1px] border-[#FFB229]">
-							<div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white p-1 pt-4 sm:pt-12  lg:p-4">
+						<div className="xl:w-[23%]  lg:w-[23%] md:w-[23%] max-md:w-[23%] sm:w-full max-sm:w-full rounded-xl border-[1px] border-[#FFB229] md:text-[12px]">
+							<div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white  pt-4 md:pt-2 sm:pt-12  lg:p-4">
 								<div className="container w-[95%] text-gray-500 sm:pt-2">
 									<div className="w-full  flex justify-between items-center max-sm:gap-2">
 							
@@ -160,8 +207,8 @@ const SectionSteps = ({
 							</div>
 						</div>
 
-						<div className="xl:w-[25%]  lg:w-[25%] md:w-[25%] sm:w-full max-sm:w-full rounded-xl border-[1px] border-[#FFB229]">
-							<div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white p-1 pt-4 sm:pt-12  lg:p-4">
+						<div className="xl:w-[23%]  lg:w-[23%] md:w-[23%] max-md:w-[23%] sm:w-full max-sm:w-full rounded-xl border-[1px] border-[#FFB229] md:text-[12px]">
+							<div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white  pt-4 md:pt-2 sm:pt-12  lg:p-4">
 								<div className="container w-[95%] text-gray-500 sm:pt-2">
 									<div className="w-full  flex justify-between items-center max-sm:gap-2">
 							
@@ -193,57 +240,13 @@ const SectionSteps = ({
 							</div>
 						</div>
 
-						<div className="xl:w-[25%]  lg:w-[25%] md:w-[25%] sm:w-full max-sm:w-full rounded-xl border-[1px] border-[#FFB229]">
-							<div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white p-1 pt-4 sm:pt-12  lg:p-4">
-								<div className="container w-[95%] text-gray-500 sm:pt-2">
-									<div className="w-full  flex justify-between items-center max-sm:gap-2">
-							
-									<span className="max-sm:text-[12px] md:text-center ">{t("Marsa Alam")}</span>
-
-									<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_2654_2103)">
-<path d="M4.99998 13C3.622 13 2.5 14.122 2.5 15.5C2.5 16.878 3.622 18 4.99998 18C6.37797 18 7.49997 16.878 7.49997 15.5C7.49997 14.122 6.37797 13 4.99998 13ZM4.99998 17C4.17297 17 3.49998 16.327 3.49998 15.5C3.49998 14.673 4.17297 14 4.99998 14C5.827 14 6.49998 14.673 6.49998 15.5C6.49998 16.327 5.827 17 4.99998 17Z" fill="black"/>
-<path d="M20 13C18.622 13 17.5 14.122 17.5 15.5C17.5 16.878 18.622 18 20 18C21.378 18 22.5 16.878 22.5 15.5C22.5 14.122 21.378 13 20 13ZM20 17C19.173 17 18.5 16.327 18.5 15.5C18.5 14.673 19.173 14 20 14C20.827 14 21.5 14.673 21.5 15.5C21.5 16.327 20.827 17 20 17Z" fill="black"/>
-<path d="M21.5 9.99998H20.654C20.345 9.99998 20.042 9.894 19.8 9.69998L15.86 6.54797C15.418 6.195 14.863 6 14.298 6H7.07C6.23202 6 5.45502 6.41602 4.99002 7.113L4.139 8.391C3.884 8.772 3.458 9 2.99998 9C1.622 9 0.5 10.122 0.5 11.5V13.5C0.5 14.878 1.622 16 2.99998 16C3.27598 16 3.5 15.776 3.5 15.5C3.5 15.224 3.27598 15 2.99998 15C2.17297 15 1.49998 14.327 1.49998 13.5V11.5C1.49998 10.673 2.17297 9.99998 2.99998 9.99998C3.794 9.99998 4.52998 9.606 4.97098 8.94497L5.822 7.66795C6.101 7.24997 6.56802 6.99994 7.07 6.99994H14.298C14.638 6.99994 14.97 7.11694 15.236 7.32895L19.176 10.4799C19.593 10.815 20.119 10.9999 20.655 10.9999H21.5C22.967 10.9999 23.5 12.4949 23.5 13.4999C23.5 14.4849 22.746 14.9999 22 14.9999C21.724 14.9999 21.5 15.2239 21.5 15.4999C21.5 15.7759 21.724 15.9999 22 15.9999C23.425 16 24.5 14.925 24.5 13.5C24.5 11.803 23.449 9.99998 21.5 9.99998Z" fill="black"/>
-<path d="M18 15H7.00002C6.72402 15 6.5 15.224 6.5 15.5C6.5 15.776 6.72402 16 7.00002 16H18C18.276 16 18.5 15.776 18.5 15.5C18.5 15.224 18.276 15 18 15Z" fill="black"/>
-<path d="M17 10H12.5V8.50002C12.5 8.22402 12.276 8 12 8C11.724 8 11.5 8.22402 11.5 8.50002V10.5C11.5 10.776 11.724 11 12 11H17C17.276 11 17.5 10.776 17.5 10.5C17.5 10.224 17.276 10 17 10Z" fill="black"/>
-<path d="M9.99994 9.99978H6.80892L7.44792 8.7238C7.57092 8.47681 7.47094 8.17681 7.22391 8.05278C6.97589 7.92978 6.67692 8.02878 6.55289 8.2768L5.55291 10.2768C5.47491 10.4308 5.48391 10.6158 5.57489 10.7628C5.66588 10.9098 5.82689 10.9998 5.99991 10.9998H9.99989C10.2759 10.9998 10.4999 10.7758 10.4999 10.4998C10.4999 10.2238 10.2759 9.99978 9.99994 9.99978Z" fill="black"/>
-<path d="M14 12H13C12.724 12 12.5 12.224 12.5 12.5C12.5 12.776 12.724 13 13 13H14C14.276 13 14.5 12.776 14.5 12.5C14.5 12.224 14.276 12 14 12Z" fill="black"/>
-</g>
-<defs>
-<clipPath id="clip0_2654_2103">
-<rect width="24" height="24" fill="white" transform="translate(0.5)"/>
-</clipPath>
-</defs>
-</svg>
-
-
-									<span className="max-sm:text-[12px] ">{t("cairo")}</span>
-
-									</div>
-
-									<div className="flex justify-around items-center py-2">
-									<span className="text-[12px]  text-[#1E1E1E] w-[40%]">
-										{tomorrow}
-									</span>
-                                    <button className="btn-hover md:w-[60%] md:h-[30px] max-sm:w-[60%] max-sm:h-[30px] rounded-xl text-white"
-									onClick={() => {
-										navigate(`/private-trip?${tomorrow}/34/1/Marsa%20Alam/Cairo`)
-									}}
-									>
-                                       {t("select")}
-									</button>
-                                      
-									</div>
-								</div>
-							</div>
-						</div>
+				
 				</div>
 
-				<div className="container w-full m-auto flex flex-col items-center justify-center gap-4  sm:flex-row sm:px-0 mt-5">
+				<div className="container w-full m-auto flex flex-col items-center justify-center gap-3  sm:flex-row sm:px-0 mt-5 ">
 					{static_trips_row1.map(i => (
-						<div className="xl:w-[25%]  lg:w-[25%] md:w-[25%] sm:w-full max-sm:w-full rounded-xl border-[1px] border-[#FFB229]">
-							<div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white p-1 pt-4 sm:pt-12  lg:p-4">
+						<div className="xl:w-[23%]  lg:w-[23%] md:w-[23%] sm:w-full max-sm:w-full rounded-xl border-[1px] border-[#FFB229] md:text-[10px]">
+							<div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white  pt-4 md:pt-2 sm:pt-12  lg:p-4">
 								<div className="container w-[95%] text-gray-500 sm:pt-2">
 									<div className="w-full  flex justify-between items-center max-sm:gap-2">
 							

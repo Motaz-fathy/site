@@ -76,13 +76,13 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
       <div
         className={`relative ${
           type === "maritime"
-            ? "w-[34vw]"
+            ? "w-[14vw] cursor-pointer"
             : type === "bus"
-            ? "w-[20vw] max-sm:w-[88vw]"
+            ? "w-[14vw] max-sm:w-[88vw] cursor-pointer"
             : type === "flight"
-            ? "w-[14vw]"
+            ? "w-[14vw] cursor-pointer"
             : type === "cars"
-            ? "w-[14vw]  "
+            ? "w-[14vw] cursor-pointer "
             : "w-auto"
         }    flex h-[55px]  max-sm:w-full  ${fieldClassName} cursor-pointer items-center  gap-1 rounded-full border-[1px]  border-[#E8ECF2]  text-left focus:outline-none sm:flex-shrink-0 sm:rounded-[4px]  ${className} ${
           focused ? "nc-hero-field-focused " : " "
@@ -119,7 +119,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
 
   const renderGuest = () => {
     return (
-      <div className="">
+      <div>
         <Popover className="relative">
           {({ open }) => (
             <>
@@ -281,7 +281,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
               moment(month).locale(i18n.language).format("MMMM YYYY")
             }
             isRTL={true}
-            openDirection = {"up"}
+            
           />
          </div>
 
@@ -291,7 +291,9 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
         {type !== "cars" ? (
           <>
             {type === "bus" ? (
-              <div className="flex w-[9.5vw] items-center  xl:translate-x-[0px] lg:translate-x-[0px] lg:rtl:translate-x-[2px] md:translate-x-[30px]  sm:translate-x-[0px]  max-sm:translate-x-[0px] justify-center rounded-[4px]  border-[1px] border-[#E8ECF2] max-sm:h-[48px] max-sm:w-full max-sm:rounded-3xl  ">
+              <div className="flex w-[9.5vw] items-center  xl:translate-x-[-70px]  xl:rtl:translate-x-[60px] lg:translate-x-[-45px]  lg:rtl:translate-x-[35px]
+              lg:rtl:translate-x-[2px] md:translate-x-[-50px] md:rtl:translate-x-[70px]  sm:translate-x-[0px]  max-sm:translate-x-[0px] justify-center rounded-[4px] 
+               border-[1px] border-[#E8ECF2] max-sm:h-[48px] max-sm:w-full max-sm:rounded-3xl  ">
                 {renderGuest()}
               </div>
             ) : (
@@ -299,7 +301,8 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
             )}
 
             {type === "flight" ? (
-              <div className="flex w-[9.5vw] items-center  justify-center rounded-[4px]  border-[1px] border-[#E8ECF2] max-sm:h-[48px] max-sm:w-full max-sm:rounded-3xl  ">
+              <div className="flex w-[9.5vw] items-center  justify-center rounded-[4px] 
+               border-[1px] border-[#E8ECF2] max-sm:h-[48px] max-sm:w-full max-sm:rounded-3xl  ">
                 {renderGuest()}
               </div>
             ) : (
@@ -321,7 +324,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
           onClick={buttonSubmitHref}
           type="button"
           className=" flex h-[45px] w-[45px] items-center justify-center rounded-full btn-hover
-          lg:rtl:mr-8
+          
           p-2 text-neutral-50  focus:outline-none max-sm:w-full max-sm:py-6 sm:mt-0  sm:py-0"
         >
           <span className="mr-3 hidden max-sm:block">Search & compare</span>

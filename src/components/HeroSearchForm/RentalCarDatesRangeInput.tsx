@@ -89,13 +89,13 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
       <div
         className={`relative   ${
           type === "maritime"
-            ? "w-[34vw]"
+            ? "w-[34vw] cursor-pointer"
             : type === "bus"
-            ? "w-[20vw] max-sm:w-[88vw]"
+            ? "w-[14vw] max-sm:w-[88vw] cursor-pointer"
             : type === "flight"
-            ? "w-[14vw]"
+            ? "w-[14vw] cursor-pointer"
             : type === "cars"
-            ? "w-[14vw]  "
+            ? "w-[14vw]  cursor-pointer"
             : "w-auto"
         }    flex h-[55px]  max-sm:w-full  ${fieldClassName} cursor-pointer items-center  gap-1 rounded-full border-[1px]  border-[#E8ECF2]  text-left focus:outline-none sm:flex-shrink-0 sm:rounded-[4px]  ${className} ${
           focused ? "nc-hero-field-focused " : " "
@@ -358,11 +358,13 @@ const RentalCarDatesRangeInput: FC<RentalCarDatesRangeInputProps> = ({
 
         {renderInputpickUpDate()}
       </div>
-      <div className="flex w-[20vw]  justify-between max-sm:h-[48px] max-sm:w-full  lg:ml-2 ">
+      <div className="flex w-[20vw]  justify-between max-sm:h-[48px] max-sm:w-full   ">
         {type !== "cars" ? (
           <>
             {type === "bus" ? (
-              <div className="flex w-[9.5vw] items-center  xl:translate-x-[0px] lg:translate-x-[0px] lg:rtl:translate-x-[2px] md:translate-x-[30px]  sm:translate-x-[0px]  max-sm:translate-x-[0px] justify-center rounded-[4px]  border-[1px] border-[#E8ECF2] max-sm:h-[48px] max-sm:w-full max-sm:rounded-3xl  ">
+              <div className="flex w-[9.5vw] items-center  xl:translate-x-[-70px]  xl:rtl:translate-x-[60px] lg:translate-x-[-45px]  lg:rtl:translate-x-[35px]
+              lg:rtl:translate-x-[2px] md:translate-x-[-50px] md:rtl:translate-x-[70px]  sm:translate-x-[0px]  max-sm:translate-x-[0px] justify-center rounded-[4px] 
+               border-[1px] border-[#E8ECF2] max-sm:h-[48px] max-sm:w-full max-sm:rounded-3xl  ">
                 {renderGuest()}
               </div>
             ) : (

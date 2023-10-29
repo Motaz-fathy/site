@@ -210,7 +210,7 @@ const LocationInput: FC<LocationInputProps> = ({
 	const [citiesWrapper, setCitiesWrapper] = useState<Cities[]>([]);
 	const pop = useRef<any>(null)
 	const handelPopScrolling = () => {
-		pop.current?.scrollIntoView({behavior : "smooth" , block : "center"})
+		pop.current?.scrollIntoView({behavior : "smooth" , block : "start"})
 	  }
 	const searchFlightItems = async (value: string) => {
 		if (!!value) {
@@ -442,7 +442,7 @@ const LocationInput: FC<LocationInputProps> = ({
 
 	return (
 		<div
-			className={`relative flex ${className} h-[56px] justify-between  lg:w-[19vw]`}
+			className={`relative flex ${className} h-[56px] justify-between  lg:w-[19vw] max-sm:mb-2`}
 			ref={containerRef}
 		>
 			<div
@@ -457,7 +457,7 @@ const LocationInput: FC<LocationInputProps> = ({
 					showPopover ? "nc-hero-field-focused" : ""
 				} md:h-full`}
 			>
-				<div className="w-fit text-neutral-300 dark:text-neutral-400 rtl:ml-3 rtl:mr-1 max-sm:rtl:mr-4">
+				<div className="w-fit text-neutral-300 dark:text-neutral-400 rtl:ml-3 rtl:mr-1 max-sm:rtl:mr-4 ">
 					{type && typeIcon ? (
 						typeIcon === "from" ? (
 							SVGS_ICON[type ?? ""].from
@@ -491,7 +491,7 @@ const LocationInput: FC<LocationInputProps> = ({
 					<input
 						className={`block  w-[70%] truncate border-none bg-transparent bg-white p-0 placeholder-[#B9C4D5] 
 						cursor-pointer
-						focus:placeholder-neutral-300  focus:outline-none focus:ring-0 xl:text-lg`}
+						focus:placeholder-neutral-300  focus:outline-none focus:ring-0 xl:text-lg `}
 						placeholder={noPlaceHolder ? placeHolder : ""}
 						value={value}
 						autoFocus={showPopover}

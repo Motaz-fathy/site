@@ -56,7 +56,7 @@ const SectionDowloadApp = ({
 					<div className="relative flex ">
 						<div className="w-full ">
 							<div className="mt-5 flex flex-col justify-start gap-2 sm:mt-7 sm:flex-row">
-								<a className="flex w-[120px] items-center justify-center gap-2 rounded-lg  py-2 px-2 text-white 
+								<a className="flex xl:w-[160px] lg:w-[160px] md:w-[140px] items-center justify-center gap-2 rounded-lg  py-2 px-2 text-white 
 							    btn-hover
 								rtl:flex-row-reverse sm:w-[200px] sm:py-4 sm:px-10"
 								href={'https://apps.apple.com/us/app/telefreik/id6447812019'}
@@ -90,7 +90,7 @@ const SectionDowloadApp = ({
 									</span>
 									<span className="sm:text-2xl">{t("iphone")}</span>
 								</a>
-								<a className="flex w-[120px] items-center   btn-hover justify-center gap-2 rounded-lg bg-[#1D4179] py-2 px-2
+								<a className="flex xl:w-[160px] lg:w-[160px] md:w-[140px] items-center   btn-hover justify-center gap-2 rounded-lg bg-[#1D4179] py-2 px-2
 								 text-white rtl:flex-row-reverse sm:w-[200px] sm:py-4 sm:px-10"
 								 href={'https://play.google.com/store/apps/details?id=com.teleferik'}
 								 target="_blank" rel="noopener noreferrer"
