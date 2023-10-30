@@ -85,20 +85,16 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
     setFocusedInput(focus);
     onFocusChange && onFocusChange(focus);
   };
+
   useEffect(() => {
-    getAddressList().then((res: any) => {
-    setAddressapifrom(res?.data?.data);
-    setAddressapito(res?.data?.data);
-    if(addressapifrom ) {
+     if(addressapifrom ) {
       setEmpty(false)
 
     }else {
       setEmpty(true)
     }
-  }).catch((erro) => {
-      console.log(erro)
-  })
-}, []);
+  } , [])
+
   const renderInputpickUpDate = () => {
     const focused: any = focusedInput === "startDate";
     return (
@@ -185,12 +181,43 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
   const [enableto, setEnableTo] = useState(false);
 
   const PopAddressfrom = () => {
+    getAddressList().then((res: any) => {
+      if(new_address !== null) {
+        
+        let arr:any = []
+       arr =  res?.data?.data?.map((item : any) => {
+             return item
+        })
+        arr?.push(new_address) 
+        setAddressapifrom(arr)
+
+      } else {
+        setAddressapifrom(res?.data?.data);        
+      }
     setEnableFrom(!enablefrom);
+  })
+
   };
   const PopAddressto = () => {
-    setEnableTo(!enableto);
-  };
+    getAddressList().then((res: any) => {
+      if(new_address !== null) {
+        
+        let arr:any = []
+       arr =  res?.data?.data?.map((item : any) => {
+             return item
+        })
+        arr?.push(new_address) 
+        setAddressapito(arr)
 
+      } else {
+        setAddressapito(res?.data?.data);        
+      }
+    setEnableTo(!enableto);
+  })
+
+  };
+  const al:any = window.localStorage.getItem("new_address")
+  const new_address = al
   
   // { get screen dimensions }
 
@@ -747,14 +774,14 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
 
     return (
       <>
-       <div className="m-auto flex w-full items-center justify-center z-[99999]">
+       <div className="m-auto flex w-full items-center justify-center ">
           {modal && (
             <div className={Styled.modal}>
               <div onClick={toggleModal} className={Styled.overlay}></div>
-              <div className={`translate-x-[10%] translate-y-[20%] rtl:translate-x-[-10%] ${Styled.modal_content}`}>
+              <div className={`translate-x-[10%] translate-y-[20%] rtl:translate-x-[-10%] ${Styled.modal_content} `}>
                 <MapAddress />
                 <ButtonClose 
-                className={` absolute top-[20px] left-[20px]   ` }
+                className={` absolute top-[20px] left-[20px]  z-20 ` }
                 onClick={toggleModal}
                 />
               </div>
@@ -899,36 +926,7 @@ export const PrivateTripTwoRoundid: FC<RentalCarDatesRangeInputProps> = ({
                     }   } max-sm:w-full   `}
                   >
                     <div className={` absolute   inset-0 flex  ${Styled.date_container} `}>
-                      <DateRangePicker
-                        disabled={true}
-                        startDate={stateDate?.startDate}
-                        endDate={stateDate?.endDate}
-                        focusedInput={focusedInput}
-                        onDatesChange={(date) => {
-                          setStateDate(date);
-                          onChange && onChange({ stateDate: date });
-                        }}
-                        onFocusChange={handleDateFocusChange}
-                        startDateId={startDateId}
-                        endDateId={endDateId}
-                        daySize={windowSize.width > 1279 ? 54 : 44}
-                        orientation={"horizontal"}
-                        showClearDates
-                        noBorder
-                        hideKeyboardShortcutsPanel
-                        numberOfMonths={
-                          numberOfMonths ||
-                          (windowSize.width < 1024 ? 1 : undefined)
-                        }
-                        anchorDirection={anchorDirection}
-                        renderMonthElement={({ month }) =>
-                          moment(month)
-                            .locale(i18n.language)
-                            .format("MMMM YYYY")
-                        }
-                        reopenPickerOnClearDates
-                        isRTL={i18n.language === "ar" ? true : false}
-                      />
+                  
                     </div>
 
                     {renderInputpickUpDate()}

@@ -20,7 +20,6 @@ const MapAddress: FC<any> = (props) => {
   const [address_details, setAddress_details] = useState("");
   const phone_number = window.localStorage.getItem("phone");
   const [AddressfromMarker,setAddressfromMarker]: any =useState()
-
   const navigate = useNavigate();       
 
   const mapStyles = {
@@ -31,7 +30,10 @@ const MapAddress: FC<any> = (props) => {
     marginBottom: 10
   };
 
+  
+  
   const addAdressHandler = async () => {
+    window.localStorage.setItem("new_address" , "")
     const body = {
       name: address_details,
       phone: phone_number,
@@ -46,7 +48,7 @@ const MapAddress: FC<any> = (props) => {
         .then((res) => {
           setLoading(false);
           toast.success("add address done");
-          window.location.reload();
+          window.localStorage.setItem("new_address" , JSON.stringify(res?.data?.data))
         })
         .catch((err: any) => {
           setLoading(false);
@@ -64,6 +66,7 @@ const MapAddress: FC<any> = (props) => {
     } else {
       toast.error("notValidData");
       setLoading(false);
+     
     }
   };
 
@@ -88,7 +91,7 @@ const MapAddress: FC<any> = (props) => {
           <label>Location Search *</label>
 
           <Autocomplete
-            className= {`h-[50px] w-full ${classes.autocomplete_min}`}
+            className= {`h-[50px] w-full ${classes.autocomplete_min} z-[99999999999999]`}
             apiKey={process.env.REACT_APP_MAP_KEY!}
             onPlaceSelected={(place: any) => {
               setAddress_details(place?.formatted_address);
@@ -105,7 +108,7 @@ const MapAddress: FC<any> = (props) => {
           />
         </div>
       </div>
-      <div className=" flex justify-center  md:ml-[8%] md:mt-[30px] lg:ml-[10%] lg:mt-[30px] ">
+      <div className=" flex justify-center  md:ml-[8%] md:mt-[30px] lg:ml-[10%] lg:mt-[30px] z-0">
         {/* @ts-ignore */}
         <Map
           google={props.google}

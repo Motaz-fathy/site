@@ -69,20 +69,8 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
   // code will be enhance
 
   const [empty , setEmpty] = useState(false)
-  useEffect(() => {
-    getAddressList().then((res: any) => {
-      setAddressapifrom(res?.data?.data);
-      setAddressapito(res?.data?.data);
 
-      if(addressapifrom ) {
-        setEmpty(false)
-
-      }else {
-        setEmpty(true)
-      }
-      
-    });
-  }, []);
+ 
   useEffect(() => {
     setStateDate(defaultDateValue);
   }, [defaultDateValue]);
@@ -186,15 +174,64 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
 
   const [enablefrom, setEnableFrom] = useState(false);
   const [enableto, setEnableTo] = useState(false);
+  const [address_loading , setAddress_loading] = useState(false)
 
   const PopAddressfrom = () => {
+    
+    getAddressList().then((res: any) => {
+      if(new_address !== null) {
+        
+        let arr:any = []
+       arr =  res?.data?.data?.map((item : any) => {
+             return item
+        })
+        arr?.push(new_address) 
+        setAddressapifrom(arr)
+
+      } else {
+        setAddressapifrom(res?.data?.data);        
+      }
     setEnableFrom(!enablefrom);
-  };
+  })
+
+}
+
+
   const PopAddressto = () => {
-    setEnableTo(!enableto);
+
+    getAddressList().then((res: any) => {
+      if(new_address !== null) {
+        let arr:any = []
+       arr =  res?.data?.data?.map((item : any) => {
+             return item
+        })
+        arr?.push(new_address) 
+       
+        setAddressapito(arr)
+      } else {
+       
+        setAddressapito(res?.data?.data);
+      }
+      setEnableTo(!enableto);
+  })
+    
   };
 
   // { get screen dimensions }
+  const al:any = window.localStorage.getItem("new_address")
+  const new_address = JSON.parse(al)
+  
+  useEffect(() => {
+ 
+    if(addressapifrom ) {
+      setEmpty(false)
+
+    }else {
+      setEmpty(true)
+    }
+    
+  }, []);
+ 
 
   const [screenSize, setScreenSize] = useState(getCurrentDimension());
 
@@ -447,7 +484,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                         : "nc-date-not-focusedInput"
                     }   } max-sm:w-full   `}
                   >
-                    <div className={` absolute   inset-0 flex   `}>
+                    <div className={` absolute   inset-0 flex   hidden`}>
                       <DateRangePicker
                         disabled={true}
                         startDate={stateDate?.startDate}
@@ -548,7 +585,9 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                <div
                  className={`ml-5 flex h-[40px] items-center  justify-start  `}
                >
-                 {AddressFromOne?.name}
+                {
+                   AddressFromOne?.name
+                }
                </div>
                <div
                  className={` ${
@@ -556,8 +595,31 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                  } `}
                >
                <div className="container mt-3 w-full ">
-
-                 {addressapifrom?.map((item: any, index: any) => {
+                 {
+                  address_loading === true ? 
+                  <div className="my-4 flex  w-full justify-center">
+                  <svg
+                  className="-ml-1 mr-3 h-20 w-20 animate-spin"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  >
+                  <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  ></circle>
+                  <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                  </svg>
+                  </div> : <>
+                  {addressapifrom?.map((item: any, index: any) => {
                    
                    return (
                      <div
@@ -572,6 +634,9 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                    );
                  })}
 
+                  </>
+                 }
+                
                  
                </div> 
                
@@ -1007,7 +1072,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                   {t("Confirm Pickup Date")}
                 </span>
 
-                <div className={`flex h-[40px] items-center justify-between border-[1px] border-[#E8ECF2] ${Styled.date_container}`}>
+                <div className={`flex h-[40px] items-center justify-between border-[1px] border-[#E8ECF2] `}>
                   <div
                     className={` relative  flex  sm:pt-0 ${className} ${
                       !!focusedInput
@@ -1015,7 +1080,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                         : "nc-date-not-focusedInput"
                     }   } max-sm:w-full   `}
                   >
-                    <div className={` absolute   inset-0 flex  ${Styled.date_container} `}>
+                    <div className={` absolute   inset-0 flex   hidden`}>
                       <DateRangePicker
                         disabled={true}
                         startDate={stateDate?.startDate}
@@ -1116,7 +1181,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                 <div
                   className={`ml-5 flex h-[40px] items-center  justify-start  `}
                 >
-                  <span className="text-[14px] font-[400] text-[#1E1E1E] max-sm:text-[8px]">
+                  <span className="text-[14px] font-[400] text-[#1E1E1E] max-sm:text-[8px] ">
                     {AddressFromOne?.name}
                   </span>
                 </div>
@@ -1133,7 +1198,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                           className={`container mt-2 flex h-[40px] w-full cursor-pointer items-center justify-start  ${Styled.itemAddress}`}
                           onClick={() => handlesetfromaddress(item)}
                         >
-                          <span className="text-[14px] text-[#1E1E1E]">
+                          <span className="text-[14px] text-[#1E1E1E] max-sm:text-[10px]">
                             {item?.name}
                           </span>
                         </div>
@@ -1270,7 +1335,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                  {
                   empty === true ? 
                   <div
-                  className=" ml-5 flex h-[40px] w-full cursor-pointer   items-center justify-start"
+                  className=" ml-5 flex h-[40px] w-full cursor-pointer   items-center justify-start max-sm:text-[8px]"
                   onClick={PopAddressto}
                 >
                   {AddressToOne?.name}
@@ -1297,7 +1362,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                             className={`container mt-2 flex h-[40px] w-full cursor-pointer items-center justify-start  ${Styled.itemAddress_to}`}
                             onClick={() => handlesettoaddress(itemTo)}
                           >
-                            <span className="text-[14px] text-[#1E1E1E]">
+                            <span className="text-[14px] text-[#1E1E1E] max-sm:text-[10px]">
                               {itemTo?.name}
                             </span>
                           </div>
@@ -1365,7 +1430,8 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
         />
         {loading && 
 
-        ( <div className="my-4 flex  w-full justify-center">
+        ( 
+        <div className="my-4 flex  w-full justify-center">
         <svg
         className="-ml-1 mr-3 h-20 w-20 animate-spin"
         xmlns="http://www.w3.org/2000/svg"
@@ -1386,7 +1452,8 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
         ></path>
         </svg>
-        </div>)
+        </div>
+        )
 
         }
         <div className="container m-auto mb-5 mt-10 flex w-full flex-col">
