@@ -24,8 +24,7 @@ export const SummaryPrivateoneRoundTrip: FC<SummaryOneRoundProp> = () => {
     };
   }
 
-  const T_id: any =     window.localStorage.getItem("trip_id")
-  const trip_Id =  JSON.parse(T_id)
+  const T_id: any = window.localStorage.getItem("trip_id")
 
   useEffect(() => {
     const updateDimension = () => {
@@ -99,7 +98,6 @@ setLoading(false)
   //  { handle large screen display  }
 
   const Large_Screen_display = () => {
-    console.log('create_ticket',create_ticket);
     
     return (
       <>
@@ -503,7 +501,7 @@ setLoading(false)
               className="mt-5 h-[54px] w-[183px] rounded-lg bg-[#1D4179] text-white"
               onClick={PayNow}
             >
-              Pay Now
+              {t("Pay Now")}
             </button>
           </div>
         </div>
@@ -520,7 +518,7 @@ setLoading(false)
         address_to={tripData?.trips[0]?.to_location?.name}
       />
       <div className="container m-auto mb-5 mt-10 flex w-full flex-col">
-      {loading && 
+      {loading === true ?
         ( <div className="my-4 flex  w-full justify-center">
         <svg
         className="-ml-1 mr-3 h-20 w-20 animate-spin"
@@ -542,11 +540,13 @@ setLoading(false)
         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
         ></path>
         </svg>
-        </div>)
-       }
+        </div>) :  <>
         {screenSize.width >= 600
           ? Large_Screen_display()
           : Min_Medium_Screen_display()}
+        </>
+       }
+       
       </div>
     </div>
   );

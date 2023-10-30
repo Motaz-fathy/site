@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 import Styled from "./components.module.css";
 import { useTranslation } from "react-i18next";
-import { dir } from "i18next";
+import i18next, { dir } from "i18next";
 
 interface HeadProps {
   fromhead_en?: string | null;
@@ -80,7 +80,10 @@ export const Headprivatetrip: FC<HeadProps> = ({
               className={`flex items-center justify-center ${Styled.fromtospace}`}
             >
               <span className={`text-[32px] font-[500px] max-sm:text-[14px] ${Styled.from_name}`}>
-                {t(`${address_From}`)} {t(`${fromhead_EN}`)} 
+                {t(`${address_From}`)}
+                 {
+                  i18next.language === 'en' ? fromhead_en : fromhead_ar
+                 } 
               </span>
               <svg
                 version="1.1"
@@ -98,7 +101,10 @@ export const Headprivatetrip: FC<HeadProps> = ({
                 <rect x="3.653" y="4" fill="#FFFFFF" width="55" height="2" />
               </svg>
               <span className={`text-[32px] font-[500px] max-sm:text-[14px] ${Styled.to_name}`}>
-                {t(`${address_To}`)} {t(`${tohead_EN}`)}
+                {t(`${address_To}`)} 
+                {
+                  i18next.language === 'en' ? tohead_en : tohead_ar
+                 } 
               </span>
             </div>
 

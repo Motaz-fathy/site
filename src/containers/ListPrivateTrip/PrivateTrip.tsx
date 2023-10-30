@@ -5,7 +5,7 @@ import { Headprivatetrip } from "components/ptivateTrip/Headprivatetrip";
 
 import Styled from './component.module.css'
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Button from "shared/Button/Button";
 
 interface PrivateTripPror {
@@ -53,7 +53,7 @@ interface Item {
 
 
 export const PrivateTrip: FC<PrivateTripPror> = () => {
-
+  const { search } = useLocation(); 
   const {t} = useTranslation()
   const [loading, setLoading] = useState<boolean>(false);
   const [data, setData]: any = useState();
@@ -84,19 +84,64 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
  } , [data ])
     
 
+ const [Date , setDate] = useState() 
+ const [travle_to , setTravelTo] = useState() 
+ const [travel_from , setTravelFrom] = useState() 
+ const [city_to , setCity] = useState() 
+ const [city_from , setCityFrom] = useState() 
 
+ useEffect(() => {
+  if (!!search) {
+    const data:any = search.slice(1).split("/");
+    setDate(data?.[0]);
+    setTravelTo(data?.[1]);
+    setTravelFrom(data?.[2]);
+    const re = /\%20/gi;
+    const from = data?.[3].replace(re , "")
+    const to = data?.[4].replace(re , "")
+    setCity(from);
+    setCityFrom(to);
+    
+  }
+}, [search]);
+
+const handle_list_getway = async  () => {
+
+  try {
+    
+    if(
+      Date !== undefined && 
+      travel_from !== undefined && 
+      travel_from !== undefined 
+    ) {
+       await 
+       axios.get(
+         `${process.env.REACT_APP_API_TELE_URL}/api/transports/private/trips?from_location_id=${travel_from}&to_location_id=${travle_to}&date=${date}&page=1`
+       )
+       .then((res: any) => {
+         setData(res?.data?.data);
+         
+       })
+   
+  
+  
+    } 
+  } catch (error) {
+    console.log(error)
+  }
+   
+}
   useEffect(() => {
-    setLoading(true)
-    axios
-    .get(
-      `${process.env.REACT_APP_API_TELE_URL}/api/transports/private/trips?from_location_id=${travelFrom}&to_location_id=${travelTo}&date=${date}&page=1`
-    )
-    .then((res: any) => {
-      setData(res.data.data);
-      setLoading(false)
-      
-    });
-  }, []) ;
+    if(
+      Date !== undefined && 
+      travel_from !== undefined && 
+      travel_from !== undefined 
+    ) {
+      handle_list_getway()
+    }
+    
+  }, [Date , travel_from , travel_from]) ;
+
 
 
 
@@ -341,7 +386,7 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
 
 
 <div>
-<Headprivatetrip fromhead_en={fromhead_en} tohead_en={tohead_en} fromhead_ar={fromhead_ar} tohead_ar={tohead_ar} />
+<Headprivatetrip fromhead_en={city_from} tohead_en={city_to} fromhead_ar={city_from} tohead_ar={city_to} />
 </div>
 
 <div className={`container w-[90%] mb-5 mt-[8%] max-sm:mt-[10%] ${Styled.container_private}`} >
