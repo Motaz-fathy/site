@@ -30,7 +30,7 @@ export const SliderOurPartner = () => {
         spaceBetween={5}
         dir="rtl"
         autoplay={{
-          delay: 1000,
+          delay: 2000,
           disableOnInteraction: false,
 
         }}
