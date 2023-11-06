@@ -14,9 +14,9 @@ const SectionFeatures = ({
           `}
 			>
 				<div className="flex flex-col mt-10 max-sm:mt-5  text-2xl text-white  xl:w-[90vw] lg:w-[90vw] md:w-[90vw] ">
-					<h2 className="text-3xl font-extrabold tracking-wide w-[90%]  m-auto mt-[150px] ">
+					<span className="text-3xl font-extrabold tracking-wide w-[90%]  m-auto mt-[150px] ">
 						{t("featuresHeader")}
-					</h2>
+					</span>
 					<p className="mt-5 text-base font-thin text-white w-[90%] m-auto">
 						{t("featuresDesc")}
 					</p>
