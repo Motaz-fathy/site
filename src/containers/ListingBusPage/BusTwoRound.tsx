@@ -223,33 +223,22 @@ export const BusTwoRound = () => {
 
             <div className="flex flex-col  ">
               <div className="flex justify-start ">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M15.751 6C15.751 6.99456 15.3559 7.94839 14.6526 8.65165C13.9493 9.35491 12.9955 9.75 12.001 9.75C11.0064 9.75 10.0526 9.35491 9.3493 8.65165C8.64604 7.94839 8.25095 6.99456 8.25095 6C8.25095 5.00544 8.64604 4.05161 9.3493 3.34835C10.0526 2.64509 11.0064 2.25 12.001 2.25C12.9955 2.25 13.9493 2.64509 14.6526 3.34835C15.3559 4.05161 15.751 5.00544 15.751 6ZM4.50195 20.118C4.53409 18.1504 5.33829 16.2742 6.74113 14.894C8.14397 13.5139 10.033 12.7405 12.001 12.7405C13.9689 12.7405 15.8579 13.5139 17.2608 14.894C18.6636 16.2742 19.4678 18.1504 19.5 20.118C17.1473 21.1968 14.5891 21.7535 12.001 21.75C9.32495 21.75 6.78495 21.166 4.50195 20.118Z"
-                    stroke="#1E1E1E"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+              <div className='min_seat '></div>
                        
                 <span className="flex justify-around items-center" >{bus_Ticket?.data?.trips[0]?.tickets?.map((item:any , index : number) => {
                 return <span key={index} className="ml-1">{item?.seat_number}</span>
                 })}</span> 
               
               </div>
-              <div className="text-[20px] font-[500]  text-[#1E1E1E]">
-                {bus_Ticket?.data?.trips[0].total}
-              </div>
-              <div className="text-[12px]  font-[400]  text-[#69696A]">
+          <div className="flex justify-around items-center gap-2">
+          <div className="text-[12px]  font-[400]  text-[#69696A]">
                 {t("Price per person")}
               </div>
+          <div className="text-[16px] font-[500]  text-[#1E1E1E] ">
+                {bus_Ticket?.data?.trips[0].total}
+              </div>
+             
+          </div>
             </div>
           </div>
         </div>
@@ -314,7 +303,7 @@ export const BusTwoRound = () => {
             </svg>
 
             <div className="ml-3 flex flex-col rtl:mr-3">
-              <span>{bus_Ticket?.data?.trips[1].station_from?.city_name}  ( {bus_Ticket?.data?.trips[1].station_from?.name} )</span>
+              <span>{bus_Ticket?.data?.trips[1]?.station_from?.city_name}  ( {bus_Ticket?.data?.trips[1]?.station_from?.name} )</span>
               <span className="pb-[15px]">
                 {bus_Ticket?.data?.trips[1].station_from?.arrival_at}
               </span>
@@ -369,31 +358,21 @@ export const BusTwoRound = () => {
 
             <div className="flex flex-col ">
               <div className="flex justify-start ">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M15.751 6C15.751 6.99456 15.3559 7.94839 14.6526 8.65165C13.9493 9.35491 12.9955 9.75 12.001 9.75C11.0064 9.75 10.0526 9.35491 9.3493 8.65165C8.64604 7.94839 8.25095 6.99456 8.25095 6C8.25095 5.00544 8.64604 4.05161 9.3493 3.34835C10.0526 2.64509 11.0064 2.25 12.001 2.25C12.9955 2.25 13.9493 2.64509 14.6526 3.34835C15.3559 4.05161 15.751 5.00544 15.751 6ZM4.50195 20.118C4.53409 18.1504 5.33829 16.2742 6.74113 14.894C8.14397 13.5139 10.033 12.7405 12.001 12.7405C13.9689 12.7405 15.8579 13.5139 17.2608 14.894C18.6636 16.2742 19.4678 18.1504 19.5 20.118C17.1473 21.1968 14.5891 21.7535 12.001 21.75C9.32495 21.75 6.78495 21.166 4.50195 20.118Z"
-                    stroke="#1E1E1E"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
+              <div className='min_seat '></div>
                 <span className="flex justify-around items-center" >{bus_Ticket?.data?.trips[1]?.tickets?.map((item:any , index : number) => {
                 return <span key={index} className="ml-1">{item?.seat_number}</span>
                 })}</span> 
               </div>
-              <div className="text-[20px] font-[500] text-[#1E1E1E]">
-                {bus_Ticket?.data?.trips[1].total}
-              </div>
-              <div className=" max-sm:pb-[14px] text-[12px]  font-[400] mb-5 text-[#69696A]">
+              <div className="flex justify-around items-center gap-2">
+              <div className=" max-sm:pb-[14px] text-[12px]  font-[400]  text-[#69696A]">
               {t("Price per person")}
               </div>
+              <div className="text-[16px] font-[500] text-[#1E1E1E]">
+                {bus_Ticket?.data?.trips[1].total}
+              </div>
+             
+              </div>
+      
             </div>
           </div>
         </div>

@@ -79,14 +79,23 @@
 }
 
 .movie-container .seat {
-	background: url("./images/car-seat\ 1.png") no-repeat;
-	height: 50px;
-	width: 50px;
+	background: url("./images/Car\ -\ Free\ security\ icons-1.png") no-repeat;
+	height: 40px;
+	width: 40px;
 	margin: 5px;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 }
 
+ .min_seat {
+	background: url("./images/Car\ -\ Free\ security\ icons-2.png") no-repeat;
+	background-size: contain;
+	height: 30px;
+	width: 30px;
+	margin: 5px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
 .movie-container .steering {
 	background: url("./images/steering-wheel\ 1.png") no-repeat;
 	height: 50px;
@@ -95,12 +104,12 @@
 	border-top-right-radius: 10px;
 }
 .movie-container .selected {
-	background: url("./images/car-seat\ 3.png") no-repeat;
-	color: rgb(255, 255, 255);
+	background: url("./images/Car\ -\ Free\ security\ icons-2.png") no-repeat;
+	color: rgb(4, 4, 185)
 }
 
 .movie-container .occupied {
-	background: url("./images/car-seat\ 2.png") no-repeat;
+	background: url("./images/Car\ -\ Free\ security\ icons-3.png") no-repeat;
 }
 
 .movie-container .seat:nth-of-type(2) {
@@ -136,6 +145,15 @@
 	align-items: center;
 	justify-content: center;
 	margin: 0 10px;
+}
+
+@media screen and (max-width : 600px) {
+	.movie-container .showcase li {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 -3px;
+	}
 }
 
 .movie-container .showcase li small {

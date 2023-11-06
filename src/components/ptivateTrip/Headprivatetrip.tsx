@@ -81,9 +81,7 @@ export const Headprivatetrip: FC<HeadProps> = ({
             >
               <span className={`text-[32px] font-[500px] max-sm:text-[14px] ${Styled.from_name}`}>
                 {t(`${address_From}`)}
-                 {
-                  i18next.language === 'en' ? fromhead_en : fromhead_ar
-                 } 
+                {fromhead_en}
               </span>
               <svg
                 version="1.1"
@@ -103,7 +101,7 @@ export const Headprivatetrip: FC<HeadProps> = ({
               <span className={`text-[32px] font-[500px] max-sm:text-[14px] ${Styled.to_name}`}>
                 {t(`${address_To}`)} 
                 {
-                  i18next.language === 'en' ? tohead_en : tohead_ar
+                 tohead_en
                  } 
               </span>
             </div>

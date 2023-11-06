@@ -7,6 +7,7 @@ import Styled from './component.module.css'
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import Button from "shared/Button/Button";
+import i18next from "i18next";
 
 interface PrivateTripPror {
   PrivatetripItem?: ChildNode;
@@ -59,12 +60,7 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
   const [data, setData]: any = useState();
   const dd:any = window.localStorage.getItem("private_oneRound_date_time");
   const date = JSON.parse(dd)
-  const travelFrom = window.localStorage.getItem("travelFrom");
-  const travelTo = window.localStorage.getItem("travelTo");
-  const fromhead_en: string | null  = window.localStorage.getItem("fromhead_en");
-  const tohead_en: string | null  = window.localStorage.getItem("tohead_en");
-  const fromhead_ar: string | null  = window.localStorage.getItem("fromhead_ar");
-  const tohead_ar: string | null  = window.localStorage.getItem("tohead_ar");
+
   const page_path_name = window.location.pathname
   window.localStorage.setItem("page_path_name" ,page_path_name)
   const dropOffLocationType = window.localStorage.getItem("dropOffLocationType")
@@ -87,8 +83,13 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
  const [Date , setDate] = useState() 
  const [travle_to , setTravelTo] = useState() 
  const [travel_from , setTravelFrom] = useState() 
- const [city_to , setCity] = useState() 
- const [city_from , setCityFrom] = useState() 
+ const [city_to , setCity] = useState<string>("") 
+ const [city_from , setCityFrom] = useState<string>("") 
+
+ const [from , setFrom] = useState("")
+ const [to , setTo] = useState("")
+
+ 
 
  useEffect(() => {
   if (!!search) {
@@ -96,11 +97,8 @@ export const PrivateTrip: FC<PrivateTripPror> = () => {
     setDate(data?.[0]);
     setTravelTo(data?.[1]);
     setTravelFrom(data?.[2]);
-    const re = /\%20/gi;
-    const from = data?.[3].replace(re , "")
-    const to = data?.[4].replace(re , "")
-    setCity(from);
-    setCityFrom(to);
+    setCity(data?.[3]);
+    setCityFrom(data?.[4]);
     
   }
 }, [search]);
@@ -120,7 +118,13 @@ const handle_list_getway = async  () => {
        )
        .then((res: any) => {
          setData(res?.data?.data);
-         
+         if(i18next.language === 'en' ) {
+          setFrom(res?.data?.data[0]?.from_location?.name_en)
+          setFrom(res?.data?.data[0]?.to_location?.name_en)
+         } else{
+          setFrom(res?.data?.data[0]?.from_location?.name_ar)
+          setTo(res?.data?.data[0]?.to_location?.name_ar)
+         }
        })
    
   
@@ -131,6 +135,8 @@ const handle_list_getway = async  () => {
   }
    
 }
+console.log(from , to)
+
   useEffect(() => {
     if(
       Date !== undefined && 
@@ -141,7 +147,6 @@ const handle_list_getway = async  () => {
     }
     
   }, [Date , travel_from , travel_from]) ;
-
 
 
 
@@ -386,7 +391,7 @@ const handle_list_getway = async  () => {
 
 
 <div>
-<Headprivatetrip fromhead_en={city_from} tohead_en={city_to} fromhead_ar={city_from} tohead_ar={city_to} />
+<Headprivatetrip  tohead_en={to} fromhead_en={from}/>
 </div>
 
 <div className={`container w-[90%] mb-5 mt-[8%] max-sm:mt-[10%] ${Styled.container_private}`} >

@@ -22,6 +22,7 @@ import { Headprivatetrip } from "components/ptivateTrip/Headprivatetrip";
 import MapAddress from "components/ptivateTrip/MapAddress";
 import ButtonClose from "shared/ButtonClose/ButtonClose";
 import ButtonPrimary from "shared/Button/ButtonPrimary";
+import i18next from "i18next";
 export interface RentalCarDatesRangeInputProps {
   defaultDateValue: DateRage;
   defaultFocus?: FocusedInputShape | null;
@@ -124,7 +125,10 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
     );
   };
 
-
+  const [from , setFrom] = useState("")
+  const [to , setTo] = useState("")
+  console.log(from , to )
+  console.log(data)
   // handle data of trip
   useEffect(() => {
     setLoading(true)
@@ -139,7 +143,14 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
       )
       .then((res: any) => {
         
-        setData(res.data.data);
+        setData(res?.data?.data);
+        if(i18next.language === 'en' ) {
+          setFrom(res?.data?.data?.from_location?.name_en)
+          setFrom(res?.data?.data?.to_location?.name_en)
+         } else{
+          setFrom(res?.data?.data?.from_location?.name_ar)
+          setTo(res?.data?.data?.to_location?.name_ar)
+         }
         setLoading(false)
       }).catch((error) => {
         toast.error(error.message)
@@ -1422,10 +1433,9 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
     return (
       <>
         <Headprivatetrip
-          fromhead_en={fromhead_en}
-          tohead_en={tohead_en}
-          fromhead_ar={fromhead_ar}
-          tohead_ar={tohead_ar}
+          fromhead_en={from}
+          tohead_en={to}
+
           seats_number={data?.bus?.seats_number}
         />
         {loading && 
