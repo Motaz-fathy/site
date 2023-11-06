@@ -388,7 +388,6 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 									</svg>
 									<span className="ml-3 rtl:mr-3">{t("filter")}</span>
 									</div>
-									<span className="text-[#1D4179] text-[16px] font-[400] ">{t("Reset all")} </span>
 							</div>
 	
 							

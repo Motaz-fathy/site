@@ -88,25 +88,24 @@ const SectionSteps = ({
     }
   ];
 
-  const handle_cairo_marsa_alam = () => {
+  const handle_cairo_marsa_alam = async () => {
    
 	 try {
-		axios
+		await axios
 		.get(
 		  `${process.env.REACT_APP_API_TELE_URL}/api/transports/private/trips?from_location_id=1&to_location_id=34&date=${tomorrow}`
 		)
 		.then((res: any) => {
-		  
 		  window.localStorage.setItem("private_list" , JSON.stringify(res?.data?.data))
-		  navigate('/private-trip?2023-10-31/34/1/Marsa%20Alam/Cairo')
-		  
+
 		})
 	 } catch (error) {
-		
 	 }
   }
   
-
+useEffect(() => {
+  handle_cairo_marsa_alam()
+} , [])
   return (
     <>
       <div
@@ -118,12 +117,13 @@ const SectionSteps = ({
           <span>{t("stepHeader")}</span>
         </div>
 
-        <div className="container m-auto flex w-full flex-col items-center justify-center gap-3  sm:flex-row sm:px-0 ">
-          <div className="rounded-xl  border-[1px] border-[#FFB229] max-md:w-[23%] max-sm:w-full sm:w-full md:w-[23%] md:text-[12px] lg:w-[23%] xl:w-[23%]">
+        <div className="container w-[90%] w-[90%] md:w-[95%] max-md:w-[95%] sm:w-[95%] m-auto flex w-full flex-col items-center justify-center grid grid-cols-4 gap-4 sm:flex-col sm:px-0 max-sm:grid-cols-1">
+
+          <div className="rounded-xl  border-[1px] border-[#FFB229]  ">
             <div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white  pt-4 sm:pt-12 md:pt-2  lg:p-4">
               <div className="container w-[95%] text-gray-500 sm:pt-2">
                 <div className="flex  w-full items-center justify-between max-sm:gap-2">
-                  <span className="text-[12px] max-sm:text-[12px] md:text-center ">
+                  <span className="text-[12px] max-sm:text-[12px] md:text-[10px] md:font-[500] ">
                     {t("Marsa Alam")}
                   </span>
 
@@ -185,9 +185,9 @@ const SectionSteps = ({
                   </span>
                   <button
                     className="btn-hover rounded-xl text-white max-sm:h-[30px] max-sm:w-[60%] md:h-[30px] md:w-[60%]"
-                    onClick={() => {
-                      handle_cairo_marsa_alam();
-                      
+                    onClick={ () => {
+                      handle_cairo_marsa_alam()
+                      navigate('/private-trip?2023-10-31/34/1/Marsa%20Alam/Cairo')
                     }}
                   >
                     {t("select")}
@@ -197,7 +197,7 @@ const SectionSteps = ({
             </div>
           </div>
 
-          <div className="rounded-xl  border-[1px] border-[#FFB229] max-md:w-[23%] max-sm:w-full sm:w-full md:w-[23%] md:text-[12px] lg:w-[23%] xl:w-[23%]">
+          <div className="rounded-xl  border-[1px] border-[#FFB229]  ">
             <div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white  pt-4 sm:pt-12 md:pt-2  lg:p-4">
               <div className="container w-[95%] text-gray-500 sm:pt-2">
                 <div className="flex  w-full items-center justify-between max-sm:gap-2">
@@ -236,7 +236,7 @@ const SectionSteps = ({
             </div>
           </div>
 
-          <div className="rounded-xl  border-[1px] border-[#FFB229] max-md:w-[23%] max-sm:w-full sm:w-full md:w-[23%] md:text-[12px] lg:w-[23%] xl:w-[23%]">
+          <div className="rounded-xl  border-[1px] border-[#FFB229] ">
             <div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white  pt-4 sm:pt-12 md:pt-2  lg:p-4">
               <div className="container w-[95%] text-gray-500 sm:pt-2">
                 <div className="flex  w-full items-center justify-between max-sm:gap-2">
@@ -275,7 +275,7 @@ const SectionSteps = ({
             </div>
           </div>
 
-          <div className="rounded-xl  border-[1px] border-[#FFB229] max-md:w-[23%] max-sm:w-full sm:w-full md:w-[23%] md:text-[12px] lg:w-[23%] xl:w-[23%]">
+          <div className="rounded-xl  border-[1px] border-[#FFB229] ">
             <div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white  pt-4 sm:pt-12 md:pt-2  lg:p-4">
               <div className="container w-[95%] text-gray-500 sm:pt-2">
                 <div className="flex  w-full items-center justify-between max-sm:gap-2">
@@ -321,14 +321,14 @@ const SectionSteps = ({
           </div>
         </div>
 
-        <div className="container m-auto mt-5 flex w-full flex-col items-center justify-center  gap-3 sm:flex-row sm:px-0 ">
+        <div className="container w-[90%] md:w-[95%] max-md:w-[95%] sm:w-[95%] m-auto mt-5 flex w-full flex-col items-center justify-center  gap-2 sm:flex-row sm:px-0  grid grid-cols-4 gap-4 sm:flex-col sm:px-0 max-sm:grid-cols-1">
           {static_trips_row1.map((i) => (
-            <div className="rounded-xl  border-[1px] border-[#FFB229] max-sm:w-full sm:w-full md:w-[23%] md:text-[10px] lg:w-[23%] xl:w-[23%]">
+            <div className="rounded-xl  border-[1px] border-[#FFB229] ">
               <div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white  pt-4 sm:pt-12 md:pt-2  lg:p-4">
                 <div className="container w-[95%] text-gray-500 sm:pt-2">
                   <div className="flex  w-full items-center justify-between max-sm:gap-2">
                     <span className="text-[12px] max-sm:text-[12px] md:text-center">
-                      {i.to}
+                      {t(`${i.to}`)}
                     </span>
 
                     <svg
@@ -357,7 +357,7 @@ const SectionSteps = ({
                     </svg>
 
                     <span className="text-[12px]  max-sm:text-[12px]">
-                      {i.from}
+                    {t(`${i.from}`)}
                     </span>
                   </div>
 

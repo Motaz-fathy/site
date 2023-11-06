@@ -172,7 +172,6 @@ const SectionGridFilterCard: FC<SectionGridFilterCardProps> = ({
 				<div className=" lg:flex md:flex max-md:flex sm:hidden max-sm:hidden flex justify-between items-center w-[98%] mb-3 rtl:mr-[3%] ">
                         <div className="flex justify-start items-center">
 						<span className="rtl:ml-2">{dataUnder.length} {t("results")} </span>
-						<span className="ml-3 text-[#1D4179]"> | {t("All tickets")}</span>
 						</div>
 					
 				</div>

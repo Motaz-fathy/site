@@ -239,7 +239,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
           !!focusedInput ? "nc-date-focusedInput" : "nc-date-not-focusedInput"
         }   max-sm:w-full ${
           type === "maritime"
-            ? "w-[34vw]"
+            ? "w-[20vw]"
             : type === "bus"
             ? " w-[25vw] ml-3 lg:rtl:mx-3 max-sm:mx-0 max-sm:w-[90vw]"
             : type === "cars"
@@ -250,7 +250,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
         <div
           className={`absolute inset-0   flex   cursor-pointer ${
             type === "maritime"
-              ? "w-[34vw] "
+              ? "w-[20vw] "
               : type === "bus"
               ? " w-[20vw] max-sm:w-[90vw]"
               : type === "cars"

@@ -79,20 +79,28 @@
 }
 
 .movie-container .seat {
-	background: url("./images/Car - Free security icons-1.png") no-repeat;
-	height: 40px;
-	width: 40px;
-	margin: 3px;
+	background: url("./images/car-seat\ 1.png") no-repeat;
+	height: 50px;
+	width: 50px;
+	margin: 5px;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 }
 
+.movie-container .steering {
+	background: url("./images/steering-wheel\ 1.png") no-repeat;
+	height: 50px;
+	width: 50px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
 .movie-container .selected {
-	background: url("./images/Car - Free security icons-2.png") no-repeat;
+	background: url("./images/car-seat\ 3.png") no-repeat;
+	color: rgb(255, 255, 255);
 }
 
 .movie-container .occupied {
-	background: url("./images/Car - Free security icons-3.png") no-repeat;
+	background: url("./images/car-seat\ 2.png") no-repeat;
 }
 
 .movie-container .seat:nth-of-type(2) {
@@ -117,10 +125,10 @@
 	display: flex;
 	justify-content: space-between;
 	list-style-type: none;
-	background: rgba(0, 0, 0, 0.1);
 	padding: 5px 10px;
 	border-radius: 5px;
 	color: #777;
+	border: 1px solid #DDDDDD;
 }
 
 .movie-container .showcase li {
@@ -495,6 +503,7 @@
 	font-family: 'Alkatra';
   }
 
+
   /* datepicker */ 
 
   .DateInput {
@@ -570,4 +579,38 @@
 		cursor: pointer;
 	  }
 	 
+  }
+
+  @media screen and (min-width : 1400px) {
+	.over {
+	  width: 20%;
+	  height: auto;
+	  text-align: center;
+	  
+	}
+
+	.center {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+	.over .to , .over .from , .over .svg {
+	    padding: 10px;
+		font-size: 16px;
+	}
+	svg {
+		width: 30px;
+		height: 30px;
+	}
+
+	.btn {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 12vw;
+		height: 40px;
+		margin-right: -80px;
+	}
   }

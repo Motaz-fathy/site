@@ -118,7 +118,7 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
 									{t("contact")}
 								</h2>
 								<h6 className=" flex items-center ltr:text-left  text-[20px] mt-2" style={{color:"#69696A"}}>
-									Lorem ipsum dolor sit amet, 
+									{t("your opinion matters")} 
 								</h6>
 							</div>
 							

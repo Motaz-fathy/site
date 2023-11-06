@@ -345,7 +345,7 @@ const HeroSearchForm: FC<HeroSearchFormProps> = ({
 
 	return (
 		<div
-			className={`   xl:w-[85vw] lg:w-[85vw]  md:w-[90vw]  max-sm:w-[100%]  max-w-full py-5 max-sm:h-[450px] lg:py-0    rounded-t-2xl bg-white lg:rounded-b-2xl max-sm:mt-[400px]
+			className={`   xl:w-[85vw] lg:w-[85vw]  md:w-[90vw]  max-sm:w-[100%]  max-w-full max-sm:h-[450px] py-2   rounded-t-2xl bg-white lg:rounded-b-2xl max-sm:mt-[400px]
 			rounded-b-2xl
 			${tabActive === "Maritime transport" && "w-[90%] m-auto"}
 			`}
