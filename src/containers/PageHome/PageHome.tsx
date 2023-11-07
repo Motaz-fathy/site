@@ -51,14 +51,10 @@ function PageHome() {
 							{t("Our partner")}
 						</h1>
 						<p className="text-[#69696A]w-[589px] mb-[32px] text-center text-[16px]  text-[400]">
-							Forem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-							vulputate libero et velit interdum, ac aliquet odio mattis.
+							{t("our_partenr")}
 						</p>
 
-						{/* <ScrollableList
-							items={[swvel, paymob, skyscanner, elgesrElAraby, ontimebus]}
-						/> */}
-						
+		
 						<SliderOurPartner />
 						
 					</div>

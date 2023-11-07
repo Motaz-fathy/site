@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { FlightHeader } from './FlightHeader'
+import { useTranslation } from 'react-i18next'
 
 export const FlightsOffers = () => {
 
@@ -27,6 +28,7 @@ export const FlightsOffers = () => {
    };
  }, [screenSize]);
 
+ const {t} = useTranslation()
  
   const Max_screen = () => {
     return (
@@ -106,8 +108,8 @@ export const FlightsOffers = () => {
 
       
        </div>
-       <span className='flex justify-start w-full text-[20px] font-[400] text-[#1E1E1E]'>Book your ticket</span>
-            <span className='flex justify-start w-full text-[#69696A] text-[16px] font-[400] ' >Economy class, 1 adult</span>
+       <span className='flex justify-start w-full text-[20px] font-[400] text-[#1E1E1E]'>{t("Book your ticket")}</span>
+            <span className='flex justify-start w-full text-[#69696A] text-[16px] font-[400] ' >{t("Economy class")}, 1 {t("adult")}</span>
             {
                 Flight_Offers?.offers?.map((item: any , index: any) => {
                    return (
@@ -233,8 +235,8 @@ export const FlightsOffers = () => {
 
         </div>
 
-        <span className='flex justify-start w-full text-[20px] font-[400] text-[#1E1E1E]'>Book your ticket</span>
-            <span className='flex justify-start w-full text-[#69696A] text-[16px] font-[400] ' >Economy class, 1 adult</span>
+        <span className='flex justify-start w-full text-[20px] font-[400] text-[#1E1E1E]'>{t("Book your ticket")}</span>
+            <span className='flex justify-start w-full text-[#69696A] text-[16px] font-[400] ' >{t("Economy class")}, 1 {t("adult")}</span>
             {
                 Flight_Offers?.offers?.map((item: any , index: any) => {
                    return (

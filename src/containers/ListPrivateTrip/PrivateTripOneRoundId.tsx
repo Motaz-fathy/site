@@ -376,11 +376,11 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                 <div className=" flex justify-start  ">
                   <h3 className="text-[20px] text-[#1E1E1E]  ">
                     {" "}
-                    {data?.bus?.name}{" "}
+                    {t(data?.bus?.name)}{" "}
                   </h3>
                   <p className=" rtl:text-right ">
                     {" "}
-                    {data?.bus?.model} & {data?.bus?.year} or similar{" "}
+                    {t(data?.bus?.model)} & {data?.bus?.year} {t("or similar")}{" "}
                   </p>
                 </div>
                 <div className="mt-5 flex items-end justify-start text-[#69696A] rtl:justify-end">
@@ -402,7 +402,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                         fill="#69696A"
                       />
                     </svg>
-                    <h4 className="ml-2">Van</h4>
+                    <h4 className="ml-2 rtl:mr-2">{t("Van")}</h4>
                   </span>
 
                   <span className="ml-3 flex items-end justify-start  rtl:justify-end ">
@@ -421,7 +421,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                         stroke-linejoin="round"
                       />
                     </svg>
-                    <h4 className="ml-1"> {data?.bus?.seats_number} seat</h4>{" "}
+                    <h4 className="ml-1"> {data?.bus?.seats_number} {t("seat")}</h4>{" "}
                   </span>
 
                   <span className="ml-2 flex items-end justify-start rtl:justify-end ">
@@ -437,7 +437,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                         fill="#69696A"
                       />
                     </svg>
-                    <h4 className="ml-2">1 large bag + 1 small bag </h4>{" "}
+                    <h4 className="ml-2 rtl:mr-2">1 {t("large bag")} + 1 {t("small bag")} </h4>{" "}
                   </span>
 
                 </div>
@@ -461,7 +461,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
             <div className=" ">
               <div className="flex flex-col">
                 <h3 className="text-[20px] font-[500] text-[black]">
-                  LE <span className="ml-2">{data?.price}</span>{" "}
+                  {t("LE")} <span className="ml-2">{data?.price}</span>{" "}
                 </h3>
                 <span>{t(`${dropOffLocationType}`)}</span>
               </div>
@@ -969,14 +969,14 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                 <div className=" flex justify-start  ">
                   <h3 className="text-[20px] text-[#1E1E1E]  ">
                     {" "}
-                    {data?.bus?.name}{" "}
+                    {t(data?.bus?.name)}{" "}
                   </h3>
                   <p className=" rtl:text-right ">
                     {" "}
-                    {data?.bus?.model} & {data?.bus?.year} or similar{" "}
+                    {t(data?.bus?.model)} & {data?.bus?.year} {t("or similar")}{" "}
                   </p>
                 </div>
-                <div className="flex items-start flex-col text-[#69696A] rtl:justify-start">
+                <div className="flex items-start flex-col text-[#69696A] rtl:justify-start gap-2">
                   <span className="flex items-center justify-start rtl:justify-end ">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -994,7 +994,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                         fill="#69696A"
                       />
                     </svg>
-                    <h4 className="ml-2">Van</h4>
+                    <h4 className="ml-2 rtl:mr-2">{t(data?.bus?.name)}</h4>
                   </span>
 
                   <span className=" flex items-end justify-start  rtl:justify-end ">
@@ -1013,7 +1013,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                         stroke-linejoin="round"
                       />
                     </svg>
-                    <h4 className="ml-1"> {data?.bus?.seats_number} seat</h4>{" "}
+                    <h4 className="ml-2 rtl:mr-2"> {data?.bus?.seats_number} {t("seat")}</h4>{" "}
                   </span>
 
                   <span className=" flex items-end justify-start rtl:justify-end ">
@@ -1029,7 +1029,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                         fill="#69696A"
                       />
                     </svg>
-                    <h4 className="ml-2">1 large bag + 1 small bag </h4>{" "}
+                    <h4 className="ml-2 rtl:mr-2">1 {t("large bag")} + 1 {t("small bag")} </h4>{" "}
                   </span>
                 </div>
               </div>

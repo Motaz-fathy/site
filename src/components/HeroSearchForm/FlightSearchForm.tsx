@@ -300,7 +300,16 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 								onChange={data => {
 									setDateRangeValue(data.stateDate);
 								}}
-								buttonSubmitHref={navigateFightTrips}
+								buttonSubmitHref={() => {
+									if(dateRangeValue !== null && pickUpInputValue !== '' && dropOffInputValue !== ''){
+										navigateFightTrips()
+									} 
+									else {
+										toast.error(`${t("enter require input")}`)
+										navigate('/')
+									}
+									
+								}}
 							/>
 						) : (
 							<SingleDate
@@ -321,7 +330,16 @@ const FlightSearchForm: FC<FlightSearchFormProps> = ({
 								}}
 								
 								onFocusChange={focus => setFieldFocused(focus as any)}
-								buttonSubmitHref={navigateFightTrips}
+								buttonSubmitHref={() => {
+									if(dateRangeValue.startDate !== null && pickUpInputValue !== '' && dropOffInputValue !== ''){
+										navigateFightTrips()
+									} 
+									else {
+										toast.error(`${t("enter require input")}`)
+										navigate('/')
+									}
+									
+								}}
 							/>
 						)}
 					</div>

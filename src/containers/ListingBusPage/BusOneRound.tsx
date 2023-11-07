@@ -13,7 +13,7 @@ export const BusOneRound = () => {
   const date_and_time = bus_Ticket?.trips[0]?.date_time
   const time = date_and_time?.split(" ")
   setTime(time[1])
-  
+  console.log(bus_Ticket)
 } , [])
       const PayNow = async () => {
         const busTicket = bus_Ticket;
@@ -42,7 +42,7 @@ export const BusOneRound = () => {
   return (
 
     <div>
-      <BusHeader seatsNumber= {bus_Ticket?.trips[0].tickets.length}/>
+      <BusHeader seatsNumber= {bus_Ticket?.trips[0].tickets.length} from={bus_Ticket?.trips[0]?.station_from?.city_name} to={bus_Ticket?.trips[0]?.station_to?.city_name}/>
         {/* <div className="container w-full mt-3 flex justify-center block max-sm:hidden">
 		<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="62" viewBox="0 0 1300 62" fill="none">
 		<path d="M16 61L407 61L484 31L407 1L387 1L16 1C7.16342 1 -3.05176e-05 8.16344 -3.05176e-05 17V31V45C-3.05176e-05 53.8366 7.16342 61 16 61Z" fill="#1D4179"/>
@@ -115,7 +115,7 @@ export const BusOneRound = () => {
           <div className="mt-3 flex h-auto w-full justify-between ">
             <div className="flex justify-start text-start ">
               <span className="text-[16px] font-[400] text-[#1E1E1E]">
-                one way
+                {t("oneWay")}
               </span>
               <span className="ml-3 text-[16px] font-[400] text-[#1E1E1E] rtl:mr-2">
                 {bus_Ticket?.data?.date}{" "}
@@ -123,7 +123,6 @@ export const BusOneRound = () => {
             </div>
             <span className="cursor-pointer text-[16px] font-[500] text-[#1D4179] ">
               {" "}
-              Edit
             </span>
           </div>
 
@@ -260,12 +259,12 @@ export const BusOneRound = () => {
         />
       </svg>
       <h4 className="ml-2">
-        {" "}
-        {bus_Ticket?.tickets?.length} Passenger{" "}
+       
+      {bus_Ticket?.trips[0].tickets?.length} {t("Passenger")}
       </h4>
     </span>
   </div>
-  <span className="text-[16px] font-[400] text-[#1D4179]">Edit</span>
+  <span className="text-[16px] font-[400] text-[#1D4179]"></span>
 </div>
 
 
@@ -315,7 +314,7 @@ export const BusOneRound = () => {
 
 <div className={`flex w-full items-center  justify-between pb-5 ${Styled.ButtonMin}`}>
   <span className="text-[20px] font-[500] text-[]"></span>
-  <button className="mt-5 h-[54px] w-[183px] rounded-lg bg-[#1D4179] text-white" onClick={PayNow}>
+  <button className="mt-5 h-[54px] w-[183px] rounded-lg btn-hover text-white" onClick={PayNow}>
     {t("Pay Now")}
   </button>
 </div>

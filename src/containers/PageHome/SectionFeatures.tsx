@@ -11,10 +11,10 @@ const SectionFeatures = ({
     <>
       <div
         className={`  mb-8 mt-20 flex h-auto flex-col items-center  py-12 rtl:gap-2  bg-[#1D4179] w-full 
-		max-sm:mb-10 max-sm:mb-[2px] max-sm:mt-[50px] max-sm:h-[920px] 
+		max-sm:mb-10 max-sm:mb-[2px] max-sm:mt-[50px] max-sm:h-[650px] 
            `}
       >
-        <div className="container flex flex-col  text-2xl text-white max-sm:mt-[200px] max-sm:pb-3 bg-[#1D4179] py-5 ">
+        <div className="container flex flex-col  text-2xl text-white max-sm:mt-[10px]  bg-[#1D4179]  ">
           <span className="text-3xl font-[500]">
             {t("featuresHeader")}
           </span>

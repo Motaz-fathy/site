@@ -410,7 +410,7 @@ export const FlightOffersTwo = () => {
       </div>
       <div className="container">
       <span className='flex justify-start w-full text-[20px] font-[400] text-[#1E1E1E]'>{t("Book your ticket")}</span>
-            <span className='flex justify-start w-full text-[#69696A] text-[16px] font-[400] ' >Economy class, 1 adult</span>
+            <span className='flex justify-start w-full text-[#69696A] text-[16px] font-[400] ' >{t("Economy class")}, 1 {t("adult")}</span>
             {
                 URLS?.map((item: any , index: any) => {
                    return (
@@ -841,10 +841,10 @@ export const FlightOffersTwo = () => {
       </div>
       <div className="container mb-10 mt-10 flex w-full flex-col">
         <span className="flex w-full justify-start text-[20px] font-[400] text-[#1E1E1E]">
-          Book your ticket
+          {t("Book your ticket")}
         </span>
         <span className="flex w-full justify-start text-[16px] font-[400] text-[#69696A] ">
-          Economy class, 1 adult
+          {t("Economy class")}, 1 {t("adult")}
         </span>
 
         {URLS?.map((item: any, index: any) => {

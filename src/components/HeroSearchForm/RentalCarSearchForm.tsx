@@ -13,6 +13,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import i18next from "i18next";
 import ExperiencesDateSingleInput from "./ExperiencesDateSingleInput";
 import SingleDate from "components/HeroSearchForm/SingleDate";
+import { toast } from "react-toastify";
 
 export interface DateRage {
 	startDate: moment.Moment | null;
@@ -261,21 +262,30 @@ const RentalCarSearchForm: FC<FlightSearchFormProps> = ({
 									setDateFocused(focus);
 								}}
 								className="mr-5 w-auto rtl:ml-5"
-								buttonSubmitHref={() =>
-									navigate(
-										`/private-trip?${dateValue?.format("YYYY-MM-DD")}/${
-											travelTo?.id
-										}/${ travelFrom?.id}/${
-											i18next.language === "en"
-												? travelTo?.name_en
-												: travelTo?.name_ar
-										}/${
-											i18next.language === "en"
-												? travelFrom?.name_en
-												: travelFrom?.name_ar
-										}`,
-
-									)
+								buttonSubmitHref={() => {
+									if(dateRangeValue !== null && pickUpInputValue !== '' && dropOffInputValue !== '') {
+										navigate(
+											`/private-trip?${dateValue?.format("YYYY-MM-DD")}/${
+												travelTo?.id
+											}/${travelFrom?.id}/${
+												i18next.language === "en"
+													? travelTo?.name_en
+													: travelTo?.name_ar
+											}/${
+												i18next.language === "en"
+													? travelFrom?.name_en
+													: travelFrom?.name_ar
+											}`,
+										)
+									} else {
+										toast.error(`${t("enter require input")}`)
+										navigate(
+											`/`,
+										)
+										
+									}
+								}
+									
 								}
 							/>
 						) : (
@@ -288,20 +298,30 @@ const RentalCarSearchForm: FC<FlightSearchFormProps> = ({
 									setDateFocused(focus);
 								}}
 								className="mr-5 rtl:ml-5"
-								buttonSubmitHref={() =>
-									navigate(
-										`/private-trip?${dateValue?.format("YYYY-MM-DD")}/${
-											travelTo?.id
-										}/${travelFrom?.id}/${
-											i18next.language === "en"
-												? travelTo?.name_en
-												: travelTo?.name_ar
-										}/${
-											i18next.language === "en"
-												? travelFrom?.name_en
-												: travelFrom?.name_ar
-										}`,
-									)
+								buttonSubmitHref={() => {
+									if(dateValue !== null && pickUpInputValue !== '' && dropOffInputValue !== '') {
+										navigate(
+											`/private-trip?${dateValue?.format("YYYY-MM-DD")}/${
+												travelTo?.id
+											}/${travelFrom?.id}/${
+												i18next.language === "en"
+													? travelTo?.name_en
+													: travelTo?.name_ar
+											}/${
+												i18next.language === "en"
+													? travelFrom?.name_en
+													: travelFrom?.name_ar
+											}`,
+										)
+									} else {
+										toast.error(`${t("enter require input")}`)
+										navigate(
+											`/`,
+										)
+										
+									}
+								}
+									
 								}
 							/>
 						)}

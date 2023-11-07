@@ -500,11 +500,13 @@ const LocationInput: FC<LocationInputProps> = ({
 							setValue(e.currentTarget.value);
 							onChange && onChange(e.currentTarget.value);
 
+
 							if (type === "flight") {
 								
 								searchFlightItems(e.currentTarget.value);
 							} else {
 								searchItems(e.currentTarget.value);
+
 							}
 						}}
 						ref={inputRef}

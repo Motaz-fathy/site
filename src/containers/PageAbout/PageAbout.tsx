@@ -29,12 +29,9 @@ const PageAbout: FC<PageAboutProps> = ({ className = "" }) => {
       <div className=" flex h-[60vh] max-sm-:h-[800px] w-[100%] items-center justify-center bg-gradient-to-r from-[#242932] to-[#2B356E]">
         <div className=" container w-[80%] flex items-start justify-between max-sm:flex-col-reverse ">
           <div className="flex flex-col items-start w-[50%] text-white max-sm:w-full max-sm-:h-[500px]">
-            <h3 className="text-[30px] max-sm:text-[16px] font-[500] mb-5 max-sm:mb-1 ">About Us.</h3>
+            <span className="text-[30px] max-sm:text-[16px] font-[500] mb-5 max-sm:mb-1 ">{t("About Us.")}</span>
             <p className="max-sm:text-[10px]">
-              Telefreik is a safe, easy and fast application that enables you to
-              search and compare prices and different modes in different times,
-              classes and classes of trips. It's like searching more than 10
-              search engines simultaneously with just a click of a button.
+             {t("about_paragraph")}
             </p>
           </div>
           <img

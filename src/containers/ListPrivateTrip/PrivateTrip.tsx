@@ -7,7 +7,8 @@ import Styled from './component.module.css'
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 import Button from "shared/Button/Button";
-import i18next from "i18next";
+import i18next, { dir } from "i18next";
+
 
 interface PrivateTripPror {
   PrivatetripItem?: ChildNode;
@@ -120,7 +121,7 @@ const handle_list_getway = async  () => {
          setData(res?.data?.data);
          if(i18next.language === 'en' ) {
           setFrom(res?.data?.data[0]?.from_location?.name_en)
-          setFrom(res?.data?.data[0]?.to_location?.name_en)
+          setTo(res?.data?.data[0]?.to_location?.name_en)
          } else{
           setFrom(res?.data?.data[0]?.from_location?.name_ar)
           setTo(res?.data?.data[0]?.to_location?.name_ar)
@@ -197,9 +198,9 @@ console.log(from , to)
                    <div className="flex  flex-col text-start">
                      <h3 className="text-[16px] text-[#1E1E1E] font-[500]">
                        {" "}
-                       {item?.bus?.name}{" "}
+                       {t(item?.bus?.name)}{" "}
                      </h3>
-                     <p className="text-[12px] text-[#69696A] font-[400]"> {item?.bus?.model}  </p>
+                     <p className="text-[12px] text-[#69696A] font-[400]"> {t(item?.bus?.model)}  </p>
                    </div>
     
                    <div className="mt-5 flex flex-col items-start text-[#69696A]">
@@ -221,7 +222,7 @@ console.log(from , to)
                            fill="#69696A"
                          />
                        </svg>
-                       <h4 className="ml-3 rtl:mr-3">Van</h4>
+                       <h4 className="ml-3 rtl:mr-3">{t(item?.bus?.name)}</h4>
                      </span>
     
                      <span className=" flex items-start justify-center mb-3">
@@ -242,7 +243,7 @@ console.log(from , to)
                            fill="#69696A"
                          />
                        </svg>
-                       <h4 className="ml-3 rtl:mr-3" >1 large bag + 1 small bag </h4>{" "}
+                       <h4 className="ml-3 rtl:mr-3" >1 {t("large bag")} + 1 {t("small bag")} </h4>{" "}
                      </span>
     
                    </div>
@@ -260,8 +261,8 @@ console.log(from , to)
                  </div>
     
                  <div className="flex flex-col ">
-                   <h3 className="text-[#1E1E1E] text-[20px] font-[400] ">LE {item.price}</h3>
-                   <span>round trip </span>
+                   <h3 className="text-[#1E1E1E] text-[20px] font-[400] ">{t("LE")} {item.price}</h3>
+                   <span>{t(`${dropOffLocationType}`)} </span>
                  </div>
     
                 {
@@ -307,9 +308,9 @@ console.log(from , to)
                    <div className="mr-36 flex  justify-around ">
                      <h3 className="text-[20px] text-[#1E1E1E] ">
                        {" "}
-                       {item.bus.name}{" "}
+                       {t(item?.bus?.name)}{" "}
                      </h3>
-                     <p className="ml-1  rtl:justify-start"> {item?.bus?.model} , or similar </p>
+                     <p className="ml-1  rtl:justify-start">  {t("or similar")}  , {t(item?.bus?.model)} </p>
                    </div>
                    <div className="mt-5 flex items-end justify-between rtl:justify-start text-[#69696A]">
                      <span className="flex items-center justify-center rtl:justify-start ">
@@ -329,7 +330,7 @@ console.log(from , to)
                            fill="#69696A"
                          />
                        </svg>
-                       <h4 className="ml-5 rtl:mr-5">Van</h4>
+                       <h4 className="ml-5 rtl:mr-5">{t("Van")}</h4>
                      </span>
                      <span className="ml-5 flex items-end justify-center ">
                        <img src="./Vector.png" />
@@ -348,7 +349,7 @@ console.log(from , to)
                            fill="#69696A"
                          />
                        </svg>
-                       <h4 className="ml-3">1 large bag + 1 small bag </h4>{" "}
+                       <h4 className="ml-3">1 {t("large bag")} + 1 {t("small bag")} </h4>{" "}
                      </span>
                    </div>
                  </div>
@@ -391,7 +392,7 @@ console.log(from , to)
 
 
 <div>
-<Headprivatetrip  tohead_en={to} fromhead_en={from}/>
+<Headprivatetrip  fromhead_en={from} tohead_en={to} />
 </div>
 
 <div className={`container w-[90%] mb-5 mt-[8%] max-sm:mt-[10%] ${Styled.container_private}`} >
@@ -403,8 +404,8 @@ console.log(from , to)
 
        <div className="flex w-full items-end justify-start ">
          <div className="mr-[auto] rtl:mr-[auto] flex justify-start " >
-           <h3> {data?.length} {t('Results')} </h3>
-           <span className="text-[#1d4179]"> | {t("All")} </span>
+           <h3>  {t('Results')} | {data?.length} </h3>
+           <span className="text-[#1d4179]"></span>
          </div>
          {/* <div className="ml-[auto]  ">
            <select className="h-[50px] w-80 rounded-lg border-[#1D4179] bg-transparent">

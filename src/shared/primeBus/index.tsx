@@ -138,7 +138,7 @@ export const PrimeBus = ({ setSelected, seats }: any) => {
 	}, [JSON.stringify(seats)]);
 	return (
 		<div className="mt-4 w-full" dir="ltr">
-			<h3 className="w-full text-2xl font-semibold ">{t("Select your seat")}</h3>
+			<span className="w-full text-2xl font-semibold ">{t("Select your seat")}</span>
 			<div className="mt-2 w-full">
 				<div
 					className={`my-5 inline-block w-full transform overflow-hidden rounded-2xl border border-black border-opacity-5 bg-white text-left align-middle text-neutral-900 transition-all dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 sm:my-8`}

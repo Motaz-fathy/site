@@ -103,7 +103,7 @@ export const FlightHeader:FC<FlightHeaderProp> = ({To , From}) => {
               <span className="text-[14px] font-[400]"> {t("Return")} . </span>
               <span className="text-[14px] font-[400]">
                 {" "}
-                Economy class
+                {t("Economy class")}
                 
               </span>
             </div>

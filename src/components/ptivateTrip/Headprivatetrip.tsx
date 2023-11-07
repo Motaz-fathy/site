@@ -18,8 +18,7 @@ interface HeadProps {
 export const Headprivatetrip: FC<HeadProps> = ({
   fromhead_en ,
   tohead_en ,
-  fromhead_ar,
-  tohead_ar,
+
   seats_number,
   car,
   address_from,
@@ -29,10 +28,7 @@ export const Headprivatetrip: FC<HeadProps> = ({
   const handleBackClick = () => {
     window.history.back();
   };
-   const fromhead_EN: any = fromhead_en === undefined ? '' :   fromhead_en
-   const fromhead_AR: any = fromhead_ar === undefined ? '' :  fromhead_ar
-   const tohead_EN: any = tohead_en === undefined ? '' :  tohead_en
-   const tohead_AR: any = tohead_ar === undefined ? '' :  tohead_ar
+
    const seats_Number: any = seats_number === undefined ? "" :  seats_number
    const Car : any = car === undefined ? '' : "car"
    const address_From: any =  address_from === undefined ? '' :address_from
@@ -80,7 +76,7 @@ export const Headprivatetrip: FC<HeadProps> = ({
               className={`flex items-center justify-center ${Styled.fromtospace}`}
             >
               <span className={`text-[32px] font-[500px] max-sm:text-[14px] ${Styled.from_name}`}>
-                {t(`${address_From}`)}
+                
                 {fromhead_en}
               </span>
               <svg
@@ -99,10 +95,8 @@ export const Headprivatetrip: FC<HeadProps> = ({
                 <rect x="3.653" y="4" fill="#FFFFFF" width="55" height="2" />
               </svg>
               <span className={`text-[32px] font-[500px] max-sm:text-[14px] ${Styled.to_name}`}>
-                {t(`${address_To}`)} 
-                {
-                 tohead_en
-                 } 
+              
+                { tohead_en } 
               </span>
             </div>
 

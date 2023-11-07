@@ -490,7 +490,7 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
                 stroke-linejoin="round"
               />
             </svg>
-            <span className="mt-1">back</span>
+            <span className="mt-1">{t("back")}</span>
           </button>
         </div>
         {/* center data */}

@@ -65,22 +65,9 @@ const BusForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 	window.localStorage.setItem("dropOffLocationType" , locationType)
 	const [valid , setvalid]   = useState<boolean>()
 
-	const Validate = () => {
-      if(locationType === 'oneWay' ) {
-        if(dateValue === null ) {
-			setvalid(false) 
-			
-		} else {
-			setvalid(true)
-		}
-	  } else {
-		if(dateRangeValue === null ) {
-			setvalid(false) 
-			toast.error("please enter start and end date ")
-		}
-	  }
-	}
 
+
+ 
 	// USER EFFECT
 	useEffect(() => {
 		if (haveDefaultValue) {
@@ -192,6 +179,7 @@ const BusForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 									setPickUpInputValue(e);
 								}}
 								onInputDone={(value: any) => {
+								
 									setTravelFrom(value);
 									setFieldFocused("dropOffInput");
 									setPickUpInputValue(
@@ -269,26 +257,35 @@ const BusForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 									setDateFocused(focus);
 								}}
 								className=" w-auto"
-								buttonSubmitHref={() =>
-									navigate(
-										`/listing-bus?${dateRangeValue?.startDate?.format("YYYY-MM-DD")}/
-										
-										${
-											travelTo?.id
-										}/${travelFrom?.id}/${
-											i18next.language === "en"
-												? travelTo?.name_en
-												: travelTo?.name_ar
-										}/${
-											i18next.language === "en"
-												? travelFrom?.name_en
-												: travelFrom?.name_ar
-										}`,
-									)
+								
+								buttonSubmitHref={() => {
+									if(valid === true && dropOffInputValue !== '' && pickUpInputValue !== '' ) {
+										navigate(
+											`/listing-bus?${dateRangeValue?.startDate?.format("YYYY-MM-DD")}/
+											
+											${
+												travelTo?.id
+											}/${travelFrom?.id}/${
+												i18next.language === "en"
+													? travelTo?.name_en
+													: travelTo?.name_ar
+											}/${
+												i18next.language === "en"
+													? travelFrom?.name_en
+													: travelFrom?.name_ar
+											}`,
+										)
+								} else {
+									toast.error(`${t("enter require input")}`)
+									navigate('/')
+								}
+								}
+								
 								}
 							/>
 						) : (
 							 <SingleDate
+							
 							type="bus"
 							guests={guests}
 							onChangeGuests={(value: any) => setGuests(value)}
@@ -311,7 +308,7 @@ const BusForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 							className="w-auto"
 							buttonSubmitHref={() =>
 								{
-									if(valid === true) {
+									if(valid === true && dropOffInputValue !== '' && pickUpInputValue !== '') {
 										navigate(
 											`/listing-bus?${dateValue?.format("YYYY-MM-DD")}/${
 												travelTo?.id
@@ -326,7 +323,7 @@ const BusForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 											}`,
 										)
 									} else {
-										
+										toast.error(`${t("enter require input")}`)
 										navigate(
 											`/`,
 										)
