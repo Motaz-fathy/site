@@ -62,13 +62,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
   const private_oneRound_date_time = date.split("T")[0].substring(1,11)
   
 
-  // code will be enhance
-  const fromhead_en: string | null = window.localStorage.getItem("fromhead_en");
-  const tohead_en: string | null = window.localStorage.getItem("tohead_en");
-  const fromhead_ar: string | null = window.localStorage.getItem("fromhead_ar");
-  const tohead_ar: string | null = window.localStorage.getItem("tohead_ar");
-  // code will be enhance
-
+  const token = window.localStorage.getItem("token") || null
   const [empty , setEmpty] = useState(false)
 
  
@@ -127,8 +121,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
 
   const [from , setFrom] = useState("")
   const [to , setTo] = useState("")
-  console.log(from , to )
-  console.log(data)
+
   // handle data of trip
   useEffect(() => {
     setLoading(true)
@@ -146,7 +139,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
         setData(res?.data?.data);
         if(i18next.language === 'en' ) {
           setFrom(res?.data?.data?.from_location?.name_en)
-          setFrom(res?.data?.data?.to_location?.name_en)
+          setTo(res?.data?.data?.to_location?.name_en)
          } else{
           setFrom(res?.data?.data?.from_location?.name_ar)
           setTo(res?.data?.data?.to_location?.name_ar)
@@ -230,7 +223,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
 
   // { get screen dimensions }
   const al:any = window.localStorage.getItem("new_address")
-  const new_address = JSON.parse(al)
+  const new_address = JSON.stringify(al)
   
   useEffect(() => {
  
@@ -560,7 +553,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                 </span>
 
                {
-                empty === true ? 
+                empty === true && token !== null  ? 
                 <div
                 className={`relative  flex cursor-pointer items-center justify-start border-[1px] border-[#E8ECF2] block w-full h-[50px] rounded-[0px] cursor-pointer  `}
                onClick={PopAddressfrom}
@@ -706,7 +699,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                         onClick={() => handlesetfromaddress(item)}
                       >
                         <span className="text-[16px] text-[#1E1E1E]">
-                          {item.name}
+                          {item?.name}
                         </span>
                       </div>
                     );
@@ -751,7 +744,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                 </span>
 
                {
-                empty === true ? 
+                empty === true  && token !== null ? 
                 <div
                 className={`relative  flex cursor-pointer items-center justify-start border-[1px] 
                 border-[#E8ECF2] block w-full h-[50px] rounded-[0px]   `}
@@ -805,7 +798,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                          onClick={() => handlesettoaddress(itemTo)} 
                        >
                          <span className="text-[16px] text-[#1E1E1E]">
-                           {itemTo.name}
+                           {itemTo?.name}
                          </span>
                        </div>
                      );
@@ -867,7 +860,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                        onClick={() => handlesettoaddress(itemTo)} 
                      >
                        <span className="text-[16px] text-[#1E1E1E]">
-                         {itemTo.name}
+                         {itemTo?.name}
                        </span>
                      </div>
                    );
@@ -911,10 +904,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                     {t("Summary")}
                   </button>
                 </div>
-                {/* <a className=" flex justify-center items-center mr-10 pl-[5%]
-              cursor-pointer pr-[5%] bg-[#1D4179] text-white text-[16px] font-[500] pt-[1%] pb-[1%] rounded-lg"
-              href={`/private-trip/twoRound/${trip_Id}${AddressFromOne}${AddressToOne}${StartDate}${time}`}
-             > Next </a> */}
+               
               </div>
             </div>
           </div>
@@ -1156,7 +1146,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                 </span>
 
                {
-                empty === true ? 
+                empty === true && token !== null ? 
                 <div
                 className={`relative  flex cursor-pointer items-center justify-start border-[1px] border-[#E8ECF2] `}
                 onClick={PopAddressfrom}
@@ -1344,7 +1334,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                   </div>
 
                  {
-                  empty === true ? 
+                  empty === true && token !== null ? 
                   <div
                   className=" ml-5 flex h-[40px] w-full cursor-pointer   items-center justify-start max-sm:text-[8px]"
                   onClick={PopAddressto}
@@ -1416,10 +1406,7 @@ export const PrivateTripOneRoundId: FC<RentalCarDatesRangeInputProps> = ({
                     {t("Summary")}
                   </button>
                 </div>
-                {/* <a className=" flex justify-center items-center mr-10 pl-[5%]
-              cursor-pointer pr-[5%] bg-[#1D4179] text-white text-[16px] font-[500] pt-[1%] pb-[1%] rounded-lg"
-              href={`/private-trip/twoRound/${trip_Id}${AddressFromOne}${AddressToOne}${StartDate}${time}`}
-             > Next </a> */}
+               
               </div>
             </div>
           </div>

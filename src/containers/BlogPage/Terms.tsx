@@ -19,9 +19,9 @@ const Terms = () => {
 		return (
 			<header className="container rounded-xl">
 				<div className="mx-auto max-w-screen-md space-y-5">
-					<h1 className=" max-w-4xl text-3xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-4xl md:!leading-[120%] lg:text-4xl ">
+					<span className=" max-w-4xl text-3xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-4xl md:!leading-[120%] lg:text-4xl ">
 						شروط وأحكام الخدمة
-					</h1>
+					</span>
 					<span className="block pb-1 text-base text-neutral-500 dark:text-neutral-400 md:text-lg">
 						{
 							<>
@@ -45,9 +45,9 @@ const Terms = () => {
 				className="dark:prose-dark prose-sm prose mx-auto !max-w-screen-md dark:prose-invert sm:prose lg:prose-lg"
 			>
 				<div>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						الأحكام العامة :
-					</h3>
+					</span>
 
 					<li>
 						علي المسافر التواجد في المحطة للمغادرة قبل الموعد المقرر بوقت كافي
@@ -109,9 +109,9 @@ const Terms = () => {
 
 					<li>يمنع التدخين نهائياً اثناء الرحلة.</li>
 
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						تعليمات الحجز :
-					</h3>
+					</span>
 					<li>
 						التذكرة صالحة للسفر في الموعد المحدد لها وعلي الخدمة المحددة بها ومن
 						خلال الشركة التي تم الحجز بها والخاضعة للقيود او البيانات المدونة
@@ -161,9 +161,9 @@ const Terms = () => {
 						باسترداد قيمة المبلغ المدفوع للتذكرة مرة أخري .
 					</li>
 
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						الحجز الإلكتروني :
-					</h3>
+					</span>
 
 					<li>
 						في حالة الحجز الالكتروني يرجي التأكد من جميع البيانات الظاهرة علي
@@ -203,18 +203,18 @@ const Terms = () => {
 						لضمان توافر مقاعد .
 					</li>
 
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						طباعه التذاكر الإلكترونية :
-					</h3>
+					</span>
 
 					<li>
 						يقوم العميل بطباعه التذاكر الخاصة به بعد الدفع من خلال موقعنا على
 						ورق عادى ويمكنه الركوب بهذا السند مباشره .
 					</li>
 
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						تعديل موعد أو الغاء الرحلة :
-					</h3>
+					</span>
 
 					<li>
 						يسمح بإلغاء الحجز أو بأجراء تعديل علي موعد السفر المدون بالتذكرة
@@ -252,9 +252,9 @@ const Terms = () => {
 						بالحجز .
 					</li>
 
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						تعليمات السفر :
-					</h3>
+					</span>
 
 					<li>
 						تأكد من وجودك في الرحلة الصحيحة التي تم حجزها من خلال الشركة .
@@ -277,9 +277,9 @@ const Terms = () => {
 						سجائر الكترونية او شيشة او ما شبة).
 					</li>
 
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						سفر الأطفال :
-					</h3>
+					</span>
 
 					<li>
 						تختلف قيمة حجز التذاكر علي حسب عمر الطفل من شركة الي اخري (طبقا
@@ -292,9 +292,9 @@ const Terms = () => {
 						بمصاحبة ذويهم بحد أقصي طفل لكل تذكرة .
 					</li>
 
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						الحقائب والشحن :
-					</h3>
+					</span>
 
 					<li>
 						الحقائب يتم تحميلها بالرحلات علي مسئولية أصحابها وينطبق عليها
@@ -354,9 +354,9 @@ const Terms = () => {
 						.
 					</li>
 
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						الامتعة والمواد المحظور نقلها :
-					</h3>
+					</span>
 
 					<li>
 						لا يسمح باصطحاب الخمور علي متن الرحلة وكذلك اصطحاب او شحن الحيوانات
@@ -410,9 +410,9 @@ const Terms = () => {
 						).
 					</li>
 
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						الزئبق والمواد الممغنطة .
-					</h3>
+					</span>
 
 					<li>
 						أي أجهزة او معدات بها زئبق ,,, ويمكن لبعض الشركات حمل المواد او
@@ -426,9 +426,9 @@ const Terms = () => {
 						الضوابط ممكن ان يضع المسافر تحت طائلة القانون .
 					</li>
 
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						حدود مسئولية الشركة :
-					</h3>
+					</span>
 
 					<li>
 						ستبذل شركة تلفريك جهدا وافرا لتوفير خدمة مميزة تليق بعملائنا تتميز

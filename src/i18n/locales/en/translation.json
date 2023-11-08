@@ -422,7 +422,15 @@
   "city" : "city",
   "Street Name" : "Street Name",
   "Location" : "Location",
-  "Add another address" : "Add another address"
+  "Add another address" : "Add another address",
+  "Sign up" : "Sign up",
+  "Password" : "Password",
+  "Confirm password" : "Confirm password",
+  "Email" : "Email",
+  "Enter the verification code we just sent on your email address." : "Enter the verification code we just sent on your email address.",
+  "Didn’t received code?" : "Didn’t received code?",
+  "Resend" : "Resend",
+  "confirm" : "confirm"
   
 
 }

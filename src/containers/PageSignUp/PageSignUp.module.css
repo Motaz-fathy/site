@@ -124,15 +124,14 @@ font-size: 20px;
     }
   
     .actions {
-    
+        width: 100%;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+       justify-content: space-around;
+       align-items: center;
      
     }
     .actions button{
         width: 100%;
-        padding: 4px 3rem;
     }
   
     .element{

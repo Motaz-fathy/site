@@ -111,56 +111,7 @@ const PageLogin: FC<PageLoginProps> = ({ className = "" }) => {
 				</div>
 				<div className="mx-auto max-w-md space-y-14 " >
 					<div className="grid gap-10">
-						{/* <LoginSocialFacebook
-              appId={process.env.REACT_APP_FB_APP_ID || ""}
-              fieldsProfile={
-                "id,first_name,last_name,middle_name,name,name_format,picture,short_name,email,gender"
-              }
-              onLoginStart={onLoginStart}
-              onLogoutSuccess={onLogoutSuccess}
-              redirect_uri={REDIRECT_URI}
-              onResolve={({ provider, data }: IResolveParams) => {
-                setProvider(provider);
-                setProfile(data);
-              }}
-              onReject={(err) => {
-                console.log(err);
-              }}
-            >
-              <a className="nc-will-change-transform  cursor-pointer flex w-full rounded-lg bg-primary-50 dark:bg-neutral-800 px-4 py-3 transform transition-transform sm:px-6 hover:translate-y-[-2px]">
-                <img
-                  className="flex-shrink-0"
-                  src={facebookSvg}
-                  alt={"facebook"}
-                />
-                <h3 className="flex-grow text-sm font-medium text-center text-neutral-700 dark:text-neutral-300 sm:text-sm">
-                  {t("continueWithFacebook")}
-                </h3>
-              </a>
-            </LoginSocialFacebook> */}
-
-						{/* <LoginSocialGoogle
-              client_id={process.env.REACT_APP_GG_APP_ID || ""}
-              onLoginStart={onLoginStart}
-              redirect_uri={REDIRECT_URI}
-              scope="openid profile email"
-              discoveryDocs="claims_supported"
-              access_type="offline"
-              onResolve={({ provider, data }: IResolveParams) => {
-                setProvider(provider);
-                setProfile(data);
-              }}
-              onReject={(err) => {
-                console.log(err);
-              }}
-            >
-              <a className="nc-will-change-transform  cursor-pointer  flex w-full rounded-lg bg-primary-50 dark:bg-neutral-800 px-4 py-3 transform transition-transform sm:px-6 hover:translate-y-[-2px]">
-                <img className="flex-shrink-0" src={googleSvg} alt={"google"} />
-                <h3 className="flex-grow text-sm font-medium text-center text-neutral-700 dark:text-neutral-300 sm:text-sm">
-                  {t("continueWithGoogle")}
-                </h3>
-              </a>
-            </LoginSocialGoogle> */}
+		
 					</div>
 					{/* FORM */}
 					<form

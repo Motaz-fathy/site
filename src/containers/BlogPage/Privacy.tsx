@@ -19,9 +19,9 @@ const Privacy = () => {
 		return (
 			<header className="container rounded-xl">
 				<div className="mx-auto max-w-screen-md space-y-5">
-					<h1 className=" max-w-4xl text-3xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-4xl md:!leading-[120%] lg:text-4xl ">
+					<span className=" max-w-4xl text-3xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-4xl md:!leading-[120%] lg:text-4xl ">
 						سياسه الخصوصيه
-					</h1>
+					</span>
 					<span className="block pb-1 text-base text-neutral-500 dark:text-neutral-400 md:text-lg">
 						{
 							<>
@@ -48,9 +48,9 @@ const Privacy = () => {
 				className="dark:prose-dark prose-sm prose mx-auto !max-w-screen-md dark:prose-invert sm:prose lg:prose-lg"
 			>
 				<div>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						لجمع التلقائي للمعلومات{" "}
-					</h3>
+					</span>
 
 					<p>
 						عندما تزور موقع الويب، تقوم خوادمنا تلقائيًا بتسجيل المعلومات التي
@@ -61,9 +61,9 @@ const Privacy = () => {
 						الصفحات والمعلومات التي تبحث عنها على موقعنا الإلكتروني وأوقات
 						الوصول والتواريخ وإحصائيات أخرى
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						جمع المعلومات الشخصية
-					</h3>
+					</span>
 
 					<p>
 						يمكنك زيارة موقع الويب دون إخبارنا عن هويتك أو الكشف عن أي معلومات
@@ -77,9 +77,9 @@ const Privacy = () => {
 						ولكن بعد ذلك قد لا تتمكن من الاستفادة من بعض ميزات موقع الويب. نرحب
 						بالمستخدمين الذين لا يعرفون ما هي المعلومات الإلزامية للاتصال بنا
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						إدارة المعلومات الشخصية{" "}
-					</h3>
+					</span>
 
 					<p>
 						يمكنك الوصول إلى معلومات شخصية معينة عنك والإضافة إليها وتحديثها
@@ -95,9 +95,9 @@ const Privacy = () => {
 						لذلك، لا يمكن إنفاذ الحق في الوصول والحق في المسح والحق في التصحيح
 						والحق في إمكانية نقل البيانات بعد انتهاء فترة الاحتفاظ
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						استخدام ومعالجة المعلومات التي تم جمعها
-					</h3>
+					</span>
 
 					<p>
 						يمكن استخدام أي من المعلومات التي نجمعها منك لإضفاء الطابع الشخصي
@@ -124,9 +124,9 @@ const Privacy = () => {
 						إذا كان توفير المعلومات الشخصية شرطًا قانونيًا أو تعاقديًا، أو شرطًا
 						ضروريًا لإبرام عقد
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						نقل المعلومات وتخزينها{" "}
-					</h3>
+					</span>
 
 					<p>
 						اعتمادًا على موقعك، قد تتضمن عمليات نقل البيانات نقل وتخزين معلوماتك
@@ -138,9 +138,9 @@ const Privacy = () => {
 						الأقسام ذات الصلة من هذا المستند أو الاستفسار معنا باستخدام
 						المعلومات الواردة في قسم الاتصال
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						حقوق المستخدمين{" "}
-					</h3>
+					</span>
 
 					<p>
 						يمكنك ممارسة بعض الحقوق فيما يتعلق بمعلوماتك التي نقوم بمعالجتها.
@@ -160,9 +160,9 @@ const Privacy = () => {
 						شريطة أن تتم معالجة معلوماتك بوسائل آلية وأن المعالجة تستند إلى
 						موافقتك، على عقد تكون جزءًا منه أو على التزامات تعاقدية مسبقة منه
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						الحق في الاعتراض على المعالجة{" "}
-					</h3>
+					</span>
 
 					<p>
 						عندما تتم معالجة المعلومات الشخصية للمصلحة العامة، أو في ممارسة سلطة
@@ -173,18 +173,18 @@ const Privacy = () => {
 						دون تقديم أي مبرر. لمعرفة ما إذا كنا نعالج المعلومات الشخصية لأغراض
 						التسويق المباشر، يمكنك الرجوع إلى الأقسام ذات الصلة من هذا المستند
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						كيف تمارس هذه الحقوق{" "}
-					</h3>
+					</span>
 
 					<p>
 						يمكن توجيه أي طلبات لممارسة حقوق المستخدم إلى المالك من خلال تفاصيل
 						الاتصال الواردة في هذا المستند. يمكن ممارسة هذه الطلبات مجانًا وسيتم
 						معالجتها من قبل المالك في أقرب وقت ممكن
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						الفواتير والدفعات{" "}
-					</h3>
+					</span>
 
 					<p>
 						نحن نستخدم معالجات دفع تابعة لجهات خارجية لمساعدتنا في معالجة
@@ -193,9 +193,9 @@ const Privacy = () => {
 						تحتوي أو لا تحتوي على حماية الخصوصية كحماية مثل سياسة الخصوصية هذه.
 						نقترح عليك مراجعة سياسات الخصوصية الخاصة بكل منها.
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						خصوصية الأطفال{" "}
-					</h3>
+					</span>
 
 					<p>
 						نحن لا نجمع أي معلومات شخصية عن قصد من الأطفال الذين تقل أعمارهم عن
@@ -209,9 +209,9 @@ const Privacy = () => {
 						الأقل للموافقة على معالجة معلوماتك الشخصية في بلدك (في بعض البلدان
 						قد نسمح لوالدك أو ولي أمرك بالقيام بذلك نيابة عنك).
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						النشرات الإخبارية{" "}
-					</h3>
+					</span>
 
 					<p>
 						نقدم رسائل إخبارية إلكترونية يمكنك الاشتراك فيها طواعية في أي وقت.
@@ -220,9 +220,9 @@ const Privacy = () => {
 						الإلكتروني هذه أو عن طريق الاتصال بنا. ومع ذلك، ستستمر في تلقي رسائل
 						البريد الإلكتروني الأساسية الخاصة بالمعاملات
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						ملفات تعريف الارتباط{" "}
-					</h3>
+					</span>
 
 					<p>
 						يستخدم موقع الويب “ملفات تعريف الارتباط” للمساعدة في تخصيص تجربتك
@@ -243,9 +243,9 @@ const Privacy = () => {
 						المستخدم على الموقع. قد تقدم هذه الشركات إعلانات قد تضع أيضًا ملفات
 						تعريف الارتباط وتتبع سلوك المستخدم.
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						لا تتبع الإشارات{" "}
-					</h3>
+					</span>
 
 					<p>
 						تتضمن بعض المتصفحات ميزة “عدم التعقب” التي تشير إلى مواقع الويب التي
@@ -259,9 +259,9 @@ const Privacy = () => {
 						ومع ذلك، كما هو موضح بمزيد من التفصيل في هذه السياسة، فإننا نقيد
 						استخدامنا وجمع معلوماتك الشخصية
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						روابط لمواقع أخرى{" "}
-					</h3>
+					</span>
 
 					<p>
 						يحتوي موقعنا على روابط لمواقع أخرى لا نملكها ولا نتحكم فيها. يرجى
@@ -270,9 +270,9 @@ const Privacy = () => {
 						الإلكتروني وأن تقرأ بيانات الخصوصية لكل موقع ويب قد يجمع معلومات
 						شخصية
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						أمن المعلومات{" "}
-					</h3>
+					</span>
 
 					<p>
 						نقوم بتأمين المعلومات التي تقدمها على خوادم الكمبيوتر في بيئة آمنة
@@ -287,9 +287,9 @@ const Privacy = () => {
 						من هذه المعلومات والبيانات أو العبث بها أثناء النقل من قبل طرف ثالث،
 						على الرغم من بذل أقصى الجهود
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						خرق البيانات{" "}
-					</h3>
+					</span>
 
 					<p>
 						في حال علمنا أن أمان الموقع قد تعرض للخطر أو تم الكشف عن معلومات
@@ -302,9 +302,9 @@ const Privacy = () => {
 						لإلحاق ضرر بالمستخدم نتيجة للانتهاك أو إذا كان الإشعار مطلوبًا بخلاف
 						ذلك بموجب القانون. عندما نقوم بذلك، سوف نرسل لك بريدًا إلكترونيًا.
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						التغييرات والتعديلات{" "}
-					</h3>
+					</span>
 
 					<p>
 						قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر وفقًا لتقديرنا وسنخطرك
@@ -318,9 +318,9 @@ const Privacy = () => {
 						التغييرات. ومع ذلك، لن نستخدم بياناتك الشخصية، بدون موافقتك، بطريقة
 						تختلف جوهريًا عما تم ذكره في وقت جمع بياناتك الشخصية
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						قبول هذه السياسة{" "}
-					</h3>
+					</span>
 
 					<p>
 						أنت تقر بأنك قد قرأت هذه السياسة وتوافق على جميع الشروط والأحكام
@@ -328,9 +328,9 @@ const Privacy = () => {
 						بهذه السياسة. إذا كنت لا توافق على الالتزام بشروط هذه السياسة، فأنت
 						غير مصرح لك باستخدام أو الوصول إلى موقع الويب وخدماته
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						الاتصال بنا{" "}
-					</h3>
+					</span>
 
 					<p>
 						إذا كنت ترغب في الاتصال بنا لفهم المزيد حول هذه السياسة أو ترغب في

@@ -259,7 +259,7 @@ const BusForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 								className=" w-auto"
 								
 								buttonSubmitHref={() => {
-									if(dateRangeValue !== null && dropOffInputValue !== '' && pickUpInputValue !== '' ) {
+									if(dateRangeValue?.startDate !== null && dateRangeValue?.endDate !== null && dropOffInputValue !== '' && pickUpInputValue !== '' ) {
 										navigate(
 											`/listing-bus?${dateRangeValue?.startDate?.format("YYYY-MM-DD")}/
 											

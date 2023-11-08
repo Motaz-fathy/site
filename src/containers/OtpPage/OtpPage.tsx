@@ -50,11 +50,11 @@ const OtpPage: FC<OtpPageProps> = ({ className = "" }) => {
                   alt={"verification"}
                 />
 
-				<h2 className="my-2 flex items-center justify-center text-3xl font-semibold leading-[115%] text-neutral-900 dark:text-neutral-100 md:text-5xl md:leading-[115%]">
+				<span className="my-2 flex items-center justify-center text-3xl font-semibold leading-[115%] text-neutral-900 dark:text-neutral-100 md:text-5xl md:leading-[115%]">
 				{t("otp")}
-				</h2>
+				</span>
 				<p className="text-center my-2 text-[#828282]">
-					Enter the verification code we just sent on your email address.
+					{t("Enter the verification code we just sent on your email address.")}
 				</p>
 				<div className="mx-auto max-w-md space-y-6">
 					<form className="grid grid-cols-1 gap-6" onSubmit={submitHandler}>
@@ -83,13 +83,13 @@ const OtpPage: FC<OtpPageProps> = ({ className = "" }) => {
 							/>
 						</div>
 
-						<ButtonPrimary type="submit">{t("login")}</ButtonPrimary>
+						<ButtonPrimary type="submit">{t("confirm")}</ButtonPrimary>
 					</form>
 					{/* ==== */}
-				<p className="text-center  text-[#828282]">
-				Didn’t received code? 
+				<p className="text-center  text-[#828282] m-0">
+				{t("Didn’t received code?")} 
 				</p>				
-				<h4  className="text-[#1d4179] text-center hover:cursor-pointer mt-0" style={{margin:"0"}}>Resend</h4>
+				<div  className="text-[#1d4179] text-center hover:cursor-pointer  m-auto text-center m-0" >{t("Resend")}</div>
 				</div>
 			</div>
 		</div>

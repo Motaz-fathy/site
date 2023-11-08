@@ -46,11 +46,11 @@ function PageHome() {
 				
 				"
 				>
-					<div className="container w-full ">
-						<h1 className="m-3 text-center text-[32px]  text-[#1E1E1E]">
+					<div className="container w-full text-center">
+						<span className="text-center text-[32px]  text-[#1E1E1E] ">
 							{t("Our partner")}
-						</h1>
-						<p className="text-[#69696A]w-[589px] mb-[32px] text-center text-[16px]  text-[400]">
+						</span>
+						<p className="text-[#69696A]w-[589px] my-[20px] text-center text-[16px]  text-[400]  m-auto">
 							{t("our_partenr")}
 						</p>
 

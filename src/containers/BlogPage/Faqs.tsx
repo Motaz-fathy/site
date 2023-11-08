@@ -20,9 +20,9 @@ const Faqs = () => {
 		return (
 			<header className="container rounded-xl">
 				<div className="mx-auto max-w-screen-md space-y-5">
-					<h1 className=" max-w-4xl text-3xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-4xl md:!leading-[120%] lg:text-4xl ">
+					<span className=" max-w-4xl text-3xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-4xl md:!leading-[120%] lg:text-4xl ">
 						الأسئلة الشائعة لشركة تلفريك
-					</h1>
+					</span>
 				</div>
 			</header>
 		);
@@ -35,9 +35,9 @@ const Faqs = () => {
 				className="dark:prose-dark prose-sm prose mx-auto !max-w-screen-md dark:prose-invert sm:prose lg:prose-lg"
 			>
 				<div>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						هل أنا بحاجة للتسجيل لاستخدام تلفريك؟
-					</h3>
+					</span>
 
 					<p>
 						لا تحتاج الى التسجيل عند استكشاف رحلاتنا واتجاهاتنا واسعارنا
@@ -46,18 +46,18 @@ const Faqs = () => {
 						الاطلاع على سجل الرحلات التي قمت بها من خلال حسابك كما يتيح لنا
 						التواصل معكم.
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						فقدت تذكرتي. ماذا يجب ان افعل الان؟{" "}
-					</h3>
+					</span>
 
 					<p>
 						يتم التوجه الى محطة الاركاب حيث يتم مراجعه الرحلة في اخر محطة ويتم
 						عمل إيصال أركاب للعميل بمبلغ مالي محدد لكل تذكرة (طبقا لسياسة الشركة
 						التي يتم الحجز من خلالها)
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						هل هو إجباري اتخاذ نسخة مطبوعة من التذكرة؟{" "}
-					</h3>
+					</span>
 
 					<p>
 						ليس هناك حاجة للحصول على نسخة مطبوعة من التذكرة عند الدفع بنظام
@@ -65,9 +65,9 @@ const Faqs = () => {
 						الى الرحلة الخاصة بك. وعند ذهابك لمحطه الركوب تعرض الحجز الالكتروني
 						على هاتفك وسيعطيك الموظف تذكرتك المطبوعة
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						هل الحجز عبر الإنترنت أغلي سعرا؟{" "}
-					</h3>
+					</span>
 
 					<p>
 						الحجز عبر الانترنت بنفس السعر. بل وعلى العكس الحجز عبر الانترنت يتيح
@@ -75,9 +75,9 @@ const Faqs = () => {
 						العملاء في فترات متقاربة وتصل الخصومات ل ١٠ ٪ على الأسعار مقارنه
 						بأسعار الشركات نفسها
 					</p>
-					<h3 className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
+					<span className=" max-w-4xl text-xl font-semibold text-neutral-900 dark:text-neutral-100 md:text-3xl md:!leading-[120%] lg:text-2xl ">
 						ما هي مزايا شراء تذكرة ذهاب وعوده؟{" "}
-					</h3>
+					</span>
 
 					<p>
 						عند شراء تذكرة الذهاب والعودة معا يتيح لك فرصة الحصول على خصم على

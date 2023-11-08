@@ -423,8 +423,15 @@
   "city" : "المدينة",
   "Street Name" : "اسم الشارع",
   "Location" : "الموقع",
-  "Add another address" : "اضافة عنوان جديد"
-  
+  "Add another address" : "اضافة عنوان جديد",
+  "Sign up" : "انشاء حساب",
+  "Password" : "كلمة المرور",
+  "Confirm password" : "تاكيد كلمة المرور",
+  "Email" : "البريد الالكترونى",
+  "Enter the verification code we just sent on your email address." : "أدخل رمز التحقق الذي أرسلناه للتو على عنوان بريدك الإلكتروني.",
+  "Didn’t received code?" : "لم تتلق الرمز؟",
+  "Resend" : "إعادة الارسال" ,
+  "confirm" : "تاكيد"
 
   
 }
