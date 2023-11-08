@@ -116,12 +116,12 @@ setLoading(false)
                   <div className=" flex justify-start  items-center">
                     <h3 className="text-[20px] text-[#1E1E1E]  mr-2">
                       {" "}
-                      {tripData?.trips[0]?.bus?.name}{" "}
+                      {t(tripData?.trips[0]?.bus?.name)}{" "}
                     </h3>
                     <p className=" rtl:text-right ">
                       {" "}
                       {tripData?.trips[0]?.bus?.model} &{" "}
-                      {tripData?.trips[0]?.bus?.year} or similar{" "}
+                      {tripData?.trips[0]?.bus?.year} {t("or similar")}{" "}
                     </p>
                   </div>
                   <div className="mt-5 flex items-end justify-start text-[#69696A] rtl:justify-end">
@@ -143,7 +143,7 @@ setLoading(false)
                         />
                       </svg>
                       <h4 className="ml-2">
-                        {tripData?.trips[0]?.bus?.type?.name}
+                        {t(tripData?.trips[0]?.bus?.type?.name)}
                       </h4>
                     </span>
 
@@ -181,7 +181,7 @@ setLoading(false)
                           fill="#69696A"
                         />
                       </svg>
-                      <h4 className="ml-2">1 large bag + 1 small bag </h4>{" "}
+                      <h4 className="ml-2">1 {t("large bag")} + 1 {t("small bag")} </h4>{" "}
                     </span>
                   </div>
                 </div>
@@ -238,11 +238,11 @@ setLoading(false)
                 </svg>
                 <h4 className="ml-2">
                   {" "}
-                  {tripData?.trips[0]?.bus?.type?.name}{" "}
+                  {t(tripData?.trips[0]?.bus?.type?.name)}{" "}
                 </h4>
               </span>
             </div>
-            <span className="text-[16px] font-[400] text-[#1D4179]">Edit</span>
+            <span className="text-[16px] font-[400] text-[#1D4179]"></span>
           </div>
 
           <div className="flex w-full items-center  justify-between pb-5">
@@ -347,7 +347,7 @@ setLoading(false)
                   <div className=" flex flex-col ">
                     <h3 className="text-[16px] font-[400] text-[#1E1E1E]  ">
                       {" "}
-                      {create_ticket?.trips[0]?.bus?.name}{" "}
+                      {t(create_ticket?.trips[0]?.bus?.name)}{" "}
                     </h3>
                     <p className=" text-[12px] rtl:text-right">
                       {" "}
@@ -375,7 +375,7 @@ setLoading(false)
                         />
                       </svg>
                       <h4 className="ml-2">
-                        {create_ticket?.trips[0]?.bus?.type?.name}
+                        {t(create_ticket?.trips[0]?.bus?.type?.name)}
                       </h4>
                     </span>
 
@@ -413,7 +413,7 @@ setLoading(false)
                           fill="#69696A"
                         />
                       </svg>
-                      <h4 className="ml-2">1 large bag + 1 small bag </h4>{" "}
+                      <h4 className="ml-2">1 {t("large bag")} + 1 {t("small bag")} </h4>{" "}
                     </span>
                   </div>
                 </div>
@@ -472,11 +472,11 @@ setLoading(false)
                 </svg>
                 <h4 className="ml-2 text-[16px] text-[#69696A]">
                   {" "}
-                  {create_ticket?.trips[0]?.bus?.type?.name}
+                  {t(create_ticket?.trips[0]?.bus?.type?.name)}
                 </h4>
               </span>
             </div>
-            <span className="text-[16px] font-[400] text-[#1D4179]">Edit</span>
+            <span className="text-[16px] font-[400] text-[#1D4179]"></span>
           </div>
 
           <div className="flex w-full items-center  justify-between pb-5">
@@ -496,7 +496,7 @@ setLoading(false)
             <div className="flex items-baseline justify-start ">
               <span className="flex flex-col   ">
                 <span className="mb-3 flex justify-end text-[16px] font-[400]">
-                  Ticket Price
+                  {t("Ticket Price")}
                 </span>
                 <h4 className="text-[16px] font-[400] text-[#1D4179]">
                   {" "}
@@ -507,16 +507,16 @@ setLoading(false)
           </div>
 
           <div className="flex w-full items-center  justify-between pb-5">
-            <span className="text-[16px] font-[400] text-[]">Discount</span>
+            <span className="text-[16px] font-[400] text-[]">{t("Discount")}</span>
             <span className="text-[16px] font-[400] text-[#1D4179]">{create_ticket?.payment_fees_value}</span>
           </div>
           <div className="flex w-full items-center  justify-between pb-5">
-            <span className="text-[16px] font-[400] text-[]">Tax Included</span>
+            <span className="text-[16px] font-[400] text-[]">{t("Tax Included")}</span>
             <span className="text-[16px] font-[400] text-[#1D4179]">{create_ticket?.payment_fees_percentage}</span>
           </div>
 
           <div className="flex w-full items-center  justify-between pb-5">
-            <span className="text-[20px] font-[500] text-[]">Total</span>
+            <span className="text-[20px] font-[500] text-[]">{t("Total")}</span>
             <span className="text-[16px] font-[400] text-[#1D4179]">
               {create_ticket?.tickets_totals}
             </span>
@@ -524,7 +524,7 @@ setLoading(false)
 
           <div className="flex w-full items-center  justify-center pb-5">
             <button
-              className="mt-5 h-[54px] w-[183px] rounded-lg bg-[#1D4179] text-white"
+              className="mt-5 h-[54px] w-[183px] rounded-lg bg-[#1D4179] text-white btn-hover"
               onClick={PayNow}
             >
               {t("Pay Now")}
@@ -559,14 +559,15 @@ setLoading(false)
     }
 
   };
-
+const from = i18n.language === 'en' ? tripData?.trips[0]?.from_location?.name_en : tripData?.trips[0]?.from_location?.name_ar
+const to = i18n.language === 'en' ? tripData?.trips[0]?.to_location?.name_en : tripData?.trips[0]?.to_location?.name_ar
   return (
     <div>
       <Headprivatetrip
         seats_number={tripData?.trips[0]?.bus?.type?.seats_number}
         car={tripData?.trips[0]?.bus?.type?.name}
-        address_from={tripData?.trips[0]?.from_location?.name}
-        address_to={tripData?.trips[0]?.to_location?.name}
+        fromhead_en={from}
+        tohead_en={to}
       />
       <div className="container m-auto mb-5 mt-10 flex w-full flex-col">
       {loading === true ?

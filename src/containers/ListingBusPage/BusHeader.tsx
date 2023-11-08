@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import Styled from './page.module.css'
 import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
 
 interface busHeaderProp {
   seatsNumber ?: any ,
@@ -102,11 +103,12 @@ export const BusHeader:FC<busHeaderProp> = ({seatsNumber , from , to }) => {
                 {" "}
                {seatsNumber} {t("Adult")} .
               </span>
-              <span className="text-[14px] font-[400]"> {t(`${dropOffLocationType}`)} . </span>
+              <span className="text-[14px] font-[400]"> {i18next.language === 'en' ?
+               `${dropOffLocationType}` :t(`${dropOffLocationType}`) } . </span>
               <span className="text-[14px] font-[400]">
                 {" "}
                 
-                {t("bus")}
+                {t("Bus")}
               </span>
             </div>
           </div>

@@ -6,7 +6,9 @@ import classes from "./ProfileCard.module.css";
 import { ArrowLeftIcon } from "@heroicons/react/24/solid";
 import ArrowGo from "./ArrowGo";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 const ProfileCard = () => {
+	const {t} = useTranslation()
 	const name = localStorage.getItem("name");
 	const phone = localStorage.getItem("phone");
 	const path = window.location.pathname;
@@ -23,40 +25,40 @@ const ProfileCard = () => {
 		<div className={classes.cardLinks}>
 			<div className={classes.avatar}>
 				<img src={Logo} alt="logo" />
-				<h2>Hi, there!</h2>
-				<h2>{name}</h2>
+				<span>{t("Hi, there!")}</span>
+				<span>{name}</span>
 			</div>
 			<main className={classes.links}>
 				<div
 					className={path === "/profile" ? classes.active : classes.link}
 					onClick={() => navigate("/profile")}
 				>
-					<p>My account</p>
+					<p>{t("My account")}</p>
 					<ArrowGo />
 				</div>
 				<div
 					className={path === "/booking" ? classes.active : classes.link}
 					onClick={() => navigate("/booking")}
 				>
-					<p>My bookings</p>
+					<p>{t("My bookings")}</p>
 					<ArrowGo />
 				</div>
 				<div
 					className={path === "/address" ? classes.active : classes.link}
 					onClick={() => navigate("/address")}
 				>
-					<p>My address </p>
+					<p>{t("My address")} </p>
 					<ArrowGo />
 				</div>
 				<div
 					className={path === "/changepassword" ? classes.active : classes.link}
 					onClick={() => navigate("/changepassword")}
 				>
-					<p>Change Password</p>
+					<p>{t("Change Password")}</p>
 					<ArrowGo />
 				</div>
 				<div className={classes.link} onClick={logout}>
-					<p>Log out </p>
+					<p>{t("Log out")} </p>
 					<ArrowGo />
 				</div>
 			</main>

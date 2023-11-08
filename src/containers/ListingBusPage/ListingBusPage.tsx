@@ -101,17 +101,20 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 					if (res?.data?.data?.length) {
 						
 						const data = refactorData([...res?.data?.data] )
-
+                        console.log("list_bus_data" , res?.data)
 						setTrips((prev: any) => [...prev, ...res?.data?.data]);
 						setDisplayableData((prev: any) => [...prev, ...data])
 						setOriginalTrips((prev: any) => [...prev, ...res?.data?.data])
 						SetFinalTrips((prev: any) => [...prev, ...res?.data?.data]);
+						if(res?.data?.pagination?.nextPageUrl !== null ) {
+							setPaginationStatus(true)
+						} else {
+							setPaginationStatus(false);
+						}
+                        
 
 
-
-					} else if (page > 1) {
-						setPaginationStatus(false);
-					}
+					} 
 					setLoading(false);
 				})
 				.catch((errors: any) => {

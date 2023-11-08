@@ -77,7 +77,7 @@ export const Headprivatetrip: FC<HeadProps> = ({
             >
               <span className={`text-[32px] font-[500px] max-sm:text-[14px] ${Styled.from_name}`}>
                 
-                {fromhead_en}
+                {fromhead_en} {}
               </span>
               <svg
                 version="1.1"
@@ -124,9 +124,8 @@ export const Headprivatetrip: FC<HeadProps> = ({
               </span>
               <span className="text-[14px] font-[400]"> {t("Return")} . </span>
               <span className="text-[14px] font-[400]">
-                {" "}
-                {Car}
-                {t("Van")}
+                
+                {t("Bus")}
               </span>
             </div>
           </div>

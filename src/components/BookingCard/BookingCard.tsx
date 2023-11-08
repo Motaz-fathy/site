@@ -20,6 +20,7 @@ import { showApiErrorMessages } from "utils";
 import { useNavigate } from "react-router-dom";
 import EmptyState from "components/EmptyState/EmptyState";
 import { forEach } from "lodash";
+import { useTranslation } from "react-i18next";
 function compareDate(dateStr: string): boolean {
 	const currentDate = new Date();
 	const targetDate = new Date(dateStr);
@@ -30,6 +31,8 @@ function compareDate(dateStr: string): boolean {
 	return targetDate > fourHoursFromNow;
 }
 const BookingCard = () => {
+	const {t} = useTranslation()
+
 	const navigate = useNavigate();
 	const [privates, setPrivates] = useState<any>([]);
 	const [addressList, setAddressList] = useState<any>([]);
@@ -136,6 +139,27 @@ const BookingCard = () => {
 			},
 		},
 	);
+	// const [newBus , setNewBus]: any = useState([])
+	// newBus =  data?.data?.data?.filter((item : any) => {
+
+	//    if(item?.status_code === "pending") {
+	// 	return item
+	//    }
+	// })
+
+	function isDateToday(dateString: string): boolean {
+		const today = new Date();
+		const date = new Date(dateString);
+		
+		// Set the time portion of both dates to midnight
+		today.setHours(0, 0, 0, 0);
+		date.setHours(0, 0, 0, 0);
+		if(today.getTime() === date.getTime() || today.getTime() > date.getTime() ){
+			return true
+		}
+		 return false
+	  } 
+
 	useEffect(() => {
 		setAllTrips([...privates, ...addressList, ...bus, ...maritimes]);
 	}, []);
@@ -145,49 +169,47 @@ const BookingCard = () => {
 	// if(addressList.length > 0){
 	// 	compareDate(addressList.date)
 	// }
+	console.log(data?.data?.data)
 	if (nav === "cur") {
-		for (let i = 0; i < bus.length; i++) {
-			if (
-				compareDate(bus[i].date) === false &&
-				bus[i].payment_data.status !== "Pending"
-			) {
+		for (let i = 0; i < data?.data?.data?.length; i++) {
+			if(data?.data?.data[i]?.payment_status_code?.toLowerCase()	=== "success" && isDateToday(data?.data?.data?.date)) {
 				newBus = [...newBus, bus[i]];
 			}
 		}
 
 		return (
 			<div className={classes.bookingCard}>
-				<h2 className={classes.title}>My bookings</h2>
-				<ul className={classes.bookingList}>
-					<li
-						className={nav === "All" ? classes.active : ""}
-						onClick={() => setNav("All")}
-					>
-						All bookings
-					</li>
-					<li
-						className={nav === "cur" ? classes.active : ""}
-						onClick={() => setNav("cur")}
-					>
-						Current bookings
-					</li>
-					<li
-						className={nav === "pend" ? classes.active : ""}
-						onClick={() => {
-							setNav("pend");
-						}}
-					>
-						Pending bookings
-					</li>
-					<li
-						className={nav === "prev" ? classes.active : ""}
-						onClick={() => {
-							setNav("prev");
-						}}
-					>
-						Previous bookings
-					</li>
-				</ul>
+			<span className="text-[20px] font-[500] ">{t("My bookings")}</span>
+			<ul className={classes.bookingList}>
+				<li
+					className={`${nav === "All" ? classes.active : ""}`}
+					onClick={() => setNav("All")}
+				>
+					<span>{t("All bookings")}</span>
+				</li>
+				<li
+					className={nav === "cur" ? classes.active : ""}
+					onClick={() => setNav("cur")}
+				>
+					<span>{t("Current bookings")}</span>
+				</li>
+				<li
+					className={nav === "pend" ? classes.active : ""}
+					onClick={() => {
+						setNav("pend");
+					}}
+				>
+					<span>{t("Pending bookings")}</span>
+				</li>
+				<li
+					className={nav === "prev" ? classes.active : ""}
+					onClick={() => {
+						setNav("prev");
+					}}
+				>
+					<span>{t("Previous bookings")}</span>
+				</li>
+			</ul>
 
 				{newBus.length === 0 ? (
 					<p> no Current </p>
@@ -209,7 +231,7 @@ const BookingCard = () => {
 		);
 	}
 	if (nav === "pend") {
-		for (let i = 0; i < bus.length; i++) {
+		for (let i = 0; i < data?.data?.data?.length; i++) {
 			// console.log(
 			// 	"bus",
 			// 	bus[i],
@@ -217,43 +239,46 @@ const BookingCard = () => {
 			// 	bus[i].can_be_cancel,
 			// );
 
-			if (compareDate(bus[i].date_time) === true && bus[i].can_be_cancel) {
+			// if (compareDate(bus[i].date_time) === true && bus[i].can_be_cancel) {
+			// 	newBus = [...newBus, bus[i]];
+			// }
+			if(data?.data?.data[i]?.status_code === "pending" ) {
 				newBus = [...newBus, bus[i]];
 			}
 		}
 		return (
 			<div className={classes.bookingCard}>
-				<h2 className={classes.title}>My bookings</h2>
-				<ul className={classes.bookingList}>
-					<li
-						className={nav === "All" ? classes.active : ""}
-						onClick={() => setNav("All")}
-					>
-						All bookings
-					</li>
-					<li
-						className={nav === "cur" ? classes.active : ""}
-						onClick={() => setNav("cur")}
-					>
-						Current bookings
-					</li>
-					<li
-						className={nav === "pend" ? classes.active : ""}
-						onClick={() => {
-							setNav("pend");
-						}}
-					>
-						Pending bookings
-					</li>
-					<li
-						className={nav === "prev" ? classes.active : ""}
-						onClick={() => {
-							setNav("prev");
-						}}
-					>
-						Previous bookings
-					</li>
-				</ul>
+			<span className="text-[20px] font-[500] ">{t("My bookings")}</span>
+			<ul className={classes.bookingList}>
+				<li
+					className={`${nav === "All" ? classes.active : ""}`}
+					onClick={() => setNav("All")}
+				>
+					<span>{t("All bookings")}</span>
+				</li>
+				<li
+					className={nav === "cur" ? classes.active : ""}
+					onClick={() => setNav("cur")}
+				>
+					<span>{t("Current bookings")}</span>
+				</li>
+				<li
+					className={nav === "pend" ? classes.active : ""}
+					onClick={() => {
+						setNav("pend");
+					}}
+				>
+					<span>{t("Pending bookings")}</span>
+				</li>
+				<li
+					className={nav === "prev" ? classes.active : ""}
+					onClick={() => {
+						setNav("prev");
+					}}
+				>
+					<span>{t("Previous bookings")}</span>
+				</li>
+			</ul>
 				{newBus.length === 0 ? (
 					<p>No Pennding</p>
 				) : (
@@ -287,40 +312,40 @@ const BookingCard = () => {
 		}
 		return (
 			<div className={classes.bookingCard}>
-				<h2 className={classes.title}>My bookings</h2>
-				<ul className={classes.bookingList}>
-					<li
-						className={nav === "All" ? classes.active : ""}
-						onClick={() => setNav("All")}
-					>
-						All bookings
-					</li>
-					<li
-						className={nav === "cur" ? classes.active : ""}
-						onClick={() => setNav("cur")}
-					>
-						Current bookings
-					</li>
-					<li
-						className={nav === "pend" ? classes.active : ""}
-						onClick={() => {
-							setNav("pend");
-						}}
-					>
-						Pending bookings
-					</li>
-					<li
-						className={nav === "prev" ? classes.active : ""}
-						onClick={() => {
-							setNav("prev");
-						}}
-					>
-						Previous bookings
-					</li>
-				</ul>
-				{newBus.length === 0 ? (
+			<span className="text-[20px] font-[500] ">{t("My bookings")}</span>
+			<ul className={classes.bookingList}>
+				<li
+					className={`${nav === "All" ? classes.active : ""}`}
+					onClick={() => setNav("All")}
+				>
+					<span>{t("All bookings")}</span>
+				</li>
+				<li
+					className={nav === "cur" ? classes.active : ""}
+					onClick={() => setNav("cur")}
+				>
+					<span>{t("Current bookings")}</span>
+				</li>
+				<li
+					className={nav === "pend" ? classes.active : ""}
+					onClick={() => {
+						setNav("pend");
+					}}
+				>
+					<span>{t("Pending bookings")}</span>
+				</li>
+				<li
+					className={nav === "prev" ? classes.active : ""}
+					onClick={() => {
+						setNav("prev");
+					}}
+				>
+					<span>{t("Previous bookings")}</span>
+				</li>
+			</ul>
+				{newBus === null ? 
 					<p>No Previous</p>
-				) : (
+				: (
 					newBus.map((bu: any) => (
 						<PrevCard
 							img_url={bu.company_data.avatar}
@@ -351,19 +376,19 @@ const BookingCard = () => {
 	}
 	return (
 		<div className={`m-0 p-0 container w-full ${classes.bookingCard}`}>
-			<h2 className={classes.title}>My bookings</h2>
+			<span className="text-[20px] font-[500] ">{t("My bookings")}</span>
 			<ul className={classes.bookingList}>
 				<li
-					className={nav === "All" ? classes.active : ""}
+					className={`${nav === "All" ? classes.active : ""}`}
 					onClick={() => setNav("All")}
 				>
-					All bookings
+					<span>{t("All bookings")}</span>
 				</li>
 				<li
 					className={nav === "cur" ? classes.active : ""}
 					onClick={() => setNav("cur")}
 				>
-					Current bookings
+					<span>{t("Current bookings")}</span>
 				</li>
 				<li
 					className={nav === "pend" ? classes.active : ""}
@@ -371,7 +396,7 @@ const BookingCard = () => {
 						setNav("pend");
 					}}
 				>
-					Pending bookings
+					<span>{t("Pending bookings")}</span>
 				</li>
 				<li
 					className={nav === "prev" ? classes.active : ""}
@@ -379,7 +404,7 @@ const BookingCard = () => {
 						setNav("prev");
 					}}
 				>
-					Previous bookings
+					<span>{t("Previous bookings")}</span>
 				</li>
 			</ul>
 

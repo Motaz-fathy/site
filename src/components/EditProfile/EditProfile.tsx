@@ -58,20 +58,20 @@ const editAddressData = async () => {
 };
   return (
     <div className={classes.editCard}>
-        <h2 className={classes.title}>Edit profile</h2>
+        <span className='text-[20px] font-[500] py-2'>{t("Edit profile")}</span>
         <div className={classes.filed}>
-            <label>Full Name *</label>
+            <label>{t("Full Name")} *</label>
             <input type='text' onChange={setValues}
 									value={values.name}
 									name="name"
 									required/>
         </div>
         <div className={classes.filed}>
-            <label>Email address *</label>
+            <label>{t("Email address")} *</label>
             <input type='email' onChange={setValues} value={values.email} name='email'/>
         </div>
         <div className={`max-sm:w-full ${classes.filed}`}>
-            <label>Phone number *</label>
+            <label>{t("Phone number")} *</label>
             <PhoneInput   className={classes.PhoneInput}
             value={mobile}
                 onChange={setMobile}
@@ -79,7 +79,7 @@ const editAddressData = async () => {
                     id="phoneNumber"/>
         </div>
         <button className={classes.Edit} onClick={editAddressData}>
-            Edit 
+            {t("Edit")} 
         </button>
          </div>
   )

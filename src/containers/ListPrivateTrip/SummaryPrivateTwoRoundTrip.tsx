@@ -96,12 +96,13 @@ export const SummaryPrivateTwoRoundTrip = () => {
   };
 
 
-    
+    const from = i18n.language === 'en' ? data_from_summary?.trips[0]?.from_location?.name_en : data_from_summary?.trips[0]?.from_location?.name_ar
+    const to = i18n.language === 'en' ? data_from_summary?.trips[0]?.to_location?.name_en : data_from_summary?.trips[0]?.to_location?.name_ar
           return (
       <>
       <Headprivatetrip 
-       fromhead_en={data_from_summary?.trips[0]?.from_location?.name}
-       tohead_en={data_from_summary?.trips[0]?.to_location?.name}
+       fromhead_en={from}
+       tohead_en={to}
        seats_number={data_from_summary?.trips[0]?.bus?.type?.seats_number}
       />
       <div className="container">
@@ -174,7 +175,7 @@ export const SummaryPrivateTwoRoundTrip = () => {
                           />
                         </svg>
                         <h4 className="ml-2">
-                          {data_from_summary?.trips[0]?.bus?.type?.name}
+                          {t(data_from_summary?.trips[0]?.bus?.type?.name)}
                         </h4>
                       </span>
   
@@ -212,7 +213,7 @@ export const SummaryPrivateTwoRoundTrip = () => {
                             fill="#69696A"
                           />
                         </svg>
-                        <h4 className="ml-2">1 large bag + 1 small bag </h4>{" "}
+                        <h4 className="ml-2">1 {t("large bag")} + 1 {t("small bag")} </h4>{" "}
                       </span>
                     </div>
                   </div>
@@ -294,7 +295,7 @@ export const SummaryPrivateTwoRoundTrip = () => {
                           />
                         </svg>
                         <h4 className="ml-2">
-                          {data_from_summary?.trips[1]?.bus?.type?.name}
+                          {t(data_from_summary?.trips[1]?.bus?.type?.name)}
                         </h4>
                       </span>
   
@@ -332,7 +333,7 @@ export const SummaryPrivateTwoRoundTrip = () => {
                             fill="#69696A"
                           />
                         </svg>
-                        <h4 className="ml-2">1 large bag + 1 small bag </h4>{" "}
+                        <h4 className="ml-2">1 {t("large bag")} + 1 {t("small bag")} </h4>{" "}
                       </span>
                     </div>
                   </div>
@@ -390,11 +391,11 @@ export const SummaryPrivateTwoRoundTrip = () => {
                     fill="#69696A"
                   />
                 </svg>
-                <h4 className="ml-2"> {data_from_summary?.trips[1]?.bus?.type?.name} </h4>
+                <h4 className="ml-2"> {t(data_from_summary?.trips[1]?.bus?.type?.name)} </h4>
               </span>
             </div>
             <span className="text-[16px] font-[400] text-[#1D4179]">
-              {t(`Edit`)}
+             
             </span>
           </div>
   
@@ -468,10 +469,10 @@ export const SummaryPrivateTwoRoundTrip = () => {
           <div className="flex w-full items-center  justify-between pb-10">
             <span className="text-[20px] font-[500] text-[]"></span>
             <button
-              className="mt-5 h-[54px] w-[183px] rounded-lg bg-[#1D4179] text-white"
+              className="mt-5 h-[54px] w-[183px] rounded-lg bg-[#1D4179] text-white btn-hover max-sm:m-auto"
               onClick={PayNow}
             >
-              Pay Now
+              {t("Pay Now")}
             </button>
           </div>
         </div>

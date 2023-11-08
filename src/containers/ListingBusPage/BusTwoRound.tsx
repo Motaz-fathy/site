@@ -12,6 +12,9 @@ export const BusTwoRound = () => {
   const bus_Ticket = JSON.parse(B_T);
   console.log(bus_Ticket,'bus_Ticket');
 
+  let T_price = bus_Ticket?.data?.trips[0].total 
+  const toltle_price = T_price.substring(3)
+
   
   const PayNow = async () => {
     const busTicket = bus_Ticket;
@@ -50,7 +53,7 @@ export const BusTwoRound = () => {
           <div className="mt-3 flex h-auto w-full justify-between ">
             <div className="flex justify-start text-start ">
               <span className="text-[16px] font-[400] text-[#1E1E1E]">
-                {t("oneWay")}
+                {t("first trip")}
               </span>
               <span className="ml-3 text-[16px] font-[400] text-[#1E1E1E] rtl:mr-2">
                 {bus_Ticket?.data?.date}{" "}
@@ -152,7 +155,7 @@ export const BusTwoRound = () => {
                 />
               </svg>
               <span className="ml-[18px] text-[16px] font-[400] text-[#69696A] rtl:mr-2 ">
-                {bus_Ticket?.data?.trip_type}
+                
               </span>
             </div>
 
@@ -170,7 +173,7 @@ export const BusTwoRound = () => {
                 {t("Price per person")}
               </div>
           <div className="text-[16px] font-[500]  text-[#1E1E1E] ">
-                {bus_Ticket?.data?.trips[0].total}
+                 {toltle_price} {t("LE")}
               </div>
              
           </div>
@@ -185,7 +188,7 @@ export const BusTwoRound = () => {
           <div className="mt-3 flex h-auto w-full justify-between ">
             <div className="flex justify-start text-start ">
               <span className="text-[16px] font-[400] text-[#1E1E1E]">
-              {t(dropOffLocationType)}
+              {t("return trip")}
               </span>
               <span className="ml-3 text-[16px] font-[400] text-[#1E1E1E] rtl:mr-2">
                 {bus_Ticket?.data?.date}{" "}
@@ -287,7 +290,7 @@ export const BusTwoRound = () => {
                 />
               </svg>
               <span className="ml-[18px] text-[16px] font-[400] text-[#69696A] rtl:mr-2 ">
-                {bus_Ticket?.data?.trip_type}
+              
               </span>
             </div>
 
@@ -303,7 +306,7 @@ export const BusTwoRound = () => {
               {t("Price per person")}
               </div>
               <div className="text-[16px] font-[500] text-[#1E1E1E]">
-                {bus_Ticket?.data?.trips[1].total}
+              {toltle_price} {t("LE")}
               </div>
              
               </div>

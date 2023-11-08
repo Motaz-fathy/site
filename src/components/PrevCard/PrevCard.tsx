@@ -5,6 +5,7 @@ import ShowIcon from 'images/logos/ShowIcon';
 import Logo from "../../images/WebusLogo.png";
 import FeedIcon from 'images/logos/FeedIcon';
 import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 function tConvert(time: any) {
   // Check correct time format and split into components
   try {
@@ -40,6 +41,7 @@ const PrevCard:FC<PrevCardProps> = ({
   img_url,
   timeTo
 }) => {
+  const {t} = useTranslation()
   return (
     <div className={classes.prevCard}>
     <header className={classes.ccardHeading}>
@@ -66,11 +68,11 @@ const PrevCard:FC<PrevCardProps> = ({
 
     <button className={classes.ccBtn} onClick={()=> toast.success("comming soon")}>
       <FeedIcon />
-      <span>Feedback</span>
+      <span>{t("Feedback")}</span>
     </button>
     <button className={`${classes.ccBtn} ${classes.active}`} onClick={()=> toast.success("comming soon")}>
       <ShowIcon />
-      <span>View ticket</span>
+      <span>{t("View ticket")}</span>
     </button>
     </div>
 </div>  

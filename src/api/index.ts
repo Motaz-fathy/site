@@ -421,7 +421,6 @@ export const getFlightsTrips = async (data: any): Promise<any> => {
 			},
 		},
 	);
-	console.log(data)
 	return res;
 };
 export const getFlightsCountries = async (value:any): Promise<any> => {

@@ -214,10 +214,10 @@ const MaritimeCheckout: FC<CheckOutPageProps> = ({ className = "" }) => {
 	const renderMain = () => {
 		return (
 			<div className="flex w-full flex-col space-y-8 border-neutral-200 px-0 dark:border-neutral-700 sm:rounded-2xl sm:border sm:p-6 xl:p-8">
-				<h2 className="text-[24px] font-semibold first-letter:uppercase ">
+				<span className="text-[24px] font-semibold first-letter:uppercase ">
 					{/* {t("confirmPayment")} */}
-					passenger details
-				</h2>
+					{t("passenger details")}
+				</span>
 				<div className="border-b border-neutral-200 dark:border-neutral-700"></div>
 				<div>
 					<div>
@@ -304,7 +304,7 @@ const MaritimeCheckout: FC<CheckOutPageProps> = ({ className = "" }) => {
 															<div className="md:col-span-2">
 																<label htmlFor="first_name">
 																	{/* {t("firstName")}  */}
-																	firs name
+																	{t("first name")}
 																</label>
 																<div className="mt-1  flex h-10 items-center rounded border border-gray-200">
 																	<input
@@ -451,7 +451,7 @@ const MaritimeCheckout: FC<CheckOutPageProps> = ({ className = "" }) => {
 						</div>
 					)}
 					<div className="mt-6">
-						<div className="pt-8">
+						<div className="p-8">
 							{!orderId && (
 								<ButtonPrimary loading={loading} onClick={() => createTicket()}>
 									{t("confirmTicket")}

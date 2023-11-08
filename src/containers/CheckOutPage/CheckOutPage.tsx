@@ -172,7 +172,7 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
         .then((res) => {
           setOrderId(res?.data?.data?.gateway_order_id);
           setPriceData(res?.data?.data);
-          toast.success(res?.data?.message);
+          toast.success(t(res?.data?.message));
           let busTicket: any = JSON.stringify(res?.data?.data);
           window.localStorage.setItem("bus_First_Ticket", busTicket);
           console.log("bus_First_Ticket", res?.data?.data);
@@ -240,7 +240,7 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
         .then((res) => {
           setOrderId(res?.data?.data?.gateway_order_id);
           setPriceData(res?.data?.data);
-          toast.success(res?.data?.message);
+          toast.success(t(res?.data?.message));
           let busTicket: any = JSON.stringify(res?.data);
           window.localStorage.setItem("bus_Return_Ticket", busTicket);
           console.log("create return  ticket", res?.data);
@@ -348,7 +348,7 @@ const CheckOutPage: FC<CheckOutPageProps> = ({ className = "" }) => {
       } else {
         return (
           <ButtonPrimary loading={loading} onClick={() => createFirsttrip()}>
-            {t("confirmTicket")}
+            {t("book & go to 2ed trip")}
           </ButtonPrimary>
         );
       }

@@ -5,10 +5,11 @@ import { getAddressList } from "api";
 import { showApiErrorMessages } from "utils";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 const ADCard = () => {
 	const navigate = useNavigate();
 	const [addressList, setAddressList] = useState<any>([]);
-
+    const {t} = useTranslation()
 	const { data: addressListData } = useQuery(
 		["addressListData"],
 		() => {
@@ -37,28 +38,28 @@ const ADCard = () => {
 		return (
 			<div className={` container ${classes.addressCard}`}>
 				<div className={classes.title}>
-					<h2>MyAdress</h2>
+					<span>{t("My adress")}</span>
 					{/* <span > Edit </span> */}
 				</div>
 				{addressList.map((item: any) => (
 					<>
 						<div className={classes.layout}>
 							<div className={classes.input}>
-								<label>Phone Number *</label>
+								<label>{t("Phone Number")} *</label>
 								<input placeholder={item?.phone} readOnly={true} />
 							</div>
 							<div className={classes.input}>
-								<label>city *</label>
+								<label>{t("city")} *</label>
 								<input placeholder={item?.city?.name} readOnly={true} />
 							</div>
 						</div>
 						<div className={classes.layout}>
 							<div className={classes.input}>
-								<label>Street Name *</label>
+								<label>{t("Street Name")} *</label>
 								<input placeholder={item?.name} readOnly={true} />
 							</div>
 							<div className={classes.input}>
-								<label>Location *</label>
+								<label>{t("Location")} *</label>
 								<input placeholder={item?.name} readOnly={true} />
 							</div>
 						</div>
@@ -71,7 +72,7 @@ const ADCard = () => {
 					onClick={() => navigate("/addaddress")}
 				>
 					{" "}
-					Add another address
+					{t("Add another address")}
 				</button>
 			</div>
 		);

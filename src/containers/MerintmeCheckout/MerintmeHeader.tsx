@@ -119,7 +119,7 @@ export const MerintmeHeader:FC<MerintmeHeaderProp> = ({
             <span className="text-[14px] font-[400]">
               {" "}
               
-              {modle}
+              {t("ship")}
             </span>
           </div>
         </div>

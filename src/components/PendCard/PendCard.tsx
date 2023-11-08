@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useTransition } from 'react';
 import classes from './PendCard.module.css';
 import Profile from 'images/Profile';
 import ShowIcon from 'images/logos/ShowIcon';
@@ -8,6 +8,7 @@ import Cancelcon from 'images/logos/Cancelcon';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 function tConvert(time: any) {
   // Check correct time format and split into components
@@ -55,9 +56,7 @@ const PendCard: FC<PendCardProps> = ({
   invoice_url
 }) => {
   const navigate = useNavigate();
-  console.log(id);
   const token = localStorage.getItem('token');
-  console.log(token);
   axios.defaults.headers.common['authorization'] = `Bearer ${token}`;
   const cancelHandler = async (e:any) => {
     e.preventDefault () 
@@ -108,8 +107,8 @@ const PendCard: FC<PendCardProps> = ({
       }
     }
   };
-  console.log('timeFrom', cancel);
 
+  const {t} = useTranslation()
   return (
     <div className={classes.pendCard}>
       <header className={classes.ccardHeading}>
@@ -119,7 +118,7 @@ const PendCard: FC<PendCardProps> = ({
             <Profile />
             <span>{seat}</span>
           </div>
-          <p>{total?.split(".")[0]} EGP</p>
+          <p>{total?.substring(3)} {t("LE")}</p>
         </div>
       </header>
       <main className={classes.ccardDetails}>
@@ -136,20 +135,20 @@ const PendCard: FC<PendCardProps> = ({
         <div className={classes.btns}>
           <button className={classes.Btnbay} onClick={PayNow}>
             <MonyIcon />
-            <span>Pay</span>
+            <span>{t("Pay")}</span>
           </button>
           <button
             className={classes.ccBtn}
             onClick={() => toast.success('comming soon')}
           >
             <ShowIcon />
-            <span>View</span>
+            <span>{t("View")}</span>
           </button>
         </div>
         {cancel && (
           <button className={classes.cancelBtn} onClick={(e)=>cancelHandler(e)}>
             <Cancelcon />
-            <span>Cancel</span>
+            <span>{t("Cancel")}</span>
           </button>
         )}
       </div>

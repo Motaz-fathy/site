@@ -327,7 +327,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
           
           p-2 text-neutral-50  focus:outline-none max-sm:w-full max-sm:py-6 sm:mt-0  sm:py-0"
         >
-          <span className="mr-3 hidden max-sm:block">Search & compare</span>
+          <span className="mr-3 hidden max-sm:block">{t("Search & compare")}</span>
           <svg
             width="33"
             height="33"

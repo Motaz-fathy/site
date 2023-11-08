@@ -259,7 +259,7 @@ const BusForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 								className=" w-auto"
 								
 								buttonSubmitHref={() => {
-									if(valid === true && dropOffInputValue !== '' && pickUpInputValue !== '' ) {
+									if(dateRangeValue !== null && dropOffInputValue !== '' && pickUpInputValue !== '' ) {
 										navigate(
 											`/listing-bus?${dateRangeValue?.startDate?.format("YYYY-MM-DD")}/
 											
@@ -308,7 +308,7 @@ const BusForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 							className="w-auto"
 							buttonSubmitHref={() =>
 								{
-									if(valid === true && dropOffInputValue !== '' && pickUpInputValue !== '') {
+									if(dateValue !== null && dropOffInputValue !== '' && pickUpInputValue !== '') {
 										navigate(
 											`/listing-bus?${dateValue?.format("YYYY-MM-DD")}/${
 												travelTo?.id
