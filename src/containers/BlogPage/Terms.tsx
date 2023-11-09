@@ -454,11 +454,7 @@ const Terms = () => {
 				<title>Terms and Conditions|| Telefreik For Booking</title>
 			</Helmet>
 			{renderHeader()}
-			<NcImage
-				className="w-full rounded-xl"
-				containerClassName="container my-10 sm:my-12 "
-				src="https://images.unsplash.com/photo-1605487903301-a1dff2e6bbbe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1957&q=80"
-			/>
+			
 
 			<div className="nc-SingleContent container space-y-10">
 				{renderContent()}

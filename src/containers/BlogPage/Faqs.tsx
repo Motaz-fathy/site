@@ -99,11 +99,7 @@ const Faqs = () => {
 				<title>Faqs || Telefreik For Booking</title>
 			</Helmet>
 			{renderHeader()}
-			<NcImage
-				className="w-full rounded-xl object-cover"
-				containerClassName="container my-10 sm:my-12 "
-				src={Hero}
-			/>
+			
 
 			<div className="nc-SingleContent container space-y-10">
 				{renderContent()}
