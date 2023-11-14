@@ -109,7 +109,7 @@ useEffect(() => {
   return (
     <>
       <div
-        className={`nc-SectionOurFeatures mx-0  pb-10 pt-10 rtl:gap-2 sm:mx-4 lg:flex-row
+        className={` nc-SectionOurFeatures mx-0  pt-10 rtl:gap-0 sm:mx-4 lg:flex-row 
           ${className} overflow-hidden`}
         data-nc-id="SectionOurFeatures"
       >
@@ -321,7 +321,8 @@ useEffect(() => {
           </div>
         </div>
 
-        <div className="container w-[90%] md:w-[95%] max-md:w-[95%] sm:w-[95%] m-auto mt-5 flex w-full flex-col items-center justify-center  gap-2 sm:flex-row sm:px-0  grid grid-cols-4 gap-4 sm:flex-col sm:px-0 max-sm:grid-cols-1">
+        <div className="container w-[90%] md:w-[95%] max-md:w-[95%] sm:w-[95%] m-auto my-5  flex w-full flex-col items-center  
+        justify-center  gap-2 sm:flex-row sm:px-0  grid grid-cols-4 gap-4 sm:flex-col sm:px-0 max-sm:grid-cols-1 ">
           {static_trips_row1.map((i) => (
             <div className="rounded-xl  border-[1px] border-[#FFB229] ">
               <div className="my-[4px] flex -translate-x-1 items-center justify-between gap-4 rounded-lg border border-gray-100 bg-white  pt-4 sm:pt-12 md:pt-2  lg:p-4">
@@ -386,9 +387,8 @@ useEffect(() => {
           ))}
         </div>
 
-        <div className="relative mt-10 flex flex-col justify-center  rtl:gap-2 sm:flex-row   ">
-          <img className="absolute top-[0px]  hidden lg:block" src={wordImg} />
-          <div className="mt-18 relative order-2 max-w-2xl flex-shrink-0 sm:order-1 lg:mt-14 lg:w-2/5"></div>
+        <div className="container w-[90%]     rtl:gap-2   flex  jus items-center m-auto translate-y-[15px]">
+          <img className="  hidden xl:flex lg:flex m-auto  " src={wordImg} />
 
           {/* <div
 						className={`mt-18 order-1 mx-4  max-w-2xl flex-shrink-0 sm:order-2 sm:m-0 lg:mt-14 lg:w-2/5 ${

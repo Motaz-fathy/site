@@ -197,7 +197,7 @@ const SocialsList1: FC<SocialsList1Props> = ({ className = "space-y-2.5" }) => {
 
 	return (
 		<div
-			className={`nc-SocialsList1 flex content-center items-center gap-3 ${className} `}
+			className={`nc-SocialsList1 flex content-center items-center gap-0  `}
 			data-nc-id="SocialsList1"
 		>
 			{socials.map(renderItem)}

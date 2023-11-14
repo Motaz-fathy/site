@@ -244,7 +244,9 @@ const BookingCard = () => {
 			// }
 			if(data?.data?.data[i]?.status_code === "pending" ) {
 				newBus = [...newBus, bus[i]];
+				console.log("newBus" , newBus)
 			}
+			console.log("newBus" , newBus)
 		}
 		return (
 			<div className={classes.bookingCard}>
@@ -282,9 +284,9 @@ const BookingCard = () => {
 				{newBus.length === 0 ? (
 					<p>No Pennding</p>
 				) : (
-					newBus.map((bu: any) => (
+					newBus?.map((bu: any) => (
 						<PendCard
-							id={bu.id}
+							id={bu?.id}
 							cancel={bu.can_be_cancel}
 							cancel_url={bu.cancel_url}
 							invoice_url={bu.payment_url}
@@ -409,16 +411,16 @@ const BookingCard = () => {
 			</ul>
 
 			{nav === "All"
-				? bus.map((bu: any) => (
+				? bus?.map((bu: any , index: any) => (
 						<CurrentCard
-							key={bu}
-							total={bu.total}
-							seat={bu.tickets[0].seat_number}
-							stationFrom={bu.station_from.name}
-							stationTo={bu.station_to.name}
-							timeFrom={bu.station_from.arrival_at}
-							timeTo={bu.station_to.arrival_at}
-							img_url={bu.company_data.avatar}
+							key={index}
+							total={bu?.total}
+							seat={bu?.tickets[0]?.seat_number}
+							stationFrom={bu?.station_from?.name}
+							stationTo={bu?.station_to?.name}
+							timeFrom={bu?.station_from?.arrival_at}
+							timeTo={bu?.station_to?.arrival_at}
+							img_url={bu?.company_data?.avatar}
 						/>
 				  ))
 				: ""}
