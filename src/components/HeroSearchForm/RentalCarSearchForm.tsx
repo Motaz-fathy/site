@@ -178,8 +178,7 @@ const RentalCarSearchForm: FC<FlightSearchFormProps> = ({
 	const renderForm = () => {
 		return (
 			<div className="w-full">
-				<form className="relative   w-full  px-2    rounded-xl sm:flex-col-reverse  
-				max-sm:flex-col-reverse  ">
+				<form className="container lg:w-full  md:w-full md:text-xs lg:h-fil relative w-full  select-none	cursor-pointer  md:h-fit xl:px-2 mt-2">
 					<span className="flex sm:hidden">{renderRadioBtn()}</span>
 					<div className="flex   lg:w-full md:w-full sm:w-full  max-sm:flex-col gap-1 md:flex-row sm:justify-around ">
 						<div className="relative flex lg:flex-row w-[40vw] max-sm:flex-col gap-y-2   sm:gap-1  max-sm:w-full ">

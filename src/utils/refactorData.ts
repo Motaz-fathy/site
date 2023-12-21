@@ -12,6 +12,7 @@ const refactorData = (trips: any) => {
 	   
 			trip.stations_from.flatMap((itemFrom: any) =>
 			trip.stations_to.map((itemTo: any) => ({
+				company_data:trip.company_data,
 				travel_from: itemFrom.name,
 				trip_url: `/checkout/?${trip.date}/${itemFrom.id}/${itemTo.id}/${trip.id}/${trip.price_start_with}/${itemFrom.city_id}/${itemTo.city_id}/${trip.company}/${trip.bus.category}`,
 				travel_at: changeFromHHmmFormatToDateFormate(
@@ -33,6 +34,7 @@ const refactorData = (trips: any) => {
 				prices_start_with: trip.prices_start_with.original_price, //their is more than tis opj like offer and after offer price
 				available_seats: trip.available_seats,
 				avatar : trip.company_data.avatar ,
+				bus_img : trip.company_data.bus_image ,
 				comapny_name : trip.company_data.name,
 				company_logo : trip.company_data.bus_image
 				

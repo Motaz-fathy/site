@@ -163,13 +163,13 @@ const BusForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
 	const renderForm = () => {
 		return (
 			<div
-			className={`container lg:w-full md:w-full md:text-xs lg:h-fil relative w-full  select-none	cursor-pointer  md:h-fit `}>
+			className={`container lg:w-full  md:w-full md:text-xs lg:h-fil relative w-full  select-none	cursor-pointer  md:h-fit xl:px-2 `}>
 				<span className="flex sm:hidden">{renderRadioBtn()}</span>
 				<form 
                 className="xl:w-full lg:w-full md:w-full  flex flex-col items-start "
                 >
                    <div className="w-full h-[70px]  flex justify-between items-center max-sm:flex-col">
-                   <div className="flex h-[56px]  lg:w-full md:w-full sm:w-full  max-sm:flex-col gap-1 md:flex-row sm:justify-around ">
+                   <div className="flex h-[56px]   lg:w-full md:w-full sm:w-full  max-sm:flex-col gap-1 md:flex-row sm:justify-around ">
 						<div className="relative flex lg:flex-row w-[40vw] max-sm:flex-col    sm:gap-1  max-sm:w-full ">
 							<LocationInput
 								key={1}
@@ -336,7 +336,7 @@ const BusForm: FC<FlightSearchFormProps> = ({ haveDefaultValue }) => {
                    </div>
                    </div>
                 			
-					<span className="hidden sm:flex">{renderRadioBtn()}</span>
+					<span className="hidden sm:flex ">{renderRadioBtn()}</span>
 				</form>
 			</div>
 		);

@@ -38,7 +38,7 @@ const Button: FC<ButtonProps> = ({
 	const _renderLoading = () => {
 		return (
 			<svg
-				className="-ml-1 mr-3 h-5 w-5 animate-spin"
+				className="h-5 w-5 animate-spin m-auto"
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
 				viewBox="0 0 24 24"
@@ -82,7 +82,7 @@ const Button: FC<ButtonProps> = ({
 			type={type}
 		>
 			{loading && _renderLoading()}
-			{children || `This is Button`}
+			{children || ``}
 		</button>
 	);
 };

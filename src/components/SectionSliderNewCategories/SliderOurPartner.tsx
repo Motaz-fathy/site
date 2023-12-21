@@ -30,7 +30,7 @@ export const SliderOurPartner = () => {
         spaceBetween={5}
         dir="rtl"
         autoplay={{
-          delay: 2000,
+          delay: 2500,
           disableOnInteraction: false,
 
         }}
@@ -41,9 +41,11 @@ export const SliderOurPartner = () => {
        
         {
           partener?.map((item: any) => {
+            console.log(item, "partner");
+            
             return (
               <SwiperSlide key={item?.id}>
-              <div className='w-[150px] h-[150px] flex justify-center items-center max-sm:w-[50px] max-sm:h-[50px]'><img src={item?.image} />
+              <div className='w-[150px] h-[150px] flex justify-center items-center max-sm:w-[50px] max-sm:h-[50px] ease-in-out'><img src={item?.image} />
               </div> 
              </SwiperSlide>
        

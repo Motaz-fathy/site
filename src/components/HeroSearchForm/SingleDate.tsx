@@ -126,7 +126,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
               <Popover.Button
                 className={`
            ${open ? "" : ""}
-            inline-flex items-center rounded-md px-4 py-1.5 text-xs font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+            inline-flex items-center rounded-md px-4 py-1.5 text-xs font-medium hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 `}
                 onClick={() => document.querySelector("html")?.click()}
               >
                 <span className="text-sm font-light leading-none text-neutral-400 ">
@@ -248,7 +248,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
         }   `}
       >
         <div
-          className={`absolute inset-0   flex   cursor-pointer ${
+          className={`absolute inset-0   flex mx-2    cursor-pointer ${
             type === "maritime"
               ? "w-[20vw] "
               : type === "bus"
@@ -287,7 +287,7 @@ const SingleDate: FC<ExperiencesDateSingleInputProps> = ({
 
         {renderInputCheckInDate()}
       </div>
-      <div className="flex w-[20vw]  justify-between max-sm:h-[48px] max-sm:w-full   ">
+      <div className="flex  w-[20%]   justify-around max-sm:h-[48px] max-sm:w-full    ">
         {type !== "cars" ? (
           <>
             {type === "bus" ? (

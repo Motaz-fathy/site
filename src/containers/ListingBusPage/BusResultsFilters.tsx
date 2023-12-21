@@ -6,7 +6,70 @@ import { each, filter, set } from "lodash";
 import Styled from './page.module.css'
 import i18next, { t } from "i18next";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import refactorData from "utils/refactorData";
 //ingore ts
+
+// toools
+function formatDate(dateString: string): string {
+    const date = new Date(dateString);
+    const month = date.toLocaleString('en-US', { month: 'short' });
+    const day = date.getDate();
+  
+    return `${month.toUpperCase()} ${day}`;
+  }
+  function formatTime(dateString?: string): string {
+    if (!dateString) {
+      return '--:--';
+    }
+  
+    const date = new Date(dateString);
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const isAM = hours < 12;
+  
+    let formattedHours = (hours % 12).toString().padStart(2, '0');
+    if (formattedHours === '00') {
+      formattedHours = '12';
+    }
+  
+    const formattedMinutes = minutes.toString().padStart(2, '0');
+    const amPmIndicator = isAM ? 'AM' : 'PM';
+  
+    return `${formattedHours}:${formattedMinutes} ${amPmIndicator}`;
+  }
+
+  interface TripData {
+    arrival_at: string;
+    travel_at: string;
+    // Other trip data...
+  }
+  
+  interface FilteredTripData {
+    arrivalDate: string;
+    // Other filtered trip data...
+  }
+  
+  function filterTrips(tripData: TripData[], startDate: string, endDate: string): TripData[] {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+  
+    return tripData.filter((trip) => {
+      const arrivalDate = new Date(trip.arrival_at);
+      return arrivalDate >= start && arrivalDate <= end;
+    });
+  }
+  
+  function filterTripsTravelTime(tripData: TripData[], startDate: string, endDate: string): TripData[] {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+  
+    return tripData.filter((trip) => {
+      const arrivalDate = new Date(trip.travel_at);
+      return arrivalDate >= start && arrivalDate <= end;
+    });
+  }
+// end tools
+
 export interface RangeFilterProps {
     filterName: string;
     firstRangePoint: string;
@@ -330,8 +393,8 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
         each: RefactoredData,
     ) => {
         if (
-            new Date(each.arrival_at) <=
-            new Date(arrival_atTimes[arrivalRange[1] - 1])
+            new Date(each.arrival_at) >=
+            new Date(arrival_atTimes[arrivalRange[0] ])
         ) {
             return true;
         }
@@ -466,6 +529,49 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
        
           
       };
+    //   mo tools
+    // depart times handling
+    const [filtered_by_mo_departure_date_start, setFiltered_by_mo_depature_date_start] = useState(travel_atTimes[0]);
+    const [filtered_by_mo_departure_date_end, setFiltered_by_mo_depature_date_end] = useState(travel_atTimes[travel_atTimes.length-1]);
+      const handle_Date_changes=(e:any) =>{
+      setDepartureRange(e)
+    // filterTripsTravelTime(data,filtered_by_mo_departure_date_start,filtered_by_mo_departure_date_end)
+    setFiltered_by_mo_depature_date_start(travel_atTimes[e[0]])
+    setFiltered_by_mo_depature_date_end(travel_atTimes[e[1]])
+    setFiltered_by_mo_arrival_date_start(refactoredData[e[0]].arrival_at)
+    setFiltered_by_mo_arrival_date_end(refactoredData[e[1]].arrival_at)
+
+      console.log(e ,"handle_Date_changes" ,RefactoredData,filtered_by_mo_departure_date_end , filtered_by_mo_departure_date_start)
+      }
+    //   arrival time handling
+    const [filtered_by_mo_arrival_date_start, setFiltered_by_mo_arrival_date_start] = useState(travel_atTimes[0]);
+    const [filtered_by_mo_arrival_date_end, setFiltered_by_mo_arrival_date_end] = useState(travel_atTimes[travel_atTimes.length-1]);
+    const [filtered_by_mo_arrival_end, setFiltered_by_mo_arrival_end] = useState(travel_atTimes[travel_atTimes.length-1]);
+      const handle_Date_changes_arrival=(e:any) =>{
+      setArrivalRange(e)
+      setFiltered_by_mo_arrival_date_start(refactoredData[e[0]].arrival_at)
+    setFiltered_by_mo_arrival_date_end(refactoredData[e[1]].arrival_at)
+    setFiltered_by_mo_arrival_end(refactoredData[e[1]].arrival_at)
+      filterTrips(refactoredData,filtered_by_mo_arrival_date_start,filtered_by_mo_arrival_date_end).forEach((element:any) => {
+          const indexToRemove = refactoredData.findIndex((item) => item.url === element.url);
+            if (indexToRemove!== -1) {
+            refactoredData.splice(indexToRemove, 1);
+            }
+      });
+    //   refactoredData = []
+    // setData([])
+    // const indexToRemove = refactoredData.findIndex((item) => item.id === itemIdToRemove);
+    // if (indexToRemove!== -1) {
+    //   refactoredData.splice(indexToRemove, 1);
+    // }
+        // (filterTrips(data,filtered_by_mo_arrival_date_start,filtered_by_mo_arrival_date_end))
+      console.log(e, "handle_Date_changes_arrival",
+      filterTrips(refactoredData,filtered_by_mo_arrival_date_start,filtered_by_mo_arrival_date_end), 
+       filtered_by_mo_arrival_date_start, filtered_by_mo_arrival_date_end,);
+
+      }
+
+    // end mo tools
     return (
         <>
             <form className={`${Styled.filter_items }  ${className} `}>
@@ -481,14 +587,17 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
                     </span>
                     </h5>
                     <div className={'   h-fit w-full'} id="toggle1">
-                        <h6 className="my-4 text-sm text-slate-500">{t("Depart from")}{` (${from})`}</h6>
+                        <h6 className="my-4 text-sm text-slate-500 flex  justify-between">{t("Depart from")}{` (${from})`}  <span className="bg-blue-300 w-[60px] h-[18px] text-stone-900 text-center font-bold  align-middle  rounded-lg  text-xm ">
+                             {formatDate(filtered_by_mo_departure_date_start)}
+                            </span></h6>
                         <div className="my-3 flex justify-between">
-                            <span className="text-xs">{travel_atTimes[0]}</span>
+                            <span className="text-xs">{formatTime(filtered_by_mo_departure_date_start)}</span>
+                            
+                           
+                            
                             <span className="text-xs">
                                 {
-                                    travel_atTimes[
-                                    travel_atTimes.length - 1
-                                    ]
+                                   formatTime(filtered_by_mo_departure_date_end)
                                 }
                             </span>
                         </div>
@@ -501,20 +610,20 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
                             defaultValue={[0, travel_atTimes.length]}
                             allowCross={false}
                             step={1}
-                            onChange={(e: any) => setDepartureRange(e)}
+                            onChange={(e: any) => handle_Date_changes(e)}
                         />
                         <div className="h-fit w-full ">
-                            <h6 className="my-4 text-sm text-slate-500">{t("arrival to")}{`(${to})`}</h6>
+                            <h6 className="my-4 text-sm text-slate-500 flex  justify-between">{t("arrival to")}{`(${to})`}
+                            <span className="bg-blue-300 w-[60px] h-[18px] text-stone-900 text-center font-bold  align-middle  rounded-lg  text-xm ">
+                             {formatDate(filtered_by_mo_arrival_end)}
+                            </span>
+                            </h6>
                             <div className="my-3 flex justify-between">
                                 <span className="text-xs">
-                                    {arrival_atTimes[0]}
+                                    {formatTime(filtered_by_mo_arrival_date_start)}
                                 </span>
                                 <span className="text-xs">
-                                    {
-                                        arrival_atTimes[
-                                        arrival_atTimes.length - 1
-                                        ]
-                                    }
+                                    {formatTime(filtered_by_mo_arrival_date_end)}
                                 </span>
                             </div>
                             <Slider
@@ -526,7 +635,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
                                 defaultValue={[0, arrival_atTimes.length]}
                                 allowCross={false}
                                 step={1}
-                                onChange={(e: any) => setArrivalRange(e)}
+                                onChange={(e: any) => handle_Date_changes_arrival(e)}
                             />
                         </div>
                     </div>
@@ -550,15 +659,15 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
                             {
                                 i18next.language === "en" ? 
                                 <>
-                                 <span className="text-xs"> {Max_Min_prices[0]}   </span>
+                                 <span className="text-xs"> {pricelRange[0]}   </span>
                                 <span className="text-xs">
-                                {Max_Min_prices[Max_Min_prices.length -1]}
+                                {pricelRange[1]}
                                 </span>
                                 </> : 
                                 <>
-                                 <span className="text-xs">  {Max_Min_prices[Max_Min_prices.length -1]}  </span>
+                                 <span className="text-xs">  {pricelRange[1]}  </span>
                                 <span className="text-xs">
-                                 {Max_Min_prices[0]}
+                                 {pricelRange[0]}
                                 </span>
                                 </>
                                }
@@ -706,15 +815,15 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
                                {
                                 i18next.language === "en" ? 
                                 <>
-                                 <span className="text-xs"> {Max_Min_prices[0]}   </span>
+                                 <span className="text-xs">  {pricelRange[0]}    </span>
                                 <span className="text-xs">
-                                {Max_Min_prices[Max_Min_prices.length -1]}
+                                 {pricelRange[1]} 
                                 </span>
                                 </> : 
                                 <>
-                                 <span className="text-xs">  {Max_Min_prices[Max_Min_prices.length -1]}  </span>
+                                 <span className="text-xs">   {pricelRange[1]}   </span>
                                 <span className="text-xs">
-                                 {Max_Min_prices[0]}
+                                  {pricelRange[0]} 
                                 </span>
                                 </>
                                }

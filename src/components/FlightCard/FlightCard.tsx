@@ -17,7 +17,12 @@ export interface FlightCardProps {
 
 const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
 
-  
+  interface Props {
+    item: {
+      gateway_id: string;
+      company_logo: string;
+    };
+  }
 
   function removeDuplicates(travelData: any) {
     const uniqueData = [];
@@ -66,7 +71,18 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
   const navigate = useNavigate();
   const busCardContainer = (refactoredData: any) => {
    
-    return refactoredData?.map((item: any ) => (
+    return refactoredData?.map((item: any ) => {
+      const bus_image =  item?.company_data?.bus_image?item.company_data.bus_image :  item.gateway_id.includes("WEBUS")
+      ? miniBus
+        : item.gateway_id.includes("BlueBus")
+      ? bus
+        : item.gateway_id.includes("Bellman")
+      ? item.company_logo
+        : item.gateway_id.includes("OnTime")
+      ? item.company_logo
+        : null;
+    console.log(item, "from biuussus5555555555")
+      return (
      
       <div
         key={item.id}
@@ -93,13 +109,10 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
             <div className="w-24 flex-shrink-0 lg:w-36">
              
                 <img
-                  src={item?.avatar}
+                  src={item?.company_data?.avatar}
                   className="h-[40px] w-[75px] flex-shrink-0 lg:w-[70px] "
                   alt=""
                 />
-             
-              
-              
             </div>
           </div>
           <div>
@@ -195,25 +208,13 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
             {/* LOGO IMG */}
 
             <div className="w-[130px] flex-shrink-0 lg:w-[130px] xl:translate-x-[10px] lg:translate-x-[-40px] lg:rtl:translate-x-[50px] md:translate-x-[0px] ">
-              {item?.gateway_id?.includes("WEBUS") && (
-									<img src={miniBus} className="lg:w-[130px] md:w-[120px] h-[80px] max-sm:w-[75px] max-sm:h-[40px]" alt="" />
-								)}
-
-								{item?.gateway_id?.includes("BlueBus") && (
-									<img src={bus} className="lg:w-[130px] md:w-[120px] h-[80px] max-sm:w-[75px] max-sm:h-[40px]" alt="" />
-								)}
-
-                {item?.gateway_id?.includes("Bellman") && (
-									<img src={item?.company_logo} className="lg:w-[130px] md:w-[120px] h-[80px] max-sm:w-[75px] max-sm:h-[40px]" alt="" />
-								)}
-
-                {item?.gateway_id?.includes("OnTime") && (
-									<img src={item?.company_logo} className="lg:w-[130px] md:w-[120px] h-[80px] max-sm:w-[75px] max-sm:h-[40px]" alt="" />
-								)}
-
-
-
-            	
+            {bus_image && (
+                <img
+                  src={bus_image}
+                  className="h-[80px] max-sm:h-[40px] max-sm:w-[75px] md:w-[120px] lg:w-[130px]"
+                  alt=""
+                />
+              )}
             </div>
           </div>
         </div>
@@ -326,7 +327,7 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
           </div>
         </div>
       </div>
-    ));
+    )});
   };
 
   return <>{busCardContainer(refactoredData)}</>;
