@@ -536,22 +536,18 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
       const handle_Date_changes=(e:any) =>{
       setDepartureRange(e)
     // filterTripsTravelTime(data,filtered_by_mo_departure_date_start,filtered_by_mo_departure_date_end)
-    setFiltered_by_mo_depature_date_start(travel_atTimes[e[0]])
-    setFiltered_by_mo_depature_date_end(travel_atTimes[e[1]])
-    setFiltered_by_mo_arrival_date_start(refactoredData[e[0]].arrival_at)
-    setFiltered_by_mo_arrival_date_end(refactoredData[e[1]].arrival_at)
+      setFiltered_by_mo_depature_date_start(travel_atTimes[e[0]])
+      setFiltered_by_mo_depature_date_end(travel_atTimes[e[1]])
 
       console.log(e ,"handle_Date_changes" ,RefactoredData,filtered_by_mo_departure_date_end , filtered_by_mo_departure_date_start)
       }
     //   arrival time handling
     const [filtered_by_mo_arrival_date_start, setFiltered_by_mo_arrival_date_start] = useState(travel_atTimes[0]);
     const [filtered_by_mo_arrival_date_end, setFiltered_by_mo_arrival_date_end] = useState(travel_atTimes[travel_atTimes.length-1]);
-    const [filtered_by_mo_arrival_end, setFiltered_by_mo_arrival_end] = useState(travel_atTimes[travel_atTimes.length-1]);
       const handle_Date_changes_arrival=(e:any) =>{
       setArrivalRange(e)
-      setFiltered_by_mo_arrival_date_start(refactoredData[e[0]].arrival_at)
-    setFiltered_by_mo_arrival_date_end(refactoredData[e[1]].arrival_at)
-    setFiltered_by_mo_arrival_end(refactoredData[e[1]].arrival_at)
+      setFiltered_by_mo_arrival_date_start(travel_atTimes[e[0]])
+      setFiltered_by_mo_arrival_date_end(travel_atTimes[e[1]])
       filterTrips(refactoredData,filtered_by_mo_arrival_date_start,filtered_by_mo_arrival_date_end).forEach((element:any) => {
           const indexToRemove = refactoredData.findIndex((item) => item.url === element.url);
             if (indexToRemove!== -1) {
@@ -615,7 +611,7 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
                         <div className="h-fit w-full ">
                             <h6 className="my-4 text-sm text-slate-500 flex  justify-between">{t("arrival to")}{`(${to})`}
                             <span className="bg-blue-300 w-[60px] h-[18px] text-stone-900 text-center font-bold  align-middle  rounded-lg  text-xm ">
-                             {formatDate(filtered_by_mo_arrival_end)}
+                             {formatDate(filtered_by_mo_arrival_date_start)}
                             </span>
                             </h6>
                             <div className="my-3 flex justify-between">

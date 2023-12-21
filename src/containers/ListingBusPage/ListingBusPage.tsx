@@ -20,7 +20,6 @@ import BusTimeCard from "components/BusTimeCard/BusTimeCard";
 // import TripAnalyzer from "./TripAnalys";
 import classes from "components/departureCard/DepartureCard.module.css";
 import BusResultsFilters from "./BusResultsFilters";
-import BusResultsFilters2 from "./MoFilters";
 import removeDuplicates from "utils/removeDuplicates";
 import changeFromHHmmFormatToDateFormate from "utils/changeFromHHmmFormatToDateFormate";
 import { getDuration } from "utils/getDuration";
@@ -398,16 +397,6 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 									{
 										!loading && travelData.length > 0 ?
 											<BusResultsFilters className="flex-1 mr-10" 
-											RefactoredData={travelDataImmutable} isLoading={loading}
-											TravleFrom = {T_F} 
-											TravleTo = {T_T}
-											setData={setDisplayableData}
-											
-											/> : null
-									}
-									{
-										!loading && travelData.length > 0 ?
-											<BusResultsFilters2 className="flex-1 mr-10" 
 											RefactoredData={travelDataImmutable} isLoading={loading}
 											TravleFrom = {T_F} 
 											TravleTo = {T_T}
