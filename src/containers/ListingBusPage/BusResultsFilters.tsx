@@ -797,7 +797,7 @@ const handle_Date_changes_arrival=(e:any) =>{
                             className="text-red-400"
                             min={0}
                             max={travel_atTimes.length}
-                            defaultValue={[0, travel_atTimes.length]}
+                            defaultValue={[0, travel_atTimes.length -1]}
                             allowCross={false}
                             step={1}
                             onChange={(e: any) => setDepartureRange(e)}
@@ -822,7 +822,7 @@ const handle_Date_changes_arrival=(e:any) =>{
                                 className="text-red-400"
                                 min={0}
                                 max={arrival_atTimes.length}
-                                defaultValue={[0, arrival_atTimes.length]}
+                                defaultValue={[0, arrival_atTimes.length -1]}
                                 allowCross={false}
                                 step={1}
                                 onChange={(e: any) => setArrivalRange(e)}
