@@ -108,7 +108,6 @@ export interface SectionGridFilterCardProps {
 	travelTo?: any;
 	paginationStatus: boolean;
 	filterStation: string;
-	filterToStation: string;
 }
 
 // Define a function component called SectionGridFilterCard that takes in the SectionGridFilterCardProps interface as props
@@ -124,8 +123,6 @@ const SectionGridFilterCard: FC<SectionGridFilterCardProps> = ({
 	cityFrom,
 	travelTo,
 	paginationStatus,
-	filterStation,
-	filterToStation,
 }) => {
 	// Use the useTranslation hook to get the translation function
 	const { t } = useTranslation();

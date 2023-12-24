@@ -81,7 +81,6 @@ const FlightCard: FC<FlightCardProps> = ({ refactoredData }) => {
         : item.gateway_id.includes("OnTime")
       ? item.company_logo
         : null;
-    console.log(item, "from biuussus5555555555")
       return (
      
       <div

@@ -25,6 +25,9 @@ import changeFromHHmmFormatToDateFormate from "utils/changeFromHHmmFormatToDateF
 import { getDuration } from "utils/getDuration";
 import refactorData from "utils/refactorData";
 import Styled from './page.module.css'
+import {Filters} from './Filters'
+// filter components 
+import {DeptureTime} from './filters/DeptureTime'
 export interface RefactoredData { classes: string, travel_from: string, travel_to: string, 
 	gateway_id: string, arrival_at: string, travel_at: string , prices_start_with: number }
 
@@ -59,8 +62,9 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 	const [originalTrips, setOriginalTrips] = useState<any>([])
 	const [displayableData, setDisplayableData] = useState<any>([])
 	const [first, setFirst] = useState("")
-    
-	
+	// filters hooks from api 
+    const [deptureTimeFromApi , set_depture_time_api] = useState<any>([])
+    const [arrivalTimeAtApi , setarrivalTimeAtApi] = useState<any>([])
 	const [filterToStation, setFilerToStation] = useState<string>("");
 	// after filtration
 	const [FinalTrips, SetFinalTrips] = useState<any>([]);
@@ -101,11 +105,12 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 					if (res?.data?.data?.length) {
 						
 						const data = refactorData([...res?.data?.data] )
-                        console.log("list_bus_data" , res?.data)
 						setTrips((prev: any) => [...prev, ...res?.data?.data]);
 						setDisplayableData((prev: any) => [...prev, ...data])
 						setOriginalTrips((prev: any) => [...prev, ...res?.data?.data])
 						SetFinalTrips((prev: any) => [...prev, ...res?.data?.data]);
+						set_depture_time_api((prev : any) => [...prev , ...res?.data?.filters?.depart_times])
+						setarrivalTimeAtApi((prev : any ) => [...prev , ...res?.data?.filters?.arrival_times])
 						if(res?.data?.pagination?.nextPageUrl !== null ) {
 							setPaginationStatus(true)
 						} else {
@@ -395,14 +400,23 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 	
 							
 									{
-										!loading && travelData.length > 0 ?
-											<BusResultsFilters className="flex-1 mr-10" 
-											RefactoredData={travelDataImmutable} isLoading={loading}
-											TravleFrom = {T_F} 
-											TravleTo = {T_T}
-											setData={setDisplayableData}
-											
-											/> : null
+										!loading && travelData.length > 0 &&
+											// <Filters className="flex-1 mr-10" 
+											// RefactoredData={travelDataImmutable} isLoading={loading}
+											// TravleFrom = {T_F} 
+											// TravleTo = {T_T}
+											// setData={setDisplayableData}
+											// filters={filters}
+											// /> : null
+											<div className="w-full flex flex-col items-center gap-3">
+											<DeptureTime 
+											 DepatureTime={deptureTimeFromApi}
+                                             ArrivalTime={arrivalTimeAtApi}
+											 City= {T_F}
+                                             SetData = {setDisplayableData}
+											 RefactoredData={travelDataImmutable}
+											/>
+											</div>
 									}
 									
 									
@@ -410,16 +424,16 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 							</div>
 	
 							<div className={` ${Styled.Min_filter} lg:hidden md:hidden  sm:block max-sm:block w-[100%] h-[60px]`}>
-							{
+							{/* {
 								!loading && travelData.length > 0 ?
-									<BusResultsFilters className="flex-1 mr-10" 
+									<Filters className="flex-1 mr-10" 
 									RefactoredData={travelDataImmutable} isLoading={loading}
 									TravleFrom = {T_F} 
 									TravleTo = {T_T}
 									setData={setDisplayableData}
-									
+									filters={filters}
 									/> : null
-							}
+							} */}
 							</div>
 	
 						<div className="lg:w-[70%] md:w-full ">{trips.length > 0 && (
@@ -431,7 +445,6 @@ const ListingBusPage: FC<ListingFlightsPageProps> = ({ className = "" }) => {
 								date={date}
 								refavtord_data={displayableData}
 								filterStation={filterStation}
-								filterToStation={filterToStation}
 								travelFrom={travelFrom}
 								travelTo={travelTo}
 								cityFrom={cityFrom}

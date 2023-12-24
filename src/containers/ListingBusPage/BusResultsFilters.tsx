@@ -287,7 +287,6 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
         
     }
     const Max_Min_prices = remove(prices)
-    console.log("Max_Min_prices" , Max_Min_prices)
     
     const [departureRange, setDepartureRange] = useState<[number, number]>([
         0,
@@ -301,7 +300,6 @@ const BusResultsFilters: FC<BusResultsFiltersProps> = React.memo(props => {
         
          Max_Min_prices[0],Max_Min_prices[Max_Min_prices.length -1],
     ]);
-    console.log("pricelRange" , pricelRange)
     const [selectedCheckboxes, setSelectedCheckboxes] =
         useState<SelectedCheckBoxesProps>({
             seatsFilter: [],
@@ -589,7 +587,7 @@ const handle_Date_changes=(e:any) =>{
     //   arrival time handling
     const [filtered_by_mo_arrival_date_start, setFiltered_by_mo_arrival_date_start] = useState(sortByArrivalAt(refactoredData)[0].arrival_at);
     const [filtered_by_mo_arrival_date_end, setFiltered_by_mo_arrival_date_end] = useState(sortByArrivalAt(refactoredData)[travel_atTimes.length-1].arrival_at);
-const handle_Date_changes_arrival=(e:any) =>{
+    const handle_Date_changes_arrival=(e:any) =>{
       setArrivalRange(e)
     
       setFiltered_by_mo_arrival_date_start(sortByArrivalAt(refactoredData)[e[0]].arrival_at)
